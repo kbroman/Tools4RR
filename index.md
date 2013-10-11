@@ -29,6 +29,8 @@ data analyses, papers, presentations, posters) are reproducible.
 
 #### Details
 
+**Course number**: BMI 826-003
+
 **Instructor**: [Karl Broman](http://www.biostat.wisc.edu/~kbroman)
 
 **Prerequisites**: Some knowledge of [R](http://www.r-project.org).
@@ -41,11 +43,11 @@ data analyses, papers, presentations, posters) are reproducible.
 
 **Project**: There will be one small project, developed over the course of
 the semester:
-  - Implement something in [R](http://www.r-project.org) (e.g., simulation + fancy plot).
-  - Develop it in a [git](http://git-scm.com) repository on
+- Implement something in [R](http://www.r-project.org) (e.g., simulation + fancy plot).
+- Develop it in a [git](http://git-scm.com) repository on
     [github](http://github.com) or [bitbucket](http://bitbucket.org).
-  - Make it an [R](http://www.r-project.org) package.
-  - Use [knitr](http://yihui.name/knitr/) to make a [vignette](http://cran.us.r-project.org/doc/manuals/R-exts.html#Writing-package-vignettes).
+- Make it an [R](http://www.r-project.org) package.
+- Use [knitr](http://yihui.name/knitr/) to make a [vignette](http://cran.us.r-project.org/doc/manuals/R-exts.html#Writing-package-vignettes).
 
 <hr/>
 
