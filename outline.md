@@ -41,7 +41,7 @@ the current directory.
 
 <p><hr/></p>
 
-#### Feb 14: Capturing exploratory analysis
+#### Feb 14: Big jobs/simulations; caching computations
 
 <p><hr/></p>
 
@@ -51,7 +51,11 @@ the current directory.
 
 <p><hr/></p>
 
-#### Feb 28: Writing R packages; Roxygen2
+#### Feb 28: Capturing exploratory analysis
+
+<p><hr/></p>
+
+#### Mar 7: Writing R packages; Roxygen2
 
  - Assemble related code into a package, with help files
  - Write a package for your own miscellaneous tools
@@ -59,7 +63,7 @@ the current directory.
 
 <p><hr/></p>
 
-#### Mar 7:  Writing clear code
+#### Mar 14:  Writing clear code
 
  - Break things up into small functions
  - Don't repeat yourself
@@ -68,30 +72,26 @@ the current directory.
 
 <p><hr/></p>
 
-#### Mar 14: Software testing and debugging
+#### Mar 28: Software testing and debugging
 
  - testthat package
  - [Hadley Wickham's paper](http://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf)
 
 <p><hr/></p>
 
-#### Mar 28: Organizing data analysis projects
+#### Apr 4: Organizing data analysis projects
 
 <p><hr/></p>
 
-#### Apr 4:  Knitr with latex for papers
+#### Apr 11:  Knitr with latex for papers
 
 <p><hr/></p>
 
-#### Apr 11: Presentations
+#### Apr 18: Presentations
 
 <p><hr/></p>
 
-#### Apr 18: Posters
-
-<p><hr/></p>
-
-#### Apr 25: Big jobs/simulations; caching computations
+#### Apr 25: Posters
 
 <p><hr/></p>
 
