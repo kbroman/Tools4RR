@@ -25,6 +25,8 @@ ensure that all aspects of their computational research (software,
 data analyses, papers, presentations, posters) are reproducible.
 
 
+<hr/>
+
 #### Details
 
 **Instructor**: [Karl Broman](http://www.biostat.wisc.edu/~kbroman)
