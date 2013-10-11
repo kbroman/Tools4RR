@@ -25,7 +25,7 @@ ensure that all aspects of their computational research (software,
 data analyses, papers, presentations, posters) are reproducible.
 
 
-<hr/>
+---
 
 #### Details
 
@@ -49,7 +49,7 @@ the semester:
 - Make it an [R](http://www.r-project.org) package.
 - Use [knitr](http://yihui.name/knitr/) to make a [vignette](http://cran.us.r-project.org/doc/manuals/R-exts.html#Writing-package-vignettes).
 
-<hr/>
+---
 
 Sources on [github](http://github.com):
 - The [source for the website](https://github.com/kbroman/Tools4RR/tree/gh-pages)
