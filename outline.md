@@ -70,6 +70,8 @@ the current directory.
  - Use meaningful names
  - Don't be cute
 
+Example: [tweet re function names](https://twitter.com/richierocks/status/388609208293556224)
+
 <p><hr/></p>
 
 #### Mar 28: Software testing and debugging
