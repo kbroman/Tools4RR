@@ -18,7 +18,7 @@
    - friends / colleagues
  - Automation with make
 
-<p><hr/></p>
+---
 
 #### Jan 31: Know the command line; know your editor
 
@@ -35,25 +35,25 @@ Editors:
 Use relative paths rather than absolute paths, and don't jump out of
 the current directory.
 
-<p><hr/></p>
+---
 
 #### Feb 7:  Knitr with markdown/asciidoc for basic reports
 
-<p><hr/></p>
+---
 
 #### Feb 14: Big jobs/simulations; caching computations
 
-<p><hr/></p>
+---
 
 #### Feb 21: Version control with git & github/bitbucket
 
  - Also, facilities through Rstudio
 
-<p><hr/></p>
+---
 
 #### Feb 28: Capturing exploratory analysis
 
-<p><hr/></p>
+---
 
 #### Mar 7: Writing R packages; Roxygen2
 
@@ -61,7 +61,7 @@ the current directory.
  - Write a package for your own miscellaneous tools
  - [Jeff Leek on developing R packages](https://github.com/jtleek/rpackages)
 
-<p><hr/></p>
+---
 
 #### Mar 14:  Writing clear code
 
@@ -72,34 +72,34 @@ the current directory.
 
 Example: [tweet re function names](https://twitter.com/richierocks/status/388609208293556224)
 
-<p><hr/></p>
+---
 
 #### Mar 28: Software testing and debugging
 
  - testthat package
  - [Hadley Wickham's paper](http://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf)
 
-<p><hr/></p>
+---
 
 #### Apr 4: Organizing data analysis projects
 
-<p><hr/></p>
+---
 
 #### Apr 11:  Knitr with latex for papers
 
-<p><hr/></p>
+---
 
 #### Apr 18: Presentations
 
-<p><hr/></p>
+---
 
 #### Apr 25: Posters
 
-<p><hr/></p>
+---
 
 #### May 2:  Ruby/python/perl for data/text manipulation
 
-<p><hr/></p>
+---
 
 #### May 9:  Software/data licenses, copyright, and human subjects/HIPPA
 
@@ -109,7 +109,7 @@ Example: [tweet re function names](https://twitter.com/richierocks/status/388609
  - HIPPA / human subjects
 
 
-<p><hr/></p>
+---
 
 #### Other resources
 
