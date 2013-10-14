@@ -39,6 +39,8 @@ the current directory.
 
 #### Feb 7:  Knitr with markdown/asciidoc for basic reports
 
+- including figures and tables
+
 ---
 
 #### Feb 14: Big jobs/simulations; caching computations
@@ -86,6 +88,8 @@ Example: [tweet re function names](https://twitter.com/richierocks/status/388609
 ---
 
 #### Apr 11:  Knitr with latex for papers
+
+- including figures and tables
 
 ---
 
