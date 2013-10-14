@@ -40,6 +40,10 @@ the current directory.
 #### Feb 7:  Knitr with markdown/asciidoc for basic reports
 
 - including figures and tables
+  ([xtable](http://cran.r-project.org/web/packages/xtable/index.html)
+  to html or asciidoc tables with the
+  [ascii package](https://github.com/eusebe/ascii/)
+
 
 ---
 
