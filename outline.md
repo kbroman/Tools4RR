@@ -10,19 +10,32 @@
  - replicable vs reproducible
  - need "pipeline": data & code available and use documented
  - "best practices" more generally...
+ - I don't have all of the answers, and my not do things in the most
+   efficient way possible.
  - finding answers to questions:
    - help files / manual pages
    - google
    - [stackoverflow](http://stackoverflow.com)
    - email lists / google groups
    - friends / colleagues
+ - Get the data in the most-raw form possible
+ - Be sure to get any/all data and meta-data possible
+ - Keep track of the "provenance" of all data files
+ - Be self-sufficient
  - Automation with make
+
+
 
 ---
 
 #### Jan 31: Know the command line; know your editor
 
 Point-and-click is _not_ reproducible.
+
+Taking your hands off the keyboard means loss of efficiency
+
+Command-line allows you to piece together multiple tools and so do
+things that weren't anticipated by the developer of the GUI.
 
 Editors:
  - emacs with ESS
