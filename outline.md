@@ -53,6 +53,7 @@ Regarding the command line:
 - `&`, `ctrl-Z`, `fg`
 - `grep`
 - flags/arguments
+- What is a shell?
 
 ---
 
