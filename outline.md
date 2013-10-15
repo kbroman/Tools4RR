@@ -48,6 +48,12 @@ Editors:
 Use relative paths rather than absolute paths, and don't jump out of
 the current directory.
 
+Regarding the command line:
+- `<`, `>`, `|`
+- `&`, `ctrl-Z`, `fg`
+- `grep`
+- flags/arguments
+
 ---
 
 #### Feb 7:  Knitr with markdown/asciidoc for basic reports
@@ -109,10 +115,10 @@ For yourself, or for you and many others...
 - Where to indicate the code that created those processed data files?
 - How to name stuff
 - How to coordinate on data cleaning and analysis?
-
-Example: [xkcd re date formats](http://xkcd.com/1179/)
-Don't put spaces in file names!
-Use relative paths (`../blah`) not absolute paths (`/users/blah`)
+- Example: [xkcd re date formats](http://xkcd.com/1179/)
+- Don't put spaces in file names!
+- Use relative paths (`../blah`) not absolute paths (`/users/blah`)
+- Softlinks (and hardlinks?)
 
 ---
 
