@@ -23,7 +23,7 @@
  - Keep track of the "provenance" of all data files
  - Be self-sufficient
  - Automation with make
-
+ - "You" 3 months in the future is effectively a different person
 
 
 ---
@@ -101,6 +101,18 @@ Example: [tweet re function names](https://twitter.com/richierocks/status/388609
 ---
 
 #### Apr 4: Organizing data analysis projects
+
+For yourself, or for you and many others...
+
+- Where to put data that multiple people will work with?
+- Where to put intermediate/processed data?
+- Where to indicate the code that created those processed data files?
+- How to name stuff
+- How to coordinate on data cleaning and analysis?
+
+Example: [xkcd re date formats](http://xkcd.com/1179/)
+Don't put spaces in file names!
+Use relative paths (`../blah`) not absolute paths (`/users/blah`)
 
 ---
 
