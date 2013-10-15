@@ -86,6 +86,7 @@ Regarding the command line:
  - Assemble related code into a package, with help files
  - Write a package for your own miscellaneous tools
  - [Jeff Leek on developing R packages](https://github.com/jtleek/rpackages)
+ - `install_github`
 
 ---
 
@@ -104,6 +105,7 @@ Example: [tweet re function names](https://twitter.com/richierocks/status/388609
 
  - testthat package
  - [Hadley Wickham's paper](http://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf)
+ - R CMD CHECK
 
 ---
 
