@@ -158,3 +158,8 @@ For yourself, or for you and many others...
 - [roger peng slides](http://www.stodden.net/AMP2011/slides/pengslides.pdf)
 - [yihui slides](http://yihui.name/slides/2012-knitr-RStudio.html)
 - Victoria Stodden course: ([guidelines](http://bioinformatics.mdanderson.org/Supplements/ReproRsch-All/Modified/ENAR/stoddenCourseGuidelines.pdf) | [syllabus](http://bioinformatics.mdanderson.org/Supplements/ReproRsch-All/Modified/ENAR/stoddenCourseSyllabus.pdf))
+- [ReproducibleResearch.net](http://reproducibleresearch.net)
+- [Reproducible Research and Software Carpentry course](https://sites.google.com/site/ubccpsc535zwinter2011/home/lectures) at UBC
+- [Reproducible Research in Signal Processing - What, why, and how](http://infoscience.epfl.ch/record/136640)
+- [Software Carpentry](http://software-carpentry.org/)
+- Roger Peng's 2009 ENAR course: [Methods for Reproducible Research](http://www.biostat.jhsph.edu/~rpeng/ENAR2009/)
