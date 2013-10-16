@@ -157,3 +157,4 @@ For yourself, or for you and many others...
 
 - [roger peng slides](http://www.stodden.net/AMP2011/slides/pengslides.pdf)
 - [yihui slides](http://yihui.name/slides/2012-knitr-RStudio.html)
+- Victoria Stodden course: ([guidelines](http://bioinformatics.mdanderson.org/Supplements/ReproRsch-All/Modified/ENAR/stoddenCourseGuidelines.pdf) | [syllabus](http://bioinformatics.mdanderson.org/Supplements/ReproRsch-All/Modified/ENAR/stoddenCourseSyllabus.pdf))
