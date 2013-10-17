@@ -8,3 +8,5 @@ flyer.pdf
 *.aux
 *.log
 *.out
+flyer.tex
+schedule.md

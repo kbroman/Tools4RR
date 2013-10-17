@@ -1,9 +1,8 @@
-<link href="http://kevinburke.bitbucket.org/markdowncss/markdown.css" rel="stylesheet"></link>
-<link href="markdown_modified.css" rel="stylesheet"></link>
-
-## Tools for Reproducible Research
-
-### Draft schedule, Spring 2014
+---
+layout: page
+title:  Draft Schedule
+tagline: Spring, 2014
+---
 
 - **Jan 24**: Introduction; basic principles; [make](http://www.gnu.org/software/make/)
 - **Jan 31**: Know the command line; know your editor
@@ -13,7 +12,7 @@
 - **Feb 28**: Capturing exploratory analysis
 - **Mar 7**:  Writing [R](http://www.r-project.org) packages; [roxygen2](https://github.com/yihui/roxygen2)
 - **Mar 14**: Writing clear code
-- **Mar 21**: **No class [Spring break]**
+- **Mar 21**: **No class (Spring break)**
 - **Mar 28**: Software testing and debugging
 - **Apr 4**:  Organizing data analysis projects
 - **Apr 11**: Knitr with latex for papers
