@@ -8,6 +8,7 @@ schedule.html: schedule.md
 
 flyer.pdf: flyer.tex
 	pdflatex flyer
+	pdflatex flyer
 
 clean:
 	rm outline.html schedule.html flyer.pdf *.aux *.log *~

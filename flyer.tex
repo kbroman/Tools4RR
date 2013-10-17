@@ -2,6 +2,9 @@
 
 \usepackage{times}
 \usepackage{amsmath}
+\usepackage{hyperref}
+\hypersetup{pdfpagemode=UseNone} % don't show bookmarks on initial view
+\hypersetup{colorlinks, urlcolor={black}}
 
 % revise margins
 \setlength{\headheight}{0.0in}
@@ -15,6 +18,8 @@
 
 \setlength{\parskip}{6pt}
 \setlength{\parindent}{0pt}
+
+\newcommand{\ttsm}{\tt \small}
 
 \begin{document}
 
@@ -38,7 +43,8 @@ reproducible research.
 
 In this course, we will discuss general principles for reproducible
 research but will focus primarily on the use of relevant tools
-(particularly {\tt make}, {\tt git}, and {\tt knitr}),
+(particularly \href{http://www.gnu.org/software/make}{\ttsm make},
+\href{http://git-scm.com}{\ttsm git}, and \href{http://github.com}{\ttsm knitr}),
 with the goal that the students leave the course ready and willing to
 ensure that all aspects of their computational research (software,
 data analyses, papers, presentations, posters) are reproducible.
@@ -47,10 +53,10 @@ data analyses, papers, presentations, posters) are reproducible.
 \textbf{\sffamily Details}
 
 \begin{tabular}{l@{\hspace{5mm}}l}
-\textbf{Instructor}: & Karl Broman, {\tt \small bit.ly/kbroman} \\
+\textbf{Instructor}: & Karl Broman, \href{http://www.biostat.wisc.edu/~kbroman}{\ttsm bit.ly/kbroman} \\
 \textbf{Prerequisite}: & Some knowledge of R \\
 \textbf{Lectures}: & Fridays, 11:00--11:50am \\
-\textbf{Website}: & {\tt \small bit.ly/tools4rr}\\
+\textbf{Website}: & \href{http://kbroman.github.io/Tools4RR}{\ttsm bit.ly/tools4rr} \\
 \end{tabular}
 
 \bigskip
