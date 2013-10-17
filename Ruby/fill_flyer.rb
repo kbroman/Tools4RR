@@ -15,7 +15,6 @@ fullline = {}
 File.open(ifile1).readlines.map do |line| 
   line.strip
   next unless line =~ /^\- \*\*(.+)\*\*:\s+(.+)$/
-#  next if line =~ /Spring Break/
   date = $1
   topictext = $2
 
@@ -23,6 +22,7 @@ File.open(ifile1).readlines.map do |line|
   # get rid of markdown-based links
   topictext = topictext.gsub(/\[([^\[\]\(\)]+)\]\([^\[\]\(\)]+\)/, '\1')
   topictext = topictext.gsub(/\&/, "and")
+  topictext = topictext.gsub(/\*\*(.*)\*\*/, '\1') # get rid of any bold
   topic[date] = topictext
 end
 
