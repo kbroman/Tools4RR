@@ -21,6 +21,9 @@
  - Get the data in the most-raw form possible
  - Be sure to get any/all data and meta-data possible
  - Keep track of the "provenance" of all data files
+ - Don't repeat yourself
+   - code; documentation, ...
+   - for example: materials for web site and for advertisement
  - Be self-sufficient
  - Automation with make
  - "You" 3 months in the future is effectively a different person
