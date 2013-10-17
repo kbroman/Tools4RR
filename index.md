@@ -33,7 +33,7 @@ data analyses, papers, presentations, posters) are reproducible.
 
 **Instructor**: [Karl Broman](http://www.biostat.wisc.edu/~kbroman)
 
-**Prerequisites**: Some knowledge of [R](http://www.r-project.org).
+**Prerequisite**: Some knowledge of [R](http://www.r-project.org).
 
 **Lectures**: Fridays, 11:00&ndash;11:50am (Location TBA)
 
