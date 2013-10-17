@@ -1,0 +1,78 @@
+\documentclass[11pt]{article}
+
+\usepackage{times}
+\usepackage{amsmath}
+
+% revise margins
+\setlength{\headheight}{0.0in}
+\setlength{\topmargin}{0.0in}
+\setlength{\headsep}{0.0in}
+\setlength{\textheight}{8.65in}
+\setlength{\footskip}{0.35in}
+\setlength{\oddsidemargin}{0.75in}
+\setlength{\evensidemargin}{0.75in}
+\setlength{\textwidth}{5in}
+
+\setlength{\parskip}{6pt}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\textbf{\large \sffamily Tools for Reproducible Research}
+
+\textbf{\sffamily BMI 826-003, Spring, 2014}
+
+\bigskip
+\textbf{\sffamily Course summary}
+
+A minimal standard for data analysis and other scientific computations
+is that they be \emph{reproducible}: that the code and data are assembled
+in a way so that another group can re-create all of the results (e.g.,
+the figures in a paper). The importance of such reproducibility is now
+widely recognized, but it is not so widely practiced as it should be,
+in large part because many computational scientists (and particularly
+statisticians) have not fully adopted the required tools for
+reproducible research.
+
+In this course, we will discuss general principles for reproducible
+research but will focus primarily on the use of relevant tools
+(particularly {\tt make}, {\tt git}, and {\tt knitr}),
+with the goal that the students leave the course ready and willing to
+ensure that all aspects of their computational research (software,
+data analyses, papers, presentations, posters) are reproducible.
+
+\bigskip
+\textbf{\sffamily Details}
+
+\begin{tabular}{l@{\hspace{5mm}}l}
+\textbf{Instructor}: & Karl Broman, {\tt \small bit.ly/kbroman} \\
+\textbf{Prerequisite}: & Some knowledge of R \\
+\textbf{Lectures}: & Fridays, 11:00--11:50am \\
+\textbf{Website}: & {\tt \small bit.ly/tools4rr}\\
+\end{tabular}
+
+\bigskip
+\textbf{\sffamily Draft schedule}
+
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{l@{\hspace{5mm}}l}
+Jan 24 & Introduction; basic principles; make \\
+Jan 31 & Know the command line; know your editor \\
+Feb 7  & Knitr with markdown/asciidoc for basic reports \\
+Feb 14 & Big jobs/simulations; caching computations \\
+Feb 21 & Version control with git \& github/bitbucket \\
+Feb 28 & Capturing exploratory analysis \\
+Mar 7  & Writing R packages; roxygen2 \\
+Mar 14 & Writing clear code \\
+Mar 28 & Software testing and debugging \\
+Apr 4 &  Organizing data analysis projects \\
+Apr 11 & Knitr with latex for papers \\
+Apr 18 & Presentations \\
+Apr 25 & Posters \\
+May 2 &  Ruby/python/perl for data/text manipulation \\
+May 9 &  Software/data licenses, copyright, \& human subjects/HIPPA \\
+\end{tabular}
+
+\end{document}

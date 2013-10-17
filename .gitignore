@@ -4,3 +4,6 @@ Refs
 markdown.css
 Web
 Images
+flyer.pdf
+*.aux
+*.log
