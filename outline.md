@@ -72,49 +72,13 @@ Regarding the command line:
 
 ---
 
-#### Feb 14: Big jobs/simulations; caching computations
-
----
-
-#### Feb 21: Version control with git & github/bitbucket
+#### Feb 14: Version control with git & github/bitbucket
 
  - Also, facilities through Rstudio
 
 ---
 
-#### Feb 28: Capturing exploratory analysis
-
----
-
-#### Mar 7: Writing R packages; Roxygen2
-
- - Assemble related code into a package, with help files
- - Write a package for your own miscellaneous tools
- - [Jeff Leek on developing R packages](https://github.com/jtleek/rpackages)
- - `install_github`
-
----
-
-#### Mar 14:  Writing clear code
-
- - Break things up into small functions
- - Don't repeat yourself
- - Use meaningful names
- - Don't be cute
-
-Example: [tweet re function names](https://twitter.com/richierocks/status/388609208293556224)
-
----
-
-#### Mar 28: Software testing and debugging
-
- - testthat package
- - [Hadley Wickham's paper](http://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf)
- - R CMD CHECK
-
----
-
-#### Apr 4: Organizing data analysis projects
+#### Feb 21: Organizing data analysis projects
 
 For yourself, or for you and many others...
 
@@ -127,6 +91,43 @@ For yourself, or for you and many others...
 - Don't put spaces in file names!
 - Use relative paths (`../blah`) not absolute paths (`/users/blah`)
 - Softlinks (and hardlinks?)
+- Need to agree on directory structure and file naming conventions
+
+---
+
+#### Feb 28: Capturing exploratory analysis
+
+---
+
+#### Mar 7:  Writing clear code
+
+ - Break things up into small functions
+ - Don't repeat yourself
+ - Use meaningful names
+ - Don't be cute
+
+Example: [tweet re function names](https://twitter.com/richierocks/status/388609208293556224)
+
+---
+
+#### Mar 14: Writing R packages; Roxygen2
+
+ - Assemble related code into a package, with help files
+ - Write a package for your own miscellaneous tools
+ - [Jeff Leek on developing R packages](https://github.com/jtleek/rpackages)
+ - `install_github`
+
+---
+
+#### Mar 28: Software testing and debugging
+
+ - testthat package
+ - [Hadley Wickham's paper](http://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf)
+ - R CMD CHECK
+
+---
+
+#### Apr 4: Big jobs/simulations; caching computations
 
 ---
 
