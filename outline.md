@@ -29,7 +29,9 @@
  - "You" 3 months in the future is effectively a different person
  - It's a lot more work to do things properly, but it could save you a
    ton of aggravation down the road.
-
+ - `make` is not just a critical tool, it is also the essence of what
+   we're trying to do: document dependencies and automate processes
+   ("How was this document created?" _Look at the `Makefile`_)
 
 ---
 
@@ -74,7 +76,13 @@ Regarding the command line:
   ([xtable](http://cran.r-project.org/web/packages/xtable/index.html)
   to html or asciidoc tables with the
   [ascii package](https://github.com/eusebe/ascii/)
-
+- *Important principle*: modify your desires to match the
+  defaults. Focus your compulsive behavior on things that matter.
+  - The actual text
+  - How the text appears on the page
+  - The graphs
+  - Which is more important: manuscript, web page, blog, grant, course
+    handout, report to collaborator, scientific poster
 
 ---
 
