@@ -83,6 +83,20 @@ Regarding the command line:
   - The graphs
   - Which is more important: manuscript, web page, blog, grant, course
     handout, report to collaborator, scientific poster
+- Start report with a brief summary of the data, and of your
+    understanding of the data and the questions
+- Useful anecdote: Bruce Tempel data.
+  - I sent him a report; included no. mice in the exper't
+  - He could tell I had an old data set ("Sorry you put so much
+    effort into that; we'll help you find the correct data")
+  - complicated story: one RData file had two different crosses, one
+    complete one half-way; the other had a later complete version of
+    the previously incomplete cross. I loaded the files in the wrong
+    order
+  - 20 min of confusion in figuring out the problem, but then just 5
+    min to correct things. Literally 25 min: I sent him the report
+    at 10:22pm, he reported the problem at 12:18am, and I sent him
+    the correction at 12:43am.
 
 ---
 
