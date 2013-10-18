@@ -27,6 +27,8 @@
  - Be self-sufficient
  - Automation with make
  - "You" 3 months in the future is effectively a different person
+ - It's a lot more work to do things properly, but it could save you a
+   ton of aggravation down the road.
 
 
 ---
