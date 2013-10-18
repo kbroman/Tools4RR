@@ -59,6 +59,12 @@ Regarding the command line:
 - `grep`
 - flags/arguments
 - What is a shell?
+- [Essential Unix commands](http://www.english.upenn.edu/~curran/205-505/unix.html)
+- [Basic Unix commands](http://www.tjhsst.edu/~dhyatt/superap/unixcmd.html)
+- [Command line essentials (slides)](http://www.slideshare.net/bbbart/command-line-essentials)
+- [How to look like a unix guru](http://www.cs.usfca.edu/~parrt/course/601/lectures/unix.util.html)
+- [Linux essentials](http://faculty.ucr.edu/~tgirke/Documents/UNIX/linux_manual.html)
+- [Important unix commands](http://www.personal.kent.edu/~rmuhamma/OpSystems/unixCommands.htm)
 
 ---
 
