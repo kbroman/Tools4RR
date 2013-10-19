@@ -29,7 +29,7 @@ data analyses, papers, presentations, posters) are reproducible.
 
 #### Details
 
-**Course number**: BMI 826-003
+**Course number**: BMI 826-003 [[UW-Madison course guide](http://bit.ly/H7IEwt)]
 
 **Instructor**: [Karl Broman](http://www.biostat.wisc.edu/~kbroman)
 
