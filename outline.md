@@ -33,6 +33,16 @@
    we're trying to do: document dependencies and automate processes
    ("How was this document created?" _Look at the `Makefile`_)
 
+if the data are updated (eg, additional subjects)
+or you find some artifact that needs fixing
+Can you just "press a button" to update?
+
+need to avoid:
+- opening file to extract csv or do even slight edit
+- copy/paste image into powerpoint
+- hand-enter table or individual value
+
+
 Levels of quality:
 - Are the tables & figures reproducible from the code and data?
 - Does the code actually do what you think it does?
@@ -129,6 +139,11 @@ For yourself, or for you and many others...
 - Use relative paths (`../blah`) not absolute paths (`/users/blah`)
 - Softlinks (and hardlinks?)
 - Need to agree on directory structure and file naming conventions
+- separate raw data (untouched) from derived data and summaries
+- stages for clean data?
+- How to divvy up tasks and know who did what?
+- How to handle the case that a contributor refuses to learn version
+  control?
 
 ---
 
@@ -208,8 +223,12 @@ Example: [tweet re function names](https://twitter.com/richierocks/status/388609
 - Roger Peng's 2009 ENAR course: [Methods for Reproducible Research](http://www.biostat.jhsph.edu/~rpeng/ENAR2009/)
 - [UW-Madison software carpentry course](http://software-carpentry.org/bootcamps/2013-08-28-wisc/index.html)
   and [schedule](http://uw-madison-aci.github.io/boot-camps/2013-08-28-uwmadison/index.html)
+- [Software carpentry notes on git](https://github.com/swcarpentry/boot-camps/blob/master/version-control/git/git-and-github/instructor_notes.md)
+- [Software carpentry course template](https://github.com/swcarpentry/bc)
+- [Success in introductory programming: what works (paper)](http://dl.acm.org/citation.cfm?id=2492020)
+- [Best Practices for Scientific Computing (pdf)](http://arxiv.org/abs/1210.0530)
 
 #### Additional software tools
 
 - [SyncTeX](http://itexmac.sourceforge.net/SyncTeX.html)
-  \[Also see [MacTeX wiki](http://mactex-wiki.tug.org/wiki/index.php/SyncTeX)\]
+  (Also see [MacTeX wiki](http://mactex-wiki.tug.org/wiki/index.php/SyncTeX))
