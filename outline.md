@@ -33,6 +33,15 @@
    we're trying to do: document dependencies and automate processes
    ("How was this document created?" _Look at the `Makefile`_)
 
+Levels of quality:
+- Are the tables & figures reproducible from the code and data?
+- Does the code actually do what you think it does?
+- In addition to _what_ was done, is it clear _why_ it was done?
+  (e.g., how were parameter settings chosen)
+- Can the code be used for other data?
+- Can you extend the code to do other things?
+
+
 ---
 
 #### Jan 31: Know the command line; know your editor
