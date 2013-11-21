@@ -35,7 +35,7 @@ data analyses, papers, presentations, posters) are reproducible.
 
 **Prerequisite**: Some knowledge of [R](http://www.r-project.org).
 
-**Lectures**: Fridays, 11:00&ndash;11:50am (Location TBA)
+**Lectures**: Fridays, 11:00&ndash;11:50am, 5275 [MSC](http://map.wisc.edu/s/tmunirrx)
 
 **[Draft schedule](pages/schedule.html)** 
 
