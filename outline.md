@@ -104,6 +104,8 @@ Regarding the command line:
     handout, report to collaborator, scientific poster
 - Start report with a brief summary of the data, and of your
     understanding of the data and the questions
+- [knitrBootstrap](http://jimhester.github.io/knitrBootstrap/) for nice-looking reports (see
+  [L. Collado-Torres's post](http://lcolladotor.github.io/rstats/2013/12/10/knitrBootstrap/#.UqamRGRDsgv)).
 - Useful anecdote: Bruce Tempel data.
   - I sent him a report; included no. mice in the exper't
   - He could tell I had an old data set ("Sorry you put so much
@@ -229,6 +231,7 @@ Example: [tweet re function names](https://twitter.com/richierocks/status/388609
 - [Best Practices for Scientific Computing (pdf)](http://arxiv.org/abs/1210.0530)
 - [Ten simple rules for reproducible computational research (paper)](http://www.ploscompbiol.org/article/info:doi/10.1371/journal.pcbi.1003285)
 - [rOpenSci](http://ropensci.org/) book, [Open Science with R](https://github.com/ropensci/open-science-with-R)
+
 
 #### Additional software tools
 
