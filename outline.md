@@ -162,6 +162,9 @@ For yourself, or for you and many others...
 
 Example: [tweet re function names](https://twitter.com/richierocks/status/388609208293556224)
 
+[Style guide](http://adv-r.had.co.nz/Style.html) in
+[Hadley Wickham](http://had.co.nz)'s [Advanced R book](http://adv-r.had.co.nz)
+
 ---
 
 #### Mar 14: Writing R packages; Roxygen2
@@ -170,6 +173,8 @@ Example: [tweet re function names](https://twitter.com/richierocks/status/388609
  - Write a package for your own miscellaneous tools
  - [Jeff Leek on developing R packages](https://github.com/jtleek/rpackages)
  - `install_github`
+ - [Hadley Wickham](http://had.co.nz)'s
+   [Advanced R book](http://adv-r.had.co.nz): Documenting [packages](http://adv-r.had.co.nz/Documenting-packages.html) and [functions](http://adv-r.had.co.nz/Documenting-functions.html)
 
 ---
 
@@ -178,6 +183,8 @@ Example: [tweet re function names](https://twitter.com/richierocks/status/388609
  - testthat package
  - [Hadley Wickham's paper](http://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf)
  - R CMD CHECK
+ - [Testing](http://adv-r.had.co.nz/Testing.html) in [Hadley Wickham](http://had.co.nz)'s
+   [Advanced R book](http://adv-r.had.co.nz)
 
 ---
 
@@ -231,6 +238,7 @@ Example: [tweet re function names](https://twitter.com/richierocks/status/388609
 - [Best Practices for Scientific Computing (pdf)](http://arxiv.org/abs/1210.0530)
 - [Ten simple rules for reproducible computational research (paper)](http://www.ploscompbiol.org/article/info:doi/10.1371/journal.pcbi.1003285)
 - [rOpenSci](http://ropensci.org/) book, [Open Science with R](https://github.com/ropensci/open-science-with-R)
+- [Hadley Wickham](had.co.nz)'s [Advanced R book](http://adv-r.had.co.nz/)
 
 
 #### Additional software tools
