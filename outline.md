@@ -18,6 +18,9 @@
    - [stackoverflow](http://stackoverflow.com)
    - email lists / google groups
    - friends / colleagues
+ - Important principle: learn to code by looking at good code
+   - Identify programmers that you respect (e.g., [Hadley Wickham](http://had.co.nz)),
+     and study what they do.
  - Get the data in the most-raw form possible
  - Be sure to get any/all data and meta-data possible
  - Keep track of the "provenance" of all data files
