@@ -237,8 +237,10 @@ Example: [tweet re function names](https://twitter.com/richierocks/status/388609
 - [Reproducible Research in Signal Processing - What, why, and how](http://infoscience.epfl.ch/record/136640)
 - [Software Carpentry](http://software-carpentry.org/)
 - Roger Peng's 2009 ENAR course: [Methods for Reproducible Research](http://www.biostat.jhsph.edu/~rpeng/ENAR2009/)
-- [UW-Madison software carpentry course](http://software-carpentry.org/bootcamps/2013-08-28-wisc/index.html)
-  and [schedule](http://uw-madison-aci.github.io/boot-camps/2013-08-28-uwmadison/index.html)
+- UW-Madison software carpentry course:
+  [August 2013](http://software-carpentry.org/bootcamps/2013-08-28-wisc/index.html)
+  ([schedule](http://uw-madison-aci.github.io/boot-camps/2013-08-28-uwmadison/index.html)),
+  [January 2014](http://uw-madison-aci.github.io/boot-camps/2014-01-13-uwmadison/index.html)
 - [Software carpentry notes on git](https://github.com/swcarpentry/boot-camps/blob/master/version-control/git/git-and-github/instructor_notes.md)
 - [Software carpentry course template](https://github.com/swcarpentry/bc)
 - [Success in introductory programming: what works (paper)](http://dl.acm.org/citation.cfm?id=2492020)
