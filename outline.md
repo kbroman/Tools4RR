@@ -24,9 +24,13 @@
  - Get the data in the most-raw form possible
  - Be sure to get any/all data and meta-data possible
  - Keep track of the "provenance" of all data files
- - Don't repeat yourself
-   - code; documentation, ...
-   - for example: materials for web site and for advertisement
+ - Don't repeat yourself (DRY)
+   - in code, in documentation, etc.
+   - for example: for this course web page: draft schedule on web site and in advertisement
+   - In code, if you're repeating the same lines of code in multiple
+     places, you should turn those bits into a function.
+   - In R packages, use Roxygen2 so that you don't need to maintain the same
+     explanations both at a function definition and in help files.
  - Be self-sufficient
  - Automation with make
  - "You" 3 months in the future is effectively a different person
