@@ -39,7 +39,7 @@ data analyses, papers, presentations, posters) are reproducible.
 
 **[Draft schedule](pages/schedule.html)** 
 
-**Recommended books**: <br>
+**Recommended books** ([on reserve at the Wendt Library](https://www.library.wisc.edu/course-pages/viewer/show/19481))<br>
 &nbsp; &nbsp; C Gandrud, _[Reproducible research with R and RStudio](http://www.amazon.com/exec/obidos/ASIN/1466572841/7210-20)_<br>
 &nbsp; &nbsp; Y Xie, _[Dynamic documents with R and knitr](http://www.amazon.com/exec/obidos/ASIN/1482203537/7210-20)_
 
