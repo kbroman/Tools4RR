@@ -244,7 +244,7 @@ Example: [tweet re function names](https://twitter.com/richierocks/status/388609
 - [Software carpentry notes on git](https://github.com/swcarpentry/boot-camps/blob/master/version-control/git/git-and-github/instructor_notes.md)
 - [Software carpentry course template](https://github.com/swcarpentry/bc)
 - [Success in introductory programming: what works (paper)](http://dl.acm.org/citation.cfm?id=2492020)
-- [Best Practices for Scientific Computing (pdf)](http://arxiv.org/abs/1210.0530)
+- [Best Practices for Scientific Computing (paper)](http://www.plosbiology.org/article/info:doi%2F10.1371%2Fjournal.pbio.1001745)
 - [Ten simple rules for reproducible computational research (paper)](http://www.ploscompbiol.org/article/info:doi/10.1371/journal.pcbi.1003285)
 - [rOpenSci](http://ropensci.org/) book, [Open Science with R](https://github.com/ropensci/open-science-with-R)
 - [Hadley Wickham](had.co.nz)'s [Advanced R book](http://adv-r.had.co.nz/)
