@@ -13,9 +13,12 @@
  - I don't have all of the answers, and my not do things in the most
    efficient way possible.
  - finding answers to questions:
+   - _Try stuff!_
    - help files / manual pages
+   - `blah -h`
    - google
    - [stackoverflow](http://stackoverflow.com)
+   - google `site:stackoverflow.com`
    - email lists / google groups
    - friends / colleagues
  - Important principle: learn to code by looking at good code
@@ -93,6 +96,14 @@ Regarding the command line:
 - [How to look like a unix guru](http://www.cs.usfca.edu/~parrt/course/601/lectures/unix.util.html)
 - [Linux essentials](http://faculty.ucr.edu/~tgirke/Documents/UNIX/linux_manual.html)
 - [Important unix commands](http://www.personal.kent.edu/~rmuhamma/OpSystems/unixCommands.htm)
+
+Also talk about how to get help (with commands/software/errors), again:
+- _Try stuff!_
+- man
+- blah -h or blah --help
+- google
+- stackoverflow / stackexchange
+- google with site
 
 ---
 
