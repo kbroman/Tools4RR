@@ -34,6 +34,7 @@
      places, you should turn those bits into a function.
    - In R packages, use Roxygen2 so that you don't need to maintain the same
      explanations both at a function definition and in help files.
+   - Make use of others' code
  - Be self-sufficient
  - Automation with make
  - "You" 3 months in the future is effectively a different person
