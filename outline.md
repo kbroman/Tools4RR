@@ -260,6 +260,7 @@ Example: [tweet re function names](https://twitter.com/richierocks/status/388609
 - [Ten simple rules for reproducible computational research (paper)](http://www.ploscompbiol.org/article/info:doi/10.1371/journal.pcbi.1003285)
 - [rOpenSci](http://ropensci.org/) book, [Open Science with R](https://github.com/ropensci/open-science-with-R)
 - [Hadley Wickham](had.co.nz)'s [Advanced R book](http://adv-r.had.co.nz/)
+- [Git can facilitate greater reproducibility and increased transparency in science (paper)](http://www.scfbm.org/content/8/1/7)
 
 
 #### Additional software tools
