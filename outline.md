@@ -12,18 +12,6 @@
  - "best practices" more generally...
  - I don't have all of the answers, and my not do things in the most
    efficient way possible.
- - finding answers to questions:
-   - _Try stuff!_
-   - help files / manual pages
-   - `blah -h`
-   - google
-   - [stackoverflow](http://stackoverflow.com)
-   - google `site:stackoverflow.com`
-   - email lists / google groups
-   - friends / colleagues
- - Important principle: learn to code by looking at good code
-   - Identify programmers that you respect (e.g., [Hadley Wickham](http://had.co.nz)),
-     and study what they do.
  - Get the data in the most-raw form possible
  - Be sure to get any/all data and meta-data possible
  - Keep track of the "provenance" of all data files
@@ -37,7 +25,12 @@
    - Make use of others' code
  - Be self-sufficient
  - Automation with make
- - "You" 3 months in the future is effectively a different person
+ - &ldquo;You&rdquo; 3 months in the future is effectively a different
+   person
+   
+   >  &ldquo;Your closest collaborator is you six months ago, but you
+   >  don't reply to emails.&rdquo;
+
  - It's a lot more work to do things properly, but it could save you a
    ton of aggravation down the road.
  - `make` is not just a critical tool, it is also the essence of what
@@ -98,13 +91,20 @@ Regarding the command line:
 - [Linux essentials](http://faculty.ucr.edu/~tgirke/Documents/UNIX/linux_manual.html)
 - [Important unix commands](http://www.personal.kent.edu/~rmuhamma/OpSystems/unixCommands.htm)
 
-Also talk about how to get help (with commands/software/errors), again:
+How to get help (with commands/software/errors):
 - _Try stuff!_
-- man
-- blah -h or blah --help
+- help files / manual pages
+- `blah -h` or `blah --help`
 - google
-- stackoverflow / stackexchange
-- google with site
+- [stackoverflow](http://stackoverflow.com)
+- google with `site:stackoverflow.com`
+- email lists / google groups
+- friends / colleagues
+- [twitter](http://twitter.com)
+
+Important principle: learn to code by looking at good code
+- Identify programmers that you respect (e.g., [Hadley Wickham](http://had.co.nz)),
+  and study what they do.
 
 ---
 
