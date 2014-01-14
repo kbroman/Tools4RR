@@ -264,6 +264,7 @@ Example: [tweet re function names](https://twitter.com/richierocks/status/388609
 - [Survival guide for Unix newbies](http://matt.might.net/articles/basic-unix/)
 - [Settling into Unix](http://matt.might.net/articles/settling-into-unix/)
 - [Shell programming with bash](http://matt.might.net/articles/bash-by-example/)
+- [Top ten reasons not to share your code](http://www.siam.org/news/news.php?id=2064)
 
 
 #### Additional software tools
