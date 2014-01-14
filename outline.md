@@ -261,6 +261,9 @@ Example: [tweet re function names](https://twitter.com/richierocks/status/388609
 - [rOpenSci](http://ropensci.org/) book, [Open Science with R](https://github.com/ropensci/open-science-with-R)
 - [Hadley Wickham](had.co.nz)'s [Advanced R book](http://adv-r.had.co.nz/)
 - [Git can facilitate greater reproducibility and increased transparency in science (paper)](http://www.scfbm.org/content/8/1/7)
+- [Survival guide for Unix newbies](http://matt.might.net/articles/basic-unix/)
+- [Settling into Unix](http://matt.might.net/articles/settling-into-unix/)
+- [Shell programming with bash](http://matt.might.net/articles/bash-by-example/)
 
 
 #### Additional software tools
