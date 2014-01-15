@@ -170,6 +170,19 @@ For yourself, or for you and many others...
 
 #### Feb 28: Capturing exploratory analysis
 
+- copy-and-paste from an R file
+- grab code from the `.Rhistory` file
+- Write code for use with the knitr function `spin()`: really simple R
+  file whose code + comments can be converted to Rmarkdown
+
+- Want to capture
+  - what you're trying to do
+  - what you're thinking about
+  - what you're seeing
+  - what you're concluding and why
+- Don't want to get in the way of the creative, exploratory process
+- But don't want to say later, &ldquo;Now, how did I create this plot?&rdquo;
+
 ---
 
 #### Mar 7:  Writing clear code
@@ -189,6 +202,8 @@ Example: [tweet re function names](https://twitter.com/richierocks/status/388609
 #### Mar 14: Writing R packages; Roxygen2
 
  - Assemble related code into a package, with help files
+ - Consider `package.skeleton()` and `create()` in `devtools`
+ - Look at others' packages
  - Write a package for your own miscellaneous tools
  - [Jeff Leek on developing R packages](https://github.com/jtleek/rpackages)
  - `install_github`
