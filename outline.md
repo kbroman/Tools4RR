@@ -55,6 +55,8 @@ Levels of quality:
 - Can the code be used for other data?
 - Can you extend the code to do other things?
 
+Windows vs Mac/Unix; if you're stuck with Windows, consider something
+like [Cygwin](http://www.cygwin.com/).
 
 ---
 
