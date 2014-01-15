@@ -4,9 +4,13 @@ Refs
 markdown.css
 Web
 Images
-flyer.pdf
+*.pdf
 *.aux
 *.log
 *.out
 flyer.tex
 schedule.md
+*.snm
+*.toc
+*.nav
+*_withnotes.tex
