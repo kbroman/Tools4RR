@@ -1,6 +1,6 @@
 ---
 layout: page
-title:  Draft Schedule
+title:  Schedule
 tagline: Spring, 2014
 ---
 
