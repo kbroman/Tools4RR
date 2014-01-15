@@ -26,6 +26,8 @@
 \definecolor{subtitle}{RGB}{102,255,204}
 \definecolor{hilight}{RGB}{102,255,204}
 \definecolor{vhilight}{RGB}{255,111,207}
+\definecolor{nhilight}{RGB}{255,0,128}  % hilight color in notes
+\definecolor{vnhilight}{RGB}{255,0,128} % vhilight for notes
 \definecolor{lolight}{RGB}{155,155,155}
 %\definecolor{green}{RGB}{125,250,125}
 
@@ -86,7 +88,7 @@
     UW{\textendash}Madison on tools for reproducible research.
 
 A minimal standard for data analysis and other scientific computations
-is that they be \emph{reproducible}: that the code and data are assembled
+is that they be {\color{nhilight} reproducible}: that the code and data are assembled
 in a way so that another group can re-create all of the results (e.g.,
 the figures in a paper). The importance of such reproducibility is now
 widely recognized, but it is not so widely practiced as it should be,
@@ -96,8 +98,8 @@ reproducible research.
 
 In this course, we will discuss general principles for reproducible
 research but will focus primarily on the use of relevant tools
-(particularly \href{http://www.gnu.org/software/make}{\ttsm make},
-\href{http://git-scm.com}{\ttsm git}, and \href{http://github.com}{\ttsm knitr}),
+(particularly \href{http://www.gnu.org/software/make}{\tt make},
+\href{http://git-scm.com}{\tt git}, and \href{http://github.com}{\tt knitr}),
 with the goal that the students leave the course ready and willing to
 ensure that all aspects of their computational research (software,
 data analyses, papers, presentations, posters) are reproducible.}
@@ -122,9 +124,9 @@ Reproducible
 \only<2>{Replicable}
 \only<3 | handout 0>{Correct}
 
-\note{An important distinction: computational work is
-  \emph{reproducible\/} if one can take the data and code and produce
-  the same set of results. \emph{Replicable\/} is more stringent: can
+\note{Computational work is
+  {\color{nhilight} reproducible} if one can take the data and code and produce
+  the same set of result. {\color{nhilight} Replicable} is more stringent: can
   someone repeat the experiment and get the same results?
 
   Reproducibility is a minimal standard. That something is
@@ -172,7 +174,7 @@ How far back to you go?
 
 \note{Data that I get from collaborators has usually gone through a
   considerable amount of pre-processing. Should we have captured that,
-  in order for the work to be considered \emph{reproducible}?
+  in order for the work to be considered reproducible?
 }
 \end{frame}
 
