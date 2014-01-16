@@ -1,0 +1,21 @@
+
+How to do a pull request on bitbucket
+
+(This only seems to work if you've _forked_ someone's repository.)
+
+
+1. push change to bitbucket
+
+   - make change
+   - git add, git commit
+   - git push
+
+2. On bitbucket website: go to _your_ version of the repository
+
+3. Top right, Icon + "Pull request"
+
+4. You're repository on left; person that you want to pull on right
+
+5. Perhaps add a description.
+
+
