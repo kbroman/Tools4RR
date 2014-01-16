@@ -35,7 +35,8 @@ data analyses, papers, presentations, posters) are reproducible.
 
 **Prerequisite**: Some knowledge of [R](http://www.r-project.org).
 
-**Lectures**: Fridays, 11:00&ndash;11:50am, 5275 [MSC](http://map.wisc.edu/s/tmunirrx)
+**Lectures**: Fridays, 11:00&ndash;11:50am,
+1116 [Biochem, 420 Henry Mall](http://map.wisc.edu/s/psk50tw2)
 
 **[Schedule](pages/schedule.html)**
 
