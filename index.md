@@ -57,5 +57,3 @@ the semester:
 Sources on [github](http://github.com):
 - The [source for the website](https://github.com/kbroman/Tools4RR/tree/gh-pages)
 - The [source for other material](https://github.com/kbroman/Tools4RR/tree/master)
-
-But there's not much there yet.
