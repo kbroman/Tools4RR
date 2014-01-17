@@ -1,0 +1,14 @@
+
+Questions for the first lecture
+
+1. Can bring a laptop to class?
+
+2. Use R as main data analysis language?
+
+3. Use LaTeX?
+
+4. Use emacs? vi/vim? other editor?
+
+5. Windows? Mac? Unix?
+
+6. Specific topics you want covered?
