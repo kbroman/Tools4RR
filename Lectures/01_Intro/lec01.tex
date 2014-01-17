@@ -110,7 +110,7 @@ data analyses, papers, presentations, posters) are reproducible.}
 
 
 \centering
-\Large 
+\Large
 
 Reproducible
 
@@ -135,6 +135,9 @@ Reproducible
   artifacts.
 
   (But reproducibility is probably correlated with correctness.)
+
+  Note that some scientists say replicable for what I call
+  reproducible, and vice versa.
 }
 \end{frame}
 
@@ -177,5 +180,103 @@ How far back to you go?
   in order for the work to be considered reproducible?
 }
 \end{frame}
+
+
+
+\begin{frame}{Basic principles}
+
+
+\vspace{24pt}
+
+\bi
+\itemsep12pt
+\item Everything via code
+\item Everything automated
+\item Get the data in the most-raw form possible
+\item Get any/all data and meta-data possible
+\item Keep track of the {\color{hilight} provenance} of all data files
+\item Be self-sufficient
+\ei
+
+\note{Pointing and clicking is not reproducible. Ideally, you press
+  just one button.
+
+Make sure you have all of the data and that you know exactly where it
+came from.
+
+If your collaborator asks, ``In what form would you like the data?''
+you should respond, ``In its current form.''
+}
+\end{frame}
+
+
+
+
+\begin{frame}{Basic tools}
+
+
+\vspace{24pt}
+
+\bi
+\itemsep12pt
+\item Make
+\item Unix command line
+\item Latex and Markdown
+\item Knitr
+\item Version control with git
+\item R packages
+\item Python (or Ruby or Perl)
+\ei
+
+\note{These are the basic tools that I think are important for
+  reproducible computational research; they form the core topics for
+  the course.
+
+  Make is for automation and for documenting dependencies. For
+  reproducibility, the command line is your best friend. Latex and
+  Markdown allow preparation of beautiful documents without pointing
+  or clicking. Knitr is for combining code and text; knitr and make
+  are the key tools for reproducibility. Version control isn't
+  strictly necessary for reproducibility, but once you get the hang of
+  it, you'll never go back. R's packaging system is among its best
+  features. A scripting language like Python is invaluable for
+  manipulating data files. Many things that are awkward in R are easy
+  in Python.
+}
+\end{frame}
+
+
+\begin{frame}{Other topics}
+
+
+\vspace{24pt}
+
+\bi
+\itemsep12pt
+\item Organizing projects
+\item Writing clear code
+\item Don't Repeat Yourself (DRY)
+\item Testing and debugging
+\item Handling big jobs
+\item Licenses; human subjects data
+\ei
+
+\note{I'll also cover all of these things.
+
+The organization of the data and code for a project is a major
+determinant of whether others will be able to make sense of it.
+Good code is not just correct but is clearly written. Code is easier
+to maintain and understand if it is modular. Adding good tests will
+help you to find problems in your code earlier rather than later. But
+you'll spend a lot of time debugging, so we should talk about
+debugging strategies. Big computational jobs (particularly big
+computer simulations) raise additional issues; reproducibility is
+especially tricky. Finally, code that you distribute should be
+licensed. And if you're working with data on human subjects, you
+need to be extra careful.
+}
+\end{frame}
+
+
 
 \end{document}
