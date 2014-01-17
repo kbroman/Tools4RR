@@ -236,6 +236,10 @@ Example: [tweet re function names](https://twitter.com/richierocks/status/388609
 
 #### Apr 18: Presentations
 
+pdf over powerpoint/html: predictable (e.g., font problems)
+
+There are nice html options, but the browser differences can cause problems
+
 ---
 
 #### Apr 25: Posters
@@ -264,6 +268,7 @@ Example: [tweet re function names](https://twitter.com/richierocks/status/388609
 - [ReproducibleResearch.net](http://reproducibleresearch.net)
 - [Reproducible Research and Software Carpentry course](https://sites.google.com/site/ubccpsc535zwinter2011/home/lectures) at UBC
 - [Reproducible Research in Signal Processing - What, why, and how](http://infoscience.epfl.ch/record/136640)
+- [Replication, reproduction, and remixing in research software](http://ivory.idyll.org/blog/research-software-reuse.html)
 - [Software Carpentry](http://software-carpentry.org/)
 - Roger Peng's 2009 ENAR course: [Methods for Reproducible Research](http://www.biostat.jhsph.edu/~rpeng/ENAR2009/)
 - UW-Madison software carpentry course:
