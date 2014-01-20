@@ -287,6 +287,7 @@ There are nice html options, but the browser differences can cause problems
 - [Settling into Unix](http://matt.might.net/articles/settling-into-unix/)
 - [Shell programming with bash](http://matt.might.net/articles/bash-by-example/)
 - [Top ten reasons not to share your code](http://www.siam.org/news/news.php?id=2064)
+- Hadley Wickham [paper on Tidy Data](http://vita.had.co.nz/papers/tidy-data.pdf)
 
 
 #### Additional software tools
