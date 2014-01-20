@@ -13,6 +13,7 @@ schedule.md
 *.snm
 *.toc
 *.nav
+*.vrb
 *_withnotes.tex
 Students
 av_passcode.txt

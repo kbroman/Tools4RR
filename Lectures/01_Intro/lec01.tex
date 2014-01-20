@@ -2,6 +2,17 @@
 \usepackage{graphicx}
 \setbeameroption{hide notes}
 \setbeamertemplate{note page}[plain]
+\usepackage{listings}
+
+% set up listing environment
+\lstset{language=bash,
+        basicstyle=\scriptsize,
+        frame=single,
+        backgroundcolor=\color{darkgray},
+        commentstyle=\color{green},
+        showspaces=false,
+        showstringspaces=false
+        }
 
 % get rid of junk
 \usetheme{default}
@@ -27,7 +38,7 @@
 \definecolor{hilight}{RGB}{102,255,204}
 \definecolor{vhilight}{RGB}{255,111,207}
 \definecolor{nhilight}{RGB}{128,0,128}  % hilight color in notes
-\definecolor{vnhilight}{RGB}{255,0,128} % vhilight for notes
+\definecolor{nvhilight}{RGB}{255,0,128} % vhilight for notes
 \definecolor{lolight}{RGB}{155,155,155}
 %\definecolor{green}{RGB}{125,250,125}
 
@@ -241,10 +252,10 @@ don't reply to emails.
 
 \bi
 \itemsep12pt
-\item ``The attached is similar to the code we used.''
-\item ``Where did this data file come from?!''
-\item ``Can you repeat the analysis, omitting subject X?''
-\item ``This part of your script is now giving an error.''
+\item "The attached is similar to the code we used."
+\item "Where did this data file come from?!"
+\item "Can you repeat the analysis, omitting subject X?"
+\item "This part of your script is now giving an error."
 \ei
 
 \note{If you've not heard any of these things, it's just a matter of
@@ -404,6 +415,19 @@ My \href{http://github.com/kbroman/qtl}{R/qtl package} is an
 
 \begin{frame}{Automation with Make}
 
+\vspace{24pt}
+
+\bi
+\itemsep12pt
+\item {\tt Make} is for more than just compiling software
+\item The {\color{hilight} essence} of what we're trying to do
+\item Automates a workflow
+\item Documents the workflow
+\item Documents the dependencies among data files, code
+\item Re-runs only the necessary code, based on what has changed
+\ei
+
+
 \note{People think of Make as a tool for automating the compilation of
   software, but it can be used much more generally.
 
@@ -412,5 +436,45 @@ My \href{http://github.com/kbroman/qtl}{R/qtl package} is an
 }
 \end{frame}
 
+
+\begin{frame}[fragile]{Example {\tt Makefile}}
+
+\begin{semiverbatim}
+\begin{lstlisting}
+# Example Makefile for a paper
+mypaper.pdf: mypaper.bib mypaper.tex Figs/fig1.pdf Figs/fig2.pdf
+    pdflatex mypaper
+    bibtex mypaper
+    pdflatex mypaper
+    pdflatex mypaper
+
+# cd R has to be on the same line as R CMD BATCH
+Figs/fig1.pdf: R/fig1.R
+    cd R;R CMD BATCH fig1.R fig1.Rout
+
+Figs/fig2.pdf: R/fig2.R
+    cd R;R CMD BATCH fig2.R fig2.Rout
+\end{lstlisting}
+\end{semiverbatim}
+
+\note{You can get really fancy with make, but this example shows you
+  the basics.
+
+  Records look like {\tt target: dependencies} and are followed by a
+  set of lines of code for creating the target from the
+  dependencies. Those lines of code must start with a tab character
+  ({\color{nvhilight} not} spaces), and if you need to change
+  directories, you have to do that on the same line as the command.
+
+  If you type {\tt make} (or {\tt make Makefile}), the {\tt
+  mypaper.pdf} file will be created; but first, any dependencies
+  will be updated, if necessary, based on the time the files were last
+  modified.
+
+  So, for example, if {\tt fig1.R} had been edited, then the commands
+  to construct {\tt fig1.pdf} would be constructed, followed by the
+  commands to construct {\tt mypaper.pdf}.
+}
+\end{frame}
 
 \end{document}
