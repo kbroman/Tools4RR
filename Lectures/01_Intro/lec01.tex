@@ -168,21 +168,6 @@ Reproducible
 
 
 
-\begin{frame}[c]{What is {\color{hilight} raw} data?}
-
-
-\Large
-\centering
-How far back to you go?
-
-\note{Data that I get from collaborators has usually gone through a
-  considerable amount of pre-processing. Should we have captured that,
-  in order for the work to be considered reproducible?
-}
-\end{frame}
-
-
-
 \begin{frame}{Basic principles}
 
 
@@ -192,6 +177,9 @@ How far back to you go?
 \itemsep12pt
 \item Everything via code
 \item Everything automated
+    \bi
+    \item[] Workflow and dependencies clearly documented
+    \ei
 \item Get the data in the most-raw form possible
 \item Get any/all data and meta-data possible
 \item Keep track of the {\color{hilight} provenance} of all data files
@@ -204,13 +192,85 @@ How far back to you go?
 Make sure you have all of the data and that you know exactly where it
 came from.
 
+But what is {\color{nhilight} raw} data? How far back should you go?
+Data that I get from collaborators has usually gone through a
+considerable amount of pre-processing. Should we have captured that,
+in order for the work to be considered reproducible?
+
 If your collaborator asks, ``In what form would you like the data?''
 you should respond, ``In its current form.''
 }
 \end{frame}
 
+\begin{frame}{Why do we care?}
+
+\vspace{24pt}
+
+\bi
+\itemsep12pt
+\item Avoid embarrassment
+\item More likely correct
+\item Save time, in the long run
+\item Greater potential for extensions; higher impact
+\ei
+
+\note{Doing things properly (writing clear, documented, well-tested
+  code) is time consuming, but it could save you a ton of aggravation
+  down the road.  Ultimately, you'll be more efficient, and your work
+  will have greater impact.
+
+Your code and analyses will be easier to debug, maintain, and extend.
+}
+\end{frame}
 
 
+\begin{frame}[c]{}
+
+\centering
+\large
+Your closest collaborator is you six months ago, but you
+don't reply to emails.
+\note{I heard this from Paul Wilson, UW-Madison.
+}
+\end{frame}
+
+
+\begin{frame}{What could go wrong?}
+
+\vspace{24pt}
+
+\bi
+\itemsep12pt
+\item ``The attached is similar to the code we used.''
+\item ``Where did this data file come from?!''
+\item ``Can you repeat the analysis, omitting subject X?''
+\item ``This part of your script is now giving an error.''
+\ei
+
+\note{If you've not heard any of these things, it's just a matter of
+  time.
+}
+\end{frame}
+
+
+\begin{frame}{Need to avoid}
+
+
+\vspace{24pt}
+
+\bi
+\itemsep12pt
+\item Open a file to extract as CSV
+\item Open a file to do even a slight edit
+\item Paste specific numbers into text
+\item Copy-paste-edit tables
+\item Copy-paste-adjust figures
+\ei
+
+\note{If you do anything ``by hand'' once, you'll have to do it 100
+  times.
+}
+\end{frame}
 
 \begin{frame}{Basic tools}
 
@@ -219,7 +279,7 @@ you should respond, ``In its current form.''
 
 \bi
 \itemsep12pt
-\item Make
+\item Automation with Make
 \item Unix command line
 \item Latex and Markdown
 \item Knitr
@@ -247,7 +307,6 @@ you should respond, ``In its current form.''
 
 
 \begin{frame}{Other topics}
-
 
 \vspace{24pt}
 
@@ -277,6 +336,81 @@ need to be extra careful.
 }
 \end{frame}
 
+
+\begin{frame}{Don't Repeat Yourself}
+
+\vspace{24pt}
+
+\bi
+\itemsep12pt
+\item In code, in documentation, etc.
+\item Repeated bits of code are harder to maintain
+    \bi
+    \item[] Write a function
+    \ei
+\item Use documentation systems like Roxygen2
+    \bi
+    \item[] Documentation in just one place
+    \ei
+\item Make use of others' code
+\ei
+
+\note{DRY is among the more important concepts/techniques.
+
+For example, I organized a meeting in Madison last spring. The
+program book and website both drew information from a single basic
+source. Change one document and both will be updated.
+
+My \href{http://github.com/kbroman/qtl}{R/qtl package} is an
+{\color{nhilight} anti}-example.
+}
+\end{frame}
+
+\begin{frame}{This course}
+
+\vspace{24pt}
+
+\bi
+\itemsep18pt
+\item Brief intro to various tools and concepts
+\item Try everything out as we go along
+    \bi
+    \item[] Ask questions!
+    \ei
+\item I don't know everything;
+    \bi
+    \item[] Make suggestions!
+    \ei
+\item Project
+    \bi
+    \item Write a bit of R code
+    \item Use version control
+    \item Make it an R package
+    \item Write a vignette
+    \ei
+\ei
+
+\note{About this course: I'm trying to get you started; pointing you
+  in the right direction. But I don't know everything, and I don't
+  always do things in the most efficient way possible: please offer me
+  suggestions!
+
+  We won't have time for a comprehensive introduction to the tools.
+  My mail goal is to convince you of their importance: to motivate you
+  to adopt them.
+}
+\end{frame}
+
+
+\begin{frame}{Automation with Make}
+
+\note{People think of Make as a tool for automating the compilation of
+  software, but it can be used much more generally.
+
+  To me, Make is the essential tool for reproducible research:
+  automation plus the documentation of dependencies and workflows.
+}
+\end{frame}
 
 
 \end{document}
