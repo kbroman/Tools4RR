@@ -5,9 +5,12 @@ tagline: Spring, 2014
 ---
 
 - **Jan 24**: Introduction; basic principles;
-    [make](http://www.gnu.org/software/make/)
-    \[[S](../assets/lectures/lec01.pdf) |
-    [N](../assets/lectures/lec01_withnotes.pdf)\]
+    [GNU Make](http://www.gnu.org/software/make/)
+    \[
+    [S](../assets/lectures/lec01.pdf) |
+    [N](../assets/lectures/lec01_withnotes.pdf) |
+    [C](https://github.com/kbroman/Tools4RR/tree/master/Lectures/01_Intro/Examples)
+    \]
 - **Jan 31**: Know the command line; know your editor
 - **Feb 7**:  [Knitr](http://yihui.name/knitr/) with [markdown](http://daringfireball.net/projects/markdown/)/[asciidoc](http://www.methods.co.nz/asciidoc/) for basic reports
 - **Feb 14**: Version control with [git](http://git-scm.com/) & [github](https://github.com/)/[bitbucket](https://bitbucket.org/)
