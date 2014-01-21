@@ -3,7 +3,7 @@ lec01.pdf: lec01.tex
 
 notes: lec01_withnotes.pdf
 
-all: lec01.pdf notes
+all: lec01.pdf notes web
 
 lec01_withnotes.pdf: lec01_withnotes.tex
 	xelatex lec01_withnotes
@@ -12,3 +12,6 @@ lec01_withnotes.pdf: lec01_withnotes.tex
 
 lec01_withnotes.tex: lec01.tex ../createVersionWithNotes.rb
 	../createVersionWithNotes.rb lec01.tex lec01_withnotes.tex
+
+web: lec01.pdf lec01_withnotes.pdf
+	cp lec01.pdf lec01_withnotes.pdf ../../Web/assets/lectures/
