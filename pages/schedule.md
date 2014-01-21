@@ -7,8 +7,8 @@ tagline: Spring, 2014
 - **Jan 24**: Introduction; basic principles;
     [GNU Make](http://www.gnu.org/software/make/)
     \[
-    [S](../assets/lectures/lec01.pdf) |
-    [N](../assets/lectures/lec01_withnotes.pdf) |
+    [S](../assets/lectures/01_intro.pdf) |
+    [N](../assets/lectures/01_intro_withnotes.pdf) |
     [C](https://github.com/kbroman/Tools4RR/tree/master/Lectures/01_Intro/Examples)
     \]
 - **Jan 31**: Know the command line; know your editor
