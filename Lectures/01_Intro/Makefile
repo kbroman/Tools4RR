@@ -1,17 +1,17 @@
-lec01.pdf: lec01.tex
-	xelatex lec01
+01_intro.pdf: 01_intro.tex
+	xelatex 01_intro
 
-notes: lec01_withnotes.pdf
+notes: 01_intro_withnotes.pdf
 
-all: lec01.pdf notes web
+all: 01_intro.pdf notes web
 
-lec01_withnotes.pdf: lec01_withnotes.tex
-	xelatex lec01_withnotes
-	pdfnup lec01_withnotes.pdf --nup 1x2 --no-landscape --paper letterpaper --frame true --scale 0.9
-	mv lec01_withnotes-nup.pdf lec01_withnotes.pdf
+01_intro_withnotes.pdf: 01_intro_withnotes.tex
+	xelatex 01_intro_withnotes
+	pdfnup 01_intro_withnotes.pdf --nup 1x2 --no-landscape --paper letterpaper --frame true --scale 0.9
+	mv 01_intro_withnotes-nup.pdf 01_intro_withnotes.pdf
 
-lec01_withnotes.tex: lec01.tex ../createVersionWithNotes.rb
-	../createVersionWithNotes.rb lec01.tex lec01_withnotes.tex
+01_intro_withnotes.tex: 01_intro.tex ../createVersionWithNotes.rb
+	../createVersionWithNotes.rb 01_intro.tex 01_intro_withnotes.tex
 
-web: lec01.pdf lec01_withnotes.pdf
-	cp lec01.pdf lec01_withnotes.pdf ../../Web/assets/lectures/
+web: 01_intro.pdf 01_intro_withnotes.pdf
+	cp 01_intro.pdf 01_intro_withnotes.pdf ../../Web/assets/lectures/
