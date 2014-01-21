@@ -1,7 +1,7 @@
-## Simple Make examples
+## Simple GNU make examples
 
-`Makefile` is a simple make file for compiling a Latex manuscript with
-R-based figures.
+`Makefile` is a simple [GNU make](http://www.gnu.org/software/make)
+file for compiling a Latex manuscript with R-based figures.
 
 `Makefile_fancy` is a slightly fancier one; see the
 [manual for Make](http://www.gnu.org/software/make/manual/make.html).
