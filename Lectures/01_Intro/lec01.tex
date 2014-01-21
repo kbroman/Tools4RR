@@ -95,7 +95,7 @@
 \setbeamertemplate{footline}{} % no page number here
 \frame{
   \titlepage
-  \note{This is an introductory lecture for a special topics course at
+  \note{This is the introductory lecture for a special topics course at
     UW{\textendash}Madison on tools for reproducible research.
 
 A minimal standard for data analysis and other scientific computations
@@ -137,7 +137,7 @@ Reproducible
 
 \note{Computational work is
   {\color{nhilight} reproducible} if one can take the data and code and produce
-  the same set of result. {\color{nhilight} Replicable} is more stringent: can
+  the same set of results. {\color{nhilight} Replicable} is more stringent: can
   someone repeat the experiment and get the same results?
 
   Reproducibility is a minimal standard. That something is
@@ -272,8 +272,8 @@ don't reply to emails.
 \bi
 \itemsep12pt
 \item Open a file to extract as CSV
-\item Open a file to do even a slight edit
-\item Paste specific numbers into text
+\item Open a data file to do even a slight edit
+\item Paste results into the text of a manuscript
 \item Copy-paste-edit tables
 \item Copy-paste-adjust figures
 \ei
@@ -331,7 +331,7 @@ don't reply to emails.
 \item Licenses; human subjects data
 \ei
 
-\note{I'll also cover all of these things.
+\note{We'll also cover all of these things.
 
 The organization of the data and code for a project is a major
 determinant of whether others will be able to make sense of it.
@@ -368,9 +368,10 @@ need to be extra careful.
 
 \note{DRY is among the more important concepts/techniques.
 
-For example, I organized a meeting in Madison last spring. The
-program book and website both drew information from a single basic
-source. Change one document and both will be updated.
+For example, I organized a meeting in Madison last spring. The program
+book and website both drew information from a single basic
+source. Change that one document and both the program and web site are
+updated.
 
 My \href{http://github.com/kbroman/qtl}{R/qtl package} is an
 {\color{nhilight} anti}-example.
@@ -388,7 +389,7 @@ My \href{http://github.com/kbroman/qtl}{R/qtl package} is an
     \bi
     \item[] Ask questions!
     \ei
-\item I don't know everything;
+\item I don't know everything
     \bi
     \item[] Make suggestions!
     \ei
@@ -407,7 +408,7 @@ My \href{http://github.com/kbroman/qtl}{R/qtl package} is an
   suggestions!
 
   We won't have time for a comprehensive introduction to the tools.
-  My mail goal is to convince you of their importance: to motivate you
+  My main goal is to convince you of their importance: to motivate you
   to adopt them.
 }
 \end{frame}
@@ -428,8 +429,8 @@ My \href{http://github.com/kbroman/qtl}{R/qtl package} is an
 \ei
 
 
-\note{People think of Make as a tool for automating the compilation of
-  software, but it can be used much more generally.
+\note{People usually think of Make as a tool for automating the
+  compilation of software, but it can be used much more generally.
 
   To me, Make is the essential tool for reproducible research:
   automation plus the documentation of dependencies and workflows.

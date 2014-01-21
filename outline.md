@@ -226,6 +226,9 @@ Example: [tweet re function names](https://twitter.com/richierocks/status/388609
 
 #### Apr 4: Big jobs/simulations; caching computations
 
+- Tricky to handle big jobs, as things become system-specific (e.g.,
+  parallel computing)
+
 ---
 
 #### Apr 11:  Knitr with latex for papers
