@@ -1,0 +1,18 @@
+# A bit more fancy Makefile
+#
+# Use 
+#     make -f Makefile_fancy
+#
+# To remove pdfs: 
+#     make -f Makefile_fancy clean
+
+FIG_DIR = Figs
+
+mypaper.pdf: mypaper.tex ${FIG_DIR}/fig1.pdf ${FIG_DIR}/fig2.pdf
+	pdflatex mypaper
+
+${FIG_DIR}/%.pdf: R/%.R
+	cd R;R CMD BATCH $(<F)
+
+clean:
+	rm *.pdf Figs/*.pdf
