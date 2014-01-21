@@ -414,7 +414,7 @@ My \href{http://github.com/kbroman/qtl}{R/qtl package} is an
 \end{frame}
 
 
-\begin{frame}{Automation with Make}
+\begin{frame}{Automation with GNU Make}
 
 \vspace{24pt}
 
@@ -475,6 +475,43 @@ Figs/fig2.pdf: R/fig2.R
   So, for example, if {\tt fig1.R} had been edited, then the commands
   to construct {\tt fig1.pdf} would be constructed, followed by the
   commands to construct {\tt mypaper.pdf}.
+}
+\end{frame}
+
+
+
+\begin{frame}[fragile]{Fancier example}
+
+\begin{semiverbatim}
+\begin{lstlisting}
+FIG_DIR = Figs
+
+mypaper.pdf: mypaper.tex ${FIG_DIR}/fig1.pdf ${FIG_DIR}/fig2.pdf
+    pdflatex mypaper
+
+# One line for both figures
+${FIG_DIR}/%.pdf: R/%.R
+    cd R;R CMD BATCH $(<F)
+
+# Use "make clean" to remove the PDFs
+clean:
+    rm *.pdf Figs/*.pdf
+\end{lstlisting}
+\end{semiverbatim}
+
+\note{As I said, you can get really fancy with GNU Make.
+
+  Use variables for directory names or compiler flags. (This example
+  is not a good one.)
+
+  Use pattern rules and automatic variables to avoid repeating
+  yourself. With {\tt \%}, we have one line covering both
+  {\tt fig1.pdf} and {\tt fig2.pdf}. The {\tt \$(<F)}
+  is the file part of
+  the first dependency.
+
+  Look at the manual for make and the many online tutorials, such as
+  the one from Software Carpentry.
 }
 \end{frame}
 
