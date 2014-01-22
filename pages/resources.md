@@ -55,13 +55,13 @@ title:  Resources and further reading
 
 ### Git, Github and Bitbucket
 
-- [Software carpentry notes on git](https://github.com/swcarpentry/boot-camps/blob/master/version-control/git/git-and-github/instructor_notes.md)
-- [Git can facilitate greater reproducibility and increased transparency in science (paper)](http://www.scfbm.org/content/8/1/7)
 - [git/github guide](http://kbroman.github.io/github_tutorial)
-- [Karthik Ram's slides](http://karthikram.github.io/git_intro)
 - [Pro Git book](http://git-scm.com/book)
 - The [git documentation](http://git-scm.com/documentation)
 - The [github help pages](https://help.github.com/)
+- [Software carpentry notes on git](https://github.com/swcarpentry/boot-camps/blob/master/version-control/git/git-and-github/instructor_notes.md)
+- [Git can facilitate greater reproducibility and increased transparency in science (paper)](http://www.scfbm.org/content/8/1/7)
+- [Karthik Ram's slides](http://karthikram.github.io/git_intro)
 - [Git tutorials on github](http://learn.github.com/); you can even
   [try it out](http://try.github.io/levels/1/challenges/1)
 - [git - the simple guide](http://rogerdudler.github.io/git-guide/)
