@@ -36,7 +36,7 @@ data analyses, papers, presentations, posters) are reproducible.
 **Prerequisite**: Some knowledge of [R](http://www.r-project.org).
 
 **Lectures**: Fridays, 11:00&ndash;11:50am,
-1116 [Biochem, 420 Henry Mall](http://map.wisc.edu/s/psk50tw2)
+[1116 Biochem, 420 Henry Mall](http://map.wisc.edu/s/psk50tw2)
 \[[directions](pages/directions.html)\]
 
 **[Schedule](pages/schedule.html)**
