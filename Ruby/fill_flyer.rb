@@ -5,7 +5,7 @@
 #
 #    schedule4web.md flyer_template.tex -> flyer.tex
 
-ifile1 = "schedule4web.md"
+ifile1 = "schedule.md"
 ifile2 = "flyer_template.tex"
 ofilen = "flyer.tex"
 
@@ -14,7 +14,7 @@ topic = {}
 fullline = {}
 File.open(ifile1).readlines.map do |line| 
   line.strip
-  next unless line =~ /^\- \*\*(.+)\*\*:\s+(.+)$/
+  next unless line =~ /^\*\*(.+)\*\*:\s+(.+)$/
   date = $1
   topictext = $2
 
