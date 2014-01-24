@@ -1,4 +1,4 @@
-all: outline.html schedule.html flyer.pdf room_notice.pdf
+all: outline.html schedule.html flyer.pdf room_notice.pdf classlist.pdf
 
 outline.html: outline.md
 	Rscript -e 'library(markdown);markdownToHTML("outline.md", "outline.html")'
@@ -18,6 +18,9 @@ flyer.pdf: flyer.tex
 
 room_notice.pdf: room_notice.tex room_notice.png
 	pdflatex room_notice
+
+classlist.pdf: classlist.tex
+	pdflatex classlist
 
 clean:
 	rm outline.html schedule.html flyer.pdf *.aux *.log *~
