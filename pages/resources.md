@@ -8,9 +8,8 @@ title:  Resources and further reading
 - [Best Practices for Scientific Computing (paper)](http://www.plosbiology.org/article/info:doi%2F10.1371%2Fjournal.pbio.1001745)
 - [Ten simple rules for reproducible computational research (paper)](http://www.ploscompbiol.org/article/info:doi/10.1371/journal.pcbi.1003285)
 - [Top ten reasons not to share your code](http://www.siam.org/news/news.php?id=2064)
-
 - [Computational and Policy Tools for Reproducible Research](http://www.stodden.net/AMP2011/slides/pengslides.pdf)
-  (slides for a talk by [http://www.biostat.jhsph.edu/~rpeng/](Roger Peng))
+  (slides for a talk by [Roger Peng](http://www.biostat.jhsph.edu/~rpeng/))
 - Roger Peng's 2009 ENAR course: [Methods for Reproducible Research](http://www.biostat.jhsph.edu/~rpeng/ENAR2009/)
 - [Reproducible Research in Signal Processing - What, why, and how](http://infoscience.epfl.ch/record/136640)
 - [Replication, reproduction, and remixing in research software](http://ivory.idyll.org/blog/research-software-reuse.html)
@@ -41,7 +40,6 @@ title:  Resources and further reading
 - [How to look like a unix guru](http://www.cs.usfca.edu/~parrt/course/601/lectures/unix.util.html)
 - [Linux essentials](http://faculty.ucr.edu/~tgirke/Documents/UNIX/linux_manual.html)
 - [Important unix commands](http://www.personal.kent.edu/~rmuhamma/OpSystems/unixCommands.htm)
-
 - [Cygwin](http://www.cygwin.com/)
 
 ### RStudio, emacs, vim
