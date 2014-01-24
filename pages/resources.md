@@ -9,10 +9,9 @@ title:  Resources and further reading
 - [Ten simple rules for reproducible computational research (paper)](http://www.ploscompbiol.org/article/info:doi/10.1371/journal.pcbi.1003285)
 - [Top ten reasons not to share your code](http://www.siam.org/news/news.php?id=2064)
 
-- [roger peng slides](http://www.stodden.net/AMP2011/slides/pengslides.pdf)
+- [Computational and Policy Tools for Reproducible Research](http://www.stodden.net/AMP2011/slides/pengslides.pdf)
+  (slides for a talk by [http://www.biostat.jhsph.edu/~rpeng/](Roger Peng))
 - Roger Peng's 2009 ENAR course: [Methods for Reproducible Research](http://www.biostat.jhsph.edu/~rpeng/ENAR2009/)
-- Victoria Stodden course: ([guidelines](http://bioinformatics.mdanderson.org/Supplements/ReproRsch-All/Modified/ENAR/stoddenCourseGuidelines.pdf) | [syllabus](http://bioinformatics.mdanderson.org/Supplements/ReproRsch-All/Modified/ENAR/stoddenCourseSyllabus.pdf))
-- [ReproducibleResearch.net](http://reproducibleresearch.net)
 - [Reproducible Research in Signal Processing - What, why, and how](http://infoscience.epfl.ch/record/136640)
 - [Replication, reproduction, and remixing in research software](http://ivory.idyll.org/blog/research-software-reuse.html)
 
@@ -20,7 +19,8 @@ title:  Resources and further reading
 
 - [GNU make](http://www.gnu.org/software/make)
 - [Manual for make](http://www.gnu.org/software/make/manual/make.html)
-- [rake](http://rake.rubyforge.org))
+- [rake](http://rake.rubyforge.org) (ruby-based build program, similar
+  to make)
 - [Minimal Make tutorial](http://kbroman.github.io/minimal_make)
 - [Managing projects with GNU make](http://oreilly.com/catalog/make3/book/)
   book (part of the
