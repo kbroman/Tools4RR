@@ -44,6 +44,12 @@ title:  Resources and further reading
 
 ### RStudio, emacs, vim
 
+- [RStudio](http://www.rstudio.com/ide/download/desktop)
+- [RStudio documentation](https://support.rstudio.com/hc/en-us)
+- [Emacs Wiki](http://www.emacswiki.org/emacs/)
+- Book: [Learning GNU Emacs, 3rd ed](http://www.amazon.com/exec/obidos/ASIN/0596006489/7210-20)
+- [Vim](http://www.vim.org/)
+- [Vim Tips wiki](http://vim.wikia.com/wiki/Vim_Tips_Wiki)
 
 ### Knitr, Markdown, Asciidoc
 
