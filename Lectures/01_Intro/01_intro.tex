@@ -519,24 +519,33 @@ clean:
 
 \begin{frame}[fragile]{How do you use make?}
 
-\vspace{24pt}
+\vspace{6pt}
 
+{\small
 \bi
-\itemsep24pt
 \item If you name your make file {\tt Makefile}, then just go into the
-directory containing that file and type
+directory containing that file and type {\tt \color{hilight} make}
 
-\begin{quote}
-{\tt \color{hilight} make}
-\end{quote}
-
-\item If you name your make file {\tt something.else}, then go into
-  the directory containing that file and type
-
-\begin{quote}
+\item If you name your make file {\tt something.else}, then type \\
 {\tt \color{hilight} make -f something.else}
+
+\item Actually, the commands above will build the {\color{vhilight} first}
+  target listed in the make file. So I'll often include something like
+  the following.
+
+\begin{quote}
+{\tt \color{hilight} all: target1 target2 target3}
 \end{quote}
+
+  Then typing {\tt \color{hilight} make all} (or just {\tt
+    \color{hilight} make}, if {\tt \color{hilight} all} is listed
+  first in the file) will build all of those
+  things.
+
+\item To be build a specific target, type {\tt \color{hilight} make target}.
+  For example, {\tt \color{hilight} make fig1.pdf}
 \ei
+}
 
 \note{I can't believe that I forgot to explain this the first time
   I gave this lecture.
