@@ -31,7 +31,8 @@ data analyses, papers, presentations, posters) are reproducible.
 
 **Course number**: BMI 826-003 \[[UW-Madison course guide](http://bit.ly/H7IEwt)\]
 
-**Instructor**: [Karl Broman](http://www.biostat.wisc.edu/~kbroman)
+**Instructor**: [Karl Broman](http://www.biostat.wisc.edu/~kbroman),
+  [2126 Genetics-Biotechnology](http://map.wisc.edu/s/2tie3nen)
 
 **Prerequisite**: Some knowledge of [R](http://www.r-project.org).
 
