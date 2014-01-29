@@ -19,6 +19,7 @@
 \beamertemplatenavigationsymbolsempty
 \hypersetup{pdfpagemode=UseNone} % don't show bookmarks on initial view
 
+
 % font
 \usepackage{fontspec}
 \setsansfont{TeX Gyre Heros}
@@ -54,6 +55,9 @@
 \setbeamerfont{itemize/enumerate subbody}{size=\footnotesize}
 \setbeamerfont{itemize/enumerate subitem}{size=\footnotesize}
 
+% default link color
+\hypersetup{colorlinks, urlcolor={hilight}}
+
 % page number
 \setbeamertemplate{footline}{%
     \raisebox{5pt}{\makebox[\paperwidth]{\hfill\makebox[20pt]{\color{lolight}
@@ -78,13 +82,13 @@
 \subtitle{Tools for Reproducible Research}
 \author{\href{http://www.biostat.wisc.edu/~kbroman}{Karl Broman}}
 \institute{Biostatistics \& Medical Informatics, UW{\textendash}Madison}
-\date{\href{http://www.biostat.wisc.edu/~kbroman}{\tt \scriptsize biostat.wisc.edu/{\textasciitilde}kbroman}
+\date{\href{http://www.biostat.wisc.edu/~kbroman}{\tt \scriptsize \color{white} biostat.wisc.edu/{\textasciitilde}kbroman}
 \\[-4pt]
-\href{http://github.com/kbroman}{\tt \scriptsize github.com/kbroman}
+\href{http://github.com/kbroman}{\tt \scriptsize \color{white} github.com/kbroman}
 \\[-4pt]
-\href{https://twitter.com/kwbroman}{\tt \scriptsize @kwbroman}
+\href{https://twitter.com/kwbroman}{\tt \scriptsize \color{white} @kwbroman}
 \\[-4pt]
-{\scriptsize Course web: \href{http://bit.ly/tools4rr}{\tt \color{hilight} bit.ly/tools4rr}}
+{\scriptsize Course web: \href{http://bit.ly/tools4rr}{\tt bit.ly/tools4rr}}
 }
 
 
@@ -137,8 +141,8 @@ any lag in looking at graphics.
 \centering
 \Large
 
-Consider {\color{hilight} \href{http://www.cygwin.org}{Cygwin}}
-{\color{lolight} (and perhaps {\color{hilight} \href{https://code.google.com/p/mintty/}{Mintty}})}
+Consider \href{http://www.cygwin.org}{Cygwin}
+{\color{lolight} (and perhaps \href{https://code.google.com/p/mintty/}{Mintty})}
 
 \note{Cygwin is an effort to get Unix command-line tools in Windows.
 
@@ -150,13 +154,115 @@ Mintty is a terminal emulator.}
 \centering
 \Large
 
-Consider {\color{hilight} \href{http://brew.sh/}{Homebrew}} and
-{\color{hilight} \href{http://www.iterm2.com}{iTerm2}}
+Consider \href{http://brew.sh/}{Homebrew} and
+\href{http://www.iterm2.com}{iTerm2}
 
 \note{Homebrew is a packaging system; iTerm2 is a Terminal replacement}
 
 \end{frame}
 
+
+\begin{frame}{The command line is your friend}
+
+\vspace{24pt}
+
+\bi
+\itemsep24pt
+\item Don't touch that mouse!
+\item Scriptable
+\item Flexible
+\ei
+\note{In the long run, you'll be happier, having conquered the command line.}
+\end{frame}
+
+
+
+\begin{frame}[c]{The shell}
+
+
+\centerline{\includegraphics[width=\textwidth]{Figs/shell.png}}
+
+Options: \href{http://en.wikipedia.org/wiki/Tcsh}{tcsh}, \href{http://www.gnu.org/software/bash/manual/bashref.html}{bash}, \href{http://www.zsh.org/}{zsh}
+
+
+\note{The shell is a program -- an interface to the operating
+  system.}
+
+\end{frame}
+
+
+
+\begin{frame}{Basics}
+
+\vspace{18pt}
+\bi
+\itemsep18pt
+\item Directory structure
+
+{\color{lolight} \tt ls -l {\textasciitilde}/.. }
+
+\item Creating, removing, changing directories
+
+{\tt \color{lolight} mkdir 
+
+rmdir
+
+cd
+
+cd -}
+
+\item Creating, moving, copying, removing files
+
+{\tt \color{lolight} touch 
+
+mv 
+
+cp 
+
+rm}
+
+\ei
+
+\note{This stuff is too boring to spend much time on.}
+
+\end{frame}
+
+
+\begin{frame}[c]{File modes}
+
+\centerline{\includegraphics[width=\textwidth]{Figs/chmod.png}}
+
+\note{Note the mode, owner, and group for each file.
+
+mode = read/write/executable for owner/group/everyone}
+
+\end{frame}
+
+
+\begin{frame}{File modes/owner/group}
+
+\vspace{24pt}
+
+\tt sudo chown kbroman .
+
+chgrp -R staff .
+
+chmod +x createVersionWithNotes.rb
+
+chmod 755 02\_Unix
+
+chmod 644 02\_Unix/02\_unix.tex
+
+chmod 700 Private\_stuff
+
+\note{You don't usually need to change the owner or group of files or
+  directories, but it's good to be aware of the possibility.
+
+  You often want to make scripts executable, or make files/directories
+  unreadable. The octal codes (e.g, 755 and 644) are convenient, once
+  you get the hang of it.}
+
+\end{frame}
 
 
 
