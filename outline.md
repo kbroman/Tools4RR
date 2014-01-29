@@ -167,6 +167,8 @@ For yourself, or for you and many others...
 - How to divvy up tasks and know who did what?
 - How to handle the case that a contributor refuses to learn version
   control?
+- Complications in data files/formats -> control file with meta data
+  describing that mess?
 
 ---
 
