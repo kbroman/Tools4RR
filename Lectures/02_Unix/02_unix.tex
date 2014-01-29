@@ -55,9 +55,6 @@
 \setbeamerfont{itemize/enumerate subbody}{size=\footnotesize}
 \setbeamerfont{itemize/enumerate subitem}{size=\footnotesize}
 
-% default link color
-\hypersetup{colorlinks, urlcolor={hilight}}
-
 % page number
 \setbeamertemplate{footline}{%
     \raisebox{5pt}{\makebox[\paperwidth]{\hfill\makebox[20pt]{\color{lolight}
@@ -65,6 +62,9 @@
 
 % add a bit of space at the top of the notes page
 \addtobeamertemplate{note page}{\setlength{\parskip}{12pt}}
+
+% default link color
+\hypersetup{colorlinks, urlcolor={hilight}}
 
 % a few macros
 \newcommand{\bi}{\begin{itemize}}
@@ -107,6 +107,7 @@ comfortable with command-line tools.
 
 And you'll spend a lot of time using an editor. Learn to use a
 powerful one.
+}
 } }
 
 
@@ -172,7 +173,14 @@ Consider \href{http://brew.sh/}{Homebrew} and
 \item Scriptable
 \item Flexible
 \ei
-\note{In the long run, you'll be happier, having conquered the command line.}
+\note{In the long run, you'll be happier, having conquered the command line.
+
+Pointing-and-clicking is not reproducible, and every time you take
+your hands off the keyboard, there's a loss of efficiency.
+
+The command line allows you to piece together multiple tools and so do
+things that weren't anticipated by the developer of the GUI.
+}
 \end{frame}
 
 
@@ -255,15 +263,62 @@ chmod 644 02\_Unix/02\_unix.tex
 
 chmod 700 Private\_stuff
 
-\note{You don't usually need to change the owner or group of files or
-  directories, but it's good to be aware of the possibility.
+\note{You don't usually need to change the owner or group assigned to
+  a file or directory, but it's good to be aware of the possibility.
 
   You often want to make scripts executable, or make files/directories
   unreadable. The octal codes (e.g, 755 and 644) are convenient, once
-  you get the hang of it.}
+  you get the hang of them.}
 
 \end{frame}
 
+
+\begin{frame}{How to solve computing problems}
+
+\vspace{24pt}
+
+\bi
+\item {\color{vhilight} Try stuff!}
+\item man pages and help files
+\item {\tt blah -h} or {\tt blah --help}
+\item \href{http://www.google.com}{Google}
+\item \href{http://stackoverflow.com}{Stackoverflow}
+\item \href{http://www.google.com}{Google} with {\tt site:stackoverflow.com}
+\item email lists and google groups
+\item friends or colleagues
+\item \href{http://twitter.com}{Twitter}
+\ei
+
+\note{It's surprising how many computing problems can be solved by
+  googling the error message.
+
+  You will run into crazy and mysterious errors. Will you give up, or
+  figure them out?
+}
+\end{frame}
+
+
+\begin{frame}{Examples}
+
+\vspace{24pt}
+
+\bi
+\item How do you suppress warnings in knitr?
+\item What symbol corresponds to the unicode {\tt \\u00B1}?
+\item What's the difference between {\tt curl} and {\tt wget}?
+\item What does "{\tt 502 Bad Gateway}" mean?
+\item "{\tt To open gs you need to install X11}"
+\item {\tt mclapply} isn't working in Windows
+\item How to ping a server in Python?
+\item {\tt Font shape `EU1/pplx/m/n' undefined}
+\ei
+
+\note{These are examples of things you might search for.
+
+If you don't understand an error message, start by pasting it into
+google.
+}
+\end{frame}
 
 
 \end{document}
