@@ -34,6 +34,8 @@ data analyses, papers, presentations, posters) are reproducible.
 **Instructor**: [Karl Broman](http://www.biostat.wisc.edu/~kbroman),
   [2126 Genetics-Biotechnology](http://map.wisc.edu/s/2tie3nen)
 
+**Office hours**: Tu, We 10:30-11:30 **except** Feb 18-19, Mar 18-19
+
 **Prerequisite**: Some knowledge of [R](http://www.r-project.org).
 
 **Lectures**: Fridays, 11:00&ndash;11:50am,
