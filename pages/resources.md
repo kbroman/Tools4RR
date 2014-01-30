@@ -61,7 +61,7 @@ title:  Resources and further reading
 - [MathJax](http://www.mathjax.org/)
 - [asciidoc](http://www.methods.co.nz/asciidoc/)
 - [knitrBootstrap](http://jimhester.github.io/knitrBootstrap/) for nice-looking reports (see
-  [L. Collado-Torres's post](http://lcolladotor.github.io/rstats/2013/12/10/knitrBootstrap/#.UqamRGRDsgv)).
+  [L. Collado-Torres's post](http://lcolladotor.github.io/2013/12/10/knitrBootstrap/#.UuntzXddXVQ))
 - [xtable](http://cran.r-project.org/web/packages/xtable/index.html)
 
 ### Git, Github and Bitbucket
