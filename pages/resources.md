@@ -42,6 +42,8 @@ title:  Resources and further reading
 - [Important unix commands](http://www.personal.kent.edu/~rmuhamma/OpSystems/unixCommands.htm)
 - [Cygwin](http://www.cygwin.com/)
 - [A command-line murder mystery](https://github.com/veltman/clmystery)
+- [Karl](http://www.biostat.wisc.edu/~kbroman)'s [`.bash_profile`](../assets/dot.bash_profile) and
+  [`.bashrc`](../assets/dot.bashrc) files
 
 ### RStudio, emacs, vim
 
@@ -49,6 +51,8 @@ title:  Resources and further reading
 - [RStudio documentation](https://support.rstudio.com/hc/en-us)
 - [Emacs Wiki](http://www.emacswiki.org/emacs/)
 - Book: [Learning GNU Emacs, 3rd ed](http://www.amazon.com/exec/obidos/ASIN/0596006489/7210-20)
+- [Karl](http://www.biostat.wisc.edu/~kbroman)'s
+  [`.emacs`](../assets/dot.emacs) file
 - [Vim](http://www.vim.org/)
 - [Vim Tips wiki](http://vim.wikia.com/wiki/Vim_Tips_Wiki)
 - Book: [Learning the vi and Vim editors](http://www.amazon.com/exec/obidos/ASIN/059652983X/7210-20)
