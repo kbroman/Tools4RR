@@ -41,6 +41,7 @@ title:  Resources and further reading
 - [Linux essentials](http://faculty.ucr.edu/~tgirke/Documents/UNIX/linux_manual.html)
 - [Important unix commands](http://www.personal.kent.edu/~rmuhamma/OpSystems/unixCommands.htm)
 - [Cygwin](http://www.cygwin.com/)
+- [A command-line murder mystery](https://github.com/veltman/clmystery)
 
 ### RStudio, emacs, vim
 
