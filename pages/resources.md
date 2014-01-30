@@ -54,6 +54,12 @@ title:  Resources and further reading
 
 ### Knitr, Markdown, Asciidoc
 
+- [knitr](http://yihui.name/knitr/)
+- [R Markdown](http://www.rstudio.com/ide/docs/r_markdown)
+- [Using R Markdown with RStudio](http://www.rstudio.com/ide/docs/authoring/using_markdown)
+- [Markdown](http://daringfireball.net/projects/markdown/)
+- [MathJax](http://www.mathjax.org/)
+- [asciidoc](http://www.methods.co.nz/asciidoc/)
 - [knitrBootstrap](http://jimhester.github.io/knitrBootstrap/) for nice-looking reports (see
   [L. Collado-Torres's post](http://lcolladotor.github.io/rstats/2013/12/10/knitrBootstrap/#.UqamRGRDsgv)).
 - [xtable](http://cran.r-project.org/web/packages/xtable/index.html)
