@@ -207,7 +207,9 @@ Options: \href{http://en.wikipedia.org/wiki/Tcsh}{tcsh}, \href{http://www.gnu.or
 \itemsep18pt
 \item Directory structure
 
-{\color{lolight} \tt ls -l {\textasciitilde}/.. }
+{\color{lolight} Absolute vs. relative paths
+
+\tt ls -l {\textasciitilde}/.. }
 
 \item Creating, removing, changing directories
 
@@ -219,19 +221,70 @@ cd
 
 cd -}
 
-\item Creating, moving, copying, removing files
+\item Moving, copying, removing files
 
-{\tt \color{lolight} touch 
-
-mv 
+{\tt \color{lolight} mv
 
 cp 
 
-rm}
+rm -i}
 
 \ei
 
-\note{This stuff is too boring to spend much time on.}
+\note{This stuff is too boring to spend much time on.
+
+But I should emphasize the importance of using relative paths (e.g.,
+{\tt ../Figs/fig1.pdf}) in a project; reliance on absolute paths
+(e.g., {\tt {\textasciitilde}/Projects/Blah/Figs/fig1.pdf}) make life difficult when
+you move the project to a different system.
+}
+
+\end{frame}
+
+
+\begin{frame}[fragile]{{\tt {\textasciitilde}/.bash\_profile}}
+
+\vspace{-12pt}
+
+\begin{semiverbatim}
+\begin{lstlisting}
+export PATH=.:/usr/local/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/lib
+
+noclobber=1    # prevent overwriting of files
+IGNOREEOF=1    # disable Ctrl-D as a way to exit
+HISTCONTROL=ignoredups
+
+alias cl='clear;cd'
+alias rm='rm -i'
+alias mv='mv -i'
+alias cp='cp -i'
+alias ls='ls -GF'
+alias 'l.'='ls -d .[a-zA-Z]*'
+alias ll='ls -lh'
+alias 'll.'='ls -Alh'
+alias md='mkdir'
+alias rd='rmdir'
+alias rmb='rm .*~ *~ *.bak *.bk!' 
+
+alias Rb='R CMD build --force --resave-data'
+alias Ri='R CMD INSTALL --library=/Users/kbroman/Rlibs'
+alias Rc='R CMD check --library=/Users/kbroman/Rlibs'
+alias Rcc='R CMD check --as-cran --library=/Users/kbroman/Rlibs'
+\end{lstlisting}
+\end{semiverbatim}
+
+
+\note{The {\tt .bash\_profile} file contains all sorts of variable
+  definitions and aliases to make your life easier.
+
+I'm an idiot, so my {\tt .bash\_profile} file sources a {\tt
+.bashrc} file, because I thought that's what it should be called.
+
+There are links to my {\tt .bash\_profile} and {\tt .bashrc} files on
+the resources page at the course web site; some of it might just be
+total crap.
+}
 
 \end{frame}
 
