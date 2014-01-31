@@ -1,17 +1,26 @@
-02_unix.pdf: 02_unix.tex
-	xelatex 02_unix
+LEC = 02_unix
 
-notes: 02_unix_withnotes.pdf
+${LEC}.pdf: ${LEC}.tex
+	xelatex ${LEC}
 
-all: 02_unix.pdf notes web
+notes: ${LEC}_withnotes.pdf
 
-02_unix_withnotes.pdf: 02_unix_withnotes.tex
-	xelatex 02_unix_withnotes
-	pdfnup 02_unix_withnotes.pdf --nup 1x2 --no-landscape --paper letterpaper --frame true --scale 0.9
-	mv 02_unix_withnotes-nup.pdf 02_unix_withnotes.pdf
+all: ${LEC}.pdf notes web
 
-02_unix_withnotes.tex: 02_unix.tex ../createVersionWithNotes.rb
-	../createVersionWithNotes.rb 02_unix.tex 02_unix_withnotes.tex
+${LEC}_withnotes.pdf: ${LEC}_withnotes.tex
+	xelatex ${LEC}_withnotes
+	pdfnup ${LEC}_withnotes.pdf --nup 1x2 --no-landscape --paper letterpaper --frame true --scale 0.9
+	mv ${LEC}_withnotes-nup.pdf ${LEC}_withnotes.pdf
 
-web: 02_unix.pdf 02_unix_withnotes.pdf
-	cp 02_unix.pdf 02_unix_withnotes.pdf ../../Web/assets/lectures/
+${LEC}_withnotes.tex: ${LEC}.tex ../createVersionWithNotes.rb
+	../createVersionWithNotes.rb ${LEC}.tex ${LEC}_withnotes.tex
+
+WEBDIR = ../../Web/assets/lectures
+
+web: ${WEBDIR}/${LEC}.pdf ${WEBDIR}/${LEC}_withnotes.pdf
+
+${WEBDIR}/${LEC}.pdf: ${LEC}.pdf
+	cp ${LEC}.pdf ${WEBDIR}
+
+${WEBDIR}/${LEC}_withnotes.pdf: ${LEC}_withnotes.pdf
+	cp ${LEC}_withnotes.pdf ${WEBDIR}
