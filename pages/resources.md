@@ -55,6 +55,9 @@ title:  Resources and further reading
 - Book: [Learning GNU Emacs, 3rd ed](http://www.amazon.com/exec/obidos/ASIN/0596006489/7210-20)
 - [Karl](http://www.biostat.wisc.edu/~kbroman)'s
   [`.emacs`](../assets/dot.emacs) file
+- [Viper mode](http://www.emacswiki.org/emacs/ViperMode) to mimic vi
+  key bindings in emacs
+- [Evil](http://www.emacswiki.org/emacs/Evil): Vim features within emacs
 - [Vim](http://www.vim.org/)
 - [Vim Tips wiki](http://vim.wikia.com/wiki/Vim_Tips_Wiki)
 - Book: [Learning the vi and Vim editors](http://www.amazon.com/exec/obidos/ASIN/059652983X/7210-20)
