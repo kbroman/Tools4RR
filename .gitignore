@@ -15,5 +15,6 @@ schedule.md
 *.nav
 *.vrb
 *_withnotes.tex
+*_onlynotes.tex
 Students
 av_passcode.txt
