@@ -99,14 +99,15 @@
 \setbeamertemplate{footline}{} % no page number here
 \frame{
   \titlepage
-  \note{For your work to be reproducible, it needs to be code-based;
-    don't touch that mouse!
 
-Some flavor of Unix will be most efficient; you'll want to be
-comfortable with command-line tools.
+\note{My goal in this lecture is to convince you that  \\
+(a) command-line-based tools are the things to focus on, \\
+(b) you need to choose a powerful, universal text editor (you'll use
+  it a lot), \\
+(c) you want to be comfortable and skilled with each.
 
-And you'll spend a lot of time using an editor. Learn to use a
-powerful one.
+For your work to be reproducible, it needs to be code-based;
+don't touch that mouse!
 }
 } }
 
@@ -180,6 +181,9 @@ your hands off the keyboard, there's a loss of efficiency.
 
 The command line allows you to piece together multiple tools and so do
 things that weren't anticipated by the developer of the GUI.
+
+And it's only through scripts that you'll have truly reproducible
+analyses.
 }
 \end{frame}
 
@@ -194,7 +198,11 @@ Options: \href{http://en.wikipedia.org/wiki/Tcsh}{tcsh}, \href{http://www.gnu.or
 
 
 \note{The shell is a program -- an interface to the operating
-  system.}
+  system.
+
+There are a number to choose from. I use {\tt bash}; I've heard great
+things about {\tt zsh}.
+}
 
 \end{frame}
 
@@ -262,7 +270,6 @@ alias cp='cp -i'
 alias ls='ls -GF'
 alias 'l.'='ls -d .[a-zA-Z]*'
 alias ll='ls -lh'
-alias 'll.'='ls -Alh'
 alias md='mkdir'
 alias rd='rmdir'
 alias rmb='rm .*~ *~ *.bak *.bk!' 
@@ -275,11 +282,19 @@ alias Rcc='R CMD check --as-cran --library=/Users/kbroman/Rlibs'
 \end{semiverbatim}
 
 
-\note{The {\tt .bash\_profile} file contains all sorts of variable
-  definitions and aliases to make your life easier.
+\note{Use the {\tt .bash\_profile} file to define various
+  variables and aliases to make your life easier.
 
-I'm an idiot, so my {\tt .bash\_profile} file sources a {\tt
-.bashrc} file, because I thought that's what it should be called.
+The most important variable is {\tt PATH}: it defines the set of
+directories where the shell will look for executable programs.
+
+If ``{\tt .}'' isn't part of your {\tt PATH}, you'll need to type
+something like {\tt ./myscript.py} to execute a script in your working
+directory. So put ``{\tt .}'' in your {\tt PATH}.
+
+My {\tt .bash\_profile} file sources a {\tt .bashrc} file; I don't
+quite understand when one is used versus the other. Google ``{\tt .bashrc
+vs .bash\_profile}.''
 
 There are links to my {\tt .bash\_profile} and {\tt .bashrc} files on
 the resources page at the course web site; some of it might just be
@@ -289,14 +304,241 @@ total crap.
 \end{frame}
 
 
+\begin{frame}[fragile]{Redirection and pipes}
+
+\begin{semiverbatim}
+\begin{lstlisting}
+$ locate article.cls > output.txt
+$ locate book.cls >> output.txt
+$ grep texmf output.txt
+
+$ locate article.cls | grep texmf
+
+$ locate article.cls | grep texmf | less
+
+$ locate article.cls | wc -l
+$ locate article.cls | grep texmf | wc -l
+
+$ cat file1.txt file2.txt > combined.txt
+\end{lstlisting}
+\end{semiverbatim}
+
+\note{Use $>$ to redirect output ``stdout'' to a file.
+
+Use $>>$ to redirect output and append to the file.
+
+Use $<$ to have input ``stdin'' come from a file.
+
+Use $|$ to have the output of one command made the input to
+another.
+
+A key design principle in Unix is the piecing together of small commands using
+this sort of technique. There are lots of little commands (often with
+short, cryptic names) that can be combined together with great
+flexibility. 
+
+Important tools mentioned here: {\tt locate} (find files matching a
+pattern), {\tt grep} (search for patterns in a file), {\tt less} (look
+through long files a page at a time),
+{\tt wc} (count the number of words, lines and/or characters in a
+file),
+{\tt cat} (print contents of or concatenate text files)
+}
+
+\end{frame}
+
+
+
+
+\begin{frame}[fragile]{Wild cards}
+
+\begin{semiverbatim}
+\begin{lstlisting}
+$ grep blah *.txt
+
+$ ls blah.???
+
+$ ls [a-z]*
+
+$ ls /usr/bin/[auz]*
+
+$ ls /usr/bin/[auz]*.*
+\end{lstlisting}
+\end{semiverbatim}
+
+\note{{\tt *} stands for anything
+
+{\tt ?} stands for a single character
+
+Use {\tt []} to match some specific set or range of characters}
+\end{frame}
+
+
+\begin{frame}[fragile]{Suspend/foreground/background}
+
+\begin{semiverbatim}
+\begin{lstlisting}
+$ R CMD BATCH input.R output.txt &
+
+$ R CMD BATCH input.R output.txt
+[ctrl-Z]
+$ bg
+
+$ emacs afile.txt
+[ctrl-Z]
+$ fg
+\end{lstlisting}
+\end{semiverbatim}
+
+\note{Use {\tt \&} to run a job in the background.
+
+Use ctrl-Z to suspend the current job. Then use {\tt bg} to then put it in
+the background or {\tt fg} to bring it back to the foreground.
+
+I use ctrl-Z and {\tt bg} if I had forgotten to use {\tt \&}.
+
+I use ctrl-Z with emacs sometimes, to do some command-line things
+without opening another shell/terminal; I'll then use {\tt fg} to
+bring emacs back. Or I'll forget about it and muck a bunch of stuff
+up.
+}
+\end{frame}
+
+
+\begin{frame}[fragile]{Other useful tools}
+
+\begin{semiverbatim}
+\begin{lstlisting}
+$ find . -name *.py
+
+$ ps ux
+
+$ top
+
+$ df -hk
+
+$ du -h
+$ du -hd2
+
+$ ln -s ~/Projects/SomeFriend/Data
+$ ln -s ~/Projects/SomeFriend/Data SomeFriend_Data
+
+$ tar xzvf qtl_1.29-2.tar.gz
+$ tar czvf blah.tgz Blah/
+$ tar tzvf blah.tgz
+
+$ wget http://kbroman.github.io/Tools4RR/pages/resources.html
+\end{lstlisting}
+\end{semiverbatim}
+
+\note{{\tt find} is like {\tt locate}
+
+{\tt ps ux} to see what processes are running.
+
+{\tt top} gives an interactive view of what processes are running.
+
+{\tt df -hk} shows disk usage
+
+{\tt du -hd2} shows disk usage in a directory and its subdirectories;
+the {\tt d2} bit says go no more than 2 levels down through the subdirectories.
+
+{\tt ln -s} makes a ``soft link'' to a file or directory. It acts like
+there's a copy, but it's not really copied.
+
+{\tt tar} is used to archive a bunch of files within a single
+file. {\tt x} for extract, {\tt c} for combine, {\tt t} for test, {\tt
+  z} for compress/zip, {\tt v} for verbose, {\tt f} for ``file name to follow.''
+
+{\tt wget} (see also {\tt curl}) for grabbing something from the web.
+}
+
+\end{frame}
+
+
+\begin{frame}[fragile]{Further useful tools}
+
+\vspace{-12pt}
+
+\begin{semiverbatim}
+\begin{lstlisting}
+$ whereis bash
+$ type rm
+$ type emacs
+
+$ pwd
+
+$ head afile.txt
+$ tail afile.txt
+$ head -n20 afile.txt
+
+$ man head
+
+$ kill 8453
+$ kill -9 8453
+
+$ history
+$ !!
+$ !-2
+$ !503
+
+$ ping www.google.com
+
+$ ispell afile.txt
+\end{lstlisting}
+\end{semiverbatim}
+
+\note{{\tt whereis} for finding a program. \\
+{\tt type} for figuring out the location of a program or the
+definition of an alias.
+
+{\tt pwd} -- print working directory
+
+{\tt head} -- print first few lines of a file \\
+{\tt tail} -- print the last few lines of a file
+
+{\tt man} -- view manual page
+
+{\tt kill} -- kill a job
+
+{\tt history} -- view command history \\
+{\tt !} -- execute past commands
+
+{\tt ping} -- see if you can connect to some server
+
+{\tt ispell} -- spell checker
+}
+
+\end{frame}
+
+
+\begin{frame}[c]{Moving around the command line}
+
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{ll} 
+{\tt ctrl-f, ctrl-b} & \color{lolight} move forward and back \\
+{\tt ctrl-a, ctrl-e} & \color{lolight}  move to beginning and end of line \\
+{\tt ctrl-k, ctrl-u} & \color{lolight}  delete rest of line, or to the start \\
+{\tt ctrl-l} & \color{lolight}  clear the screen \\
+{\tt ctrl-c} & \color{lolight}  cancel what you've typed \\
+{\tt tab} & \color{lolight}  autocomplete command or file \\
+{\tt ctrl-p, ctrl-n} & \color{lolight}  forward and backward in history \\
+{\tt ctrl-r} & \color{lolight}  search for a previous command
+\end{tabular}
+
+\note{These are mostly emacs-like key ``bindings''.}
+\end{frame}
+
+
+
 \begin{frame}[c]{File modes}
 
 \centerline{\includegraphics[width=\textwidth]{Figs/chmod.png}}
 
 \note{Note the mode, owner, and group for each file.
 
-mode = read/write/executable for owner/group/everyone}
+mode = read/write/executable for owner/group/everyone
 
+r = readable; w = writable; x = executable (for a directory, enter-able)}
 \end{frame}
 
 
@@ -317,10 +559,21 @@ chmod 644 02\_Unix/02\_unix.tex
 chmod 700 Private\_stuff
 
 \note{You don't usually need to change the owner or group assigned to
-  a file or directory, but it's good to be aware of the possibility.
+  a file or directory, but it's good to be aware of the
+  possibility. 
+
+  Groups are useful if you want a file accessible by some set of
+  people but not everyone. You need a system admin to set up the group.
 
   You often want to make scripts executable, or make files/directories
-  unreadable. The octal codes (e.g, 755 and 644) are convenient, once
+  unreadable or unwriteable.  
+
+  For example, primary raw data files should not be writable. Large
+  Excel-based data files often contain screwed up cells where someone
+  was typing in some random spot without realizing it. I found myself
+  doing that yesterday!
+
+  The octal codes (e.g, 755 and 644) are convenient, once
   you get the hang of them.}
 
 \end{frame}
@@ -340,6 +593,7 @@ chmod 700 Private\_stuff
 \item email lists and google groups
 \item friends or colleagues
 \item \href{http://twitter.com}{Twitter}
+\item Buy a book. Buy {\color{vhilight} all} of the books.
 \ei
 
 \note{It's surprising how many computing problems can be solved by
@@ -347,6 +601,9 @@ chmod 700 Private\_stuff
 
   You will run into crazy and mysterious errors. Will you give up, or
   figure them out?
+
+  I do tend to but all possible books on a topic that is of even
+  passing interest to me. I read at least part of each of them.
 }
 \end{frame}
 
@@ -357,13 +614,14 @@ chmod 700 Private\_stuff
 
 \bi
 \item How do you suppress warnings in knitr?
-\item What symbol corresponds to the unicode {\tt \\u00B1}?
+\item What symbol corresponds to the unicode {\tt {\textbackslash}u00B1}?
 \item What's the difference between {\tt curl} and {\tt wget}?
 \item What does "{\tt 502 Bad Gateway}" mean?
 \item "{\tt To open gs you need to install X11}"
 \item {\tt mclapply} isn't working in Windows
 \item How to ping a server in Python?
 \item {\tt Font shape `EU1/pplx/m/n' undefined}
+\item {\tt except KeyError, k: raise AttributeError, k}
 \ei
 
 \note{These are examples of things you might search for.
@@ -404,6 +662,8 @@ google.
   RStudio is increasingly
   useful, but as a general editor (for things that aren't R), I think
   it's insufficient.
+
+  The choice of editor is very personal.
 }
 \end{frame}
 
@@ -425,6 +685,18 @@ google.
 
 \note{I've not figured out how to explore code across a set of files
   in emacs; otherwise I'm very happy with it.
+}
+\end{frame}
+
+
+\begin{frame}[c]{Don't forget to look at the resources page}
+
+
+\centerline{\href{http://kbroman.github.io/Tools4RR/pages/resources.html}{\tt http://kbroman.github.io/Tools4RR/pages/resources.html}}
+
+\note{If you find other useful resources, let me know.
+
+When we get to git and GitHub, make a pull request!
 }
 \end{frame}
 
