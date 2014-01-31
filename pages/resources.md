@@ -40,8 +40,10 @@ title:  Resources and further reading
 - [How to look like a unix guru](http://www.cs.usfca.edu/~parrt/course/601/lectures/unix.util.html)
 - [Linux essentials](http://faculty.ucr.edu/~tgirke/Documents/UNIX/linux_manual.html)
 - [Important unix commands](http://www.personal.kent.edu/~rmuhamma/OpSystems/unixCommands.htm)
+- UW-Madison software carpentry [tutorial on the shell](https://github.com/UW-Madison-ACI/boot-camps/tree/2014-01-uwmadison/shell)
 - [Cygwin](http://www.cygwin.com/)
 - [A command-line murder mystery](https://github.com/veltman/clmystery)
+- Book: [Learning the bash shell](http://www.amazon.com/exec/obidos/ASIN/0596009658/7210-20)
 - [Karl](http://www.biostat.wisc.edu/~kbroman)'s [`.bash_profile`](../assets/dot.bash_profile) and
   [`.bashrc`](../assets/dot.bashrc) files
 
