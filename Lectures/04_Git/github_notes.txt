@@ -1,5 +1,0 @@
-
-Students can make ~5 private repos on github
-
-Mention github pages (with Jekyll bootstrap)
-  http://pages.github.com/
