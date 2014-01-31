@@ -115,6 +115,10 @@ title:  Resources and further reading
 
 ### Latex
 
+- [AucTex](https://www.gnu.org/software/auctex/), for working with
+  LaTeX within emacs.
+
+
 
 ### Beamer for slides and posters
 
