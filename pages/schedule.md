@@ -12,6 +12,10 @@ tagline: Spring, 2014
     \]
 
 **Jan 31**: Know the command line; know your editor
+    \[
+    [S](../assets/lectures/02_unix.pdf) |
+    [N](../assets/lectures/02_unix_withnotes.pdf)
+    \]
 
 **Feb 7**:  [Knitr](http://yihui.name/knitr/) with [markdown](http://daringfireball.net/projects/markdown/)/[asciidoc](http://www.methods.co.nz/asciidoc/) for basic reports
 
