@@ -1,0 +1,159 @@
+\documentclass[12pt,t]{beamer}
+\usepackage{graphicx}
+\setbeameroption{hide notes}
+\setbeamertemplate{note page}[plain]
+\usepackage{listings}
+
+% set up listing environment
+\lstset{language=bash,
+        basicstyle=\scriptsize,
+        frame=single,
+        backgroundcolor=\color{darkgray},
+        commentstyle=\color{green},
+        showspaces=false,
+        showstringspaces=false
+        }
+
+% get rid of junk
+\usetheme{default}
+\beamertemplatenavigationsymbolsempty
+\hypersetup{pdfpagemode=UseNone} % don't show bookmarks on initial view
+
+
+% font
+\usepackage{fontspec}
+\setsansfont{TeX Gyre Heros}
+\setbeamerfont{note page}{family*=pplx,size=\footnotesize} % Palatino for notes
+% "TeX Gyre Heros can be used as a replacement for Helvetica"
+% In Unix, unzip the following into ~/.fonts
+% In Mac, unzip it, double-click the .otf files, and install using "FontBook"
+%   http://www.gust.org.pl/projects/e-foundry/tex-gyre/heros/qhv2.004otf.zip
+
+% named colors
+\definecolor{offwhite}{RGB}{249,242,215}
+\definecolor{foreground}{RGB}{255,255,255}
+\definecolor{background}{RGB}{24,24,24}
+\definecolor{title}{RGB}{107,174,214}
+\definecolor{gray}{RGB}{155,155,155}
+\definecolor{subtitle}{RGB}{102,255,204}
+\definecolor{hilight}{RGB}{102,255,204}
+\definecolor{vhilight}{RGB}{255,111,207}
+\definecolor{nhilight}{RGB}{128,0,128}  % hilight color in notes
+\definecolor{nvhilight}{RGB}{255,0,128} % vhilight for notes
+\definecolor{lolight}{RGB}{155,155,155}
+%\definecolor{green}{RGB}{125,250,125}
+
+% use those colors
+\setbeamercolor{titlelike}{fg=title}
+\setbeamercolor{subtitle}{fg=subtitle}
+\setbeamercolor{institute}{fg=gray}
+\setbeamercolor{normal text}{fg=foreground,bg=background}
+\setbeamercolor{item}{fg=foreground} % color of bullets
+\setbeamercolor{subitem}{fg=gray}
+\setbeamercolor{itemize/enumerate subbody}{fg=gray}
+\setbeamertemplate{itemize subitem}{{\textendash}}
+\setbeamerfont{itemize/enumerate subbody}{size=\footnotesize}
+\setbeamerfont{itemize/enumerate subitem}{size=\footnotesize}
+
+% page number
+\setbeamertemplate{footline}{%
+    \raisebox{5pt}{\makebox[\paperwidth]{\hfill\makebox[20pt]{\color{lolight}
+          \scriptsize\insertframenumber}}}\hspace*{5pt}}
+
+% add a bit of space at the top of the notes page
+\addtobeamertemplate{note page}{\setlength{\parskip}{12pt}}
+
+% default link color
+\hypersetup{colorlinks, urlcolor={hilight}}
+
+% a few macros
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\ig}{\includegraphics}
+\newcommand{\subt}[1]{{\footnotesize \color{subtitle} {#1}}}
+\newcommand{\ttsm}{\tt \small}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% end of header
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% title info
+\title{Writing reproducible reports}
+\subtitle{KnitR with R Markdown and AsciiDoc}
+\author{\href{http://www.biostat.wisc.edu/~kbroman}{Karl Broman}}
+\institute{Biostatistics \& Medical Informatics, UW{\textendash}Madison}
+\date{\href{http://www.biostat.wisc.edu/~kbroman}{\tt \scriptsize \color{white} biostat.wisc.edu/{\textasciitilde}kbroman}
+\\[-4pt]
+\href{http://github.com/kbroman}{\tt \scriptsize \color{white} github.com/kbroman}
+\\[-4pt]
+\href{https://twitter.com/kwbroman}{\tt \scriptsize \color{white} @kwbroman}
+\\[-4pt]
+{\scriptsize Course web: \href{http://bit.ly/tools4rr}{\tt bit.ly/tools4rr}}
+}
+
+
+\begin{document}
+
+% title slide
+{
+\setbeamertemplate{footline}{} % no page number here
+\frame{
+  \titlepage
+
+\note{Statisticians write a lot of reports, describing the results of
+  data analyses. It's best if such reports are fully reproducible:
+  that the data and code are available, and that there's a clear and
+  automatic path from data and code to the final report.
+
+  Knitr is ideal for this effort. It's a system for combining code and
+  text into a single document. Process the document, and the code is
+  replaced with the results and figures that it generates.
+
+  I've found it most efficient to produce informal analysis reports as
+  web pages. Markdown and Asciidoc are two systems for writing simple,
+  readble text, with the sort of marks that you might use in an email
+  message, that get converted to nicely formated html-based web pages.
+
+  My goal in this lecture is to show you how to use Knitr with R
+  Markdown (a variant of Markdown) and AsciiDoc to make such
+  reproducible reports, and to convince you that this is the way that
+  you should be constructing such analysis reports.
+}
+} }
+
+
+\begin{frame}{Data analysis reports}
+
+\vspace{24pt}
+
+\bi
+\itemsep24pt
+\item Figures/tables + email
+\item Static \LaTeX\ or Word document
+\item Knitr/Sweave + \LaTeX\ $\rightarrow$ PDF
+\item Knitr + Markdown/AsciiDoc $\rightarrow$ Web page
+\ei
+
+\note{Statisticians write a lot of reports. You do a bunch of
+  analyses, create a bunch of figures and tables, and you want to
+  describe what you've done to a collaborator.
+
+  When I was first starting out, I'd create a bunch of figures and
+  tables and email them to my collaborator with a description of the
+  findings in the body of the email. That was cumbersome for me and
+  for the collaborator. ("Which figure are we talking about, again?")
+
+  I moved towards writing formal reports in
+  \LaTeX\ and sending my collaborator a
+  PDF. But that was a lot of work, and if I later wanted to re-run
+  things (e.g., if additional data were added), it was a real hassle.
+
+  Sweave + \LaTeX\ was a big help, but it's a pain to deal with page
+  breaks.
+
+  Web pages, produced with knitr and Markdown or Asciidoc, are ideal.
+}
+\end{frame}
+
+
+\end{document}
