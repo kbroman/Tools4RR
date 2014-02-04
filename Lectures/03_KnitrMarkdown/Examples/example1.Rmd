@@ -1,3 +1,6 @@
+<link href="http://kevinburke.bitbucket.org/markdowncss/markdown.css" rel="stylesheet"></link>
+<link href="http://www.biostat.wisc.edu/~kbroman/markdown_modified.css" rel="stylesheet"></link>
+
 ## Knitr/R Markdown example
 
 This is a simple example using knitr and R markdown to mix code and
