@@ -67,6 +67,7 @@ title:  Resources and further reading
 - [knitr](http://yihui.name/knitr/)
 - [R Markdown](http://www.rstudio.com/ide/docs/r_markdown)
 - [Using R Markdown with RStudio](http://www.rstudio.com/ide/docs/authoring/using_markdown)
+- [Equations in R Markdown](http://www.rstudio.com/ide/docs/authoring/using_markdown_equations)
 - [Markdown](http://daringfireball.net/projects/markdown/)
 - [MathJax](http://www.mathjax.org/)
 - [asciidoc](http://www.methods.co.nz/asciidoc/)
