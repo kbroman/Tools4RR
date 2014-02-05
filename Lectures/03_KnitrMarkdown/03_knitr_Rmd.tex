@@ -79,7 +79,7 @@
 
 % title info
 \title{Writing reproducible reports}
-\subtitle{KnitR with R Markdown and AsciiDoc}
+\subtitle{KnitR with R Markdown}
 \author{\href{http://www.biostat.wisc.edu/~kbroman}{Karl Broman}}
 \institute{Biostatistics \& Medical Informatics, UW{\textendash}Madison}
 \date{\href{http://www.biostat.wisc.edu/~kbroman}{\tt \scriptsize \color{white} biostat.wisc.edu/{\textasciitilde}kbroman}
@@ -110,14 +110,17 @@
   replaced with the results and figures that it generates.
 
   I've found it most efficient to produce informal analysis reports as
-  web pages. Markdown and Asciidoc are two systems for writing simple,
-  readble text, with the sort of marks that you might use in an email
-  message, that get converted to nicely formated html-based web pages.
+  web pages. Markdown is a system for writing simple,
+  readable text, with the sort of marks that you might use in an email
+  message, that gets converted to nicely formated html-based web pages.
 
   My goal in this lecture is to show you how to use Knitr with R
-  Markdown (a variant of Markdown) and AsciiDoc to make such
+  Markdown (a variant of Markdown) to make such
   reproducible reports, and to convince you that this is the way that
   you should be constructing such analysis reports.
+
+  I'd originally planned to also cover KnitR with AsciiDoc, but I
+  decided to drop it; it's best to focus on Markdown.
 }
 } }
 
@@ -131,7 +134,7 @@
 \item Figures/tables + email
 \item Static \LaTeX\ or Word document
 \item Knitr/Sweave + \LaTeX\ $\rightarrow$ PDF
-\item Knitr + Markdown/AsciiDoc $\rightarrow$ Web page
+\item Knitr + Markdown $\rightarrow$ Web page
 \ei
 
 \note{Statisticians write a lot of reports. You do a bunch of
@@ -141,7 +144,7 @@
   When I was first starting out, I'd create a bunch of figures and
   tables and email them to my collaborator with a description of the
   findings in the body of the email. That was cumbersome for me and
-  for the collaborator. ("Which figure are we talking about, again?")
+  for the collaborator. (``Which figure are we talking about, again?'')
 
   I moved towards writing formal reports in
   \LaTeX\ and sending my collaborator a
@@ -151,7 +154,9 @@
   Sweave + \LaTeX\ was a big help, but it's a pain to deal with page
   breaks.
 
-  Web pages, produced with knitr and Markdown or Asciidoc, are ideal.
+  Web pages, produced with knitr and Markdown, are ideal. You can make
+  super-tall multi-panel figures that show the full details, without
+  worrying page breaks. And hyperlinks are more convenient, too.
 }
 \end{frame}
 

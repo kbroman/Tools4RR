@@ -9,7 +9,9 @@ ability to use [MathJax](http://www.mathjax.org/) to include
 
 `example2.asciidoc` is a simple example of an
 file combining R and [asciidoc](http://www.methods.co.nz/asciidoc/).
-Asciidoc is more complicated (but has more features) than Markdown.
+AsciiDoc is more complicated (but has more features) than Markdown.
+(Note that I've decided not to try to cover AsciiDoc in this course;
+it's best to focus.)
 
 `Makefile` is the [GNU make](http://www.gnu.org/software/make) file
 for using [knitr](http://yihui.name/knitr/) to convert the R Markdown

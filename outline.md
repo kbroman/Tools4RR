@@ -110,12 +110,11 @@ Important principle: learn to code by looking at good code
 
 ---
 
-#### Feb 7:  Knitr with markdown/asciidoc for basic reports
+#### Feb 7:  Knitr with markdown for basic reports
 
 - including figures and tables
   ([xtable](http://cran.r-project.org/web/packages/xtable/index.html)
-  to html or asciidoc tables with the
-  [ascii package](https://github.com/eusebe/ascii/)
+  to html
 - *Important principle*: modify your desires to match the
   defaults. Focus your compulsive behavior on things that matter.
   - The actual text

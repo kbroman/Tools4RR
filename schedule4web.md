@@ -13,7 +13,7 @@ tagline: Spring, 2014
 
 **Jan 31**: Know the command line; know your editor
 
-**Feb 7**:  [Knitr](http://yihui.name/knitr/) with [markdown](http://daringfireball.net/projects/markdown/)/[asciidoc](http://www.methods.co.nz/asciidoc/) for basic reports
+**Feb 7**:  [Knitr](http://yihui.name/knitr/) with [Markdown](http://daringfireball.net/projects/markdown/) for basic reports
 
 **Feb 14**: Version control with [git](http://git-scm.com/) & [github](https://github.com/)/[bitbucket](https://bitbucket.org/)
 
