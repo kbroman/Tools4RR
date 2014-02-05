@@ -8,8 +8,8 @@
 \lstset{language=bash,
         basicstyle=\scriptsize,
         frame=single,
+        commentstyle=,
         backgroundcolor=\color{darkgray},
-        commentstyle=\color{green},
         showspaces=false,
         showstringspaces=false
         }
@@ -187,6 +187,147 @@ What if you used the wrong version of the data?
 }
 
 \end{frame}
+
+
+\begin{frame}[fragile]{html}
+
+\vspace{6pt}
+
+\lstset{basicstyle=\ttfamily\scriptsize}
+\begin{lstlisting}
+<!DOCTYPE html>
+<html lang="em">
+<head>
+  <meta charset=utf-8"/>
+  <title>Example html file</title>
+</head>
+
+<body>
+<h1>Markdown example</h1>
+
+<p>Use a bit of <strong>bold</strong> or <em>italics</em>. Use
+backticks to indicate <code>code</code> that will be rendered
+in monospace.</p>
+
+<ul>
+<li>This is part of a list</li>
+<li>another item</li>
+</ul>
+
+</body>
+</html>
+\end{lstlisting}
+
+\vfill
+
+\hfill {\footnotesize \color{lolight} [\href{http://kbroman.github.io/knitr_knutshell/assets/markdown_example.html}{Example}]}
+
+\note{It's helpful to know a bit of html, which is the markup
+language that web pages are written in. html really isn't that hard;
+it's just cumbersome.
+
+An html document contains pairs of tags to indicate content, like <h1>
+and </h1> to indicate that the enclosed text is a ``level one
+header'', or <em> and </em> to indicate emphasis (generally
+italics). A web browser will parse the html tags and render the web
+page, often using a cascading style sheet (CSS) to define the precise
+style of the different elements.
+
+Note that there are six levels of headers, with tags
+<h1>, <h2>, <h3>, \dots, <h6>. Think of these as the title,
+section, subsection, sub-subsection, \dots
+}
+\end{frame}
+
+
+\begin{frame}[fragile]{CSS}
+
+\vspace{6pt}
+
+\lstset{basicstyle=\ttfamily\scriptsize}
+\begin{lstlisting}
+ul,ol {
+  margin: 0 0 0 35px;
+}
+
+a {
+  color: purple;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+a:hover
+{
+  color: purple;
+  background: #CAFFFF;
+}
+\end{lstlisting}
+
+\vfill
+
+\hfill {\footnotesize \color{lolight}
+[\href{http://kevinburke.bitbucket.org/markdowncss/markdown.css}{Example}]}
+
+\note{I don't really want to talk about CSS, but I thought I should at
+  least acknowledge its existence.
+
+  CSS is really important for defining how your document will
+  appear. Much of the time, you just want to find someone else's CSS
+  document that is satisfactory to you.
+}
+\end{frame}
+
+
+\begin{frame}[fragile]{Markdown}
+
+\vspace{6pt}
+
+\lstset{basicstyle=\ttfamily\scriptsize}
+\begin{lstlisting}
+# Markdown example
+
+Use a bit of **bold** or _italics_. Use backticks to indicate
+`code` that will be rendered in monospace.
+
+- This is part of a list
+- another item
+
+Include blocks of code using three backticks:
+
+```
+x <- rnorm(100)
+```
+
+Or indent four spaces:
+
+    mean(x)
+    sd(x)
+
+And it's easy to create links, like to
+[Markdown](http://daringfireball.net/projects/markdown/).
+\end{lstlisting}
+
+\vfill
+
+\hfill {\footnotesize \color{lolight}
+[\href{http://kbroman.github.io/knitr_knutshell/assets/markdown_example.md}{Example} |
+\href{https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet}{MD cheat sheet}]}
+
+\note{Markdown is a system for writing simple, readable text that is
+  easily converted into html. The reason it's useful to know a bit of
+  html is that then you have a better idea how the final product will
+  look. (Plus, if you want to get fancy, you can just insert a bit of
+  html within the Markdown document.)
+
+  Markdown is just a system of marks that will get searched-and-
+  replaced to create an html document. A big advantage of the Markdown
+  marks is that the source document is much like what you might write
+  in an email, and so it's much more human-readable.
+
+}
+\end{frame}
+
+
 
 
 \end{document}
