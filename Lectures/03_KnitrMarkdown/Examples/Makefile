@@ -1,6 +1,6 @@
 all: example1.html example2.html
 
-R_OPTS=--no-save --no-restore --no-init-file --no-site-file # vanilla, but with --environ
+R_OPTS=--no-save --no-restore --no-init-file --no-site-file # --vanilla, but without --no-environ
 
 example1.html: example1.Rmd
 	R ${R_OPTS} -e 'library(knitr);knit2html("example1.Rmd", "example1.html")'
