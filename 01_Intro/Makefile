@@ -24,3 +24,6 @@ ${WEBDIR}/${LEC}.pdf: ${LEC}.pdf
 
 ${WEBDIR}/${LEC}_withnotes.pdf: ${LEC}_withnotes.pdf
 	cp ${LEC}_withnotes.pdf ${WEBDIR}
+
+clean:
+	rm *.aux *.log *.nav *.out *.snm *.toc *.vrb
