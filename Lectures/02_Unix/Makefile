@@ -4,8 +4,8 @@ ${LEC}.pdf: ${LEC}.tex
 	xelatex ${LEC}
 
 notes: ${LEC}_withnotes.pdf
-
 all: ${LEC}.pdf notes web
+pdf: ${LEC}.pdf notes
 
 ${LEC}_withnotes.pdf: ${LEC}_withnotes.tex
 	xelatex ${LEC}_withnotes
