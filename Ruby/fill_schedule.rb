@@ -5,9 +5,9 @@
 #
 #    schedule4web.md schedule_template.md -> schedule.md
 
-ifile1 = "schedule4web.md"
-ifile2 = "schedule_template.md"
-ofilen = "schedule.md"
+ifile1 = "Handouts/schedule4web.md"
+ifile2 = "Handouts/schedule_template.md"
+ofilen = "Handouts/schedule.md"
 
 dates = []
 topic = {}

@@ -1,26 +1,26 @@
-all: outline.html schedule.html flyer.pdf room_notice.pdf classlist.pdf
+all: Notes/outline.html Handouts/schedule.html Handouts/flyer.pdf Handouts/room_notice.pdf Handouts/classlist.pdf
 
-outline.html: outline.md
-	Rscript -e 'library(markdown);markdownToHTML("outline.md", "outline.html")'
+Notes/outline.html: Notes/outline.md
+	cd Notes;Rscript -e 'library(markdown);markdownToHTML("outline.md", "outline.html")'
 
-schedule.md: schedule_template.md schedule4web.md Ruby/fill_schedule.rb
+Handouts/schedule.md: Handouts/schedule_template.md Handouts/schedule4web.md Ruby/fill_schedule.rb
 	Ruby/fill_schedule.rb
 
-schedule.html: schedule.md
-	Rscript -e 'library(markdown);markdownToHTML("schedule.md", "schedule.html")'
+Handouts/schedule.html: Handouts/schedule.md
+	cd Handouts;Rscript -e 'library(markdown);markdownToHTML("schedule.md", "schedule.html")'
 
-flyer.tex: flyer_template.tex schedule.md Ruby/fill_flyer.rb
+Handouts/flyer.tex: Handouts/flyer_template.tex Handouts/schedule.md Ruby/fill_flyer.rb
 	Ruby/fill_flyer.rb
 
-flyer.pdf: flyer.tex
-	pdflatex flyer
-	pdflatex flyer
+Handouts/flyer.pdf: Handouts/flyer.tex
+	cd Handouts;pdflatex flyer
+	cd Handouts;pdflatex flyer
 
-room_notice.pdf: room_notice.tex room_notice.png
-	pdflatex room_notice
+Handouts/room_notice.pdf: Handouts/room_notice.tex Handouts/room_notice.png
+	cd Handouts;pdflatex room_notice
 
-classlist.pdf: classlist.tex
-	pdflatex classlist
+Handouts/classlist.pdf: Handouts/classlist.tex
+	cd Handouts;pdflatex classlist
 
 clean:
-	rm outline.html schedule.html flyer.pdf *.aux *.log *~
+	rm Handouts/outline.html Handouts/schedule.html Handouts/flyer.pdf Handouts/*.aux Handouts/*.log Handouts/*~

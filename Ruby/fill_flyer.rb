@@ -5,9 +5,9 @@
 #
 #    schedule4web.md flyer_template.tex -> flyer.tex
 
-ifile1 = "schedule.md"
-ifile2 = "flyer_template.tex"
-ofilen = "flyer.tex"
+ifile1 = "Handouts/schedule.md"
+ifile2 = "Handouts/flyer_template.tex"
+ofilen = "Handouts/flyer.tex"
 
 dates = []
 topic = {}

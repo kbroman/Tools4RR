@@ -1,5 +1,5 @@
-outline.html
-schedule.html
+Notes/outline.html
+Handouts/schedule.html
 Refs
 markdown.css
 Web
@@ -8,8 +8,8 @@ Images
 *.aux
 *.log
 *.out
-flyer.tex
-schedule.md
+Handouts/flyer.tex
+Handouts/schedule.md
 *.snm
 *.toc
 *.nav
@@ -17,3 +17,5 @@ schedule.md
 *_withnotes.tex
 Students
 av_passcode.txt
+announcements.txt
+notes.txt
