@@ -189,6 +189,56 @@ What if you used the wrong version of the data?
 \end{frame}
 
 
+\begin{frame}[fragile]{Code chunks}
+
+\vspace{6pt}
+
+Input to knitr:
+\lstset{basicstyle=\ttfamily\scriptsize}
+\begin{lstlisting}
+We see that this is an intercross with `r nind(sug)` 
+individuals. There are `r nphe(sug)` phenotypes, and genotype
+data at `r totmar(sug)` markers across the `r nchr(sug)`
+autosomes.  The genotype data is quite complete.
+
+```{r summary_plot, fig.height=8}
+plot(sug)
+```
+\end{lstlisting}
+
+\vfill
+
+Output from knitr:
+\begin{lstlisting}
+We see that this is an intercross with 163 
+individuals. There are 6 phenotypes, and genotype
+data at 93 markers across the 19
+autosomes.  The genotype data is quite complete.
+
+```r
+plot(sug)
+```
+
+![plot of chunk summary_plot](RmdFigs/summary_plot.png) 
+\end{lstlisting}
+
+
+\note{The basic idea in knitr is that your regular text document will
+  be interrupted by chunks of code delimited in a special way.
+
+  This example is with R Markdown. 
+
+  There are in-line bits of code indicated with backticks.
+  When the document is processed by knitr, they'll be evaluated and
+  replaced by the result.
+
+  Larger code chunks with three backticks. This one will produce a
+  plot. When processed by knitr, an image file will be created and a
+  link to the image will be inserted at that location.
+}
+\end{frame}
+
+
 \begin{frame}[fragile]{html}
 
 \vspace{6pt}
@@ -242,7 +292,7 @@ section, subsection, sub-subsection, \dots
 
 \begin{frame}[fragile]{CSS}
 
-\vspace{6pt}
+\vspace{24pt}
 
 \lstset{basicstyle=\ttfamily\scriptsize}
 \begin{lstlisting}
@@ -263,7 +313,7 @@ a:hover
 }
 \end{lstlisting}
 
-\vfill
+\vspace{24pt}
 
 \hfill {\footnotesize \color{lolight}
 [\href{http://kevinburke.bitbucket.org/markdowncss/markdown.css}{Example}]}
