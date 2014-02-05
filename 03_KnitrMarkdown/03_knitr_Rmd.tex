@@ -193,7 +193,7 @@ What if you used the wrong version of the data?
 
 \vspace{6pt}
 
-Input to knitr:
+\href{https://github.com/kbroman/Tools4RR/blob/master/03_KnitrMarkdown/Examples/example1.Rmd}{Input to knitr}:
 \lstset{basicstyle=\ttfamily\scriptsize}
 \begin{lstlisting}
 We see that this is an intercross with `r nind(sug)` 
@@ -208,7 +208,7 @@ plot(sug)
 
 \vfill
 
-Output from knitr:
+\href{https://github.com/kbroman/Tools4RR/blob/master/03_KnitrMarkdown/Examples/example1.md}{Output from knitr}:
 \begin{lstlisting}
 We see that this is an intercross with 163 
 individuals. There are 6 phenotypes, and genotype
@@ -235,6 +235,11 @@ plot(sug)
   Larger code chunks with three backticks. This one will produce a
   plot. When processed by knitr, an image file will be created and a
   link to the image will be inserted at that location.
+
+  In knitr, different types of text have different ways of delimiting
+  code chunks, because it's basically going to do a
+  search-and-replace and depending on the form of text, different
+  patterns will be easier to find.
 }
 \end{frame}
 
