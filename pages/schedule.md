@@ -8,14 +8,14 @@ tagline: Spring, 2014
     \[
     [S](../assets/lectures/01_intro.pdf) |
     [N](../assets/lectures/01_intro_withnotes.pdf) |
-    [C](https://github.com/kbroman/Tools4RR/tree/master/Lectures/01_Intro/Examples)
+    [C](https://github.com/kbroman/Tools4RR/tree/master/01_Intro/Examples)
     \]
 
 **Jan 31**: Know the command line; know your editor
     \[
     [S](../assets/lectures/02_unix.pdf) |
     [N](../assets/lectures/02_unix_withnotes.pdf) |
-    [C](https://github.com/kbroman/Tools4RR/tree/master/Lectures/02_Unix/Dotfiles)
+    [C](https://github.com/kbroman/Tools4RR/tree/master/02_Unix/Dotfiles)
     \]
 
 **Feb 7**:  [Knitr](http://yihui.name/knitr/) with [Markdown](http://daringfireball.net/projects/markdown/) for basic reports
