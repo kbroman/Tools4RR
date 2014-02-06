@@ -36,12 +36,17 @@
 \definecolor{title}{RGB}{107,174,214}
 \definecolor{gray}{RGB}{155,155,155}
 \definecolor{subtitle}{RGB}{102,255,204}
-\definecolor{hilight}{RGB}{102,255,204}
-\definecolor{vhilight}{RGB}{255,111,207}
-\definecolor{nhilight}{RGB}{128,0,128}  % hilight color in notes
-\definecolor{nvhilight}{RGB}{255,0,128} % vhilight for notes
-\definecolor{lolight}{RGB}{155,155,155}
-%\definecolor{green}{RGB}{125,250,125}
+\definecolor{hilit}{RGB}{102,255,204}
+\definecolor{vhilit}{RGB}{255,111,207}
+\definecolor{nhilit}{RGB}{128,0,128}  % hilit color in notes
+\definecolor{nvhilit}{RGB}{255,0,128} % vhilit for notes
+\definecolor{lolit}{RGB}{155,155,155}
+
+\newcommand{\hilit}{\color{hilit}}
+\newcommand{\vhilit}{\color{vhilit}}
+\newcommand{\nhilit}{\color{nhilit}}
+\newcommand{\nvhilit}{\color{nvhilit}}
+\newcommand{\lolit}{\color{lolit}}
 
 % use those colors
 \setbeamercolor{titlelike}{fg=title}
@@ -57,14 +62,14 @@
 
 % page number
 \setbeamertemplate{footline}{%
-    \raisebox{5pt}{\makebox[\paperwidth]{\hfill\makebox[20pt]{\color{lolight}
+    \raisebox{5pt}{\makebox[\paperwidth]{\hfill\makebox[20pt]{\lolit
           \scriptsize\insertframenumber}}}\hspace*{5pt}}
 
 % add a bit of space at the top of the notes page
 \addtobeamertemplate{note page}{\setlength{\parskip}{12pt}}
 
 % default link color
-\hypersetup{colorlinks, urlcolor={hilight}}
+\hypersetup{colorlinks, urlcolor={hilit}}
 
 % a few macros
 \newcommand{\bi}{\begin{itemize}}
@@ -127,7 +132,7 @@
 
 \begin{frame}[c]{KnitR in a Knutshell}
 
-\centerline{\href{http://kbroman.github.io/knitr_knutshell}{\tt bit.ly/knitrknutshell}}
+\centerline{\Large \href{http://kbroman.github.io/knitr_knutshell}{\tt bit.ly/knitrknutshell}}
 
 \note{I wrote a short tutorial on knitr, covering a bit more than I'll
   cover in this lecture. 
@@ -205,7 +210,7 @@ What if you used the wrong version of the data?
 \end{frame}
 
 
-\begin{frame}[fragile]{Code chunks}
+\begin{frame}[fragile]{KnitR code chunks}
 
 \vspace{6pt}
 
@@ -289,7 +294,7 @@ in monospace.</p>
 
 \vfill
 
-\hfill {\footnotesize \color{lolight} [\href{http://kbroman.github.io/knitr_knutshell/assets/markdown_example.html}{Example}]}
+\hfill {\footnotesize \lolit [\href{http://kbroman.github.io/knitr_knutshell/assets/markdown_example.html}{Example}]}
 
 \note{It's helpful to know a bit of html, which is the markup
 language that web pages are written in. html really isn't that hard;
@@ -333,7 +338,7 @@ a:hover
 
 \vspace{24pt}
 
-\hfill {\footnotesize \color{lolight}
+\hfill {\footnotesize \lolit
 [\href{http://kevinburke.bitbucket.org/markdowncss/markdown.css}{Example}]}
 
 \note{I don't really want to talk about CSS, but I thought I should at
@@ -376,7 +381,7 @@ And it's easy to create links, like to
 
 \vfill
 
-\hfill {\footnotesize \color{lolight}
+\hfill {\footnotesize \lolit
 [\href{http://kbroman.github.io/knitr_knutshell/assets/markdown_example.md}{Example} |
 \href{https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet}{MD cheat sheet}]}
 
@@ -454,7 +459,7 @@ help(read.cross)
 
 \vfill
 
-\hfill {\footnotesize \color{lolight}
+\hfill {\footnotesize \lolit
 [\href{https://github.com/kbroman/knitr_knutshell/blob/gh-pages/assets/knitr_example.Rmd}{Example}]}
 
 
@@ -477,15 +482,15 @@ chunks.
 
 \renewcommand{\arraystretch}{1.3}
 \begin{tabular}{ll} 
-{\tt echo=FALSE}     & \color{lolight} Don't include the code \\
-{\tt results="hide"} & \color{lolight} Don't include the output \\
-{\tt include=FALSE}  & \color{lolight} Don't show code or output \\
-{\tt eval=FALSE}     & \color{lolight} Don't evaluate the code at all \\
-{\tt warning=FALSE}  & \color{lolight} Don't show R warnings \\
-{\tt message=FALSE}  & \color{lolight} Don't show R messages \\
-{\tt fig.width=\#}   & \color{lolight} Width of figure \\
-{\tt fig.height=\#}  & \color{lolight} Height of figure \\
-{\tt fig.path="Figs/"} & \color{lolight} Path for figure files \\
+{\tt echo=FALSE}     & \lolit Don't include the code \\
+{\tt results="hide"} & \lolit Don't include the output \\
+{\tt include=FALSE}  & \lolit Don't show code or output \\
+{\tt eval=FALSE}     & \lolit Don't evaluate the code at all \\
+{\tt warning=FALSE}  & \lolit Don't show R warnings \\
+{\tt message=FALSE}  & \lolit Don't show R messages \\
+{\tt fig.width={\lolit \#}}   & \lolit Width of figure \\
+{\tt fig.height={\lolit \#}}  & \lolit Height of figure \\
+{\tt fig.path="Figs/"} & \lolit Path for figure files \\
 \end{tabular}
 
 \vspace{24pt}
@@ -560,7 +565,8 @@ opts_knit$set(progress = TRUE, verbose = TRUE)
 \item It's easy to confuse global \href{http://yihui.name/knitr/options#chunk_options}{chunk options} with 
 \href{http://yihui.name/knitr/options#package_options}{package options}.
 \item I've not used package options.
-\item So focus on {\tt opts\_chunk\$set()} not {\tt opts\_knit\$set()}.
+\item So focus on {\tt \hilit opts\_chunk\$set()} not {\tt
+  \lolit opts\_knit\$set()}.
 \ei
 
 \note{If you are doing something fancy, you may need knitr package
@@ -571,6 +577,74 @@ opts_knit$set(progress = TRUE, verbose = TRUE)
 }
 \end{frame}
 
+
+
+\begin{frame}[fragile]{In-line code}
+
 \vspace{24pt}
+
+\begin{lstlisting}
+We see that this is an intercross with `r nind(sug)` 
+individuals. There are `r nphe(sug)` phenotypes, and genotype
+data at `r totmar(sug)` markers across the `r nchr(sug)`
+autosomes.  The genotype data is quite complete.
+\end{lstlisting}
+
+\vfill
+
+\bi
+\itemsep12pt
+\item Each bit of in-line code needs to be within one line; they can't
+  span across lines.
+\item I'll often precede a paragraph with a code chunk with {\tt
+  include=FALSE}, defining various variables, to simplify the in-line
+  code.
+\item Never hard-code a result or summary statistic again!
+\ei
+
+\note{In-line code to insert summary statistics and such is a key
+  feature of KnitR.
+
+  Even if you wanted the code for your figures or data analysis to be
+  separate, you'd still want to make use of this feature.
+
+  Remember my anecdote earlier in this lecture: if I hadn't mentioned
+  sample sizes, my collaborator wouldn't have noticed that I was using
+  an old version of the data.
+}
+\end{frame}
+
+
+\begin{frame}{Rounding}
+
+\vspace{24pt}
+
+\bi
+\itemsep18pt
+\item {\tt cor(x,y)} might produce {\tt \vhilit 0.8992877}, but
+I want {\tt \hilit 0.90}.
+
+\item {\tt round(cor(x,y), 2)}, would give {\tt \vhilit 0.9}, but I want 
+{\tt \hilit 0.90}.
+
+\item You could use {\tt sprintf("\%.2f", cor(x,y))}, but
+{\tt sprintf("\%.2f", -0.001)} gives {\tt \vhilit -0.00}.
+
+\item Use the {\tt myround} function in my
+\href{http://github.com/kbroman/broman}{R/broman} package.
+
+\item {\tt myround(cor(x,y), 2)} solves both issues.
+\ei
+
+\note{I'm very particular about rounding. You should too.
+
+  If you're a C programmer, sprintf seems natural. No one else agrees.
+
+  The R/broman package is on both github and CRAN.
+}
+\end{frame}
+
+
+
 
 \end{document}
