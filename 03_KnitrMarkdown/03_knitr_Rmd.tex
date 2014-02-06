@@ -645,6 +645,71 @@ I want {\tt \hilit 0.90}.
 \end{frame}
 
 
+\begin{frame}{R Markdown $\rightarrow$ html, in \href{http://www.rstudio.com}{RStudio}}
 
+\vspace{12pt}
+
+\centerline{\includegraphics[width=\textwidth]{Figs/rstudio_knitr.png}}
+
+\note{The easiest way to convert an R Markdown file to html is with R
+  Studio.
+
+  Open the R Markdown file in R Studio and click the ``Knit HTML''
+  button (with the ball of yarn and knitting needle).
+
+  Note the little ``MD'' button next to that. Click that, and you'll
+  get the ``Markdown Quick Reference.''
+
+  What actually happens: The knit function in the knitr package
+  processes all of the code chunks and in-line code and creates a
+  Markdown file and possibly a bunch of figure files.
+
+  Then, the markdownToHTML function in the markdown package converts the
+  Markdown file to an HTML file, with embedded figures.
+}
+
+\end{frame}
+
+
+\begin{frame}[fragile]{R Markdown $\rightarrow$ html, in \href{http://www.r-project.org}{R}}
+
+\vspace{18pt}
+
+\begin{lstlisting}
+> library(knitr)
+> knit("knitr_example.Rmd")
+> library(markdown)
+> knit("knitr_example.md", "knitr_example.html")
+\end{lstlisting}
+
+\bigskip
+
+\begin{lstlisting}
+> library(knitr)
+> knit2html("knitr_example.Rmd")
+\end{lstlisting}
+
+
+\note{When you click the ``Knit HTML'' button in RStudio, it just runs
+  some R code for you (and then opens the result in a preview window).
+
+  But you can do the same thing directly, in R.
+}
+\end{frame}
+
+\begin{frame}[fragile]{R Markdown $\rightarrow$ html,
+    \href{http://www.gnu.org/software/make}{GNU make}}
+
+\vspace{24pt}
+
+\begin{lstlisting}
+knitr_example.html: knitr_example.Rmd
+  R -e 'library(knitr);knit2html("knitr_example.Rmd")'
+\end{lstlisting}
+
+\note{I prefer to do this from the command-line, using a Makefile.
+  Then it's more obvious what's happening.
+}
+\end{frame}
 
 \end{document}

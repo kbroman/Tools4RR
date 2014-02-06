@@ -19,3 +19,5 @@ Students
 av_passcode.txt
 announcements.txt
 notes.txt
+.Rhistory
+.RData
