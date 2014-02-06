@@ -667,6 +667,10 @@ I want {\tt \hilit 0.90}.
 
   Then, the {\tt markdownToHTML} function in the markdown package converts the
   Markdown file to an HTML file, with embedded figures.
+
+  RStudio is especially useful when you're first learning R Markdown
+  and KnitR, as it's easy to create and view the corresponding html
+  file, and you have access to that Markdown Quick Reference.
 }
 
 \end{frame}
@@ -761,4 +765,112 @@ knitr_example.html: knitr_example.Rmd
 }
 \end{frame}
 
+
+
+\begin{frame}[fragile]{Controlling figures}
+
+\vspace{6pt}
+
+\begin{lstlisting}
+```{r test_figure, dev.args=list(pointsize=18)}
+par(cex.axis=1.5, cex.lab=1.5)
+x <- rnorm(100)
+y <- 2*x + rnorm(100)
+plot(x,y)
+```
+\end{lstlisting}
+
+\vfill
+
+{\small
+\bi
+\itemsep8pt
+\item The default is for KnitR/R Markdown is to use the {\tt png()}
+  graphics device. 
+\item Use another graphics device with the chunk option {\tt dev}.
+\item Pass arguments to the graphics device via the chunk
+  option {\tt dev.args}.
+\item To increase the size of axis labels, I seem to need {\tt
+  par(cex.lab=1.5)} as well as {\tt dev.args=list(pointsize=18)}
+\ei
+}
+
+\note{Graphics in KnitR are super easy. For the most part, you don't
+  have to do anything! If a code chunk produces a figure, it will be
+  inserted.
+
+  But depending on the type of figure, you might want to try different
+  graphics devices. And sometimes you want to pass arguments to the
+  graphics device.
+
+  As far as I can tell, it seems like, to change the size of axis
+  labels, you can't just use the pointsize device argument; you also
+  need to use something like {\tt par(cex.lab=1.5)}.
+}
+\end{frame}
+
+
+\begin{frame}[fragile]{Tables}
+
+\vspace{24pt}
+
+\begin{lstlisting}
+```{r kable, results="asis"}
+x <- rnorm(100)
+y <- 2*x + rnorm(100)
+out <- lm(y ~ x)
+kable(summary(out)$coef, format="html",
+      digits=2)
+```
+\end{lstlisting}
+
+\vspace{12pt}
+
+\begin{lstlisting}
+```{r xtable, results="asis"}
+library(xtable)
+tab <- xtable(coef_tab, digits=c(0, 2, 2, 1, 3))
+print(tab, type="html")
+```
+\end{lstlisting}
+
+
+\note{Two ways to make tables with R Markdown: the {\tt kable}
+  function in the knitr package, and the {\tt xtable} function in the
+  xtable package.
+
+  {\tt kable} is simpler, but has fewer options.
+
+  {\tt xtable} gives you more complete control.
+}
+\end{frame}
+
+
+
+\begin{frame}[c]{Important principles}
+
+\centering
+Modify your desires to match the defaults.
+
+\vspace{36pt}
+
+Focus your compulsive behavior on things that matter.
+
+\note{Focus on the text and the figures before worrying to much about
+  fine details of how they appear on the page.
+
+  And consider which is more important: a manuscript, web page, blog,
+  grant, course slides, course handout, report to collaborator,
+  scientific poster.
+
+  You can spend a ton of time trying to get things to look just
+  right. Ideally, you spend that time trying to construct a general
+  solution.  Or you can modify your desires to more closely match what
+  you get without any effort.
+}
+\end{frame}
+
+
+
 \end{document}
+
