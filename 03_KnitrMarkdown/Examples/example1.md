@@ -44,23 +44,83 @@ summary(out)
 ## 
 ## Residuals:
 ##    Min     1Q Median     3Q    Max 
-## -4.889 -1.391 -0.094  1.435  3.994 
+## -5.868 -1.507  0.291  1.557  4.464 
 ## 
 ## Coefficients:
 ##             Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)  -0.3107     0.4439    -0.7     0.49    
-## x             2.0152     0.0389    51.9   <2e-16 ***
+## (Intercept)  -0.1736     0.4572   -0.38      0.7    
+## x             2.0406     0.0408   50.01   <2e-16 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## Residual standard error: 1.97 on 98 degrees of freedom
-## Multiple R-squared:  0.965,	Adjusted R-squared:  0.964 
-## F-statistic: 2.69e+03 on 1 and 98 DF,  p-value: <2e-16
+## Residual standard error: 2.03 on 98 degrees of freedom
+## Multiple R-squared:  0.962,	Adjusted R-squared:  0.962 
+## F-statistic: 2.5e+03 on 1 and 98 DF,  p-value: <2e-16
 ```
 
 
 So note that the estimated slope for the regression line is
-2.02.
+2.04.
+
+### Tables
+
+To include a table, use `kable` in the knitr package or `xtable` in
+the xtable package.
+
+`kable` is simpler but has few options.
+
+
+```r
+coef_tab <- summary(out)$coef
+kable(summary(out)$coef, format = "html", digits = 2)
+```
+
+<table>
+ <thead>
+  <tr>
+   <th>   </th>
+   <th> Estimate </th>
+   <th> Std. Error </th>
+   <th> t value </th>
+   <th> Pr(>|t|) </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td> (Intercept) </td>
+   <td> -0.17 </td>
+   <td> 0.46 </td>
+   <td> -0.38 </td>
+   <td> 0.7 </td>
+  </tr>
+  <tr>
+   <td> x </td>
+   <td>  2.04 </td>
+   <td> 0.04 </td>
+   <td> 50.01 </td>
+   <td> 0.0 </td>
+  </tr>
+</tbody>
+</table>
+
+
+`xtable` gives you more complete control.
+
+
+```r
+library(xtable)
+tab <- xtable(coef_tab, digits = c(0, 2, 2, 1, 3))
+print(tab, type = "html")
+```
+
+<!-- html table generated in R 3.0.2 by xtable 1.7-1 package -->
+<!-- Thu Feb  6 15:32:53 2014 -->
+<TABLE border=1>
+<TR> <TH>  </TH> <TH> Estimate </TH> <TH> Std. Error </TH> <TH> t value </TH> <TH> Pr(&gt |t|) </TH>  </TR>
+  <TR> <TD align="right"> (Intercept) </TD> <TD align="right"> -0.17 </TD> <TD align="right"> 0.46 </TD> <TD align="right"> -0.4 </TD> <TD align="right"> 0.705 </TD> </TR>
+  <TR> <TD align="right"> x </TD> <TD align="right"> 2.04 </TD> <TD align="right"> 0.04 </TD> <TD align="right"> 50.0 </TD> <TD align="right"> 0.000 </TD> </TR>
+   </TABLE>
+
 
 ### It's usually best to end with session information
 
@@ -80,7 +140,7 @@ sessionInfo()
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-## [1] knitr_1.5
+## [1] xtable_1.7-1 knitr_1.5   
 ## 
 ## loaded via a namespace (and not attached):
 ## [1] evaluate_0.5.1 formatR_0.10   stringr_0.6.2  tools_3.0.2

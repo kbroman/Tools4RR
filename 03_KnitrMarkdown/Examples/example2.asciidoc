@@ -35,6 +35,20 @@ summary(out)
 So note that the estimated slope for the regression line is
 +r sprintf("%.2f", out$coef[2])+.
 
+== Tables ==
+
+To include a table, use +ascii+ in the 
+link:http://eusebe.github.io/ascii/[ascii package].
+It has a **ton** of options.
+
+//begin.rcode table, results="asis", warning=FALSE
+library(ascii)
+coef_tab <- summary(out)$coef
+ascii(coef_tab, include.rownames=TRUE, include.colnames=TRUE,
+      header=TRUE)
+//end.rcode
+
+
 == It's usually best to end with session information ==
 
 //begin.rcode sessionInfo

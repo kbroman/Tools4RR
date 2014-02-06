@@ -33,6 +33,27 @@ summary(out)
 So note that the estimated slope for the regression line is
 `r sprintf("%.2f", out$coef[2])`.
 
+### Tables
+
+To include a table, use `kable` in the knitr package or `xtable` in
+the xtable package.
+
+`kable` is simpler but has few options.
+
+```{r kable, results="asis"}
+coef_tab <- summary(out)$coef
+kable(summary(out)$coef, format="html",
+      digits=2)
+```
+
+`xtable` gives you more complete control.
+
+```{r xtable, results="asis"}
+library(xtable)
+tab <- xtable(coef_tab, digits=c(0, 2, 2, 1, 3))
+print(tab, type="html")
+```
+
 ### It's usually best to end with session information
 
 ```{r sessionInfo}
