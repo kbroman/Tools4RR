@@ -125,6 +125,22 @@
 } }
 
 
+\begin{frame}[c]{KnitR in a Knutshell}
+
+\centerline{\href{http://kbroman.github.io/knitr_knutshell}{\tt bit.ly/knitrknutshell}}
+
+\note{I wrote a short tutorial on knitr, covering a bit more than I'll
+  cover in this lecture. 
+
+  I'd be glad for suggestions, corrections, or questions.
+}
+\end{frame}
+
+
+
+
+
+
 \begin{frame}{Data analysis reports}
 
 \vspace{24pt}
@@ -544,6 +560,7 @@ opts_knit$set(progress = TRUE, verbose = TRUE)
 \item It's easy to confuse global \href{http://yihui.name/knitr/options#chunk_options}{chunk options} with 
 \href{http://yihui.name/knitr/options#package_options}{package options}.
 \item I've not used package options.
+\item So focus on {\tt opts\_chunk\$set()} not {\tt opts\_knit\$set()}.
 \ei
 
 \note{If you are doing something fancy, you may need knitr package
@@ -553,5 +570,7 @@ opts_knit$set(progress = TRUE, verbose = TRUE)
   vs. opts\_knit\$set.
 }
 \end{frame}
+
+\vspace{24pt}
 
 \end{document}
