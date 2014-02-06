@@ -300,15 +300,16 @@ in monospace.</p>
 language that web pages are written in. html really isn't that hard;
 it's just cumbersome.
 
-An html document contains pairs of tags to indicate content, like <h1>
-and </h1> to indicate that the enclosed text is a ``level one
-header'', or <em> and </em> to indicate emphasis (generally
-italics). A web browser will parse the html tags and render the web
-page, often using a cascading style sheet (CSS) to define the precise
-style of the different elements.
+An html document contains pairs of tags to indicate content, like 
+{\tt <h1>} and {\tt </h1>} to indicate that the enclosed text is a
+``level one header'', or {\tt <em>} and {\tt </em>} to indicate emphasis
+(generally italics). A web browser will parse the html tags and
+render the web page, often using a cascading style sheet (CSS) to
+define the precise style of the different elements.
 
 Note that there are six levels of headers, with tags
-<h1>, <h2>, <h3>, \dots, <h6>. Think of these as the title,
+{\tt <h1>}, {\tt <h2>}, {\tt <h3>}, \dots, {\tt <h6>}. 
+Think of these as the title,
 section, subsection, sub-subsection, \dots
 }
 \end{frame}
@@ -469,7 +470,7 @@ You can (and should) assign names to the code chunks. It will make it
 easier to fix errors, and figure files will be named based on the
 name of the chunk that produces them. 
 
-Code chunks can also have options, like include=FALSE and eval=FALSE.
+Code chunks can also have options, like {\tt include=FALSE} and {\tt eval=FALSE}.
 And you can define global options, which will apply to all subsequent
 chunks.
 }
@@ -501,9 +502,9 @@ There are \href{http://yihui.name/knitr/options#chunk_options}{lots of chunk opt
   more. Each should be valid R code, and can be basically any valid
   R code, so you can get pretty fancy.
 
-  The ending slash in fig.path is important, as this is just pasted to
+  The ending slash in {\tt fig.path} is important, as this is just pasted to
   the front of the figure file names. If not included, the figures
-  would be in the main directory but with names starting with ``Figs''.
+  would be in the main directory but with names starting with ``{\tt Figs}''.
 }
 \end{frame}
 
@@ -536,9 +537,9 @@ plot(x, y)
 \item You can override the global values in specific chunks.
 \ei
 
-\note{I'll often use include=FALSE and echo=FALSE in a report to a
+\note{I'll often use {\tt include=FALSE} and {\tt echo=FALSE} in a report to a
   collaborator, as they won't want to see the code and raw
-  results. I'll then use include=TRUE for the figure chunks.
+  results. I'll then use {\tt include=TRUE} for the figure chunks.
 
   And I'll set some default choice for figure heights and widths but
   then adjust them a bit in particular figures.
@@ -572,8 +573,8 @@ opts_knit$set(progress = TRUE, verbose = TRUE)
 \note{If you are doing something fancy, you may need knitr package
   options, but I've not used them. 
 
-  I've gotten confused about them, though: opts\_chunk\$set
-  vs. opts\_knit\$set.
+  I've gotten confused about them, though: {\tt opts\_chunk\$set}
+  vs. {\tt opts\_knit\$set}.
 }
 \end{frame}
 
@@ -660,11 +661,11 @@ I want {\tt \hilit 0.90}.
   Note the little ``MD'' button next to that. Click that, and you'll
   get the ``Markdown Quick Reference.''
 
-  What actually happens: The knit function in the knitr package
+  What actually happens: The {\tt knit} function in the knitr package
   processes all of the code chunks and in-line code and creates a
   Markdown file and possibly a bunch of figure files.
 
-  Then, the markdownToHTML function in the markdown package converts the
+  Then, the {\tt markdownToHTML} function in the markdown package converts the
   Markdown file to an HTML file, with embedded figures.
 }
 
@@ -709,6 +710,54 @@ knitr_example.html: knitr_example.Rmd
 
 \note{I prefer to do this from the command-line, using a Makefile.
   Then it's more obvious what's happening.
+}
+\end{frame}
+
+
+
+\begin{frame}{Reproducible knitr documents}
+
+\vspace{6pt}
+
+\bi
+\itemsep8pt
+\item Don't use absolute paths like {\tt \vhilit
+  {\textasciitilde}/Data/blah.csv}
+\item Keep all of the code and data in one directory (and its
+  subdirectories)
+\item If you {\vhilit must} use absolute paths, define the various directories
+  with variables at the top of your document.
+\item Use {\tt R --vanilla} or perhaps \\
+{\tt \scriptsize R --no-save --no-restore --no-init-file --no-site-file}
+\item Use GNU make to document the construction of the final product
+   (tell future users what to do)
+\item Include a chunk with {\tt sessionInfo()} at the end
+\item For simulations, use {\tt set.seed} in your first
+   chunk. 
+\ei
+
+\note{That you've used knitr doesn't mean the work is really {\nvhilit
+    reproducible}.  The source and data need to be available to
+  others, they need to know what packages were used and how to compile it,
+  and then they need to be able to compile it on their system.
+
+  The complicated alternative to {\tt R --vanilla} is if you want to 
+  still load {\tt {\textasciitilde}/.Renviron}, for example, to define
+  {\tt R\_LIBS}.
+
+  If you use {\tt set.seed} at the top of the document, it should be that
+  the random aspects will give exactly the same results.
+  I'll use \\ {\tt runif(1, 0, 10{\textasciicircum}8)} and then paste that big number
+  within {\tt set.seed()}.
+
+  Two anecdotes: The github repository for the Reproducible Research
+  with R and R Studio book uses some absolute paths that basically
+  make it not reproducible.
+
+  Earn et al. (2014) Proc Roy Soc B 281(1778):20132570 has a really
+  nice supplement, written with KnitR. But it says, ``The source code
+  is available upon request.'' It's not {\nvhilit really}
+  reproducible, then.
 }
 \end{frame}
 
