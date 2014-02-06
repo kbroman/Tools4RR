@@ -19,6 +19,12 @@ tagline: Spring, 2014
     \]
 
 **Feb 7**:  [Knitr](http://yihui.name/knitr/) with [Markdown](http://daringfireball.net/projects/markdown/) for basic reports
+    \[
+    [S](../assets/lectures/03_knitr_Rmd.pdf) |
+    [N](../assets/lectures/03_knitr_Rmd_withnotes.pdf) |
+    [C](https://github.com/kbroman/Tools4RR/tree/master/03_KnitrMarkdown/Examples)
+    \]
+
 
 **Feb 14**: Version control with [git](http://git-scm.com/) & [github](https://github.com/)/[bitbucket](https://bitbucket.org/)
 
