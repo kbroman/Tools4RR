@@ -1,11 +1,14 @@
 LEC = 04_git
 
+WEBDIR = ../Web/assets/lectures
+DROPBOXDIR = ~/Dropbox/Teaching/Tools4RR
+
 ${LEC}.pdf: ${LEC}.tex
 	xelatex ${LEC}
 
 notes: ${LEC}_withnotes.pdf
-all: ${LEC}.pdf notes web
 pdf: ${LEC}.pdf notes
+all: ${LEC}.pdf notes web dropbox
 
 ${LEC}_withnotes.pdf: ${LEC}_withnotes.tex
 	xelatex ${LEC}_withnotes
@@ -15,15 +18,18 @@ ${LEC}_withnotes.pdf: ${LEC}_withnotes.tex
 ${LEC}_withnotes.tex: ${LEC}.tex ../Ruby/createVersionWithNotes.rb
 	../Ruby/createVersionWithNotes.rb ${LEC}.tex ${LEC}_withnotes.tex
 
-WEBDIR = ../Web/assets/lectures
-
 web: ${WEBDIR}/${LEC}.pdf ${WEBDIR}/${LEC}_withnotes.pdf
 
 ${WEBDIR}/${LEC}.pdf: ${LEC}.pdf
-	cp ${LEC}.pdf ${WEBDIR}
+	cp ${LEC}.pdf ${WEBDIR}/
 
 ${WEBDIR}/${LEC}_withnotes.pdf: ${LEC}_withnotes.pdf
-	cp ${LEC}_withnotes.pdf ${WEBDIR}
+	cp ${LEC}_withnotes.pdf ${WEBDIR}/
+
+dropbox: ${DROPBOXDIR}/${LEC}_withnotes.pdf
+
+${DROPBOXDIR}/${LEC}_withnotes.pdf: ${LEC}_withnotes.pdf
+	cp ${LEC}_withnotes.pdf ${DROPBOXDIR}/
 
 clean:
 	rm *.aux *.log *.nav *.out *.snm *.toc *.vrb
