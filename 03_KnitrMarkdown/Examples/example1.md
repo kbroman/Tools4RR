@@ -6,13 +6,21 @@
 This is a simple example using knitr and R markdown to mix code and
 text.
 
+We'll start by setting the seed for the random number generator.
+
+
+```r
+set.seed(53079239)
+```
+
+
 We'll first simulate some data with $x \sim N(\mu=10, \sigma=5)$ and
 $y = 2x + \epsilon$, where $\epsilon \sim N(\mu=0, \sigma=2)$.
 
 
 ```r
 x <- rnorm(100, 10, 5)
-y <- 2 * x + rnorm(100, 0, 2)
+y <- 2*x + rnorm(100, 0, 2)
 ```
 
 
@@ -20,7 +28,7 @@ Here's a scatterplot of the data.
 
 
 ```r
-plot(x, y, pch = 21, bg = "slateblue", las = 1)
+plot(x, y, pch=21, bg="slateblue", las=1)
 ```
 
 ![plot of chunk scatterplot](figure/scatterplot.png) 
@@ -44,23 +52,23 @@ summary(out)
 ## 
 ## Residuals:
 ##    Min     1Q Median     3Q    Max 
-## -5.868 -1.507  0.291  1.557  4.464 
+## -4.472 -1.106  0.105  1.160  4.398 
 ## 
 ## Coefficients:
 ##             Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)  -0.1736     0.4572   -0.38      0.7    
-## x             2.0406     0.0408   50.01   <2e-16 ***
+## (Intercept)  -0.5251     0.4204   -1.25     0.21    
+## x             2.0337     0.0367   55.36   <2e-16 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## Residual standard error: 2.03 on 98 degrees of freedom
-## Multiple R-squared:  0.962,	Adjusted R-squared:  0.962 
-## F-statistic: 2.5e+03 on 1 and 98 DF,  p-value: <2e-16
+## Residual standard error: 1.88 on 98 degrees of freedom
+## Multiple R-squared:  0.969,	Adjusted R-squared:  0.969 
+## F-statistic: 3.06e+03 on 1 and 98 DF,  p-value: <2e-16
 ```
 
 
 So note that the estimated slope for the regression line is
-2.04.
+2.03.
 
 ### Tables
 
@@ -72,33 +80,34 @@ the xtable package.
 
 ```r
 coef_tab <- summary(out)$coef
-kable(summary(out)$coef, format = "html", digits = 2)
+kable(summary(out)$coef, format="html",
+      digits=2)
 ```
 
 <table>
  <thead>
   <tr>
-   <th>   </th>
-   <th> Estimate </th>
-   <th> Std. Error </th>
-   <th> t value </th>
-   <th> Pr(>|t|) </th>
+   <th align="left">   </th>
+   <th align="right"> Estimate </th>
+   <th align="right"> Std. Error </th>
+   <th align="right"> t value </th>
+   <th align="right"> Pr(>|t|) </th>
   </tr>
  </thead>
 <tbody>
   <tr>
-   <td> (Intercept) </td>
-   <td> -0.17 </td>
-   <td> 0.46 </td>
-   <td> -0.38 </td>
-   <td> 0.7 </td>
+   <td align="left"> (Intercept) </td>
+   <td align="right"> -0.53 </td>
+   <td align="right">  0.42 </td>
+   <td align="right"> -1.25 </td>
+   <td align="right">  0.21 </td>
   </tr>
   <tr>
-   <td> x </td>
-   <td>  2.04 </td>
-   <td> 0.04 </td>
-   <td> 50.01 </td>
-   <td> 0.0 </td>
+   <td align="left"> x </td>
+   <td align="right">  2.03 </td>
+   <td align="right">  0.04 </td>
+   <td align="right"> 55.36 </td>
+   <td align="right">  0.00 </td>
   </tr>
 </tbody>
 </table>
@@ -109,16 +118,16 @@ kable(summary(out)$coef, format = "html", digits = 2)
 
 ```r
 library(xtable)
-tab <- xtable(coef_tab, digits = c(0, 2, 2, 1, 3))
-print(tab, type = "html")
+tab <- xtable(coef_tab, digits=c(0, 2, 2, 1, 3))
+print(tab, type="html")
 ```
 
 <!-- html table generated in R 3.0.2 by xtable 1.7-1 package -->
-<!-- Thu Feb  6 15:32:53 2014 -->
+<!-- Fri Feb  7 10:17:58 2014 -->
 <TABLE border=1>
 <TR> <TH>  </TH> <TH> Estimate </TH> <TH> Std. Error </TH> <TH> t value </TH> <TH> Pr(&gt |t|) </TH>  </TR>
-  <TR> <TD align="right"> (Intercept) </TD> <TD align="right"> -0.17 </TD> <TD align="right"> 0.46 </TD> <TD align="right"> -0.4 </TD> <TD align="right"> 0.705 </TD> </TR>
-  <TR> <TD align="right"> x </TD> <TD align="right"> 2.04 </TD> <TD align="right"> 0.04 </TD> <TD align="right"> 50.0 </TD> <TD align="right"> 0.000 </TD> </TR>
+  <TR> <TD align="right"> (Intercept) </TD> <TD align="right"> -0.53 </TD> <TD align="right"> 0.42 </TD> <TD align="right"> -1.2 </TD> <TD align="right"> 0.215 </TD> </TR>
+  <TR> <TD align="right"> x </TD> <TD align="right"> 2.03 </TD> <TD align="right"> 0.04 </TD> <TD align="right"> 55.4 </TD> <TD align="right"> 0.000 </TD> </TR>
    </TABLE>
 
 
@@ -140,7 +149,7 @@ sessionInfo()
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-## [1] xtable_1.7-1 knitr_1.5   
+## [1] xtable_1.7-1 knitr_1.5.22
 ## 
 ## loaded via a namespace (and not attached):
 ## [1] evaluate_0.5.1 formatR_0.10   stringr_0.6.2  tools_3.0.2

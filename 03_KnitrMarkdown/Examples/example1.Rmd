@@ -6,6 +6,12 @@
 This is a simple example using knitr and R markdown to mix code and
 text.
 
+We'll start by setting the seed for the random number generator.
+
+```{r set_seed}
+set.seed(53079239)
+```
+
 We'll first simulate some data with $x \sim N(\mu=10, \sigma=5)$ and
 $y = 2x + \epsilon$, where $\epsilon \sim N(\mu=0, \sigma=2)$.
 

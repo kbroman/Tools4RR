@@ -7,7 +7,7 @@ example1.html: example1.Rmd
 
 example2.html: example2.asciidoc
 	R ${R_OPTS} -e 'library(knitr);knit("example2.asciidoc")'
-	asciidoc -a data-uri -a toc -a toclevels=4 -a num example2.txt
+	asciidoc example2.txt
 
 # knitr does Rmd -> md -> html
 # you don't really need to create the intermediate md file, 

@@ -8,6 +8,12 @@ Karl Broman
 This is a simple example using knitr and asciidoc to mix code and
 text.
 
+We'll start by setting the seed for the random number generator.
+
+//begin.rcode set_seed
+set.seed(53079239)
+//end.rcode
+
 We'll first simulate some data with x drawn from N(mu=10, sigma=5) and
 y = 2x + e, where e is N(mu=0, sigma=2).
 
