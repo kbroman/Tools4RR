@@ -773,7 +773,6 @@ knitr_example.html: knitr_example.Rmd
 
 \begin{lstlisting}
 ```{r test_figure, dev.args=list(pointsize=18)}
-par(cex.axis=1.5, cex.lab=1.5)
 x <- rnorm(100)
 y <- 2*x + rnorm(100)
 plot(x,y)
@@ -790,8 +789,6 @@ plot(x,y)
 \item Use another graphics device with the chunk option {\tt dev}.
 \item Pass arguments to the graphics device via the chunk
   option {\tt dev.args}.
-\item To increase the size of axis labels, I seem to need {\tt
-  par(cex.lab=1.5)} as well as {\tt dev.args=list(pointsize=18)}
 \ei
 }
 
@@ -803,9 +800,18 @@ plot(x,y)
   graphics devices. And sometimes you want to pass arguments to the
   graphics device.
 
-  As far as I can tell, it seems like, to change the size of axis
-  labels, you can't just use the pointsize device argument; you also
-  need to use something like {\tt par(cex.lab=1.5)}.
+  Yesterday (6 Feb 2014), to change the size of axis
+  labels, you couldn't just use the pointsize device argument; you'd also
+  need to use something like {\tt par(cex.lab=1.5)}. But I posted a
+  question about it on StackOverflow, and Yihui Xie responded and then
+  immediately fixed the problem. I used a bit of twitter in there too,
+  to get his attention.
+
+  To download and install the development version of knitr, you can
+  use the {\tt install\_github} function in Hadley Wickham's devtools
+  package. Use {\tt install.packages("devtools")} if you don't already
+  have it installed.  Then {\tt library(devtools)} and
+  {\tt install\_github("yihui/knitr")}.
 }
 \end{frame}
 
