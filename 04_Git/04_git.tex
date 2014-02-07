@@ -1,13 +1,24 @@
 \documentclass[12pt,t]{beamer}
-
 \usepackage{graphicx}
 \setbeameroption{hide notes}
 \setbeamertemplate{note page}[plain]
+\usepackage{listings}
+
+% set up listing environment
+\lstset{language=bash,
+        basicstyle=\ttfamily\scriptsize,
+        frame=single,
+        commentstyle=,
+        backgroundcolor=\color{darkgray},
+        showspaces=false,
+        showstringspaces=false
+        }
 
 % get rid of junk
 \usetheme{default}
 \beamertemplatenavigationsymbolsempty
 \hypersetup{pdfpagemode=UseNone} % don't show bookmarks on initial view
+
 
 % font
 \usepackage{fontspec}
@@ -24,12 +35,18 @@
 \definecolor{background}{RGB}{24,24,24}
 \definecolor{title}{RGB}{107,174,214}
 \definecolor{gray}{RGB}{155,155,155}
-%\definecolor{darkgray}{RGB}{30,30,30}
 \definecolor{subtitle}{RGB}{102,255,204}
-\definecolor{hilight}{RGB}{102,255,204}
-\definecolor{vhilight}{RGB}{255,111,207}
-\definecolor{lolight}{RGB}{155,155,155}
-\definecolor{green}{RGB}{125,250,125}
+\definecolor{hilit}{RGB}{102,255,204}
+\definecolor{vhilit}{RGB}{255,111,207}
+\definecolor{nhilit}{RGB}{128,0,128}  % hilit color in notes
+\definecolor{nvhilit}{RGB}{255,0,128} % vhilit for notes
+\definecolor{lolit}{RGB}{155,155,155}
+
+\newcommand{\hilit}{\color{hilit}}
+\newcommand{\vhilit}{\color{vhilit}}
+\newcommand{\nhilit}{\color{nhilit}}
+\newcommand{\nvhilit}{\color{nvhilit}}
+\newcommand{\lolit}{\color{lolit}}
 
 % use those colors
 \setbeamercolor{titlelike}{fg=title}
@@ -45,55 +62,74 @@
 
 % page number
 \setbeamertemplate{footline}{%
-    \raisebox{5pt}{\makebox[\paperwidth]{\hfill\makebox[20pt]{\color{gray}
+    \raisebox{5pt}{\makebox[\paperwidth]{\hfill\makebox[20pt]{\lolit
           \scriptsize\insertframenumber}}}\hspace*{5pt}}
 
 % add a bit of space at the top of the notes page
 \addtobeamertemplate{note page}{\setlength{\parskip}{12pt}}
 
+% default link color
+\hypersetup{colorlinks, urlcolor={hilit}}
+
 % a few macros
-\newcommand{\subt}[1]{{\footnotesize \color{subtitle} {#1}}}
-
-\usepackage{listings}
-
-\lstset{language=bash,
-        basicstyle=\tiny,
-        frame=single,
-        backgroundcolor=\color{darkgray},
-        commentstyle=\color{green},
-        showspaces=false,
-        showstringspaces=false
-        }
-
-\newcommand{\ft}[1]{\frametitle{#1}}
 \newcommand{\bi}{\begin{itemize}}
 \newcommand{\bbi}{\vspace{24pt} \begin{itemize} \itemsep8pt}
 \newcommand{\ei}{\end{itemize}}
-\newcommand{\figw}[2]{\centerline{\includegraphics[width=#2\textwidth]{#1}}}
+\newcommand{\ig}{\includegraphics}
+\newcommand{\subt}[1]{{\footnotesize \color{subtitle} {#1}}}
+\newcommand{\ttsm}{\tt \small}
 \newcommand{\figh}[2]{\centerline{\includegraphics[height=#2\textheight]{#1}}}
-\newcommand{\fig}[1]{\centerline{\includegraphics{#1}}}
+\newcommand{\figw}[2]{\centerline{\includegraphics[width=#2\textwidth]{#1}}}
 
-\title[git \& GitHub]{A brief introduction to git \& GitHub}
-\author[Broman \& Younkin]{Karl Broman \& Samuel G. Younkin}
-\institute{Biostatistics \& Medical Informatics \\ University of Wisconsin{\textendash}Madison}
-\date{\href{https://github.com/syounkin/GitPrimer}{\tt \scriptsize github.com/syounkin/GitPrimer}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% end of header
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Version control}
+\subtitle{with git and GitHub}
+\author{\href{http://www.biostat.wisc.edu/~kbroman}{Karl Broman}}
+\institute{Biostatistics \& Medical Informatics, UW{\textendash}Madison}
+\date{\href{http://www.biostat.wisc.edu/~kbroman}{\tt \scriptsize \color{white} biostat.wisc.edu/{\textasciitilde}kbroman}
+\\[-4pt]
+\href{http://github.com/kbroman}{\tt \scriptsize \color{white} github.com/kbroman}
+\\[-4pt]
+\href{https://twitter.com/kwbroman}{\tt \scriptsize \color{white} @kwbroman}
+\\[-4pt]
+{\scriptsize Course web: \href{http://bit.ly/tools4rr}{\tt bit.ly/tools4rr}}
+}
 
 \begin{document}
-\frame{\titlepage}
 
+{
+\setbeamertemplate{footline}{} % no page number here
 \frame{
-\vspace{12pt}
+  \titlepage
+
+\vfill
+\hfill {\color{lolit} \scriptsize
+Slides prepared with \href{http://pages.cs.wisc.edu/~syounkin/}{Sam Younkin}}
+
+\note{People are more resistant to version control than to any other
+  tool.
+
+}
+} }
+
+
+\begin{frame}[c]{}
 
 % comic from http://www.phdcomics.com/comics/archive.php?comicid=1531
 \centerline{\includegraphics[height=3.2in]{Images/phd101212s.png}}
 
+\vfill
 \color{gray} \tiny
 \centerline{\url{http://www.phdcomics.com/comics/archive.php?comicid=1531}}
-}
 
-\section{Version control}
-\frame{
-\ft{\only<1>{Methods for tracking versions}\only<2>{Suppose it stops working\dots}}
+\note{
+}
+\end{frame}
+
+\begin{frame}{\only<1>{Methods for tracking versions}\only<2|handout 0>{Suppose it stops working\dots}}
 \bbi
 \item Don't keep track
 \onslide<2>{
@@ -115,49 +151,56 @@
 \ei
 }
 \ei
-}
 
-\frame{
-\ft{Why use formal version control?}
+\note{
+}
+\end{frame}
+
+\begin{frame}{Why use formal version control?}
 \bbi
 \item History of changes
 \item Able to go back
 \item No worries about breaking things that work
 \item Merging changes from multiple people
 \ei
-}
 
-\frame[c]{
-\ft{Example repository}
+\note{
+}
+\end{frame}
+
+\begin{frame}[c]{Example repository}
 
 \figh{Images/example_repo}{0.80}
 
-\onslide<2>{
+\onslide<2|handout 0>{
 \vspace*{-0.65\textheight}
 \figh{Images/example_repo_zoom}{0.55}
 }
+
+\note{
 }
+\end{frame}
 
 
-\frame[c]{
-\ft{Example history}
+\begin{frame}[c]{Example history}
 
 \figh{Images/example_history}{0.80}
-}
 
-\frame[c]{
-\ft{Example commit}
+\note{
+}
+\end{frame}
+
+\begin{frame}[c]{Example commit}
 
 \figh{Images/example_commit}{0.80}
+\note{
 }
+\end{frame}
 
 
 
 
-\section{git}
-
-\frame{
-\ft{What is git?}
+\begin{frame}{What is git?}
 \bbi
 \item Formal version control system
 \item Developed by Linus Torvalds (developer of Linux)
@@ -173,40 +216,48 @@
 \item presentations
 \ei
 \ei
+
+\note{
 }
+\end{frame}
 
 
-\frame{
-\ft{Why use git?}
+\begin{frame}{Why use git?}
 \bbi
 \item It's fast
 \item You don't need access to a server
 \item Amazingly good at merging simultaneous changes
 \item Everyone's using it
 \ei
+
+\note{
 }
+\end{frame}
 
-\section{GitHub}
-
-\frame{
-\ft{What is GitHub?}
+\begin{frame}{What is GitHub?}
 \bbi
 \item A home for git repositories
 \item Interface for exploring git repositories
-\item {\color{hilight} Real} open source
+\item {\color{hilit} Real} open source
 \bi
 \item immediate, easy access to the code
 \ei
 \item Like facebook for programmers
+\item Free 2-year "micro" account for students
+\bi
+\item \href{http://education.github.com}{github.com/edu}
+\ei
 \item (Bitbucket.org is an alternative)
 \bi
 \item free private repositories
 \ei
 \ei
-}
 
-\frame{
-\ft{Why use GitHub?}
+\note{
+}
+\end{frame}
+
+\begin{frame}{Why use GitHub?}
 \bbi
 \item It takes care of the server aspects of git
 \item Graphical user interface for git
@@ -226,7 +277,10 @@
 "Here's a correction for your documentation."
 \ei
 \ei
+
+\note{
 }
+\end{frame}
 
 
 
@@ -262,6 +316,9 @@
 \item[] {\tt git pull}
 \ei }
 \ei
+
+\note{
+}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -273,89 +330,76 @@
 \ei
 \item Initialize it to be a git repository
 \bi
-\item {\tt \color{hilight} git init}
+\item {\tt \color{hilit} git init}
 \item Creates subdirectory \verb|~/GitPrimer/.git|
 \ei
 \ei
-\begin{semiverbatim}
+
 \begin{lstlisting}
-$ mkdir ~/GitPrimer
-$ cd ~/GitPrimer
+$ mkdir ~/Docs/Talks/Graphs
+$ cd ~/Docs/Talks/Graphs
 $ git init
-Initialized empty Git repository in ~/GitPrimer/.git/
+Initialized empty Git repository in ~/Docs/Talks/Graphs/.git/
 \end{lstlisting}
-\end{semiverbatim}
+
+\note{
+}
 \end{frame}
 
 \begin{frame}[fragile]
 \frametitle{Produce content}
 \bbi
-\item Create a README file
+\item Create a {\tt README.md} file
 \ei
-\begin{semiverbatim}
+
+\bigskip 
 \begin{lstlisting}
-Welcome to the GitPrimer repository.
+## Talk on &ldquo;How to display data badly&rdquo;
 
-Date: Tue Oct  1 14:12:47 CDT 2013
 
-This repository contains source code for a brief git & GitHub tutorial
-given by Younkin & Broman at the University of Wisconsin-Madison,
-Dept. of Biostatistics & Medical Informatics.
+These are slides for a talk that I give as often as possible,
+because it's fun.
 
-Email Samuel Younkin <syounkin@stat.wisc.edu> with questions or
-comments.
+This was inspired by Howard Wainer's article, whose title I
+stole: H Wainer (1984) How to display data badly.
+American Statistician 38:137-147
+
+A recent PDF is
+[here](
+http://www.biostat.wisc.edu/~kbroman/talks/graphs2013.pdf).
 \end{lstlisting}
-\end{semiverbatim}
+
+\note{
+}
 \end{frame}
 
-\begin{frame}[fragile]
-\frametitle{Produce content}
-\bbi
-\item Or create a README.md file
-\ei
-\begin{semiverbatim}
-\begin{lstlisting}
-Welcome to the GitPrimer repository.
-
-Date: Tue Oct  1 14:12:47 CDT 2013
-
-This repository contains source code for a brief git & GitHub tutorial
-given by [Younkin](http://www.stat.wisc.edu/~syounkin/) &
-[Broman](http://www.biostat.wisc.edu/~kbroman) at the University of
-Wisconsin-Madison, Dept. of Biostatistics & Medical Informatics.
-
-Email Samuel Younkin <syounkin@stat.wisc.edu> with questions or
-comments, or submit an
-[Issue at the GitHub](https://github.com/syounkin/GitPrimer/issues).
-\end{lstlisting}
-\end{semiverbatim}
-\end{frame}
 
 \begin{frame}[fragile]
 \frametitle{Incorporate into repository}
 \bbi
-\item Stage the changes using {\tt \color{hilight} git add}
+\item Stage the changes using {\tt \color{hilit} git add}
 \ei
-\begin{semiverbatim}
+
 \begin{lstlisting}
 $ git add README
 \end{lstlisting}
-\end{semiverbatim}
+
+\note{
+}
 \end{frame}
 
 \begin{frame}[fragile]
 \frametitle{Incorporate into repository}
 \bbi
-\item Now commit using {\tt \color{hilight} git commit}
+\item Now commit using {\tt \color{hilit} git commit}
 \ei
-\begin{semiverbatim}
+
 \begin{lstlisting}
 $ git commit -m "Initial commit of README file"
 [master (root-commit) 32c9d01] Initial commit of README file
  1 file changed, 14 insertions(+)
  create mode 100644 README
 \end{lstlisting}
-\end{semiverbatim}
 
 \bi
 \item The \texttt{-m} argument allows one to enter a message
@@ -363,13 +407,15 @@ $ git commit -m "Initial commit of README file"
 \item Use a meaningful message
 \item Message can have multiple lines, but make 1st line an overview
 \ei
+
+\note{
+}
 \end{frame}
 
 
 
 
-\begin{frame}[fragile]
-\ft{A few points on commits}
+\begin{frame}[fragile]{A few points on commits}
 \bbi
 \item Use frequent, small commits
 \item Don't get out of sync with your collaborators
@@ -380,8 +426,6 @@ $ git commit -m "Initial commit of README file"
 \item Use a {\tt .gitignore} file to indicate files to be ignored
 \ei
 
-
-\begin{semiverbatim}
 \begin{lstlisting}
 *~
 manuscript.pdf
@@ -393,14 +437,13 @@ Figs/*.pdf
 *.log
 *.out
 \end{lstlisting}
-\end{semiverbatim}
 
-
+\note{
+}
 \end{frame}
 
 
-\begin{frame}[fragile]
-\ft{Removing/moving files}
+\begin{frame}[fragile]{Removing/moving files}
 
 \vspace{24pt}
 
@@ -408,36 +451,38 @@ For files that are being tracked by git:
 
 \bigskip
 
-\hspace{1em} Use {\tt \color{hilight} git rm} instead of just {\tt rm}
+\hspace{1em} Use {\tt \color{hilit} git rm} instead of just {\tt rm}
 
-\hspace{1em} Use {\tt \color{hilight} git mv} instead of just {\tt mv}
+\hspace{1em} Use {\tt \color{hilit} git mv} instead of just {\tt mv}
 
-\begin{semiverbatim}
 \begin{lstlisting}
 $ git rm myfile
 $ git mv myfile newname
 $ git mv myfile SubDir/
 $ git commit
 \end{lstlisting}
-\end{semiverbatim}
 
+\note{
+}
 \end{frame}
 
 
 
-\frame{
-\ft{Using git on an existing project}
+\begin{frame}{Using git on an existing project}
 
 \bbi
 \item {\tt git init}
 \item Set up {\tt .gitignore} file
-\item {\tt git status} {\footnotesize \color{lolight} (did you miss any?)}
-\item {\tt git add .} {\footnotesize \color{lolight} (or name files individually)}
-\item {\tt git status} {\footnotesize \color{lolight} (did you miss any?)}
+\item {\tt git status} {\footnotesize \color{lolit} (did you miss any?)}
+\item {\tt git add .} {\footnotesize \color{lolit} (or name files individually)}
+\item {\tt git status} {\footnotesize \color{lolit} (did you miss any?)}
 \item {\tt git commit}
 \ei
 
+
+\note{
 }
+\end{frame}
 
 
 \begin{frame}
@@ -468,6 +513,9 @@ $ git commit
 \item[] {\tt git pull}
 \ei
 \ei
+
+\note{
+}
 \end{frame}
 
 
@@ -475,14 +523,13 @@ $ git commit
 
 \section{GitHub Demo}
 
-\begin{frame}[fragile]
-\ft{Getting started with GitHub}
+\begin{frame}[fragile]{Getting started with GitHub}
 \bbi
 \item Get an account
 \item Set up ssh keys
 \bi
-\item Look for files {\color{hilight} \verb|~/.ssh/id_rsa|} and {\color{hilight} \verb|~/.ssh/id_rsa.pub|}
-\item {\color{hilight} \verb|ssh-keygen |}\verb|-t rsa -C "your_email@example.com"|
+\item Look for files {\color{hilit} \verb|~/.ssh/id_rsa|} and {\color{hilit} \verb|~/.ssh/id_rsa.pub|}
+\item {\color{hilit} \verb|ssh-keygen |}\verb|-t rsa -C "your_email@example.com"|
 \item Copy contents of \verb|~/.ssh/id_rsa.pub|
 \ei
 \item Add SSH key at GitHub
@@ -494,37 +541,41 @@ $ git commit
 \ei
 \item Similar thing at BitBucket
 \ei
+
+
+\note{
+}
 \end{frame}
 
-\frame{
-\ft{Set up GitHub repository}
+\begin{frame}{Set up GitHub repository}
 
 \only<1>{
 \bbi
 \item Click the "Create a new repo" button
-\item Give it a {\color{hilight} name} and description
+\item Give it a {\color{hilit} name} and description
 \item Click the "Create repository" button
 \item Back at the command line:
   \bi
-  \item[] {\tt git remote add origin git@github.com:username/{\color{hilight} repo}}
+  \item[] {\tt git remote add origin git@github.com:username/{\color{hilit} repo}}
   \item[] {\tt git push -u origin master}
   \ei
 \ei
 }
 \only<2->{\vspace{24pt}}
-\only<2>{\figw{Images/new_repo_1.png}{0.95}}
-\only<3>{\figw{Images/new_repo_2.png}{0.95}}
+\only<2 | handout 0>{\figw{Images/new_repo_1.png}{0.95}}
+\only<3 | handout 0>{\figw{Images/new_repo_2.png}{0.95}}
 
+
+\note{
 }
+\end{frame}
 
-\begin{frame}[fragile]
-\ft{Configuration file}
+\begin{frame}[fragile]{Configuration file}
 
 \vspace{24pt}
 
 Part of a {\tt .git/config} file:
 
-\begin{semiverbatim}
 \begin{lstlisting}
 [remote "origin"]
 	url = git@github.com:kbroman/qtl.git
@@ -538,13 +589,13 @@ Part of a {\tt .git/config} file:
 	url = git://github.com/byandell/qtl.git
 	fetch = +refs/heads/*:refs/remotes/brian/*
 \end{lstlisting}
-\end{semiverbatim}
 
+\note{
+}
 \end{frame}
 
 
-\frame{
-\ft{Issues and pull requests}
+\begin{frame}{Issues and pull requests}
 \bbi
 \item Problem with or suggestion for someone's code?
 \bi
@@ -560,37 +611,41 @@ Part of a {\tt .git/config} file:
 \item Submit a Pull Request
 \ei
 \ei
+
+\note{
 }
+\end{frame}
 
 
-\begin{frame}[fragile]
-\ft{Suggest a change to a repo}
+\begin{frame}[fragile]{Suggest a change to a repo}
 \bbi
 \item Go to the repository:
 \bi
 \item[] \verb|http://github.com/someone/repo|
 \ei
-\item {\color{hilight} Fork} the repository
+\item {\color{hilit} Fork} the repository
 \bi
 \item[] Click the "Fork" button
 \ei
-\item {\color{hilight} Clone} your version of it
+\item {\color{hilit} Clone} your version of it
 \bi
 \item[] {\tt git clone git@github.com:username/repo}
 \ei
-\item Change things locally, {\tt git \color{hilight} add}, {\tt git \color{hilight} commit}
+\item Change things locally, {\tt git \color{hilit} add}, {\tt git \color{hilit} commit}
 \item Push your changes to \emph{your\/} GitHub repository
 \bi
-\item[] {\tt git \color{hilight} push}
+\item[] {\tt git \color{hilit} push}
 \ei
 \item Go to \emph{your\/} GitHub repository
-\item Click "{\color{hilight} Pull Requests}" and "New pull request"
+\item Click "{\color{hilit} Pull Requests}" and "New pull request"
 \ei
+
+\note{
+}
 \end{frame}
 
 
-\begin{frame}[fragile]
-\ft{Pulling a friend's changes}
+\begin{frame}[fragile]{Pulling a friend's changes}
 \bbi
 \item Add a connection
 \bi
@@ -605,26 +660,26 @@ Part of a {\tt .git/config} file:
 \item[] {\tt git push}
 \ei
 \ei
+
+\note{
+}
 \end{frame}
 
 
-\begin{frame}[fragile]
-\ft{Merge conflicts}
+\begin{frame}[fragile]{Merge conflicts}
 
-\vspace{24pt}
+\vspace{12pt}
 
-Sometimes after {\color{hilight} \tt git pull friend master}
+Sometimes after {\color{hilit} \tt git pull friend master}
 
-\begin{semiverbatim}
 \begin{lstlisting}
 Auto-merging README.md
 CONFLICT (content): Merge conflict in README.md
 Automatic merge failed; fix conflicts and then commit the result.
 \end{lstlisting}
-\end{semiverbatim}
 
 Inside the file you'll see:
-\begin{semiverbatim}
+
 \begin{lstlisting}
 <<<<<<< HEAD
 A line in my file.
@@ -632,45 +687,49 @@ A line in my file.
 A line in my friend's file
 >>>>>>> 031389f2cd2acde08e32f0beb084b2f7c3257fff
 \end{lstlisting}
-\end{semiverbatim}
 
 Edit, add, commit, push, submit pull request.
+
+\note{
+}
 \end{frame}
 
 
-\begin{frame}[c]
-\ft{git/GitHub with RStudio}
+\begin{frame}[c]{git/GitHub with RStudio}
 
-\only<1>{\figw{Images/RStudio01.png}{0.90}}
-\only<2>{\figh{Images/RStudio02.png}{0.60}}
-\only<3>{\figh{Images/RStudio03.png}{0.60}}
+\only<1 | handout 0>{\figw{Images/RStudio01.png}{0.90}}
+\only<2 | handout 0>{\figh{Images/RStudio02.png}{0.60}}
+\only<3 | handout 0>{\figh{Images/RStudio03.png}{0.60}}
 \only<4>{\figw{Images/RStudio04.png}{0.90}}
-\only<5>{\figw{Images/RStudio05.png}{0.90}}
-\only<6>{\figw{Images/RStudio06.png}{0.90}}
-\only<7>{\figw{Images/RStudio04.png}{0.90}}
-\only<8>{\figh{Images/RStudio07.png}{0.80}}
-\only<9>{\figh{Images/RStudio08.png}{0.80}}
-\only<10>{\figw{Images/RStudio09.png}{0.90}}
-\only<11>{
+\only<5 | handout 0>{\figw{Images/RStudio05.png}{0.90}}
+\only<6 | handout 0>{\figw{Images/RStudio06.png}{0.90}}
+\only<7 | handout 0>{\figw{Images/RStudio04.png}{0.90}}
+\only<8 | handout 0>{\figh{Images/RStudio07.png}{0.80}}
+\only<9 | handout 0>{\figh{Images/RStudio08.png}{0.80}}
+\only<10 | handout 0>{\figw{Images/RStudio09.png}{0.90}}
+\only<11 | handout 0>{
 \tt git remote add origin git@github.com:kbroman/repo
 
 git push -u origin master
 }
-\only<12>{\figw{Images/RStudio10.png}{0.90}}
-\only<13>{\figh{Images/RStudio11.png}{0.80}}
+\only<12 | handout 0>{\figw{Images/RStudio10.png}{0.90}}
+\only<13 | handout 0>{\figh{Images/RStudio11.png}{0.80}}
 
+
+\note{
+}
 \end{frame}
 
-\frame[c]{
-\ft{Delete GitHub repo}
+\begin{frame}[c]{Delete GitHub repo}
 
 \figh{Images/RStudio12.png}{0.80}
+
+\note{
 }
+\end{frame}
 
 
-\section{Learn More}
-\frame{
-\ft{}
+\begin{frame}{}
 
 \vspace{25mm}
 
@@ -683,28 +742,9 @@ made.
 
 \vspace{33mm}
 \centerline{\scriptsize \tt \color{gray} \href{http://bit.ly/stupidcode}{bit.ly/stupidcode}}
+
+\note{
 }
-
-\frame{
-\ft{Resources}
-\bbi
-\item Look at others' repositories:
-\bi
-\item Hadley Wickham (ggplot2):
-{\footnotesize \url{https://github.com/hadley}}
-\item Yihui Xie (knitr):
-{\footnotesize \url{https://github.com/yihui}}
-\ei
-
-\item Karl's tutorial:
-{\color{gray} \scriptsize \url{http://kbroman.github.io/github_tutorial}}
-
-\item Karthik Ram's slides:
-{\color{gray} \scriptsize \url{http://karthikram.github.io/git_intro}}
-
-\item Pro Git book: 
-{\color{gray} \scriptsize \url{http://git-scm.com/book}}
-\ei
-}
+\end{frame}
 
 \end{document}
