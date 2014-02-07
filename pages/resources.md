@@ -69,16 +69,18 @@ title:  Resources and further reading
 
 - [knitr](http://yihui.name/knitr/)
 - [knitr in a knutshell](http://kbroman.github.io/knitr_knutshell/)
-  (under development)
 - [R Markdown](http://www.rstudio.com/ide/docs/r_markdown)
 - [Using R Markdown with RStudio](http://www.rstudio.com/ide/docs/authoring/using_markdown)
 - [Equations in R Markdown](http://www.rstudio.com/ide/docs/authoring/using_markdown_equations)
 - [Markdown](http://daringfireball.net/projects/markdown/)
 - [MathJax](http://www.mathjax.org/)
-- [asciidoc](http://www.methods.co.nz/asciidoc/)
 - [knitrBootstrap](http://jimhester.github.io/knitrBootstrap/) for nice-looking reports (see
   [L. Collado-Torres's post](http://lcolladotor.github.io/2013/12/10/knitrBootstrap/#.UuntzXddXVQ))
-- [xtable](http://cran.r-project.org/web/packages/xtable/index.html)
+- [xtable](http://cran.r-project.org/web/packages/xtable/index.html),
+  an R package for creating LaTeX and HTML tables
+- [asciidoc](http://www.methods.co.nz/asciidoc/)
+- [knitr resources](http://kbroman.github.io/knitr_knutshell/pages/resources.html)
+
 
 ### Git, Github and Bitbucket
 
