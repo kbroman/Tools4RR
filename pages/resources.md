@@ -85,6 +85,9 @@ title:  Resources and further reading
 ### Git, Github and Bitbucket
 
 - [git/github guide](http://kbroman.github.io/github_tutorial)
+- [GitHub](http://github.com)
+- [Free 2-year "micro" account for students (?)](http://education.github.com) (allows 5
+  private repositories)
 - [Pro Git book](http://git-scm.com/book)
 - The [git documentation](http://git-scm.com/documentation)
 - The [github help pages](https://help.github.com/)
