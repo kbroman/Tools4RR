@@ -39,7 +39,7 @@ So note that the estimated slope for the regression line is
 
 To include a table, use +ascii+ in the 
 link:http://eusebe.github.io/ascii/[ascii package].
-It has a **ton** of options.
+It has a *ton* of options.
 
 //begin.rcode table, results="asis", warning=FALSE
 library(ascii)
