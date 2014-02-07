@@ -60,6 +60,9 @@ title:  Resources and further reading
 - [Evil](http://www.emacswiki.org/emacs/Evil): Vim features within emacs
 - [Vim](http://www.vim.org/)
 - [Vim Tips wiki](http://vim.wikia.com/wiki/Vim_Tips_Wiki)
+- [Vim-R-plugin](http://www.vim.org/scripts/script.php?script_id=2628)
+  \[[github](https://github.com/vim-scripts/Vim-R-plugin)\], like ESS
+  for Vim
 - Book: [Learning the vi and Vim editors](http://www.amazon.com/exec/obidos/ASIN/059652983X/7210-20)
 
 ### Knitr, Markdown, Asciidoc
