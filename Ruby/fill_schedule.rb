@@ -14,7 +14,7 @@ topic = {}
 fullline = {}
 File.open(ifile1).readlines.map do |line| 
   line.strip
-  next unless line =~ /^\*\*(.+)\*\*:\s+(.+)$/
+  next unless line =~ /^\*\*(.+)\*\*:\s+(.+)$/ or line =~ /^\s*$/
   dates.push($1)
   topic[$1] = $2
   fullline[$1] = line
