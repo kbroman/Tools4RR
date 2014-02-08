@@ -252,11 +252,11 @@ But I *do* want to show both beamer and slidify, and the use of pandoc
 
 ---
 
-#### Apr 25: Python for data/text manipulation, I
+#### Apr 25: Python for data/text manipulation
 
 ---
 
-#### May 2:  Python for data/text manipulation, II
+#### May 2:  Python Lab
 
 ---
 
