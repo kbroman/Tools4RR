@@ -46,9 +46,9 @@ tagline: Spring, 2014
 
 **Apr 18**: Knitr with LaTeX for talks and posters
 
-**Apr 25**: [Python](http://www.python.org/) I
+**Apr 25**: [Python](http://www.python.org/) for data/text manipulation
 
-**May 2**:  [Python](http://www.python.org/) II
+**May 2**:  [Python](http://www.python.org/) Laboratory
 
 **May 9**:  Software/data licenses, copyright, and human subjects/HIPPA
 
