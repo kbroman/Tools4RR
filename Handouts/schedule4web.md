@@ -37,7 +37,7 @@ tagline: Spring, 2014
 
 **Apr 25**: [Python](http://www.python.org/) for data/text manipulation
 
-**May 2**:  [Python](http://www.python.org/) Lab
+**May 2**:  [Python](http://www.python.org/) Laboratory
 
 **May 9**:  Software/data licenses, copyright, and human subjects/HIPPA
 
