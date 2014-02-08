@@ -28,9 +28,9 @@ tagline: Spring, 2014
 
 **Feb 14**: Version control with [git](http://git-scm.com/) & [github](https://github.com/)/[bitbucket](https://bitbucket.org/)
 
-**Feb 21**: Organizing projects
+**Feb 21**: [git](http://git-scm.com)/[GitHub](https://github.com) Laboratory
 
-**Feb 28**: Capturing exploratory analysis
+**Feb 28**: Organizing projects; capturing exploratory analysis
 
 **Mar 7**:  Writing clear code
 
@@ -42,13 +42,13 @@ tagline: Spring, 2014
 
 **Apr 4**:  Big jobs/simulations; caching computations
 
-**Apr 11**: Knitr with latex for papers
+**Apr 11**: Knitr with LaTeX for papers
 
-**Apr 18**: Presentations
+**Apr 18**: Knitr with LaTeX for talks and posters
 
-**Apr 25**: Posters
+**Apr 25**: [Python](http://www.python.org/) I
 
-**May 2**:  [Ruby](https://www.ruby-lang.org/en/)/[python](http://www.python.org/)/[perl](http://www.perl.org/) for data/text manipulation
+**May 2**:  [Python](http://www.python.org/) II
 
 **May 9**:  Software/data licenses, copyright, and human subjects/HIPPA
 
