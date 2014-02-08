@@ -147,7 +147,12 @@ Important principle: learn to code by looking at good code
 
 ---
 
-#### Feb 21: Organizing data analysis projects
+#### Feb 21: Git Laboratory
+
+  - Pair up and work through some git/github examples
+
+
+#### Feb 28: Organizing data analysis projects, Capturing exploratory analysis
 
 For yourself, or for you and many others...
 
@@ -169,9 +174,7 @@ For yourself, or for you and many others...
 - Complications in data files/formats -> control file with meta data
   describing that mess?
 
----
-
-#### Feb 28: Capturing exploratory analysis
+EDA: 
 
 - copy-and-paste from an R file
 - grab code from the `.Rhistory` file
@@ -234,23 +237,26 @@ Example: [tweet re function names](https://twitter.com/richierocks/status/388609
 
 #### Apr 11:  Knitr with latex for papers
 
-- including figures and tables
+- including more on figures and tables?
 
 ---
 
-#### Apr 18: Presentations
+#### Apr 18: Presentations and posters
 
 pdf over powerpoint/html: predictable (e.g., font problems)
 
 There are nice html options, but the browser differences can cause problems
 
+But I *do* want to show both beamer and slidify, and the use of pandoc
+
+
 ---
 
-#### Apr 25: Posters
+#### Apr 25: Python for data/text manipulation, I
 
 ---
 
-#### May 2:  Ruby/python/perl for data/text manipulation
+#### May 2:  Python for data/text manipulation, II
 
 ---
 
