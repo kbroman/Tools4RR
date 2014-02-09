@@ -80,6 +80,8 @@ title:  Resources and further reading
   an R package for creating LaTeX and HTML tables
 - [asciidoc](http://www.methods.co.nz/asciidoc/)
 - [knitr resources](http://kbroman.github.io/knitr_knutshell/pages/resources.html)
+- [polymode](https://github.com/vitoshka/polymode), an emacs mode that
+  handles R Markdown nicely
 
 
 ### Git, Github and Bitbucket
@@ -97,6 +99,7 @@ title:  Resources and further reading
 - [Git tutorials on github](http://learn.github.com/); you can even
   [try it out](http://try.github.io/levels/1/challenges/1)
 - [git - the simple guide](http://rogerdudler.github.io/git-guide/)
+- [magit](http://magit.github.io/), an emacs mode for git
 
 
 ### Organizing projects and data
