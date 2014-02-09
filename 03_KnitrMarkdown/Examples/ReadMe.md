@@ -7,7 +7,7 @@ combining R code and
 ability to use [MathJax](http://www.mathjax.org/) to include
 [LaTeX](http://www.latex-project.org/)-type code for equations.
 
-`example2.asciidoc` is a simple example of a
+`example2.Rasciidoc` is a simple example of a
 file combining R and [asciidoc](http://www.methods.co.nz/asciidoc/).
 AsciiDoc is more complicated (but has more features) than Markdown.
 (Note that I've decided not to try to cover AsciiDoc in this course;

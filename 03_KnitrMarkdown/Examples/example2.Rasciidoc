@@ -43,7 +43,7 @@ So note that the estimated slope for the regression line is
 
 == Tables ==
 
-To include a table, use +ascii+ in the 
+To include a table, use the +ascii+ function in the 
 link:http://eusebe.github.io/ascii/[ascii package].
 It has a *ton* of options.
 
