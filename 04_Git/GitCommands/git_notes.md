@@ -116,6 +116,8 @@ only on origin:
 ### Bitbucket
 
 I had some trouble setting up ssh in Bitbucket; here's what seemed to work.
+But it was a _long_ time ago, so I don't really know what any of this
+means.
 
 Have the ssh agent running:
 
