@@ -109,9 +109,22 @@
 \hfill {\color{lolit} \scriptsize
 Slides prepared with \href{http://pages.cs.wisc.edu/~syounkin/}{Sam Younkin}}
 
-\note{People are more resistant to version control than to any other
-  tool.
+\note{Version control is not strictly necessary for reproducible
+  research, and it's admittedly a lot of work (to learn and to use) in
+  the short term, but the long term benefits are enormous.
 
+  The advantages are: you'll save the entire history of changes to a
+  project, you can go back to any point in time (and see what has
+  changed between any two points in time), you don't have to worry
+  about breaking things that work, and you can easily merge changes
+  from multiple people.
+
+  I now use version control for basically everything: software, data
+  analysis projects, papers, talks, and web sites.
+
+  People are more resistant to version control than to any other
+  tool, because of the short-term effort and the lack of recognition
+  of the long-term benefits.
 }
 } }
 
@@ -125,7 +138,7 @@ Slides prepared with \href{http://pages.cs.wisc.edu/~syounkin/}{Sam Younkin}}
 \color{gray} \tiny
 \centerline{\url{http://www.phdcomics.com/comics/archive.php?comicid=1531}}
 
-\note{
+\note{This is typical. And never use ``final'' in a file name.
 }
 \end{frame}
 
@@ -152,7 +165,13 @@ Slides prepared with \href{http://pages.cs.wisc.edu/~syounkin/}{Sam Younkin}}
 }
 \ei
 
-\note{
+\note{There are three methods for keeping track of changes: don't keep
+  track, periodically zip/tar a directory with a version number, or
+  use formal version control.
+  
+  Imagine that some aspect of your code has stopped working at some
+  point. You know it was working in the past, but it's not working
+  now. How easy is it to figure out where the problem was introduced?
 }
 \end{frame}
 
@@ -164,7 +183,17 @@ Slides prepared with \href{http://pages.cs.wisc.edu/~syounkin/}{Sam Younkin}}
 \item Merging changes from multiple people
 \ei
 
-\note{
+\note{With formal version control, you'll save the entire history of
+  changes to the project, and you can easily go back to any
+  point in the history of the project, to see how things were behaving
+  at that point.
+
+  You'll be able to make modifications (e.g., to try out a new
+  feature) without worrying about breaking things that work.
+
+  And version control is especially useful for collaboration. If a
+  collaborator has made a bunch of changes, it'll be much easier to
+  see what was changed and to incorporate those changes.
 }
 \end{frame}
 
@@ -177,7 +206,8 @@ Slides prepared with \href{http://pages.cs.wisc.edu/~syounkin/}{Sam Younkin}}
 \figh{Images/example_repo_zoom}{0.55}
 }
 
-\note{
+\note{This is a snapshot of a repository on GitHub: a set of files and
+  subdirectories with more files. You can easily explore the contents.
 }
 \end{frame}
 
@@ -186,14 +216,16 @@ Slides prepared with \href{http://pages.cs.wisc.edu/~syounkin/}{Sam Younkin}}
 
 \figh{Images/example_history}{0.80}
 
-\note{
+\note{This is a short view of the history of changes to the
+  repository: a series of ``commits.''
 }
 \end{frame}
 
 \begin{frame}[c]{Example commit}
 
 \figh{Images/example_commit}{0.80}
-\note{
+\note{This is an example of one of those commits, highlighting what
+  lines were added and what lines were removed.
 }
 \end{frame}
 
@@ -217,7 +249,12 @@ Slides prepared with \href{http://pages.cs.wisc.edu/~syounkin/}{Sam Younkin}}
 \ei
 \ei
 
-\note{
+\note{We're going to focus on git, the version control system
+  developed by Linus Torvalds for managing the source code for Linux.
+
+  You can track any content, but it's mostly for tracking plain text
+  files, but that can be most anything (source code, data analysis
+  projects, manuscripts, websites, presentations).
 }
 \end{frame}
 
@@ -230,7 +267,9 @@ Slides prepared with \href{http://pages.cs.wisc.edu/~syounkin/}{Sam Younkin}}
 \item Everyone's using it
 \ei
 
-\note{
+\note{Git is fast, you can use it locally on your own computer, it's
+  amazingly good at merging changes, and there are lots of people
+  using it.
 }
 \end{frame}
 
@@ -253,7 +292,23 @@ Slides prepared with \href{http://pages.cs.wisc.edu/~syounkin/}{Sam Younkin}}
 \ei
 \ei
 
-\note{
+\note{GitHub is a website that hosts git repositories, with a nice
+  graphical user interface for exploring git repositories.
+
+  Source code on GitHub is \emph{really\/} open source: anyone can
+  study it and grab it.
+
+  GitHub is sort of like Facebook for programmers: you can see what
+  people are up to, and easily collaborate on shared projects.
+
+  It's free to have public repositories on GitHub; if you want private
+  repositories, you generally have to pay, but I understand that
+  students can get a two-year account that allows 5 private
+  repositories.
+
+  Bitbucket.org is an alternative; it allows unlimited private
+  repositories. I'm cheap, so I use Bitbucket for my private
+  repositories.
 }
 \end{frame}
 
@@ -278,7 +333,13 @@ Slides prepared with \href{http://pages.cs.wisc.edu/~syounkin/}{Sam Younkin}}
 \ei
 \ei
 
-\note{
+\note{GitHub takes care of the server aspects of git, and you get a
+  great GUI for exploring your repositories.
+
+  GitHub is great for browsing others' code, for learning; you don't
+  even have to download it to your computer. And it's really easy to
+  contribute to others' code (e.g., to report typos in their
+  documentation).
 }
 \end{frame}
 
@@ -323,7 +384,20 @@ Slides prepared with \href{http://pages.cs.wisc.edu/~syounkin/}{Sam Younkin}}
 \ei }
 \ei
 
-\note{
+\note{These are the basic git commands you'll use day-to-day.
+
+  {\tt git status} to see the current state of things, 
+  {\tt git diff} to see what's changed, and {\tt git log} to look at
+  the history.
+
+  After you've made some changes, you'll use {\tt git add} to indicate
+  which changes you want to commit to, and {\tt git commit} to commit
+  to them (to add them to the repository).
+
+  You use {\tt git push} to push changes to GitHub, and {\tt git pull}
+  (or {\tt git fetch} and {\tt git merge}) to pull changes from a
+  collaborator's repository, or if you're synchronizing a repository
+  between two computers.
 }
 \end{frame}
 
@@ -348,7 +422,9 @@ $ git init
 Initialized empty Git repository in ~/Docs/Talks/Graphs/.git/
 \end{lstlisting}
 
-\note{
+\note{If you're starting a new, fresh project, you make a directory
+  for it and go into that directory, and then you type {\tt git
+    init}. This creates a {\tt .git} subdirectory.
 }
 \end{frame}
 
@@ -374,7 +450,8 @@ A recent PDF is
 http://www.biostat.wisc.edu/~kbroman/talks/graphs2013.pdf).
 \end{lstlisting}
 
-\note{
+\note{Start creating a bit of content, such as a Readme file. You can
+  use Markdown to make it look nicer.
 }
 \end{frame}
 
@@ -389,7 +466,9 @@ http://www.biostat.wisc.edu/~kbroman/talks/graphs2013.pdf).
 $ git add README.md
 \end{lstlisting}
 
-\note{
+\note{Use {\tt git add} to tell git that you want to start keeping
+  track of this file.  This is called ``staging,'' or you say the file
+  is ``staged.''
 }
 \end{frame}
 
@@ -413,7 +492,7 @@ $ git commit -m "Initial commit of README.md file"
 \item Message can have multiple lines, but make 1st line an overview
 \ei
 
-\note{
+\note{Use {\tt git commit} to add the file to the repository.
 }
 \end{frame}
 
@@ -432,7 +511,14 @@ $ git commit -m "Initial commit of README.md file"
 \ei
 
 
-\note{
+\note{I recommend using git with all of your current projects.
+  Start with one.
+
+  Go into the directory and type {\tt git init}. Then use {\tt git
+    add} repeatedly, to indicate which files you want to add to the
+  repository.
+
+  Then use {\tt git commit} to make an initial commit.
 }
 \end{frame}
 
@@ -459,7 +545,13 @@ $ git mv myfile SubDir/
 $ git commit
 \end{lstlisting}
 
-\note{
+\note{For files that are being tracked by git: If you want to change
+  the name of a file, or if you want to move it to a subdirectory, you
+  can't just use {\tt mv}, you need to use {\tt git mv}.
+
+  If you want to remove a file from the project, don't use just {\tt
+    rm}, use {\tt git rm}. Note that the file won't be
+  \emph{completely\/} removed; it'll still be within the history.
 }
 \end{frame}
 
