@@ -284,10 +284,10 @@ Slides prepared with \href{http://pages.cs.wisc.edu/~syounkin/}{Sam Younkin}}
 
 
 
-\section{git Demo}
-
 \begin{frame}
 \frametitle{Basic use}
+
+\vspace{-18pt}
 
 \bbi
 \item Change some files
@@ -310,10 +310,16 @@ Slides prepared with \href{http://pages.cs.wisc.edu/~syounkin/}{Sam Younkin}}
 \bi
 \item[] {\tt git push}
 \ei }
-\onslide<3>{
+\onslide<3->{
 \item Pull changes from your collaborator
 \bi
+\only<3>{
 \item[] {\tt git pull}
+}
+\onslide<4>{
+\item[] {\tt git fetch}
+\item[] {\tt git merge}
+}
 \ei }
 \ei
 
@@ -324,14 +330,14 @@ Slides prepared with \href{http://pages.cs.wisc.edu/~syounkin/}{Sam Younkin}}
 \begin{frame}[fragile]
 \frametitle{Initialize repository}
 \bbi
-\item Create a working directory
+\item Create {\lolit (and {\tt cd} to)} a working directory
 \bi
-\item For example, \verb|~/GitPrimer|
+\item For example, \verb|~/Docs/Talks/Graphs|
 \ei
 \item Initialize it to be a git repository
 \bi
 \item {\tt \color{hilit} git init}
-\item Creates subdirectory \verb|~/GitPrimer/.git|
+\item Creates subdirectory \verb|~/Docs/Talks/Graphs/.git|
 \ei
 \ei
 
@@ -355,7 +361,6 @@ Initialized empty Git repository in ~/Docs/Talks/Graphs/.git/
 \bigskip 
 \begin{lstlisting}
 ## Talk on &ldquo;How to display data badly&rdquo;
-
 
 These are slides for a talk that I give as often as possible,
 because it's fun.
@@ -381,7 +386,7 @@ http://www.biostat.wisc.edu/~kbroman/talks/graphs2013.pdf).
 \ei
 
 \begin{lstlisting}
-$ git add README
+$ git add README.md
 \end{lstlisting}
 
 \note{
@@ -395,10 +400,10 @@ $ git add README
 \ei
 
 \begin{lstlisting}
-$ git commit -m "Initial commit of README file"
-[master (root-commit) 32c9d01] Initial commit of README file
+$ git commit -m "Initial commit of README.md file"
+[master (root-commit) 32c9d01] Initial commit of README.md file
  1 file changed, 14 insertions(+)
- create mode 100644 README
+ create mode 100644 README.md
 \end{lstlisting}
 
 \bi
@@ -407,6 +412,52 @@ $ git commit -m "Initial commit of README file"
 \item Use a meaningful message
 \item Message can have multiple lines, but make 1st line an overview
 \ei
+
+\note{
+}
+\end{frame}
+
+
+
+
+\begin{frame}{Using git on an existing project}
+
+\bbi
+\item {\tt git init}
+\item Set up {\tt .gitignore} file
+\item {\tt git status} {\footnotesize \color{lolit} (did you miss any?)}
+\item {\tt git add .} {\footnotesize \color{lolit} (or name files individually)}
+\item {\tt git status} {\footnotesize \color{lolit} (did you miss any?)}
+\item {\tt git commit}
+\ei
+
+
+\note{
+}
+\end{frame}
+
+
+
+\begin{frame}[fragile]{Removing/moving files}
+
+\vspace{24pt}
+
+For files that are being tracked by git:
+
+\bigskip
+
+\hspace{1em} Use {\tt \color{hilit} git rm} instead of just {\tt rm}
+
+\hspace{1em} Use {\tt \color{hilit} git mv} instead of just {\tt mv}
+
+\bigskip
+
+\begin{lstlisting}
+$ git rm myfile
+$ git mv myfile newname
+$ git mv myfile SubDir/
+$ git commit
+\end{lstlisting}
 
 \note{
 }
@@ -443,85 +494,6 @@ Figs/*.pdf
 \end{frame}
 
 
-\begin{frame}[fragile]{Removing/moving files}
-
-\vspace{24pt}
-
-For files that are being tracked by git:
-
-\bigskip
-
-\hspace{1em} Use {\tt \color{hilit} git rm} instead of just {\tt rm}
-
-\hspace{1em} Use {\tt \color{hilit} git mv} instead of just {\tt mv}
-
-\begin{lstlisting}
-$ git rm myfile
-$ git mv myfile newname
-$ git mv myfile SubDir/
-$ git commit
-\end{lstlisting}
-
-\note{
-}
-\end{frame}
-
-
-
-\begin{frame}{Using git on an existing project}
-
-\bbi
-\item {\tt git init}
-\item Set up {\tt .gitignore} file
-\item {\tt git status} {\footnotesize \color{lolit} (did you miss any?)}
-\item {\tt git add .} {\footnotesize \color{lolit} (or name files individually)}
-\item {\tt git status} {\footnotesize \color{lolit} (did you miss any?)}
-\item {\tt git commit}
-\ei
-
-
-\note{
-}
-\end{frame}
-
-
-\begin{frame}
-\frametitle{Basic use}
-
-\bbi
-\item Change some files
-\item See what you've changed
-\bi
-\item[] {\tt git status}
-\item[] {\tt git diff}
-\item[] {\tt git log}
-\ei
-\item Indicate what changes to save
-\bi
-\item[] {\tt git add}
-\ei
-\item Commit to those changes
-\bi
-\item[] {\tt git commit}
-\ei
-\item Push the changes to GitHub
-\bi
-\item[] {\tt git push}
-\ei
-\item Pull changes from your collaborator
-\bi
-\item[] {\tt git pull}
-\ei
-\ei
-
-\note{
-}
-\end{frame}
-
-
-
-
-\section{GitHub Demo}
 
 \begin{frame}[fragile]{Getting started with GitHub}
 \bbi
@@ -695,26 +667,19 @@ Edit, add, commit, push, submit pull request.
 \end{frame}
 
 
-\begin{frame}[c]{git/GitHub with RStudio}
+\begin{frame}{git/GitHub with RStudio}
 
-\only<1 | handout 0>{\figw{Images/RStudio01.png}{0.90}}
-\only<2 | handout 0>{\figh{Images/RStudio02.png}{0.60}}
-\only<3 | handout 0>{\figh{Images/RStudio03.png}{0.60}}
-\only<4>{\figw{Images/RStudio04.png}{0.90}}
-\only<5 | handout 0>{\figw{Images/RStudio05.png}{0.90}}
-\only<6 | handout 0>{\figw{Images/RStudio06.png}{0.90}}
-\only<7 | handout 0>{\figw{Images/RStudio04.png}{0.90}}
-\only<8 | handout 0>{\figh{Images/RStudio07.png}{0.80}}
-\only<9 | handout 0>{\figh{Images/RStudio08.png}{0.80}}
-\only<10 | handout 0>{\figw{Images/RStudio09.png}{0.90}}
-\only<11 | handout 0>{
-\tt git remote add origin git@github.com:kbroman/repo
+\vspace{24pt}
 
-git push -u origin master
-}
-\only<12 | handout 0>{\figw{Images/RStudio10.png}{0.90}}
-\only<13 | handout 0>{\figh{Images/RStudio11.png}{0.80}}
+\figw{Images/RStudio04.png}{0.90}
 
+\vspace{64pt}
+
+\hfill 
+{\small \lolit 
+See \href{http://www.biostat.wisc.edu/~kbroman/presentations/GitPrimer.pdf}{GitPrimer.pdf}
+or
+\href{http://www.rstudio.com/ide/docs/version_control/overview}{RStudio page}}
 
 \note{
 }
