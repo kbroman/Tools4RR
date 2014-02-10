@@ -100,6 +100,7 @@ title:  Resources and further reading
   [try it out](http://try.github.io/levels/1/challenges/1)
 - [git - the simple guide](http://rogerdudler.github.io/git-guide/)
 - [magit](http://magit.github.io/), an emacs mode for git
+- [Tutorial on magit](http://www.masteringemacs.org/articles/2013/12/06/introduction-magit-emacs-mode-git/)
 
 
 ### Organizing projects and data
