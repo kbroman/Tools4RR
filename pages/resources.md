@@ -106,11 +106,12 @@ title:  Resources and further reading
 
 ### Organizing projects and data
 
-- Hadley Wickham [paper on Tidy Data](http://vita.had.co.nz/papers/tidy-data.pdf)
+- [Hadley Wickham]((had.co.nz)'s [paper on Tidy Data](http://vita.had.co.nz/papers/tidy-data.pdf)
 
 ### Writing clear code
 
-[Style guide](http://adv-r.had.co.nz/Style.html) in
+- [Style guide](http://adv-r.had.co.nz/Style.html) in [Hadley Wickham]((had.co.nz)'s
+  [Advanced R Programming book](http://adv-r.had.co.nz/)
 
 ### R packages
 
