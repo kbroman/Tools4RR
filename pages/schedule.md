@@ -27,6 +27,11 @@ tagline: Spring, 2014
 
 
 **Feb 14**: Version control with [git](http://git-scm.com/) & [github](https://github.com/)/[bitbucket](https://bitbucket.org/)
+    \[
+    [S](../assets/lectures/04_git.pdf) |
+    [N](../assets/lectures/04_git_withnotes.pdf) |
+    [C](https://github.com/kbroman/Tools4RR/tree/master/04_Git/GitCommands)
+    \]
 
 **Feb 21**: [git](http://git-scm.com)/[GitHub](https://github.com) Laboratory
 
