@@ -43,15 +43,29 @@ Most of the time, you'll be typing:
 You can use `git commit -a` to commit all changes to files that are
 currently being tracked (skipping the `git add`).
 
+Get a summary of previous commits with `git log`:
+
+    git log
+    git log -2                            # [last 2 commits]
+    git log -2 -p                         # [-p shows what's changed]
+    git log -2 --stat                     # [no. lines added/removed]
+    git log --pretty=oneline              # [one-line summary]
+    git log --pretty=format:"%h - %an, %ar : %s"
+
 Diff is really useful for seeing what you've changed, and to see
 what's changed between different versions.  You can refer to commits
-by a tag (see next section), by the initial part of the "hash", or by
-branch.
+by a tag (see next section), by the initial part of the "SHA hash", or by
+branch. You can look at just changes in a given file. If you use
+[GitX](http://gitx.frim.nl/) for Mac, you can pipe the `git diff`
+output to gitx.
 
     git diff  
+    git diff 7d9fbc
+    git diff 7d9fbc..9952b
+    git diff 1.16-6
     git diff 1.16-6 R/est.map.R
     git diff 1.16-6 R/est.map.R | gitx
-    git diff --name-status master..devel  # 
+    git diff --name-status master..devel
 
 ### Tagging
 
