@@ -61,11 +61,11 @@ output to gitx.
 
     git diff  
     git diff 7d9fbc
-    git diff 7d9fbc..9952b
+    git diff 7d9fbc 9952b
     git diff 1.16-6
     git diff 1.16-6 R/est.map.R
     git diff 1.16-6 R/est.map.R | gitx
-    git diff --name-status master..devel
+    git diff --stat master devel
 
 ### Tagging
 
