@@ -3,3 +3,25 @@
 ul,ol {
     margin: 0 0 0 35px;
 }
+
+a
+{
+  color: purple;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+a:hover
+{
+  color: purple;
+  background: #CAFFFF;
+}
+
+p {
+  max-width: 660px;
+}
+
+pre {
+  max-width: 600px;
+}
+
