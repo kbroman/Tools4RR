@@ -1,0 +1,113 @@
+\documentclass[12pt,t]{beamer}
+\usepackage{graphicx}
+\setbeameroption{hide notes}
+\setbeamertemplate{note page}[plain]
+\usepackage{listings}
+
+% set up listing environment
+\lstset{language=bash,
+        basicstyle=\ttfamily\scriptsize,
+        frame=single,
+        commentstyle=,
+        backgroundcolor=\color{darkgray},
+        showspaces=false,
+        showstringspaces=false
+        }
+
+% get rid of junk
+\usetheme{default}
+\beamertemplatenavigationsymbolsempty
+\hypersetup{pdfpagemode=UseNone} % don't show bookmarks on initial view
+
+
+% font
+\usepackage{fontspec}
+\setsansfont{TeX Gyre Heros}
+\setbeamerfont{note page}{family*=pplx,size=\footnotesize} % Palatino for notes
+% "TeX Gyre Heros can be used as a replacement for Helvetica"
+% In Unix, unzip the following into ~/.fonts
+% In Mac, unzip it, double-click the .otf files, and install using "FontBook"
+%   http://www.gust.org.pl/projects/e-foundry/tex-gyre/heros/qhv2.004otf.zip
+
+% named colors
+\definecolor{offwhite}{RGB}{249,242,215}
+\definecolor{foreground}{RGB}{255,255,255}
+\definecolor{background}{RGB}{24,24,24}
+\definecolor{title}{RGB}{107,174,214}
+\definecolor{gray}{RGB}{155,155,155}
+\definecolor{subtitle}{RGB}{102,255,204}
+\definecolor{hilit}{RGB}{102,255,204}
+\definecolor{vhilit}{RGB}{255,111,207}
+\definecolor{nhilit}{RGB}{128,0,128}  % hilit color in notes
+\definecolor{nvhilit}{RGB}{255,0,128} % vhilit for notes
+\definecolor{lolit}{RGB}{155,155,155}
+
+\newcommand{\hilit}{\color{hilit}}
+\newcommand{\vhilit}{\color{vhilit}}
+\newcommand{\nhilit}{\color{nhilit}}
+\newcommand{\nvhilit}{\color{nvhilit}}
+\newcommand{\lolit}{\color{lolit}}
+
+% use those colors
+\setbeamercolor{titlelike}{fg=title}
+\setbeamercolor{subtitle}{fg=subtitle}
+\setbeamercolor{institute}{fg=gray}
+\setbeamercolor{normal text}{fg=foreground,bg=background}
+\setbeamercolor{item}{fg=foreground} % color of bullets
+\setbeamercolor{subitem}{fg=gray}
+\setbeamercolor{itemize/enumerate subbody}{fg=gray}
+\setbeamertemplate{itemize subitem}{{\textendash}}
+\setbeamerfont{itemize/enumerate subbody}{size=\footnotesize}
+\setbeamerfont{itemize/enumerate subitem}{size=\footnotesize}
+
+% page number
+\setbeamertemplate{footline}{%
+    \raisebox{5pt}{\makebox[\paperwidth]{\hfill\makebox[20pt]{\lolit
+          \scriptsize\insertframenumber}}}\hspace*{5pt}}
+
+% add a bit of space at the top of the notes page
+\addtobeamertemplate{note page}{\setlength{\parskip}{12pt}}
+
+% default link color
+\hypersetup{colorlinks, urlcolor={hilit}}
+
+% a few macros
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\bbi}{\vspace{24pt} \begin{itemize} \itemsep8pt}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\ig}{\includegraphics}
+\newcommand{\subt}[1]{{\footnotesize \color{subtitle} {#1}}}
+\newcommand{\ttsm}{\tt \small}
+\newcommand{\figh}[2]{\centerline{\includegraphics[height=#2\textheight]{#1}}}
+\newcommand{\figw}[2]{\centerline{\includegraphics[width=#2\textwidth]{#1}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% end of header
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Organizing projects and EDA}
+\subtitle{}
+\author{\href{http://www.biostat.wisc.edu/~kbroman}{Karl Broman}}
+\institute{Biostatistics \& Medical Informatics, UW{\textendash}Madison}
+\date{\href{http://www.biostat.wisc.edu/~kbroman}{\tt \scriptsize \color{white} biostat.wisc.edu/{\textasciitilde}kbroman}
+\\[-4pt]
+\href{http://github.com/kbroman}{\tt \scriptsize \color{white} github.com/kbroman}
+\\[-4pt]
+\href{https://twitter.com/kwbroman}{\tt \scriptsize \color{white} @kwbroman}
+\\[-4pt]
+{\scriptsize Course web: \href{http://bit.ly/tools4rr}{\tt bit.ly/tools4rr}}
+}
+
+\begin{document}
+
+{
+\setbeamertemplate{footline}{} % no page number here
+\frame{
+  \titlepage
+
+\note{
+}
+} }
+
+
+\end{document}
