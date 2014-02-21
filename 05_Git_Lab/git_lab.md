@@ -59,6 +59,9 @@ We'll work in pairs: **User A** and **User B**
   (`http://github.com/[userB]/[repo]`)
   - Click "Pull requests"
   - Click "New pull request"
+  - Click "Create pull request"
+  - Optionally add a comment
+  - Click "Send pull request"
 
 ### User A
 
@@ -70,15 +73,7 @@ We'll work in pairs: **User A** and **User B**
 
         git fetch [userB]
 
-- You'll see their repo as a hidden branch
-
-        git branch -a
-
-- Checkout their version of the repo
-
-        git checkout remotes/[userB]/master
-
-- Turn it into a local branch
+- Checkout their version of the repo as a local branch
 
         git checkout -b [userB] [userB]/master
 
@@ -105,7 +100,8 @@ We'll work in pairs: **User A** and **User B**
 
 ### User B
 
-- Add a connection to User A's repo
+- Add a connection to User A's repo; the "main" repository is often
+  called "`upstream`".
 
         git remote add upstream git://github.com/[userA]/[repo]
 
@@ -113,9 +109,8 @@ We'll work in pairs: **User A** and **User B**
 
         git fetch upstream
 
-- Check it out, and make it a branch
+- Check it out as a local branch
 
-        git checkout remotes/upstream/master
         git checkout -b upstream upstream/master
 
 - Test things
@@ -133,13 +128,10 @@ We'll work in pairs: **User A** and **User B**
 
 ### User B
 
-- Fetch User A's change
-
-        git fetch upstream
-
-- Checkout that branch and note the change
+- Pull User A's change
 
         git checkout upstream
+        git pull
 
 - Go back to your master branch and merge the change from User A.
 
@@ -154,6 +146,14 @@ We'll work in pairs: **User A** and **User B**
 
 - Fetch User A's repo
 
+        git checkout [userA]
+        git pull
+
 - Merge into your master branch
 
+        git checkout master
+        git merge [userA]
+
 - Push back to github
+
+        git push
