@@ -100,18 +100,17 @@ We'll work in pairs: **User A** and **User B**
 
 ### User B
 
-- Add a connection to User A's repo; the "main" repository is often
-  called "`upstream`".
+- Add a connection to User A's repo
 
-        git remote add upstream git://github.com/[userA]/[repo]
+        git remote add userA git://github.com/[userA]/[repo]
 
 - Fetch User A's latest
 
-        git fetch upstream
+        git fetch userA
 
 - Check it out as a local branch
 
-        git checkout -b upstream upstream/master
+        git checkout -b userA userA/master
 
 - Test things
 
@@ -119,7 +118,7 @@ We'll work in pairs: **User A** and **User B**
   github.
 
         git checkout master
-        git merge upstream
+        git merge userA
         git push
 
 ### Users A and B
@@ -130,13 +129,13 @@ We'll work in pairs: **User A** and **User B**
 
 - Pull User A's change
 
-        git checkout upstream
+        git checkout userA
         git pull
 
 - Go back to your master branch and merge the change from User A.
 
         git checkout master
-        git merge upstream
+        git merge userA
 
 - Fix the merge conflict; then `add`, `commit`, `push`.
 
