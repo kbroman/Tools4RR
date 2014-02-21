@@ -30,7 +30,7 @@ tagline: Spring, 2014
     \[
     [S](../assets/lectures/04_git.pdf) |
     [N](../assets/lectures/04_git_withnotes.pdf) |
-    [C](https://github.com/kbroman/Tools4RR/tree/master/04_Git/GitCommands)
+    [C](https://github.com/kbroman/Tools4RR/tree/master/04_Git/GitCommands/git_notes.md)
     \]
 
 **Feb 21**: [git](http://git-scm.com)/[GitHub](https://github.com) Laboratory
