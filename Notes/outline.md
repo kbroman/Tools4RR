@@ -209,6 +209,7 @@ Example: [tweet re function names](https://twitter.com/richierocks/status/388609
 
  - Assemble related code into a package, with help files
  - Consider `package.skeleton()` and `create()` in `devtools`
+ - Use [Roxygen2](https://github.com/klutometis/roxygen) for in-source documentation
  - Look at others' packages
  - Write a package for your own miscellaneous tools
  - [Jeff Leek on developing R packages](https://github.com/jtleek/rpackages)
