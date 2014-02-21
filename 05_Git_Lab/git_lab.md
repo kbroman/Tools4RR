@@ -143,15 +143,15 @@ We'll work in pairs: **User A** and **User B**
 
 ### User A
 
-- Fetch User A's repo
+- Fetch User B's repo
 
-        git checkout [userA]
+        git checkout [userB]
         git pull
 
 - Merge into your master branch
 
         git checkout master
-        git merge [userA]
+        git merge [userB]
 
 - Push back to github
 
