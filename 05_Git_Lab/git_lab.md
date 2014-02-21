@@ -9,39 +9,29 @@ We'll work in pairs: **User A** and **User B**
 
 - Set up a new repository, locally
 
-  ```
-  mkdir [directory]
-  cd [directory]
-  git init
-  ```
+        mkdir [directory]
+        cd [directory]
+        git init
        
 - Create or copy over a file or two and add them to the repository.
  
-  ```
-  [create/copy files]
-  git add [filenames]
-  git commit
-  ```
+        [create/copy files]
+        git add [filenames]
+        git commit
        
 - Go to your GitHub account and create a new repository
  
 - Connect and push your local repository to GitHub
  
-  ```
-  git remote add origin git@github.com:[userA]/[repo]
-  ```
+        git remote add origin git@github.com:[userA]/[repo]
        
   or
    
-  ```
-  git remote add origin https://github.com/[userA]/[repo]
-  ```
+        git remote add origin https://github.com/[userA]/[repo]
        
   add then
    
-  ```
-  git push -u origin master
-  ```
+        git push -u origin master
        
 #### User B
 
@@ -49,29 +39,21 @@ We'll work in pairs: **User A** and **User B**
  
 - Clone _your_ version of that repository locally
  
-  ```
-  git clone git@github.com:[userB]/[repo]
-  ```
+        git clone git@github.com:[userB]/[repo]
        
   or
    
-  ```
-  git clone https://github.com/[userB]/[repo]
-  ```
+        git clone https://github.com/[userB]/[repo]
        
 - Change a file, and another file
  
-  ```
-  [change/copy files]
-  git add [filenames]
-  git commit
-  ```
+        [change/copy files]
+        git add [filenames]
+        git commit
        
 - Push the changes to GitHub
  
-  ```
-  git push
-  ```
+        git push
        
 - Make a pull request on GitHub       
 
