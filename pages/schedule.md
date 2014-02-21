@@ -34,6 +34,9 @@ tagline: Spring, 2014
     \]
 
 **Feb 21**: [git](http://git-scm.com)/[GitHub](https://github.com) Laboratory
+    \[
+    [C](https://github.com/kbroman/Tools4RR/blob/master/05_Git_Lab/git_lab.md)
+    \]
 
 **Feb 28**: Organizing projects; capturing exploratory analysis
 
