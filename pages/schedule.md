@@ -42,7 +42,7 @@ tagline: Spring, 2014
 
 **Mar 7**:  Writing clear code
 
-**Mar 14**: Writing [R](http://www.r-project.org) packages; [roxygen2](https://github.com/yihui/roxygen2)
+**Mar 14**: Writing [R](http://www.r-project.org) packages; [roxygen2](https://github.com/klutometis/roxygen)
 
 **Mar 21**: **No class (Spring break)**
 
