@@ -151,6 +151,7 @@ Important principle: learn to code by looking at good code
 
   - Pair up and work through some git/github examples
 
+---
 
 #### Feb 28: Organizing data analysis projects, Capturing exploratory analysis
 
@@ -223,9 +224,10 @@ Example: [tweet re function names](https://twitter.com/richierocks/status/388609
 
  - testthat package
  - [Hadley Wickham's paper](http://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf)
- - R CMD CHECK
+ - R CMD check --as-cran
  - [Testing](http://adv-r.had.co.nz/Testing.html) in [Hadley Wickham](http://had.co.nz)'s
    [Advanced R book](http://adv-r.had.co.nz)
+ - Titus Brown: [Automated testing and research software](http://ivory.idyll.org/blog/automated-testing-and-research-software.html)
 
 ---
 
@@ -249,6 +251,8 @@ pdf over powerpoint/html: predictable (e.g., font problems)
 There are nice html options, but the browser differences can cause problems
 
 But I *do* want to show both beamer and slidify, and the use of pandoc
+
+[Benomics on slidify](http://benjaminlmoore.wordpress.com/2014/02/24/slidify-presentations-in-r-markdown/)
 
 
 ---
