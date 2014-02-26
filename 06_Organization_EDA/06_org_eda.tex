@@ -153,7 +153,7 @@ Projects/AlanAttie/
         /Tar/
 \end{lstlisting}
 
-\note{This is basically how I organize my harddrive. You want it to be
+\note{This is basically how I organize my hard drive. You want it to be
   clear where things are. You shouldn't be searching for stuff.
 
   In my {\tt Projects/} directory, I have a {\tt Tar/} directory with
@@ -537,15 +537,22 @@ Data4Tram/            PepIns_2012-02-09/     transeQTL4Lude/
 \item Where to put intermediate/processed data?
 \item Where to indicate the code that created those processed data files?
 \item How to divvy up tasks and know who did what?
+\ei
+
+\vspace{12pt}
+
+\bi
 \item Need to agree on directory structure and file naming conventions
-\item Consider symbolic links for shared data files/directories
+\item Consider symbolic links for shared data directories
 \bi
 \item[] {\tt ln -s /z/Proj/blah}
 \item[] {\tt ln -s /z/Proj/blah my\_blah}
 \ei
 \ei
 
-\note{Ideally, everything with git/GitHub.
+\note{Ideally, everything synchronized with git/GitHub.
+
+  The keys: planning and regular communication
 
   Symbolic links are also called ``soft links.'' It's just like a file
   shortcut in Windows.
@@ -561,9 +568,28 @@ Data4Tram/            PepIns_2012-02-09/     transeQTL4Lude/
 
 \vspace{24pt}
 
+\only<2|handout 0>{
 
-\note{Use git yourself, and copy over your stuff to a common
-  spot...preferably an automated system for the copying-over.
+\vspace*{48pt}
+
+\centerline{Um\dots}
+}
+
+\only<3|handout>{
+\bi
+\item Use git yourself
+\item Copy files to/from some shared space
+  \bi
+  \item Ideally, in an automated way
+  \ei
+\item Commit {\vhilit their} changes.
+\ei
+}
+
+\note{Life would be easier if all of our analysis collaborators
+  adopted git.
+
+Teach them how?!
 }
 \end{frame}
 
