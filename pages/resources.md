@@ -106,17 +106,17 @@ title:  Resources and further reading
 
 ### Organizing projects and data
 
-- [Hadley Wickham]((had.co.nz)'s [paper on Tidy Data](http://vita.had.co.nz/papers/tidy-data.pdf)
+- [Hadley Wickham](http://had.co.nz)'s [paper on Tidy Data](http://vita.had.co.nz/papers/tidy-data.pdf)
 - [KnitR](http://yihui.name/knitr)'s [`stitch()` and `spin()`](http://yihui.name/knitr/demo/stitch)
 
 ### Writing clear code
 
-- [Style guide](http://adv-r.had.co.nz/Style.html) in [Hadley Wickham]((had.co.nz)'s
+- [Style guide](http://adv-r.had.co.nz/Style.html) in [Hadley Wickham](http://had.co.nz)'s
   [Advanced R Programming book](http://adv-r.had.co.nz/)
 
 ### R packages
 
-- [Hadley Wickham](had.co.nz)'s [Advanced R book](http://adv-r.had.co.nz/)
+- [Hadley Wickham](http://had.co.nz)'s [Advanced R book](http://adv-r.had.co.nz/)
 - [Jeff Leek on developing R packages](https://github.com/jtleek/rpackages)
 - Documenting R
   [packages](http://adv-r.had.co.nz/Documenting-packages.html) and [functions](http://adv-r.had.co.nz/Documenting-functions.html)
