@@ -10,9 +10,8 @@ set.seed(53079239)
 x <- rnorm(100, 10, 5)
 y <- 2*x + rnorm(100, 0, 2)
 
-#'Here's a scatterplot of the data.
+#' Here's a scatterplot of the data.
 plot(x, y, pch=21, bg="slateblue", las=1)
-
 
 #' The estimated correlation between x and y is
 cor(x,y)
