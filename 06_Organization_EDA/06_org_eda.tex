@@ -440,8 +440,40 @@ Organization takes time.
 
 \vspace{24pt}
 
+Read Hadley Wickham's
+\href{http://vita.had.co.nz/papers/tidy-data.pdf}{paper on Tidy Data}.
 
-\note{Refer to Hadley Wickham's paper.
+\vspace{12pt}
+
+\bi
+\item Each variable forms a column.
+\item Each observation forms a row.
+\item Each type of observational unit forms a table.
+\ei
+
+\vspace{12pt}
+
+{\footnotesize
+\renewcommand{\arraystretch}{1.05}
+\begin{center}
+\begin{tabular}{ccc} \hline
+Mouse & Treatment & Response \\ \hline
+ 1    & control  & -- \\
+ 1    &   ttt    & 7.4 \\
+ 2    & control  & 3.8 \\
+ 2    &   ttt    & 5.2 \\
+ 3    & control  & 5.5 \\
+ 3    &   ttt    & 6.6 \\ \hline
+\end{tabular}
+\end{center}
+}
+
+\note{Read the paper!
+
+  When you convert data into a better form, convert it into the {\nhilit
+  tidy} form.
+
+  Also, consider Hadley's tools, like dplyr
 }
 \end{frame}
 
@@ -620,6 +652,23 @@ Teach them how?!
   Step 3: have a system.
 }
 \end{frame}
+
+
+\begin{frame}{Avoid}
+
+\vspace{24pt}
+
+\bi
+\item "How did I create this plot?"
+\item "Why did I decide to omit those six samples?"
+\item "Where (on the web) did I find these data?"
+\item "What was that interesting gene?"
+\ei
+
+\note{I've said all of these things to myself.
+}
+\end{frame}
+
 
 
 \begin{frame}{Basic principles}
