@@ -211,9 +211,85 @@ Projects/Hassold_QTL/
 \end{frame}
 
 
-\begin{frame}{Basic principles}
+\begin{frame}[fragile]{Organizing a paper}
 
 \vspace{6pt}
+
+\begin{lstlisting}
+Docs/Papers/PhyloQTL/
+
+    Analysis/
+    Data/
+    Figs/
+    Notes/
+    R/
+    SuppFigs/
+
+    ReadMe.txt
+    Makefile
+    phyloqtl.tex
+    phyloqtl.bib
+
+    Submitted/
+    Reviews/
+    Revised/
+    Final/
+    Proofs/
+\end{lstlisting}
+
+\note{This is how I organize the material for a paper.
+
+  {\tt R/} contains code for figures; {\tt Analysis/} contains other
+  analysis code; {\tt Data/} contains data; {\tt Figs/} contains the
+  figures; {\tt Notes/} contains notes or references.
+
+  Of course, a {\tt Makefile} for compiling the PDF, and perhaps a
+  {\tt ReadMe} file to explain where things are.
+
+  And I'll save the submitted version (and text files with bits
+  for web forms at submission), plus reviews, the revised version plus
+  response to reviews, and then the final submitted version and the
+  proofs.
+}
+\end{frame}
+
+
+\begin{frame}[fragile]{Organizing a talk}
+
+\vspace{6pt}
+
+\begin{lstlisting}
+Docs/Talks/SampleMixups/
+
+    Figs/
+    R/
+
+    ReadMe.txt
+    Makefile
+    bmi2013.tex
+
+    Old/
+\end{lstlisting}
+
+\note{This is how I organize the material for a talk: much like a
+  paper, but generally a bit simpler.
+
+  Again, {\tt R/} contains code for figures and {\tt Figs/} contains
+  the actual figures.
+
+  And again, a {\tt Makefile} for compiling the PDF, and perhaps a
+  {\tt ReadMe} file to explain where things are.
+
+  And I'll save all old versions in {\tt Old/}
+}
+\end{frame}
+
+
+
+
+\begin{frame}{Basic principles}
+
+\vspace{18pt}
 
 \bi
 \item Develop your own system
@@ -225,19 +301,19 @@ Projects/Hassold_QTL/
 \item Separate raw from processed data
 \item Separate code from data
 \item It should be obvious what code created what files, and what the
-  dependencies were.
+  dependencies are.
 \item No hand-editing of data files
-\item Don't put spaces in file names!
+\item Don't use spaces in file names
 \item Use relative paths, not absolute paths
 \bi
-\item {\tt ../blah} not {\tt {\textasciitilde}/blah} or {\tt /users/blah}
+\item[] {\tt \hilit ../blah} \; not \; {\tt \vhilit {\textasciitilde}/blah} \; or \; {\tt \vhilit /users/blah}
 \ei
 \ei
 
 \note{I work on many different projects at the same time, and I'll
   come back to a project 6 months or a year later.
 
-  You shouldn't have to spend much time figuring out where things are
+  I don't want to spend much time figuring out where things are
   and how things were created: have a {\tt Makefile}, and keep notes. But
   notes are not necessarily correct while a {\tt Makefile} would be.
 
@@ -258,9 +334,29 @@ don't reply to emails.
 \end{frame}
 
 
+
+\begin{frame}[c]{}
+
+\centering
+\large
+Organization takes time.
+
+\note{There's no getting around the fact that doing things properly
+  takes longer, in the short term.
+
+  If you have a good system and good habits, it won't seem like it
+  takes so long.
+
+  But definitely, it's a large up-front investment in
+  order to potentially save a lot of time and aggravation later.
+}
+\end{frame}
+
+
+
 \begin{frame}{Painful bits}
 
-\vspace{6pt}
+\vspace{24pt}
 
 \bi
 \item Coming up with good names for things
@@ -277,17 +373,122 @@ don't reply to emails.
 \item Long, messy Makefiles
 \ei
 
-\note{
+\vspace{18pt}
+
+\only<2|handout>{\centerline{\hilit $\rightarrow$ Modularity}}
+
+\note{I don't have many solutions to these problems. Version control
+  helps. And try to break things down into different stages, in
+  case one aspect needs to be revised. Maybe use different
+  subdirectories for the different stages of data cleaning.
 }
 \end{frame}
 
 
-\begin{frame}{Problem: 80 million side projects}
+\begin{frame}[c]{}
 
-\vspace{6pt}
+\vspace{24pt}
+
+\centerline{\includegraphics[height=0.8\textheight]{Figs/iso_8601.png}}
+
+\vfill
+
+\hfill {\footnotesize \lolit \href{http://xkcd.com/1179/}{xkcd}}
+
+\note{Go with the xkcd format for writing dates, for ease of sorting.
+}
+\end{frame}
 
 
-\note{Show what's happened with the Attie project.
+
+\begin{frame}{Problem: Variations across data files}
+
+\vspace{24pt}
+
+\bi
+\item Different files (or parts of files!) may have different formats.
+\item Variables (or factor levels) may have different names in
+  different files.
+\item The names of files may inconsistent.
+\ei
+
+\bigskip
+
+\bi
+\item It's tempting to hand-edit the files. {\vhilit Don't!}
+\item Create another meta-data file that explains what's what.
+\ei
+
+\note{Scientists aren't trained in how to organize data.
+
+  Multiple people in a lab might have his/her own system, or an
+  individual's system may change over time (or from the top to the
+  bottom of a file!)
+
+  Create a separate file with meta-data: ``These are the files. In
+  this file, the variable is called {\nhilit blah} while in that file it's
+  {\nhilit blather}.''
+
+  The meta-data file should be structured as data (e.g., as a comma-
+  or tab-delimited file) for easy parsing.
+}
+\end{frame}
+
+
+
+\begin{frame}{Tidy data}
+
+\vspace{24pt}
+
+
+\note{Refer to Hadley Wickham's paper.
+}
+\end{frame}
+
+
+
+
+
+
+\begin{frame}[fragile]{Problem: 80 million side projects}
+
+\vspace{24pt}
+
+\begin{lstlisting}
+$ ls ~/Projects/Attie
+
+AimeeNullSims/        Deuterium/             Ping/
+AimeeResults/         ExtractData4Gary/      Ping2/
+AnnotationFiles/      ForFirstPaper/         Ping3/
+Brian/                FromAimee/             Ping4/
+Chr10adipose/         GoldStandard/          Play/
+Chr6_extrageno/       HumanGWAS/             Proteomics/
+Chr6hotspot/          Insulin/               R/
+ChrisPlaisier/        Islet_2011-05/         RBM_PlasmaUrine/
+Code4Aimee/           Lusis/                 R_adipose/
+CompAnnot/            MappingProbes/         R_islet/
+CondScans/            Microarrays/           Rawdata/
+D2O_2012-02-14/       MultiProbes/           Scans/
+D2O_Nrm_2012-02-29/   NewMap/                SimsRePower/
+D2O_cellcycle/        Notes/                 Slco1a6/
+D2Ocorr/              NullSims/              StudyLineupMethods/
+Data4Aimee/           NullSims_2009-09-10/   eQTLPaper/
+Data4Tram/            PepIns_2012-02-09/     transeQTL4Lude/
+\end{lstlisting}
+\note{This is a project-gone-wrong.
+
+  A key problem in research is that you don't really know what you're
+  doing when you get started. It seems best to separate out each
+  side-project as a separate directory, but it can be a nightmare to
+  find things later.
+
+  If each of these subdirectories was nicely organized and had a
+  {\tt ReadMe} file, you could {\tt grep} your way through them.
+
+  I sort of like the idea of separate directories for the different
+  aspects of mucking about. And second versions are always better. Maybe
+  we should plan to muck about separately and then bring a more
+  refined analysis back into a common directory?
 }
 \end{frame}
 
@@ -295,10 +496,32 @@ don't reply to emails.
 
 \begin{frame}{Saving intermediate results}
 
-\vspace{6pt}
+\vspace{24pt}
+
+{\hilit R Markdown document with details of data cleaning.}
+
+\bi
+\item Within the {\tt .Rmd} file, periodically {\tt save} the state of
+  things, for further exploratory analysis.
+
+\item Put those intermediate files (which might be large) in a common
+  subdirectory.
+
+\item The subdirectory could be under {\hilit separate} version
+  control.
+
+\item But you'll need to {\hilit go in there} and commit files.
+\ei
 
 
-\note{Sub-folders can be their own git repositories.
+\note{I want a reproducible analysis document, but I want to be able
+  to grab objects from the middle of the process for further
+  exploration. So I'll include code chunks to save the state of
+  things, say in a {\tt Cache} or {\tt RData} subdirectory.
+
+  Subdirectories can be their own git repositories:
+  Include that subdirectory in the {\tt .gitignore} file, and then
+  use {\tt git init} within the subdirectory.
 }
 \end{frame}
 
@@ -307,12 +530,25 @@ don't reply to emails.
 
 \begin{frame}{Problem: Coordinating with collaborators}
 
-\vspace{6pt}
+\vspace{24pt}
 
+\bi
+\item Where to put data that multiple people will work with?
+\item Where to put intermediate/processed data?
+\item Where to indicate the code that created those processed data files?
+\item How to divvy up tasks and know who did what?
+\item Need to agree on directory structure and file naming conventions
+\item Consider symbolic links for shared data files/directories
+\bi
+\item[] {\tt ln -s /z/Proj/blah}
+\item[] {\tt ln -s /z/Proj/blah my\_blah}
+\ei
+\ei
 
-\note{Syncing data, derived data, code.
+\note{Ideally, everything with git/GitHub.
 
-  Divvying up tasks.
+  Symbolic links are also called ``soft links.'' It's just like a file
+  shortcut in Windows.
 }
 \end{frame}
 
@@ -323,29 +559,116 @@ don't reply to emails.
 
 \begin{frame}{Problem: Collaborators who don't use git}
 
-\vspace{6pt}
+\vspace{24pt}
 
 
-\note{Use it yourself, and copy over your stuff.
+\note{Use git yourself, and copy over your stuff to a common
+  spot...preferably an automated system for the copying-over.
 }
 \end{frame}
 
 
 
 
-\begin{frame}{Problem: Variations in names across files}
+\begin{frame}{Exploratory data analysis}
 
-\vspace{6pt}
+\vspace{24pt}
 
+\bi
+\item what were trying to do?
+\item what you're thinking about?
+\item what did you observe?
+\item what did you conclude, and why?
+\ei
 
-\note{Create a separate file with meta-data: ``In this file, the
-  variable is called blah while in that file it's blather.''
+\note{We want to be able to capture the full outcome of exploratory
+  data analysis.
 
-  Similarly, complications in the names of files.
+  But we don't want to inhibit the creative flow. How to capture this
+  stuff?
+
+  Step 1: slow down and document.
+
+  Step 2: think of your future self.
+
+  Step 3: have a system.
 }
 \end{frame}
 
 
+\begin{frame}{Basic principles}
+
+\vspace{24pt}
+
+\bi
+\item[] {\hilit Step 1}: slow down and document.
+\item[] {\hilit Step 2}: have sympathy for your future self.
+\item[] {\hilit Step 3}: have a system.
+\ei
+
+\note{I said this in the notes on the previous page; it's worth
+  emphasizing again.
+
+  If you're not {\nhilit thinking} about keeping track of things, you
+  won't keep track of things.
+
+  One thing I like to do: write a set of comments describing my basic
+  plan, and then fill in the code afterwards. It forces you to think
+  things through, and then you'll have at least a rough sense of what
+  you were doing, even if you don't take the time to write further
+  comments.
+}
+\end{frame}
+
+\begin{frame}{Capturing EDA}
+
+\vspace{24pt}
+
+\bi
+\item copy-and-paste from an R file
+\item grab code from the {\tt .Rhistory} file
+\item Write an informal R Markdown file
+\item Write code for use with the KnitR function {\tt spin()}
+\bi
+\item[] Comments like \; {\hilit \tt \#' This will become text}
+\ei
+\ei
+
+\note{There are a number of techniques you can use to capture the EDA
+  process.
+
+  You don't need to save all of the figures, but you do need to save
+  the code and write down your motivation, observations, and
+  conclusions.
+
+  I usually start out with a plain R file and then move to more formal
+  R Markdown or AsciiDoc reports.
+}
+\end{frame}
+
+
+\begin{frame}[fragile]{A file to {\tt spin()}}
+
+\vspace{24pt}
+
+\begin{lstlisting}
+#' This is a simple example of an R file for use with spin().
+
+#' We'll start by setting the seed for the RNG.
+set.seed(53079239)
+
+#' We'll first simulate some data with x ~ N(mu=10, sig=5) and
+#' y = 2x + e, where e ~ N(mu=0, sig=2)
+x <- rnorm(100, 10, 5)
+y <- 2*x + rnorm(100, 0, 2)
+
+#' Here's a scatterplot of the data.
+plot(x, y, pch=21, bg="slateblue", las=1)
+\end{lstlisting}
+
+\note{Here's an example R file for use with {\tt spin()}.
+}
+\end{frame}
 
 
 \end{document}
