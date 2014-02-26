@@ -107,6 +107,7 @@ title:  Resources and further reading
 ### Organizing projects and data
 
 - [Hadley Wickham]((had.co.nz)'s [paper on Tidy Data](http://vita.had.co.nz/papers/tidy-data.pdf)
+- [KnitR](http://yihui.name/knitr)'s [`stitch()` and `spin()`](http://yihui.name/knitr/demo/stitch)
 
 ### Writing clear code
 

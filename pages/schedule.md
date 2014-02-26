@@ -39,6 +39,12 @@ tagline: Spring, 2014
     \]
 
 **Feb 28**: Organizing projects; capturing exploratory analysis
+    \[
+    [S](../assets/lectures/06_org_eda.pdf) |
+    [N](../assets/lectures/06_org_eda_withnotes.pdf) |
+    [C](https://github.com/kbroman/Tools4RR/tree/master/06_Organization_EDA/Examples)
+    \]
+
 
 **Mar 7**:  Writing clear code
 
