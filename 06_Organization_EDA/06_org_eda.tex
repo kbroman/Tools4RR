@@ -86,7 +86,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \title{Tools for Reproducible Research}
-\subtitle{Organizing projects and EDA}
+\subtitle{Organizing projects; exploratory data analysis}
 \author{\href{http://www.biostat.wisc.edu/~kbroman}{Karl Broman}}
 \institute{Biostatistics \& Medical Informatics, UW{\textendash}Madison}
 \date{\href{http://www.biostat.wisc.edu/~kbroman}{\tt \scriptsize \color{white} biostat.wisc.edu/{\textasciitilde}kbroman}
@@ -105,9 +105,247 @@
 \frame{
   \titlepage
 
-\note{
+\note{I'm trying to cover two things here: how to organize data
+  analysis projects, so in the end the results will be reproducible
+  and clear, and how to capture the results of exploratory data
+  analysis.
+
+  The hardest part, regarding organizing projects, concerns how to coordinate
+  collaborative projects: to keep data, code, and results synchronized
+  among collaborators.
+
+  Regarding exploratory data analysis, we want to capture the whole
+  process: what you're trying to do, what you're thinking about, what
+  you're seeing, and what you're concluding and why. And we want to do
+  so without getting in the way of the creative process.
+
+  I'll sketch what I try to do, and the difficulties I've had. But I
+  don't have all of the answers.
 }
 } }
+
+
+\begin{frame}[fragile]{Organizing your stuff}
+
+\vspace{6pt}
+
+\begin{lstlisting}
+Code/d3examples/
+    /Others/
+    /PyBroman/
+    /Rbroman/
+    /Rqtl/
+    /Rqtlcharts/
+Docs/Talks/
+    /Meetings/
+    /Others/
+    /Papers/
+    /Resume/
+    /Reviews/
+    /Travel/
+Play/
+Projects/AlanAttie/
+        /BruceTempel/
+        /Hassold_QTL/
+        /Hassold_Age/
+        /Payseur_Gough/
+        /PhyloQTL/
+        /Tar/
+\end{lstlisting}
+
+\note{This is basically how I organize my harddrive. You want it to be
+  clear where things are. You shouldn't be searching for stuff.
+
+  In my {\tt Projects/} directory, I have a {\tt Tar/} directory with
+  {\tt tar.gz} files
+  of older projects; the same is true for other directories, like
+  {\tt Docs/Papers/} and {\tt Docs/Talks/}.
+}
+\end{frame}
+
+
+\begin{frame}[fragile]{Organizing your projects}
+
+\vspace{6pt}
+
+\begin{lstlisting}
+Projects/Hassold_QTL/
+
+    Data/
+    Notes/
+    R/
+    R/Figs/
+    R/Cache/
+    Rawdata/
+    Refs/
+
+    Makefile
+    Readme.txt
+
+    Python/convertGeno.py
+    Python/convertPheno.py
+    Python/combineData.py
+
+    R/prepData.R
+    R/analysis.R
+    R/diagnostics.Rmd
+    R/qtl_analysis.Rmd
+\end{lstlisting}
+
+\note{This is how I'd organize a simple project.
+
+  Separate the raw data from processed data.
+
+  Separate code from data.
+
+  Include a Readme file and a Makefile.
+
+  I tend to reuse file names. Almost every project will have an {\tt
+    R/prepData.R} script.
+
+  Of course, each project is under version control (with git)!
+
+  {\tt R/analysis.R} usually has exploratory analyses, and then
+  there'll be separate {\tt .Rmd} files with more finalized work.
+}
+\end{frame}
+
+
+\begin{frame}{Basic principles}
+
+\vspace{6pt}
+
+\bi
+\item Develop your own system
+\item Put everything in a common directory
+\item Be consistent
+\bi
+\item directory structure; names
+\ei
+\item Separate raw from processed data
+\item Separate code from data
+\item It should be obvious what code created what files, and what the
+  dependencies were.
+\item No hand-editing of data files
+\item Don't put spaces in file names!
+\item Use relative paths, not absolute paths
+\bi
+\item {\tt ../blah} not {\tt {\textasciitilde}/blah} or {\tt /users/blah}
+\ei
+\ei
+
+\note{I work on many different projects at the same time, and I'll
+  come back to a project 6 months or a year later.
+
+  You shouldn't have to spend much time figuring out where things are
+  and how things were created: have a {\tt Makefile}, and keep notes. But
+  notes are not necessarily correct while a {\tt Makefile} would be.
+
+  Plan for the whole deal to ultimately be open to others: will you be
+  proud of the work, or embarrassed by the mess?
+}
+\end{frame}
+
+
+\begin{frame}[c]{}
+
+\centering
+\large
+Your closest collaborator is you six months ago, but you
+don't reply to emails.
+\note{I heard this from Paul Wilson, UW-Madison.
+}
+\end{frame}
+
+
+\begin{frame}{Painful bits}
+
+\vspace{6pt}
+
+\bi
+\item Coming up with good names for things
+\bi
+\item Code as verbs; data as nouns
+\ei
+\item Stages of data cleaning
+\item Going back and redoing stuff
+\item Clutter of old stuff that you no longer need
+\item Keeping track of the order of things
+\bi
+\item dependencies; what gave rise to what
+\ei
+\item Long, messy Makefiles
+\ei
+
+\note{
+}
+\end{frame}
+
+
+\begin{frame}{Problem: 80 million side projects}
+
+\vspace{6pt}
+
+
+\note{Show what's happened with the Attie project.
+}
+\end{frame}
+
+
+
+\begin{frame}{Saving intermediate results}
+
+\vspace{6pt}
+
+
+\note{Sub-folders can be their own git repositories.
+}
+\end{frame}
+
+
+
+
+\begin{frame}{Problem: Coordinating with collaborators}
+
+\vspace{6pt}
+
+
+\note{Syncing data, derived data, code.
+
+  Divvying up tasks.
+}
+\end{frame}
+
+
+
+
+
+
+\begin{frame}{Problem: Collaborators who don't use git}
+
+\vspace{6pt}
+
+
+\note{Use it yourself, and copy over your stuff.
+}
+\end{frame}
+
+
+
+
+\begin{frame}{Problem: Variations in names across files}
+
+\vspace{6pt}
+
+
+\note{Create a separate file with meta-data: ``In this file, the
+  variable is called blah while in that file it's blather.''
+
+  Similarly, complications in the names of files.
+}
+\end{frame}
+
+
 
 
 \end{document}
