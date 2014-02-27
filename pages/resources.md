@@ -152,6 +152,8 @@ title:  Resources and further reading
 ### Python
 
 - [Python for biologists](http://pythonforbiologists.com/index.php/introduction-to-python-for-biologists/)
+- [IPython](http://ipython.org/)
+- [IPython notebook](http://ipython.org/notebook)
 
 
 ### Software Licenses
