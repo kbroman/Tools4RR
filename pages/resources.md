@@ -133,15 +133,25 @@ title:  Resources and further reading
 
 ### Latex
 
+- [A hitchhiker's guide to LaTeX (pdf)](http://chaosbook.org/FAQ/lala.pdf)
 - [AucTex](https://www.gnu.org/software/auctex/), for working with
   LaTeX within emacs.
 
 
+### Slides and posters
 
-### Beamer for slides and posters
+- [LaTeX Beamer](https://bitbucket.org/rivanvx/beamer/wiki/Home)
+- [Beamer Quickstart](http://www.math.umbc.edu/~rouben/beamer)
+- [Slidify](http://slidify.org/)
+- [Get started with slidify](http://slidify.org/start.html)
+- [Slides on slidify](http://slidify.org/samples/intro/) from
+  [Ramnath Vaidyanathan](https://github.com/ramnathv)
+- [Lecture on slidify](https://github.com/DataScienceSpecialization/courses/tree/master/09_DevelopingDataProducts/slidify)
+  from the Johns Hopkins Data Science Coursera course
 
+### Python
 
-### Ruby and Python
+- [Python for biologists](http://pythonforbiologists.com/index.php/introduction-to-python-for-biologists/)
 
 
 ### Software Licenses
