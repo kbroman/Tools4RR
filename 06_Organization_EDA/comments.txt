@@ -1,0 +1,19 @@
+
+Many-side-projects problem:
+
+  Have periodic "versions" for the project, perhaps labeled by date
+    - Move all the good stuff over and retire the crappy stuff
+
+  Put defunct side projects into an Old/ subdirectory
+  Put active but not yet clearly interesting ones into New/ or Play/
+
+Syncing with collaborators (e.g., on a paper)
+
+  If then send you a marked-up PDF, save it an a coauthor-specific
+  folder, then incorporate and commit the changes yourself.
+
+Syncing between computers?
+
+  Maybe Dropbox or Google Drive would be better than git/github, for
+  grabbing all of those huge intermediate files that you don't want under
+  version control but also don't want to reconstruct every time.
