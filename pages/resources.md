@@ -130,6 +130,7 @@ title:  Resources and further reading
 
 ### Big jobs
 
+- [KnitR cache](http://yihui.name/knitr/demo/cache/)
 
 ### Latex
 
