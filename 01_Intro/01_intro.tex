@@ -21,12 +21,20 @@
 
 % font
 \usepackage{fontspec}
+\fontspec
+  [ Path = ../fonts/ ,
+    UprightFont = *-regular , 
+    BoldFont = *-bold ,
+    ItalicFont = *-italic ,
+    BoldItalicFont = *-bolditalic ]{texgyreheros}
 \setsansfont{TeX Gyre Heros}
 \setbeamerfont{note page}{family*=pplx,size=\footnotesize} % Palatino for notes
 % "TeX Gyre Heros can be used as a replacement for Helvetica"
-% In Unix, unzip the following into ~/.fonts
-% In Mac, unzip it, double-click the .otf files, and install using "FontBook"
-%   http://www.gust.org.pl/projects/e-foundry/tex-gyre/heros/qhv2.004otf.zip
+% I've placed them in ../fonts/; alternatively you can install them
+% permanently on your system as follows:
+%     Download http://www.gust.org.pl/projects/e-foundry/tex-gyre/heros/qhv2.004otf.zip
+%     In Unix, unzip it into ~/.fonts
+%     In Mac, unzip it, double-click the .otf files, and install using "FontBook"
 
 % named colors
 \definecolor{offwhite}{RGB}{249,242,215}
