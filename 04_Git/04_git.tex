@@ -349,8 +349,26 @@ Slides prepared with \href{http://pages.cs.wisc.edu/~syounkin/}{Sam Younkin}}
   documentation).
 }
 \end{frame}
-
-
+\begin{frame}
+\frametitle{Local (Stat) git use}
+\vspace{-18pt}
+\bbi
+\item Easy to use, free infinite private repositories.
+\item Not as nice of interface to review code: Relly on GUI or private web page.
+\item When your ssh account expires, your access to them expires.
+\item Setup:
+\bi
+\item[Initialize] 3 steps (On server):
+\bi 
+\item[Connect] {\tt ssh bigmem01.stat.wisc.edu} {\small Connect to server. Consider using kinit + aklog if logging on frequently}
+\item[Make Folder] {\tt cd Repositories;mkdir NewRepository} {\small Enter your repository folder, make a new dir (If you are hiding it change permissions)}
+\item[Initialize Server Respository] {\tt cd NewRespository;git init} {\small Enter the new repository and initialize}
+\item[Clone/Pull onto other systems] On Client:{\tt git clone ssh:{\textbackslash\textbackslash}bigmem01.stat.wisc.edu\~[user]\Repositories\NewRepository}
+\item[Make changes, and commit] On client:{\tt git add -i;git commit -m 'This change is well documented. Take that laptop in the shower!'}
+\item[Push changes back] On client:{\tt git push origin}
+\ei
+\ei
+\end{frame}
 
 \begin{frame}
 \frametitle{Basic use}
