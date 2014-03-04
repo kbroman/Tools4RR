@@ -85,6 +85,7 @@
 \newcommand{\ig}{\includegraphics}
 \newcommand{\subt}[1]{{\footnotesize \color{subtitle} {#1}}}
 \newcommand{\ttsm}{\tt \small}
+\newcommand{\ttfn}{\tt \footnotesize}
 \newcommand{\figh}[2]{\centerline{\includegraphics[height=#2\textheight]{#1}}}
 \newcommand{\figw}[2]{\centerline{\includegraphics[width=#2\textwidth]{#1}}}
 
@@ -349,26 +350,7 @@ Slides prepared with \href{http://pages.cs.wisc.edu/~syounkin/}{Sam Younkin}}
   documentation).
 }
 \end{frame}
-\begin{frame}
-\frametitle{Local (Stat) git use}
-\vspace{-18pt}
-\bbi
-\item Easy to use, free infinite private repositories.
-\item Not as nice of interface to review code: Rely on GUI or private web page.
-\item When your ssh account expires, your access to them expires.
-\item Setup:
-\bi
-\item[Initialize] 3 steps (On server):
-\bi 
-\item[Connect] {\tt ssh bigmem01.stat.wisc.edu} {\small Connect to server. Consider using kinit + aklog if logging on frequently}
-\item[Make Folder] {\tt cd Repositories;mkdir NewRepository} {\small Enter your repository folder, make a new dir (If you are hiding it change permissions)}
-\item[Initialize Server Repository] {\tt cd NewRepository;git init} {\small Enter the new repository and initialize}
-\item[Clone/Pull onto other systems] On Client:{\tt git clone ssh:{\textbackslash\textbackslash}bigmem01.stat.wisc.edu\~[user]\Repositories\NewRepository}
-\item[Make changes, and commit] On client:{\tt git add -i;git commit -m 'This change is well documented. Take that laptop in the shower!'}
-\item[Push changes back] On client:{\tt git push origin}
-\ei
-\ei
-\end{frame}
+
 
 \begin{frame}
 \frametitle{Basic use}
@@ -968,6 +950,102 @@ or
   the Danger Zone.
 }
 \end{frame}
+
+
+\begin{frame}
+\frametitle{Git at Statistics, UW-Madison}
+
+\vspace{18pt}
+
+\bbi
+\item Easy to use, free infinite private repositories.
+\item Not as nice of interface to review code: Rely on GUI or private web page.
+\item When your ssh account expires, your access to them expires.
+\ei
+
+\note{If you have an account on the UW-Madison Statistics server, you
+  can use git there in place of GitHub.
+
+  The advantage is that you can have as many private repositories as
+  you want.
+
+  The disadvantages are that you won't have the GitHub interface and
+  you can only use this as long as you have a Statistics account.
+
+  I haven't done this myself; these three slides were kindly provided
+  by Tim Grilley.
+}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Git at Statistics, UW-Madison}
+
+\vspace{18pt}
+
+Setup (on server):
+\bigskip
+
+\bi 
+\item Connect to server
+    \bi
+    \item[] {\ttfn ssh bigmem01.stat.wisc.edu}
+    \item[] Consider using kinit + aklog if logging on frequently
+    \ei
+\item Make Folder
+    \bi
+    \item[] {\ttfn cd Repositories}
+    \item[] {\ttfn mkdir NewRepository} 
+    \ei
+\item Initialize Server Repository
+    \bi
+    \item[] {\ttfn cd NewRepository}
+    \item[] {\ttfn git init} 
+    \ei
+\ei
+
+\note{To set up a repository you just log in
+  to one of the Statistics computers, create a directory, and use {\tt
+  git init}.
+}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Git at Statistics, UW-Madison}
+
+\vspace{18pt}
+
+Usage (on client, e.g. laptop):
+\bigskip
+
+\bi
+\item Clone/Pull onto other systems
+    \bi
+    \item[] {\tt \tiny git clone ssh:{\textbackslash\textbackslash}bigmem01.stat.wisc.edu{\textbackslash\textasciitilde}[user]{\textbackslash}Repositories{\textbackslash}NewRepository}
+    \ei
+\item Make changes, and commit
+    \bi
+    \item[] {\ttfn git add -i}
+    \item[] {\ttfn git commit -m 'An informative message here.'}
+    \ei
+\item Push changes back
+    \bi
+    \item[] {\ttfn git push origin}
+    \ei
+\ei
+
+\note{This is what you'd do on your local computer (e.g., a Windows
+  laptop).
+
+  On a Mac, you'd need to replace the backslashes with forward
+  slashes.
+}
+\end{frame}
+
+
+
+
 
 
 \begin{frame}{}
