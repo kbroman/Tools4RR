@@ -388,6 +388,10 @@ Organization takes time.
   helps. And try to break things down into different stages, in
   case one aspect needs to be revised. Maybe use different
   subdirectories for the different stages of data cleaning.
+
+  A point that was raised in the discussion: Have periodic
+  ``versions'' for a project, perhaps labeled by date. Move all the
+  good stuff over and retire the stuff that is no longer useful or necessary.
 }
 \end{frame}
 
@@ -528,6 +532,11 @@ Data4Tram/            PepIns_2012-02-09/     transeQTL4Lude/
   aspects of mucking about. And second versions are always better. Maybe
   we should plan to muck about separately and then bring a more
   refined analysis back into a common directory?
+
+  A point raised in the discussion:   Put defunct side projects into
+  an {\tt Old/} subdirectory, and put active but not yet clearly
+  interesting ones into {\tt New/} or {\tt Play/}. This will help to
+  avoid the clutter.
 }
 \end{frame}
 
@@ -561,6 +570,16 @@ Data4Tram/            PepIns_2012-02-09/     transeQTL4Lude/
   Subdirectories can be their own git repositories:
   Include that subdirectory in the {\tt .gitignore} file, and then
   use {\tt git init} within the subdirectory.
+
+  A point raised in the discussion: how to synchronize a project
+  between computers? If we don't put the intermediate files in the
+  main repository, we can't rely on GitHub. (For a simple manuscript
+  or talk, it's okay to reconstruct things on another computer, but
+  for big analyses, you wouldn't want to.) I use ChronoSync to
+  synchronize my Mac desktop and laptop. Maybe Dropbox or Google Drive
+  would be useful for this. You'd still want to use git and
+  and GitHub, but you could supplement them by having the repository
+  sit in your Dropbox folder.
 }
 \end{frame}
 
@@ -626,9 +645,12 @@ Data4Tram/            PepIns_2012-02-09/     transeQTL4Lude/
 }
 
 \note{Life would be easier if all of our analysis collaborators
-  adopted git.
+  adopted git. Teach them how?!
 
-Teach them how?!
+  When I'm working with a collaborator on a paper, I may get comments
+  from them as a marked-up PDF. I'll save that in the repository and
+  will incorporate and commit the changes in the source files, on my
+  own.
 }
 \end{frame}
 
