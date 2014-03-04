@@ -111,8 +111,14 @@ title:  Resources and further reading
 
 ### Writing clear code
 
+- [Best Practices for Scientific Computing (paper)](http://www.plosbiology.org/article/info:doi%2F10.1371%2Fjournal.pbio.1001745)
 - [Style guide](http://adv-r.had.co.nz/Style.html) in [Hadley Wickham](http://had.co.nz)'s
   [Advanced R Programming book](http://adv-r.had.co.nz/)
+- Oliveira & Stewart,
+  [Writing scientific software (book)](http://www.amazon.com/exec/obidos/ASIN/0521675952/7210-20)
+- Kernighan & Plauger, [The elements of programming style, 2nd ed (book)](http://www.amazon.com/exec/obidos/ASIN/0070342075/7210-20)
+- Kernighan & Pike, [The practice of programming](http://www.amazon.com/exec/obidos/ASIN/020161586X/7210-20)
+
 
 ### R packages
 
@@ -127,6 +133,8 @@ title:  Resources and further reading
 - [Hadley Wickham's paper](http://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf)
 - [Testing](http://adv-r.had.co.nz/Testing.html) in [Hadley Wickham](http://had.co.nz)'s
    [Advanced R book](http://adv-r.had.co.nz)
+- Marick, [The craft of software testing (book)](http://www.amazon.com/exec/obidos/ASIN/0131774115/7210-20)
+- Agans, [Debugging (book)](http://www.amazon.com/exec/obidos/ASIN/0814474578/7210-20)
 
 ### Big jobs
 
