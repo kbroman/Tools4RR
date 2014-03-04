@@ -112,27 +112,33 @@
 \frame{
   \titlepage
 
-\note{
+\note{Clear code is more likely to work.
+
+  Clear code is easier to use.
+
+  Clear code is easier to maintain.
+
+  Clear code is easier to extend.
 }
 } }
 
 
 \begin{frame}{Basic principles}
 
-\vspace{12pt}
+\vspace{24pt}
 
 \bi
 \item Code that works
     \bi
-    \item[] No bugs; efficiency is secondary
-    \ei
-\item Reuseable
-    \bi
-    \item[] Modular; reasonably general
+    \item[] No bugs; efficiency is secondary (or tertiary)
     \ei
 \item Readable
     \bi
     \item[] Fixable; extendable
+    \ei
+\item Reuseable
+    \bi
+    \item[] Modular; reasonably general
     \ei
 \item Reproducible
     \bi
@@ -148,7 +154,23 @@
     \ei
 \ei
 
-\note{
+\note{Our first goal should be to get the right answer.
+
+  But we also want to write code that we (and others) will be able to
+  use again. Efficiency is way down on the list of needs.
+
+  Write clearly, and re-write.
+
+  Break things down into small, re-usable functions, written in a
+  general way, but not {\nvhilit too} general. You want to actually
+  solve a particular problem.
+
+  Step 1 is to stop and think.
+
+  Step 2: write re-usable functions rather than a script.
+
+  By reproducible/re-runnable, I mean: don't have a bunch of code from
+  which you copy-and-paste in a special way.
 }
 \end{frame}
 
