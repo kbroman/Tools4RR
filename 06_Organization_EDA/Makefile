@@ -6,7 +6,7 @@ DROPBOXDIR = ~/Dropbox/Teaching/Tools4RR
 ${LEC}.pdf: ${LEC}.tex
 	xelatex ${LEC}
 
-notes: ${LEC}_withnotes.pdf ${LEC}_onlynotes.pdf
+notes: ${LEC}_withnotes.pdf
 pdf: ${LEC}.pdf notes
 all: ${LEC}.pdf notes web dropbox
 
@@ -17,16 +17,6 @@ ${LEC}_withnotes.pdf: ${LEC}_withnotes.tex
 
 ${LEC}_withnotes.tex: ${LEC}.tex ../Ruby/createVersionWithNotes.rb
 	../Ruby/createVersionWithNotes.rb ${LEC}.tex ${LEC}_withnotes.tex
-
-${LEC}_onlynotes.pdf: ${LEC}_onlynotes.tex
-	xelatex ${LEC}_onlynotes
-	pdfjam ${LEC}_onlynotes.pdf '1-6,8-9,12,14-16,20,22-23,25' --landscape --outfile tmp.pdf
-	pdfnup tmp.pdf --nup 2x2 --paper letterpaper --frame true --scale 0.9
-	mv tmp-nup.pdf ${LEC}_onlynotes.pdf
-#	rm tmp.pdf
-
-${LEC}_onlynotes.tex: ${LEC}.tex ../Ruby/createVersionOnlyNotes.rb
-	../Ruby/createVersionOnlyNotes.rb ${LEC}.tex ${LEC}_onlynotes.tex
 
 web: ${WEBDIR}/${LEC}.pdf ${WEBDIR}/${LEC}_withnotes.pdf
 
