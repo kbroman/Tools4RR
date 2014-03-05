@@ -1,13 +1,3 @@
-% set up listing environment
-\lstset{language=bash,
-        basicstyle=\ttfamily\scriptsize,
-        frame=single,
-        commentstyle=,
-        backgroundcolor=\color{darkgray},
-        showspaces=false,
-        showstringspaces=false
-        }
-
 % get rid of junk
 \usetheme{default}
 \beamertemplatenavigationsymbolsempty
@@ -31,17 +21,28 @@
 %     In Mac, unzip it, double-click the .otf files, and install using "FontBook"
 
 % named colors
-\definecolor{offwhite}{RGB}{249,242,215}
-\definecolor{foreground}{RGB}{255,255,255}
-\definecolor{background}{RGB}{24,24,24}
-\definecolor{title}{RGB}{107,174,214}
+\definecolor{offwhite}{RGB}{255,250,240}
 \definecolor{gray}{RGB}{155,155,155}
-\definecolor{subtitle}{RGB}{102,255,204}
-\definecolor{hilit}{RGB}{102,255,204}
-\definecolor{vhilit}{RGB}{255,111,207}
+
+\ifx\notescolors\undefined % slides
+  \definecolor{foreground}{RGB}{255,255,255}
+  \definecolor{background}{RGB}{24,24,24}
+  \definecolor{title}{RGB}{107,174,214}
+  \definecolor{subtitle}{RGB}{102,255,204}
+  \definecolor{hilit}{RGB}{102,255,204}
+  \definecolor{vhilit}{RGB}{255,111,207}
+  \definecolor{lolit}{RGB}{155,155,155}
+\else % notes
+  \definecolor{background}{RGB}{255,255,255}
+  \definecolor{foreground}{RGB}{24,24,24}
+  \definecolor{title}{RGB}{27,94,134}
+  \definecolor{subtitle}{RGB}{22,175,124}
+  \definecolor{hilit}{RGB}{122,0,128}
+  \definecolor{vhilit}{RGB}{255,0,128}
+  \definecolor{lolit}{RGB}{95,95,95}
+\fi
 \definecolor{nhilit}{RGB}{128,0,128}  % hilit color in notes
 \definecolor{nvhilit}{RGB}{255,0,128} % vhilit for notes
-\definecolor{lolit}{RGB}{155,155,155}
 
 \newcommand{\hilit}{\color{hilit}}
 \newcommand{\vhilit}{\color{vhilit}}
@@ -52,11 +53,11 @@
 % use those colors
 \setbeamercolor{titlelike}{fg=title}
 \setbeamercolor{subtitle}{fg=subtitle}
-\setbeamercolor{institute}{fg=gray}
+\setbeamercolor{institute}{fg=lolit}
 \setbeamercolor{normal text}{fg=foreground,bg=background}
 \setbeamercolor{item}{fg=foreground} % color of bullets
-\setbeamercolor{subitem}{fg=gray}
-\setbeamercolor{itemize/enumerate subbody}{fg=gray}
+\setbeamercolor{subitem}{fg=lolit}
+\setbeamercolor{itemize/enumerate subbody}{fg=lolit}
 \setbeamertemplate{itemize subitem}{{\textendash}}
 \setbeamerfont{itemize/enumerate subbody}{size=\footnotesize}
 \setbeamerfont{itemize/enumerate subitem}{size=\footnotesize}
@@ -72,6 +73,27 @@
 % default link color
 \hypersetup{colorlinks, urlcolor={hilit}}
 
+\ifx\notescolors\undefined % slides
+  % set up listing environment
+  \lstset{language=bash,
+          basicstyle=\ttfamily\scriptsize,
+          frame=single,
+          commentstyle=,
+          backgroundcolor=\color{darkgray},
+          showspaces=false,
+          showstringspaces=false
+          }
+\else % notes
+  \lstset{language=bash,
+          basicstyle=\ttfamily\scriptsize,
+          frame=single,
+          commentstyle=,
+          backgroundcolor=\color{offwhite},
+          showspaces=false,
+          showstringspaces=false
+          }
+\fi
+
 % a few macros
 \newcommand{\bi}{\begin{itemize}}
 \newcommand{\bbi}{\vspace{24pt} \begin{itemize} \itemsep8pt}
@@ -82,3 +104,4 @@
 \newcommand{\ttfn}{\tt \footnotesize}
 \newcommand{\figh}[2]{\centerline{\includegraphics[height=#2\textheight]{#1}}}
 \newcommand{\figw}[2]{\centerline{\includegraphics[width=#2\textwidth]{#1}}}
+
