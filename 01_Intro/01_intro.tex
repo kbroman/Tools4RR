@@ -4,77 +4,7 @@
 \setbeamertemplate{note page}[plain]
 \usepackage{listings}
 
-% set up listing environment
-\lstset{language=bash,
-        basicstyle=\scriptsize,
-        frame=single,
-        backgroundcolor=\color{darkgray},
-        commentstyle=\color{green},
-        showspaces=false,
-        showstringspaces=false
-        }
-
-% get rid of junk
-\usetheme{default}
-\beamertemplatenavigationsymbolsempty
-\hypersetup{pdfpagemode=UseNone} % don't show bookmarks on initial view
-
-% font
-\usepackage{fontspec}
-\setsansfont
-  [ ExternalLocation = ../fonts/ ,
-    UprightFont = *-regular , 
-    BoldFont = *-bold ,
-    ItalicFont = *-italic ,
-    BoldItalicFont = *-bolditalic ]{texgyreheros}
-\setbeamerfont{note page}{family*=pplx,size=\footnotesize} % Palatino for notes
-% "TeX Gyre Heros can be used as a replacement for Helvetica"
-% I've placed them in ../fonts/; alternatively you can install them
-% permanently on your system as follows:
-%     Download http://www.gust.org.pl/projects/e-foundry/tex-gyre/heros/qhv2.004otf.zip
-%     In Unix, unzip it into ~/.fonts
-%     In Mac, unzip it, double-click the .otf files, and install using "FontBook"
-
-% named colors
-\definecolor{offwhite}{RGB}{249,242,215}
-\definecolor{foreground}{RGB}{255,255,255}
-\definecolor{background}{RGB}{24,24,24}
-\definecolor{title}{RGB}{107,174,214}
-\definecolor{gray}{RGB}{155,155,155}
-\definecolor{subtitle}{RGB}{102,255,204}
-\definecolor{hilight}{RGB}{102,255,204}
-\definecolor{vhilight}{RGB}{255,111,207}
-\definecolor{nhilight}{RGB}{128,0,128}  % hilight color in notes
-\definecolor{nvhilight}{RGB}{255,0,128} % vhilight for notes
-\definecolor{lolight}{RGB}{155,155,155}
-%\definecolor{green}{RGB}{125,250,125}
-
-% use those colors
-\setbeamercolor{titlelike}{fg=title}
-\setbeamercolor{subtitle}{fg=subtitle}
-\setbeamercolor{institute}{fg=gray}
-\setbeamercolor{normal text}{fg=foreground,bg=background}
-\setbeamercolor{item}{fg=foreground} % color of bullets
-\setbeamercolor{subitem}{fg=gray}
-\setbeamercolor{itemize/enumerate subbody}{fg=gray}
-\setbeamertemplate{itemize subitem}{{\textendash}}
-\setbeamerfont{itemize/enumerate subbody}{size=\footnotesize}
-\setbeamerfont{itemize/enumerate subitem}{size=\footnotesize}
-
-% page number
-\setbeamertemplate{footline}{%
-    \raisebox{5pt}{\makebox[\paperwidth]{\hfill\makebox[20pt]{\color{gray}
-          \scriptsize\insertframenumber}}}\hspace*{5pt}}
-
-% add a bit of space at the top of the notes page
-\addtobeamertemplate{note page}{\setlength{\parskip}{12pt}}
-
-% a few macros
-\newcommand{\bi}{\begin{itemize}}
-\newcommand{\ei}{\end{itemize}}
-\newcommand{\ig}{\includegraphics}
-\newcommand{\subt}[1]{{\footnotesize \color{subtitle} {#1}}}
-\newcommand{\ttsm}{\tt \small}
+\input{../LaTeX/header.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % end of header
@@ -85,13 +15,13 @@
 \subtitle{Tools for Reproducible Research}
 \author{\href{http://www.biostat.wisc.edu/~kbroman}{Karl Broman}}
 \institute{Biostatistics \& Medical Informatics, UW{\textendash}Madison}
-\date{\href{http://www.biostat.wisc.edu/~kbroman}{\tt \scriptsize biostat.wisc.edu/{\textasciitilde}kbroman}
+\date{\href{http://www.biostat.wisc.edu/~kbroman}{\tt \scriptsize \color{white} biostat.wisc.edu/{\textasciitilde}kbroman}
 \\[-4pt]
-\href{http://github.com/kbroman}{\tt \scriptsize github.com/kbroman}
+\href{http://github.com/kbroman}{\tt \scriptsize \color{white} github.com/kbroman}
 \\[-4pt]
-\href{https://twitter.com/kwbroman}{\tt \scriptsize @kwbroman}
+\href{https://twitter.com/kwbroman}{\tt \scriptsize \color{white} @kwbroman}
 \\[-4pt]
-{\scriptsize Course web: \href{http://bit.ly/tools4rr}{\tt \color{hilight} bit.ly/tools4rr}}
+{\scriptsize Course web: \href{http://bit.ly/tools4rr}{\tt bit.ly/tools4rr}}
 }
 
 
@@ -106,7 +36,7 @@
     UW{\textendash}Madison on tools for reproducible research.
 
 A minimal standard for data analysis and other scientific computations
-is that they be {\color{nhilight} reproducible}: that the code and data are assembled
+is that they be {\color{nhilit} reproducible}: that the code and data are assembled
 in a way so that another group can re-create all of the results (e.g.,
 the figures in a paper). The importance of such reproducibility is now
 widely recognized, but it is not so widely practiced as it should be,
@@ -143,8 +73,8 @@ Reproducible
 \only<3 | handout 0>{Correct}
 
 \note{Computational work is
-  {\color{nhilight} reproducible} if one can take the data and code and produce
-  the same set of results. {\color{nhilight} Replicable} is more stringent: can
+  {\color{nhilit} reproducible} if one can take the data and code and produce
+  the same set of results. {\color{nhilit} Replicable} is more stringent: can
   someone repeat the experiment and get the same results?
 
   Reproducibility is a minimal standard. That something is
@@ -170,8 +100,8 @@ Reproducible
 \itemsep12pt
 \item Are the tables and figures reproducible from the code and data?
 \item Does the code actually do what you think it does?
-\item In addition to {\color{hilight} what} was done, is it clear
-  {\color{hilight} why} it was done?
+\item In addition to {\color{hilit} what} was done, is it clear
+  {\color{hilit} why} it was done?
   \bi
   \item[] (e.g., how were parameter settings chosen?)
   \ei
@@ -200,7 +130,7 @@ Reproducible
     \ei
 \item Get the data in the most-raw form possible
 \item Get any/all data and meta-data possible
-\item Keep track of the {\color{hilight} provenance} of all data files
+\item Keep track of the {\color{hilit} provenance} of all data files
 \item Be self-sufficient
 \ei
 
@@ -210,7 +140,7 @@ Reproducible
 Make sure you have all of the data and that you know exactly where it
 came from.
 
-But what is {\color{nhilight} raw} data? How far back should you go?
+But what is {\color{nhilit} raw} data? How far back should you go?
 Data that I get from collaborators has usually gone through a
 considerable amount of pre-processing. Should we have captured that,
 in order for the work to be considered reproducible?
@@ -381,7 +311,7 @@ source. Change that one document and both the program and web site are
 updated.
 
 My \href{http://github.com/kbroman/qtl}{R/qtl package} is an
-{\color{nhilight} anti}-example.
+{\color{nhilit} anti}-example.
 }
 \end{frame}
 
@@ -428,7 +358,7 @@ My \href{http://github.com/kbroman/qtl}{R/qtl package} is an
 \bi
 \itemsep12pt
 \item {\tt Make} is for more than just compiling software
-\item The {\color{hilight} essence} of what we're trying to do
+\item The {\color{hilit} essence} of what we're trying to do
 \item Automates a workflow
 \item Documents the workflow
 \item Documents the dependencies among data files, code
@@ -471,7 +401,7 @@ Figs/fig2.pdf: R/fig2.R
   Records look like {\tt target: dependencies} and are followed by a
   set of lines of code for creating the target from the
   dependencies. Those lines of code must start with a tab character
-  ({\color{nvhilight} not} spaces), and if you need to change
+  ({\color{nvhilit} not} spaces), and if you need to change
   directories, you have to do that on the same line as the command.
 
   If you type {\tt make} (or {\tt make Makefile}), the {\tt
@@ -531,26 +461,26 @@ clean:
 {\small
 \bi
 \item If you name your make file {\tt Makefile}, then just go into the
-directory containing that file and type {\tt \color{hilight} make}
+directory containing that file and type {\tt \color{hilit} make}
 
 \item If you name your make file {\tt something.else}, then type \\
-{\tt \color{hilight} make -f something.else}
+{\tt \color{hilit} make -f something.else}
 
-\item Actually, the commands above will build the {\color{vhilight} first}
+\item Actually, the commands above will build the {\color{vhilit} first}
   target listed in the make file. So I'll often include something like
   the following.
 
 \begin{quote}
-{\tt \color{hilight} all: target1 target2 target3}
+{\tt \color{hilit} all: target1 target2 target3}
 \end{quote}
 
-  Then typing {\tt \color{hilight} make all} (or just {\tt
-    \color{hilight} make}, if {\tt \color{hilight} all} is listed
+  Then typing {\tt \color{hilit} make all} (or just {\tt
+    \color{hilit} make}, if {\tt \color{hilit} all} is listed
   first in the file) will build all of those
   things.
 
-\item To be build a specific target, type {\tt \color{hilight} make target}.
-  For example, {\tt \color{hilight} make Figs/fig1.pdf}
+\item To be build a specific target, type {\tt \color{hilit} make target}.
+  For example, {\tt \color{hilit} make Figs/fig1.pdf}
 \ei
 }
 

@@ -4,81 +4,7 @@
 \setbeamertemplate{note page}[plain]
 \usepackage{listings}
 
-% set up listing environment
-\lstset{language=bash,
-        basicstyle=\scriptsize,
-        frame=single,
-        backgroundcolor=\color{darkgray},
-        commentstyle=\color{green},
-        showspaces=false,
-        showstringspaces=false
-        }
-
-% get rid of junk
-\usetheme{default}
-\beamertemplatenavigationsymbolsempty
-\hypersetup{pdfpagemode=UseNone} % don't show bookmarks on initial view
-
-
-% font
-\usepackage{fontspec}
-\setsansfont
-  [ ExternalLocation = ../fonts/ ,
-    UprightFont = *-regular , 
-    BoldFont = *-bold ,
-    ItalicFont = *-italic ,
-    BoldItalicFont = *-bolditalic ]{texgyreheros}
-\setbeamerfont{note page}{family*=pplx,size=\footnotesize} % Palatino for notes
-% "TeX Gyre Heros can be used as a replacement for Helvetica"
-% I've placed them in ../fonts/; alternatively you can install them
-% permanently on your system as follows:
-%     Download http://www.gust.org.pl/projects/e-foundry/tex-gyre/heros/qhv2.004otf.zip
-%     In Unix, unzip it into ~/.fonts
-%     In Mac, unzip it, double-click the .otf files, and install using "FontBook"
-
-% named colors
-\definecolor{offwhite}{RGB}{249,242,215}
-\definecolor{foreground}{RGB}{255,255,255}
-\definecolor{background}{RGB}{24,24,24}
-\definecolor{title}{RGB}{107,174,214}
-\definecolor{gray}{RGB}{155,155,155}
-\definecolor{subtitle}{RGB}{102,255,204}
-\definecolor{hilight}{RGB}{102,255,204}
-\definecolor{vhilight}{RGB}{255,111,207}
-\definecolor{nhilight}{RGB}{128,0,128}  % hilight color in notes
-\definecolor{nvhilight}{RGB}{255,0,128} % vhilight for notes
-\definecolor{lolight}{RGB}{155,155,155}
-%\definecolor{green}{RGB}{125,250,125}
-
-% use those colors
-\setbeamercolor{titlelike}{fg=title}
-\setbeamercolor{subtitle}{fg=subtitle}
-\setbeamercolor{institute}{fg=gray}
-\setbeamercolor{normal text}{fg=foreground,bg=background}
-\setbeamercolor{item}{fg=foreground} % color of bullets
-\setbeamercolor{subitem}{fg=gray}
-\setbeamercolor{itemize/enumerate subbody}{fg=gray}
-\setbeamertemplate{itemize subitem}{{\textendash}}
-\setbeamerfont{itemize/enumerate subbody}{size=\footnotesize}
-\setbeamerfont{itemize/enumerate subitem}{size=\footnotesize}
-
-% page number
-\setbeamertemplate{footline}{%
-    \raisebox{5pt}{\makebox[\paperwidth]{\hfill\makebox[20pt]{\color{lolight}
-          \scriptsize\insertframenumber}}}\hspace*{5pt}}
-
-% add a bit of space at the top of the notes page
-\addtobeamertemplate{note page}{\setlength{\parskip}{12pt}}
-
-% default link color
-\hypersetup{colorlinks, urlcolor={hilight}}
-
-% a few macros
-\newcommand{\bi}{\begin{itemize}}
-\newcommand{\ei}{\end{itemize}}
-\newcommand{\ig}{\includegraphics}
-\newcommand{\subt}[1]{{\footnotesize \color{subtitle} {#1}}}
-\newcommand{\ttsm}{\tt \small}
+\input{../LaTeX/header.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % end of header
@@ -125,12 +51,12 @@ don't touch that mouse!
 \centering
 \Large
 
-Windows {\color{lolight} vs.} Mac OSX {\color{lolight} vs.} Linux
+Windows {\color{lolit} vs.} Mac OSX {\color{lolit} vs.} Linux
 
 \bigskip
 \bigskip
 
-Remote {\color{lolight} vs.} Not
+Remote {\color{lolit} vs.} Not
 
 \note{The Windows operating system is not very programmer-friendly.
 
@@ -151,7 +77,7 @@ any lag in looking at graphics.
 \Large
 
 Consider \href{http://www.cygwin.org}{Cygwin}
-{\color{lolight} (and perhaps \href{https://code.google.com/p/mintty/}{Mintty})}
+{\color{lolit} (and perhaps \href{https://code.google.com/p/mintty/}{Mintty})}
 
 \note{Cygwin is an effort to get Unix command-line tools in Windows.
 
@@ -236,13 +162,13 @@ things about {\tt zsh}.
 \itemsep18pt
 \item Directory structure
 
-{\color{lolight} Absolute vs. relative paths
+{\color{lolit} Absolute vs. relative paths
 
 \tt ls -l {\textasciitilde}/.. }
 
 \item Creating, removing, changing directories
 
-{\tt \color{lolight} mkdir 
+{\tt \color{lolit} mkdir 
 
 rmdir
 
@@ -252,7 +178,7 @@ cd -}
 
 \item Moving, copying, removing files
 
-{\tt \color{lolight} mv
+{\tt \color{lolit} mv
 
 cp 
 
@@ -540,14 +466,14 @@ definition of an alias.
 
 \renewcommand{\arraystretch}{1.3}
 \begin{tabular}{ll} 
-{\tt ctrl-f, ctrl-b} & \color{lolight} move forward and back \\
-{\tt ctrl-a, ctrl-e} & \color{lolight}  move to beginning and end of line \\
-{\tt ctrl-k, ctrl-u} & \color{lolight}  delete rest of line, or to the start \\
-{\tt ctrl-l} & \color{lolight}  clear the screen \\
-{\tt ctrl-c} & \color{lolight}  cancel what you've typed \\
-{\tt tab} & \color{lolight}  autocomplete command or file \\
-{\tt ctrl-p, ctrl-n} & \color{lolight}  forward and backward in history \\
-{\tt ctrl-r} & \color{lolight}  search for a previous command
+{\tt ctrl-f, ctrl-b} & \color{lolit} move forward and back \\
+{\tt ctrl-a, ctrl-e} & \color{lolit}  move to beginning and end of line \\
+{\tt ctrl-k, ctrl-u} & \color{lolit}  delete rest of line, or to the start \\
+{\tt ctrl-l} & \color{lolit}  clear the screen \\
+{\tt ctrl-c} & \color{lolit}  cancel what you've typed \\
+{\tt tab} & \color{lolit}  autocomplete command or file \\
+{\tt ctrl-p, ctrl-n} & \color{lolit}  forward and backward in history \\
+{\tt ctrl-r} & \color{lolit}  search for a previous command
 \end{tabular}
 
 \note{These are mostly emacs-like key ``bindings''.}
@@ -609,7 +535,7 @@ chmod 700 Private\_stuff
 \vspace{24pt}
 
 \bi
-\item {\color{vhilight} Try stuff!}
+\item {\color{vhilit} Try stuff!}
 \item man pages and help files
 \item {\tt blah -h} or {\tt blah --help}
 \item \href{http://www.google.com}{Google}
@@ -619,7 +545,7 @@ chmod 700 Private\_stuff
 \item email lists and google groups
 \item friends or colleagues
 \item \href{http://twitter.com}{Twitter}
-\item Buy a book. Buy {\color{vhilight} all} of the books.
+\item Buy a book. Buy {\color{vhilit} all} of the books.
 \ei
 
 \note{You will run into crazy and mysterious errors. Will you give up, or

@@ -3,14 +3,14 @@ LEC = 02_unix
 WEBDIR = ../Web/assets/lectures
 DROPBOXDIR = ~/Dropbox/Teaching/Tools4RR
 
-${LEC}.pdf: ${LEC}.tex
+${LEC}.pdf: ${LEC}.tex ../LaTeX/header.tex
 	xelatex ${LEC}
 
 notes: ${LEC}_withnotes.pdf
 pdf: ${LEC}.pdf notes
 all: ${LEC}.pdf notes web dropbox
 
-${LEC}_withnotes.pdf: ${LEC}_withnotes.tex
+${LEC}_withnotes.pdf: ${LEC}_withnotes.tex ../LaTeX/header.tex
 	xelatex ${LEC}_withnotes
 	pdfnup ${LEC}_withnotes.pdf --nup 1x2 --no-landscape --paper letterpaper --frame true --scale 0.9
 	mv ${LEC}_withnotes-nup.pdf ${LEC}_withnotes.pdf

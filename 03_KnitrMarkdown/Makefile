@@ -3,10 +3,10 @@ LEC = 03_knitr_Rmd
 WEBDIR = ../Web/assets/lectures
 DROPBOXDIR = ~/Dropbox/Teaching/Tools4RR
 
-${LEC}.pdf: ${LEC}.tex
+${LEC}.pdf: ${LEC}.tex ../LaTeX/header.tex
 	xelatex ${LEC}
 
-notes: ${LEC}_withnotes.pdf
+notes: ${LEC}_withnotes.pdf ../LaTeX/header.tex
 pdf: ${LEC}.pdf notes
 all: ${LEC}.pdf notes web dropbox
 
