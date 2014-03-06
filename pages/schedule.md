@@ -47,6 +47,11 @@ tagline: Spring, 2014
 
 
 **Mar 7**:  Writing clear code
+    \[
+    [S](../assets/lectures/07_clearcode.pdf) |
+    [N](../assets/lectures/07_clearcode_withnotes.pdf) |
+    [C](https://github.com/kbroman/Tools4RR/tree/master/07_ClearCode/Examples/ReadMe.md)
+    \]
 
 **Mar 14**: Writing [R](http://www.r-project.org) packages; [roxygen2](https://github.com/klutometis/roxygen)
 
