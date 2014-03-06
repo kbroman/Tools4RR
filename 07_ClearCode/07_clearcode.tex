@@ -117,7 +117,7 @@
 \begin{frame}[fragile,c]{Break code into small functions}
 
 \begin{lstlisting}
-sampleone <- 
+sampleone <-
 function(vec)
   ifelse(length(vec)==1, vec, sample(vec, 1))
 
@@ -128,7 +128,7 @@ function(vec, step)
   index <- match(grid, vec)
 
   if(any(is.na(index)))
-    index <- sapply(grid, function(a,b) { 
+    index <- sapply(grid, function(a,b) {
         d <- abs(a-b);
         sampleone(which(d == min(d)))
       }, vec)
@@ -151,7 +151,7 @@ function(vec, step)
   task. Break long functions into pieces.
 
   Comment on the input and output; ideally, these
-  are obvious from the names. 
+  are obvious from the names.
 }
 \end{frame}
 
@@ -167,7 +167,7 @@ function(cross, markers)
 
   m <- match(markers, mn)
   if(any(is.na(m)))
-    warning("Some markers couldn't be found: ", 
+    warning("Some markers couldn't be found: ",
             paste(markers[is.na(m)], collapse=" "))
 
   drop.markers(cross, mn[is.na(match(mn, markers))])
@@ -212,18 +212,18 @@ function(n, mu=0, V=matrix(1))
 # colors from blue to red
 revrainbow <-
 function(n=256, ...)
-  rev(rainbow(start=0, end=2/3, n=n, ...))  
+  rev(rainbow(start=0, end=2/3, n=n, ...))
 
 
 
 # move values above/below quantiles to those quantiles
-winsorize <- 
+winsorize <-
 function(vec, q=0.006)
 {
   lohi <- quantile(vec, c(q, 1-q), na.rm=TRUE)
   if(diff(lohi) < 0)
     lohi <- rev(lohi)
-  
+
   vec[!is.na(vec) & vec < lohi[1]] <- lohi[1]
   vec[!is.na(vec) & vec > lohi[2]] <- lohi[2]
 
@@ -232,7 +232,7 @@ function(vec, q=0.006)
 \end{lstlisting}
 
 \note{If there's a bit of code that you write a lot, turn it into a
-  function. 
+  function.
 }
 \end{frame}
 
@@ -326,7 +326,7 @@ function(vec, q=0.006)
 
 \begin{lstlisting}
 # move values above/below quantiles to those quantiles
-winsorize <- 
+winsorize <-
 function(vec, q=0.006)
 {
 lohi <- quantile(vec, c(q, 1-q), na.rm=TRUE)
@@ -344,7 +344,7 @@ vec
 
   Most people recommend indenting by 4 spaces. Still, I prefer 2.\\
   (4 spaces are easier to track.)
-      
+
   Don't use tabs, as they get messed up when moving between
   computers.
 }
@@ -499,7 +499,7 @@ leftval <- which( (map - start) <=0 )
 \hfill {\tt \footnotesize \lolit \href{https://twitter.com/richierocks/status/388609208293556224}{@richierocks}}
 
 \note{{\tt drop\_the\_bom} might actually be quite memorable, which
-would make it a good choice. 
+would make it a good choice.
 
 And think of knitr: {\tt knit}, {\tt purl}, {\tt spin}, {\tt
 stitch}. Those work.
@@ -578,14 +578,14 @@ But generally I'd say: be direct rather than cute. Perhaps
 \ei
 }
 
-\note{Meaningful error messages are hard. 
+\note{Meaningful error messages are hard.
 
       Writing them to give detailed information takes time.
- 
+
       And of course {\nhilit you} wouldn't be making these errors, right?
-      
+
       But remember that you, six months from now, will be like a whole new
-      person. 
+      person.
 
 }
 \end{frame}
@@ -777,7 +777,7 @@ structure.
 \ei
 
 \note{Our primary goal, as scientific programmers, is to get the right
-  answer. 
+  answer.
 
   We all write differently. That's okay. But be consistent. If every
   function is named in a different way, it will be that much harder to
@@ -792,7 +792,7 @@ structure.
   maintain.
 
   It's when I'm hurried that I write crap code. It means more work
-  later. 
+  later.
 
   There are a lot of great programmers out there; read their code and
   learn from it.
