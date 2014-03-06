@@ -10,8 +10,8 @@
 % end of header
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\title{Tools for Reproducible Research}
-\subtitle{Writing clear code}
+\title{Writing clear code}
+\subtitle{Tools for Reproducible Research}
 \author{\href{http://www.biostat.wisc.edu/~kbroman}{Karl Broman}}
 \institute{Biostatistics \& Medical Informatics, UW{\textendash}Madison}
 \date{\href{http://www.biostat.wisc.edu/~kbroman}{\tt \scriptsize \color{foreground} biostat.wisc.edu/{\textasciitilde}kbroman}
@@ -37,7 +37,7 @@
 
 \hfill {\tt \footnotesize \lolit \href{http://geekandpoke.typepad.com/geekandpoke/2008/02/the-art-of-prog.html}{geekandpoke.typepad.com}}
 
-\note{
+\note{It's funny because it's true.
 }
 
 \end{frame}
@@ -49,7 +49,7 @@
 \frame{
   \titlepage
 
-\note{Clear code is more likely to work.
+\note{Clear code is more likely to be correct.
 
   Clear code is easier to use.
 
@@ -64,7 +64,7 @@
 
 \begin{frame}{Basic principles}
 
-\vspace{24pt}
+\vspace{18pt}
 
 \bi
 \item Code that works
@@ -98,13 +98,13 @@
   But we also want to write code that we (and others) will be able to
   use again. Efficiency is way down on the list of needs.
 
-  Write clearly, and re-write.
+  Write clearly, and re-write for greater clarity.
 
   Break things down into small, re-usable functions, written in a
   general way, but not {\nvhilit too} general. You want to actually
   solve a particular problem.
 
-  Step 1 is to stop and think.
+  Step 1: stop and think.
 
   Step 2: write re-usable functions rather than a script.
 
@@ -112,6 +112,695 @@
   which you copy-and-paste in a special way.
 }
 \end{frame}
+
+
+\begin{frame}[fragile,c]{Break code into small functions}
+
+\begin{lstlisting}
+sampleone <- 
+function(vec)
+  ifelse(length(vec)==1, vec, sample(vec, 1))
+
+get_grid_index <-
+function(vec, step)
+{
+  grid <- seq(min(vec), max(vec), by=step)
+  index <- match(grid, vec)
+
+  if(any(is.na(index)))
+    index <- sapply(grid, function(a,b) { 
+        d <- abs(a-b);
+        sampleone(which(d == min(d)))
+      }, vec)
+
+  index
+}
+\end{lstlisting}
+
+
+\note{This is a bit of code that was originally part of a larger
+  function. I pulled out the {\tt get\_grid\_index} and then further pulled
+  out the {\tt sampleone} function.
+
+  Separated as functions, the code is more likely to be reused. And
+  the smaller and more focused the function, the more likely you'll
+  use it again.
+
+  Avoid having scripts that are long streams of code.
+  Write functions. Give each function a single, focused
+  task. Break long functions into pieces.
+
+  Comment on the input and output; ideally, these
+  are obvious from the names. 
+}
+\end{frame}
+
+
+\begin{frame}[fragile,c]{Another example}
+
+\begin{lstlisting}
+# retain just the indicated markers
+pull.markers <-
+function(cross, markers)
+{
+  mn <- markernames(cross)
+
+  m <- match(markers, mn)
+  if(any(is.na(m)))
+    warning("Some markers couldn't be found: ", 
+            paste(markers[is.na(m)], collapse=" "))
+
+  drop.markers(cross, mn[is.na(match(mn, markers))])
+}
+\end{lstlisting}
+
+\note{Note that this function calls other functions I wrote,
+  {\tt markernames} and {\tt drop.markers}.
+
+  The reliance on {\tt drop.markers} might be less efficient, but it's
+  more efficient to write, and it's easier to maintain.
+}
+\end{frame}
+
+
+\begin{frame}[fragile,c]{Yet another example}
+
+\begin{lstlisting}
+# rmvn: simulate from multivariate normal distribution
+rmvn <-
+function(n, mu=0, V=matrix(1))
+{
+  p <- length(mu)
+
+  if(any(is.na(match(dim(V),p))))
+    stop("Dimension problem!")
+
+  D <- chol(V)
+
+  matrix(rnorm(n*p),ncol=p) %*% D + rep(mu,each=n)
+}
+\end{lstlisting}
+\note{Perhaps this is more understandable.
+
+  Note the use of default values.
+}
+\end{frame}
+
+\begin{frame}[fragile,c]{Still more examples}
+
+\begin{lstlisting}
+# colors from blue to red
+revrainbow <-
+function(n=256, ...)
+  rev(rainbow(start=0, end=2/3, n=n, ...))  
+
+
+
+# move values above/below quantiles to those quantiles
+winsorize <- 
+function(vec, q=0.006)
+{
+  lohi <- quantile(vec, c(q, 1-q), na.rm=TRUE)
+  if(diff(lohi) < 0)
+    lohi <- rev(lohi)
+  
+  vec[!is.na(vec) & vec < lohi[1]] <- lohi[1]
+  vec[!is.na(vec) & vec > lohi[2]] <- lohi[2]
+
+  vec
+}
+\end{lstlisting}
+
+\note{If there's a bit of code that you write a lot, turn it into a
+  function. 
+}
+\end{frame}
+
+
+\begin{frame}{Don't repeat yourself (or others)}
+
+\bbi
+\item Avoid having repeated blocks of code.
+\item Create functions, and call those functions repeatedly.
+\item This is easier to maintain.
+  \bi
+  \item If something needs to be fixed/revised, you just have to do it
+    the one time.
+  \ei
+\item Look at others' libraries/packages.
+  \bi
+  \item Don't write what others have already written (especially if
+    they've done it better than you would have).
+  \ei
+\ei
+
+\note{Don't repeat yourself (DRY) is one of the more important
+  concepts for programmers.
+
+  I'm particularly bad at making use of others' code.
+}
+\end{frame}
+
+
+\begin{frame}{Don't make things too specific}
+
+\bbi
+\item Write code that is a bit more general than your specific data
+  \bi
+  \item Don't assume particular data dimensions.
+  \item Don't forget about the possibility of missing values\\
+    (even if {\hilit your} data doesn't have any).
+  \item Aim for re-use.
+  \ei
+\item Things like file names should be arguments.
+  \bi
+  \item Don't assume a particular data file name.
+  \ei
+\ei
+
+\note{Don't make things too general, either. You want to actually
+  solve your particular problem.
+
+  You don't want to have to edit the code for different data.
+}
+\end{frame}
+
+
+
+\begin{frame}{No global variables, ever!}
+
+\bbi
+\item Don't refer directly to objects in your workspace.
+\item If a function needs something, pass it as an argument.
+\item (But what about really big data sets?)
+\ei
+
+\note{Global variables make code unreadable.
+
+  Global variables make code difficult to reuse.
+}
+\end{frame}
+
+
+
+\begin{frame}{No magic numbers}
+
+\bbi
+\item Name numbers and use the names
+  \bi
+  \item[] e.g., {\tt max\_iter=1000}, {\tt tol\_convergence=0.0001}
+  \ei
+\item {\hilit Even better}: include them as function arguments
+\ei
+
+\note{You'll later ask yourself, ``Why {\tt 12}?''
+
+  When you include such things as function arguments, include
+  reasonable default values.
+}
+\end{frame}
+
+
+
+\begin{frame}[fragile,c]{Indent!}
+
+\begin{lstlisting}
+# move values above/below quantiles to those quantiles
+winsorize <- 
+function(vec, q=0.006)
+{
+lohi <- quantile(vec, c(q, 1-q), na.rm=TRUE)
+if(diff(lohi) < 0)
+lohi <- rev(lohi)
+vec[!is.na(vec) & vec < lohi[1]] <- lohi[1]
+vec[!is.na(vec) & vec > lohi[2]] <- lohi[2]
+vec
+}
+\end{lstlisting}
+
+\note{I taught part of a course on statistical programming at Johns
+  Hopkins. It included a lecture like this one. Still, many students
+  submitted their programming assignment flush left.
+
+  Most people recommend indenting by 4 spaces. Still, I prefer 2.\\
+  (4 spaces are easier to track.)
+      
+  Don't use tabs, as they get messed up when moving between
+  computers.
+}
+\end{frame}
+
+
+
+\begin{frame}[fragile,c]{Use white space}
+
+\begin{lstlisting}
+# move values above/below quantiles to those quantiles
+winsorize<-function(vec,q=0.006)
+{lohi<-quantile(vec,c(q,1-q),na.rm=TRUE)
+if(diff(lohi)<0)lohi<-rev(lohi)
+vec[!is.na(vec)&vec<lohi[1]]<-lohi[1]
+vec[!is.na(vec)&vec>lohi[2]]<-lohi[2]
+vec}
+\end{lstlisting}
+
+\note{The computer doesn't care about white space, but people do.
+}
+\end{frame}
+
+
+\begin{frame}[fragile,c]{Don't let lines get too long}
+
+\begin{lstlisting}
+get_grid_index <-
+function(vec, step)
+{
+  grid <- seq(min(vec), max(vec), by=step)
+  index <- match(grid, vec)
+
+  if(any(is.na(index)))
+    index <- sapply(grid, function(a,b) { d <- abs(a-b); sampleone(which(d == min(d))) }, vec)
+
+  index
+}
+\end{lstlisting}
+
+
+\note{$<$ 72 characters per line
+
+}
+\end{frame}
+
+
+\begin{frame}[fragile,c]{Use parentheses to avoid ambiguity}
+
+
+\begin{lstlisting}
+if( (ndraws1==1) && (ndraws2>1) ) {
+
+ ...
+
+}
+
+leftval <- which( (map - start) <=0 )
+\end{lstlisting}
+
+
+\note{Even if they aren't {\nvhilit necessary}, they can be helpful
+  to you (or others) later.
+}
+\end{frame}
+
+
+
+
+\begin{frame}{Names: meaningful}
+
+\bbi
+\item Make name descriptive but concise
+\item Avoid {\tt tmp1}, {\tt tmp2}, ...
+\item Only use {\tt i}, {\tt j}, {\tt x}, {\tt y} in the simplest
+  situations
+\item If a function is named {\tt fv}, what might it do?
+\item if an object is called {\tt nms}, what could it be?
+\item Functions as verbs; objects as nouns
+\ei
+
+\note{I'm terrible at coming up with good names. But it's really
+  important.
+
+  Descriptive names make code self-documenting.
+
+  If functions are named by what they do, you may not need to explain
+  further.
+
+  If the object names are meaningful, the code will be readable as
+  it stands. If the objects are named {\tt g}, {\tt g2}, and {\tt
+  gg}, it'll need a lot of comments.
+
+  I admit, I'm a terrible offender in this regard, especially when I'm
+  coding in a hurry. Do as I say, not as I do.
+}
+\end{frame}
+
+
+
+
+\begin{frame}{Names: consistent}
+
+\bbi
+\item If one function uses {\tt markers}, you shouldn't have another
+  that uses {\tt mnames}.
+
+\item If one function is named in {\tt camelCase}, you shouldn't have
+  another named with {\tt pothole\_case}.
+
+\item If you use {\tt nind} for an object, you shouldn't have another called {\tt n.var}
+\ei
+
+\note{Consistency makes the names easier to remember.
+
+  If the names are easier to remember, you're less likely to use the
+  wrong name and so introduce a bug.
+}
+\end{frame}
+
+
+
+\begin{frame}{Names: avoid confusion}
+
+\bbi
+\item Don't use both {\tt total} and {\tt totals}
+\item Don't use both {\tt n.cluster} and {\tt n.clusters}
+\item Don't use both {\tt result} and {\tt results}
+\item Don't use both {\tt Mat} and {\tt mat}
+\item Don't use both {\tt g} and {\tt gg}
+\ei
+
+\note{Don't use similar but different names, in the same function or
+  across functions.
+}
+\end{frame}
+
+
+
+
+
+
+
+\begin{frame}[c]{Don't be cute}
+
+\vspace{38pt}
+
+\figw{Figs/richierocks_tweet.png}{0.8}
+
+\vspace{50pt}
+
+\hfill {\tt \footnotesize \lolit \href{https://twitter.com/richierocks/status/388609208293556224}{@richierocks}}
+
+\note{{\tt drop\_the\_bom} might actually be quite memorable, which
+would make it a good choice. 
+
+And think of knitr: {\tt knit}, {\tt purl}, {\tt spin}, {\tt
+stitch}. Those work.
+
+But generally I'd say: be direct rather than cute. Perhaps
+{\tt remove\_byteorder\_marks}
+}
+\end{frame}
+
+
+
+
+
+\begin{frame}{Comments}
+
+\bi
+\item Comment the tricky bits and the major sections
+\item Don't belabor the obvious
+\item Don't comment bad code; rewrite it
+\item Document the input/output and purpose, not the mechanics
+\item Don't contradict the code
+  \bi
+  \item this happens if you revise the code but don't revise the
+    related comments
+  \ei
+\item Comment code as you are writing it (or before)
+\item Plan to spend 1/4 of your time commenting
+\ei
+
+
+\note{Some things are tricky and deserve explanation, so that when you
+  come back to it, you have a guide.
+
+  But in many cases, code can be rewritten to be clear and
+  self-documenting.
+
+  Commenting takes time. And no one ever goes back and adds comments
+  later. It's another one of those ``invest for the future'' type of
+  things.
+}
+\end{frame}
+
+
+
+
+\begin{frame}{Error/warning messages}
+
+\vspace{6pt}
+
+{\small
+\bi
+\item Explain what's wrong (and where)
+  \bi
+  \item {\ttsm error("nrow(X) != nrow(Y)")}
+  \ei
+
+\item Suggest corrective action
+  \bi
+  \item {\ttsm You need to first run calc.genoprob().}
+  \ei
+
+\item Give details
+  \bi
+  \item {\ttfn error"nrow(X) (", nrX, ") != nrow(Y) (", nrY")}
+  \ei
+
+
+\item Don't give warning messages that the users won't understand.
+  \bi
+  \item {\ttsm X'X is singular.}
+  \ei
+
+\item Don't let users do something stupid without warning
+
+\item Include error checking even in personal code.
+\ei
+}
+
+\note{Meaningful error messages are hard. 
+
+      Writing them to give detailed information takes time.
+ 
+      And of course {\nhilit you} wouldn't be making these errors, right?
+      
+      But remember that you, six months from now, will be like a whole new
+      person. 
+
+}
+\end{frame}
+
+
+\begin{frame}{Check data integrity}
+
+\bbi
+\item Check that the input is as expected, or give warnings/errors.
+
+\item Write these in the first pass (though they're dull).
+  \bi
+  \item You may not remember your assumptions later
+  \ei
+
+\item These are useful for {\hilit documenting} the assumptions.
+\ei
+
+\note{You can't include enough such checks.
+
+  Hadley Wickham's {\tt assertthat} package is great for this. We'll
+  talk about it in a couple of weeks.
+}
+\end{frame}
+
+
+\begin{frame}{Program organization}
+
+\bbi
+\item Break code into separate files (say 300 lines?)
+
+\item Each file includes related functions
+
+\item Files should be named meaningfully
+
+\item Include a {\hilit brief} comment at the top.
+\ei
+
+\note{My R/qtl package has some {\nhilit really} long files, like {\tt
+    util.R}, which seemed like a good idea at the time. I have to use
+  a lot of {\tt grep} to find things. And there are plenty of
+  functions in there that I have totally forgotten about.
+
+  I used to make really long boiler-plate comments at the top of each
+  file. That means that you {\nhilit always} have to page down to get
+  to the code. Now I try to write really minimal comments.
+}
+\end{frame}
+
+
+
+\begin{frame}[fragile,c]{Create an R package!}
+
+\bbi
+\item Make a personal package with bits of your own code
+\item Mine is R/broman, \href{http://github.com/kbroman/broman}{\ttsm github.com/kbroman/broman}
+\ei
+
+\vspace{12pt}
+
+\begin{lstlisting}
+# qqline corresponding to qqplot
+qqline2 <- function(x, y, probs = c(0.25, 0.75), qtype = 7, ...)
+{
+  stopifnot(length(probs) == 2)
+  x <- quantile(x, probs, names=FALSE, type=qtype, na.rm = TRUE)
+  y <- quantile(y, probs, names=FALSE, type=qtype, na.rm = TRUE)
+  slope <- diff(y)/diff(x)
+  int <- y[1L] - slope*x[1L]
+  abline(int, slope, ...)
+  invisible(c(intercept=int, slope=slope))
+}
+\end{lstlisting}
+\note{R packages are great for encapsulating and distributing R code
+  with documentation.
+
+  Every R programmer should have a personal package containing the
+  various functions that they use day-to-day.
+
+  We'll talk about writing R packages next week. It's really rather
+  easy.
+
+  I give an example here of one function in my R/broman package.
+  Some of the earlier examples are in this package.
+}
+\end{frame}
+
+
+
+
+\begin{frame}{Complex data objects}
+
+\bbi
+\item Keep disparate data together in a more complex
+structure.
+  \bi
+  \item lists in R
+  \item I also like to hide things in object {\hilit attributes}
+  \ei
+\item It's easier to pass such objects between functions
+\item Consider object-oriented programming
+\ei
+
+\note{Complex data objects allow you to think about complex data as a
+  {\hilit single thing}. And they make it easier to pass the data into
+  a function.
+
+  R has two systems for object-oriented programming: S3 and S4. They
+  can make your code easier to use and understand. But they can also
+  make things more opaque and harder to understand.
+}
+\end{frame}
+
+
+
+
+
+\begin{frame}{Avoiding bugs}
+
+\bbi
+\item Learn to type well.
+\item Think before you type.
+\item Consider commenting before coding.
+\item Code defensively
+  \bi
+  \item Handle cases that "can't happen"
+  \ei
+\item Code simply and clearly
+\item Use modularity to advantage
+\item Think through all special cases
+\item Don't be in too much of a hurry
+\ei
+
+\note{Writing clear code will make it easier to find bugs, but we also
+  want to {\hilit avoid} introducing bugs in the first place. These
+  are my strategies: Useful when {\hilit applied}.
+}
+\end{frame}
+
+
+
+
+
+\begin{frame}{Basic principles}
+
+\vspace{18pt}
+
+\bi
+\item Code that works
+    \bi
+    \item[] No bugs; efficiency is secondary (or tertiary)
+    \ei
+\item Readable
+    \bi
+    \item[] Fixable; extendable
+    \ei
+\item Reuseable
+    \bi
+    \item[] Modular; reasonably general
+    \ei
+\item Reproducible
+    \bi
+    \item[] Re-runnable
+    \ei
+\item Think before you code
+    \bi
+    \item[] More thought $\implies$ fewer bugs/re-writes
+    \ei
+\item Learn from others' code
+    \bi
+    \item[] R itself; key R packages
+    \ei
+\ei
+
+\note{It seems useful to repeat these basic principles.
+}
+\end{frame}
+
+
+\begin{frame}{Summary}
+
+\bbi
+\item Get the correct answers.
+\item Find a clear style and stick to it.
+\item Plan for the future.
+\item Be organized.
+\item Don't be too hurried.
+\item Learn from others.
+\ei
+
+\note{Our primary goal, as scientific programmers, is to get the right
+  answer. 
+
+  We all write differently. That's okay. But be consistent. If every
+  function is named in a different way, it will be that much harder to
+  remember.
+
+  Plan for the future: write code that is readable and easy to
+  maintain. And write things in a modular and reasonably general way,
+  so that you (or others) will be more likely to be able to re-use
+  your work.
+
+  Be organized. Well-organized software is easier to understand and
+  maintain.
+
+  It's when I'm hurried that I write crap code. It means more work
+  later. 
+
+  There are a lot of great programmers out there; read their code and
+  learn from it.
+}
+\end{frame}
+
+
+
 
 
 \end{document}
