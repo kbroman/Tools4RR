@@ -15,4 +15,4 @@ Here are some links to R packages to look at.
     [hmm_bc.c](https://github.com/kbroman/qtl/blob/master/src/hmm_bc.c)
 
 - [Hadley Wickham](http://had.co.nz/)'s [assertthat](https://github.com/hadley/assertthat) and
-  [testthat](https://github.com/hadley/testthat)
+  [testthat](https://github.com/hadley/testthat) packages
