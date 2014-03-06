@@ -272,9 +272,15 @@ function(vec, q=0.006)
     (even if {\hilit your} data doesn't have any).
   \item Aim for re-use.
   \ei
-\item Things like file names should be arguments.
+\item Use function arguments
   \bi
-  \item Don't assume a particular data file name.
+  \item Don't assume particular data file names
+  \item Don't hard-code tuning parameters
+  \item R scripts can take \href{http://stackoverflow.com/questions/2151212/how-can-i-read-command-line-parameters-from-an-r-script}{command-line arguments}:\\[2pt]
+    \bi
+    \item[] {\ttsm Rscript myscript.R input\_file output\_file} \\[2pt]
+    \item[] {\ttsm args <- commandArgs(TRUE)}
+    \ei
   \ei
 \ei
 
@@ -308,7 +314,8 @@ function(vec, q=0.006)
 \bbi
 \item Name numbers and use the names
   \bi
-  \item[] e.g., {\tt max\_iter=1000}, {\tt tol\_convergence=0.0001}
+  \item[] {\tt max\_iter <- 1000}
+  \item[] {\tt tol\_convergence <- 0.0001}
   \ei
 \item {\hilit Even better}: include them as function arguments
 \ei
@@ -449,19 +456,23 @@ leftval <- which( (map - start) <=0 )
 \begin{frame}{Names: consistent}
 
 \bbi
-\item If one function uses {\tt markers}, you shouldn't have another
-  that uses {\tt mnames}.
+\item {\tt markers} vs {\tt mnames}
 
-\item If one function is named in {\tt camelCase}, you shouldn't have
-  another named with {\tt pothole\_case}.
+\item {\tt camelCase} vs. {\tt pothole\_case}
 
-\item If you use {\tt nind} for an object, you shouldn't have another called {\tt n.var}
+\item {\tt nind} vs {\tt n.var}
+
+\item If a function/object, there shouldn't be a function/object with
+  the other
+
 \ei
 
 \note{Consistency makes the names easier to remember.
 
   If the names are easier to remember, you're less likely to use the
   wrong name and so introduce a bug.
+
+  And, of course, other users will appreciate the consistency.
 }
 \end{frame}
 
@@ -515,7 +526,7 @@ But generally I'd say: be direct rather than cute. Perhaps
 
 \begin{frame}{Comments}
 
-\bi
+\bbi
 \item Comment the tricky bits and the major sections
 \item Don't belabor the obvious
 \item Don't comment bad code; rewrite it
@@ -637,14 +648,14 @@ But generally I'd say: be direct rather than cute. Perhaps
 
 
 
-\begin{frame}[fragile,c]{Create an R package!}
+\begin{frame}[fragile]{Create an R package!}
 
 \bbi
 \item Make a personal package with bits of your own code
 \item Mine is R/broman, \href{http://github.com/kbroman/broman}{\ttsm github.com/kbroman/broman}
 \ei
 
-\vspace{12pt}
+\vspace{24pt}
 
 \begin{lstlisting}
 # qqline corresponding to qqplot
