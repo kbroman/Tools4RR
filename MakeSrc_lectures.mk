@@ -1,3 +1,7 @@
+# Common portion of the Makefile for each lecture:
+# everything except the definition of LEC
+#   (Thanks, Jianan!)
+
 WEBDIR = ../Web/assets/lectures
 DROPBOXDIR = ~/Dropbox/Teaching/Tools4RR
 
