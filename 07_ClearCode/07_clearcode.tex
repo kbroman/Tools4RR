@@ -101,7 +101,7 @@
   Write clearly, and re-write for greater clarity.
 
   Break things down into small, re-usable functions, written in a
-  general way, but not {\nvhilit too} general. You want to actually
+  general way, but not {\nhilit too} general. You want to actually
   solve a particular problem.
 
   Step 1: stop and think.
@@ -203,6 +203,11 @@ function(n, mu=0, V=matrix(1))
 \note{Perhaps this is more understandable.
 
   Note the use of default values.
+
+  I'm often wanting to simulate from a multivariate normal
+  distribution. It's not hard, but you have to remember: do you do 
+  {\tt Z \%*\% D} or {\tt D \%*\% Z}? And in any case, it's a lot
+  easier to just write {\tt rmvn(n, mu, V)}.
 }
 \end{frame}
 
@@ -233,6 +238,15 @@ function(vec, q=0.006)
 
 \note{If there's a bit of code that you write a lot, turn it into a
   function.
+
+  I can't tell you how many times I typed
+  {\tt rev(rainbow(start=0, end=2/3, n=256))} before I thought to make
+  it a function. (And I can't tell you how many times I've typed it
+  since, having forgotten that I wrote the function.)
+
+  I learned about Winsorization relatively recently; it's a really
+  useful technique to deal with possible outliers. It's not hard. But
+  how much easier to just write {\tt winsorize()}!
 }
 \end{frame}
 
@@ -308,7 +322,12 @@ function(vec, q=0.006)
   solve your particular problem.
 
   You don't want to have to edit the code for different data.
-}
+
+  We {\nhilit will} write scripts. But make them a bit more general by
+  allowing command-line arguments to specify input and output file
+  names. You can always include defaults, for your particular
+  files. Even better is to have these specified in your {\tt
+    Makefile.}  }
 \end{frame}
 
 
@@ -324,6 +343,10 @@ function(vec, q=0.006)
 \note{Global variables make code unreadable.
 
   Global variables make code difficult to reuse.
+
+  But when you pass data into a function, R makes a copy. How to deal
+  with {\nhilit really big} data sets, then? I'm not sure. And
+  {\nvhilit efficiency is secondary}.
 }
 \end{frame}
 
@@ -433,7 +456,7 @@ leftval <- which( (map - start) <=0 )
 \end{lstlisting}
 
 
-\note{Even if they aren't {\nvhilit necessary}, they can be helpful
+\note{Even if they aren't {\nhilit necessary}, they can be helpful
   to you (or others) later.
 }
 \end{frame}
@@ -444,12 +467,12 @@ leftval <- which( (map - start) <=0 )
 \begin{frame}{Names: meaningful}
 
 \bbi
-\item Make name descriptive but concise
+\item Make names descriptive but concise
 \item Avoid {\tt tmp1}, {\tt tmp2}, ...
 \item Only use {\tt i}, {\tt j}, {\tt x}, {\tt y} in the simplest
   situations
 \item If a function is named {\tt fv}, what might it do?
-\item if an object is called {\tt nms}, what could it be?
+\item If an object is called {\tt nms}, what could it be?
 \item Functions as verbs; objects as nouns
 \ei
 
@@ -482,8 +505,8 @@ leftval <- which( (map - start) <=0 )
 
 \item {\tt nind} vs {\tt n.var}
 
-\item If a function/object, there shouldn't be a function/object with
-  the other
+\item If a function/object has one of these, there shouldn't be a
+  function/object with the other.
 
 \ei
 
@@ -510,6 +533,8 @@ leftval <- which( (map - start) <=0 )
 
 \note{Don't use similar but different names, in the same function or
   across functions.
+
+  It's confusing, and it's prone to bugs from mistyping.
 }
 \end{frame}
 
@@ -589,16 +614,16 @@ But generally I'd say: be direct rather than cute. Perhaps
 
 \item Suggest corrective action
   \bi
-  \item {\ttsm You need to first run calc.genoprob().}
+  \item {\ttsm "You need to first run calc.genoprob()."}
   \ei
 
 \item Give details
   \bi
-  \item {\ttfn error"nrow(X) (", nrX, ") != nrow(Y) (", nrY")}
+  \item {\ttfn {\hilit "nrow(X) ("}, nrX, {\hilit ") != nrow(Y) ("}, nrY, {\hilit ")"}}
   \ei
 
 
-\item Don't give warning messages that the users won't understand.
+\item Don't give error/warning messages that users won't understand.
   \bi
   \item {\ttsm X'X is singular.}
   \ei
@@ -752,7 +777,7 @@ structure.
 
 \note{Writing clear code will make it easier to find bugs, but we also
   want to {\hilit avoid} introducing bugs in the first place. These
-  are my strategies: Useful when {\hilit applied}.
+  are my strategies; They are useful {\hilit when applied}.
 }
 \end{frame}
 
