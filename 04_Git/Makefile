@@ -1,3 +1,3 @@
 LEC = 04_git
 
-include ../MakeSrc.mk
+include ../MakeSrc_lectures.mk

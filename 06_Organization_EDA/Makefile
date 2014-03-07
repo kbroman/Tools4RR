@@ -1,3 +1,3 @@
 LEC = 06_org_eda
 
-include ../MakeSrc.mk
+include ../MakeSrc_lectures.mk
