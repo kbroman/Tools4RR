@@ -117,7 +117,7 @@ title:  Resources and further reading
 - Oliveira & Stewart,
   [Writing scientific software (book)](http://www.amazon.com/exec/obidos/ASIN/0521675952/7210-20)
 - Kernighan & Plauger, [The elements of programming style, 2nd ed (book)](http://www.amazon.com/exec/obidos/ASIN/0070342075/7210-20)
-- Kernighan & Pike, [The practice of programming](http://www.amazon.com/exec/obidos/ASIN/020161586X/7210-20)
+- Kernighan & Pike, [The practice of programming (book)](http://www.amazon.com/exec/obidos/ASIN/020161586X/7210-20)
 
 
 ### R packages
@@ -126,11 +126,14 @@ title:  Resources and further reading
 - [Jeff Leek on developing R packages](https://github.com/jtleek/rpackages)
 - Documenting R
   [packages](http://adv-r.had.co.nz/Documenting-packages.html) and [functions](http://adv-r.had.co.nz/Documenting-functions.html)
+- [Rd2roxygen package](http://yihui.name/Rd2roxygen/): Translate Rd
+  files to roxygen comments
+- [Travis CI](http://travis-ci.com/) [for R](http://yihui.name/en/2013/04/travis-ci-general-purpose/)
 
 ### Testing and debugging
 
-- testthat package
-- [Hadley Wickham's paper](http://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf)
+- [assertthat](https://github.com/hadley/assertthat) and [testthat](https://github.com/hadley/testthat) packages
+- [Hadley Wickham's paper on testthat](http://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf)
 - [Testing](http://adv-r.had.co.nz/Testing.html) in [Hadley Wickham](http://had.co.nz)'s
    [Advanced R book](http://adv-r.had.co.nz)
 - Marick, [The craft of software testing (book)](http://www.amazon.com/exec/obidos/ASIN/0131774115/7210-20)
