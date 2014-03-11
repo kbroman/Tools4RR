@@ -55,12 +55,12 @@
 
 \bbi
 \item To distribute R code and documentation
-\item To keep track of the misc.\ R functions you write and
-  {\hilit reuse}
-\item To distribute the data and software that accompany a paper.
+\item To keep track of the misc.\ R functions you write
+  {\hilit and reuse}
+\item To distribute data and software accompanying a paper.
 \ei
 
-\note{R packages can be big and important. 
+\note{R packages can be big and important.
 
      But that shouldn't scare you off. Assembling a few R functions
      within a package will make it vastly easier for {\nhilit you} to
@@ -98,7 +98,7 @@
 
 \note{I was going to write a short example R package, but Alyssa
   Frazee saved me the effort. Here package is a perfect little example
-  to illustrate how to write a package. 
+  to illustrate how to write a package.
 
   It's also a great example of a small but really useful package.
   One small function could be widely useful; you just need to package
@@ -141,7 +141,7 @@ RSkittleBrewer/
 
 \begin{lstlisting}
 Package: RSkittleBrewer
-Version: 1.01
+Version: 1.1
 Author: Alyssa Frazee
 Maintainer: Alyssa Frazee <afrazee@jhsph.edu>
 License: MIT + file LICENSE
@@ -159,7 +159,7 @@ URL: https://github.com/alyssafrazee/RSkittleBrewer
 
   The only part that might be unclear is the {\tt License} field. You
   need to choose a license. We'll talk about this on the very last day
-  of the course. 
+  of the course.
 
   For now, I'd suggest choosing between the GPL-3
   (the GNU Public License v3) and MIT licenses. GPL-3 has a
@@ -204,14 +204,13 @@ export(plotSmarties)
 
 \vspace{12pt}
 
-\small
 \begin{lstlisting}
 \name{RSkittleBrewer}
 \alias{RSkittleBrewer}
 \title{Candy-based color palettes}
 \description{Vectors of colors corresponding to different
              candies.}
-\usage{RSkittleBrewer(flavor = c("original", "tropical", 
+\usage{RSkittleBrewer(flavor = c("original", "tropical",
                       "wildberry", "M&M", "smarties"))
 }
 \arguments{
@@ -239,6 +238,149 @@ plotSmarties()
   links to related functions.
 
   Writing these help files is tedious! That's where Roxygen2 comes in.
+}
+\end{frame}
+
+
+\begin{frame}[fragile]{Building, installing, and checking}
+
+\vspace{24pt}
+
+\begin{lstlisting}
+R CMD build RSkittleBrewer
+R CMD INSTALL RSkittleBrewer_1.1.tar.gz
+R CMD check RSkittleBrewer_1.1.tar.gz
+
+R CMD check --as-cran RSkittleBrewer_1.1.tar.gz
+
+R CMD INSTALL --library=~/Rlibs RSkittleBrewer_1.1.tar.gz
+# (~/.Renviron file contains R_LIBS=~/Rlibs)
+
+# On windows:
+R CMD INSTALL --build RSkittleBrewer_1.1.tar.gz
+\end{lstlisting}
+
+\note{
+  To install your package, you first need to {\nhilit build} it. {\tt
+    R CMD build} creates the {\tt .tar.gz} source file that you'd
+  distribute.
+
+  You then use {\tt R CMD INSTALL} to install the package. You may
+  want to use {\tt --library=/some/dir} to install to a different
+  directory, in which case you need to set {\tt R\_LIBS} in your {\tt
+    {\textasciitilde}/.Renviron} file.
+
+  {\tt R CMD check} runs extensive checks of the package, including
+  running all of the examples in the help files.
+  Pay attention to any errors, warnings, or notes, and revise the
+  package to avoid them. This is particularly true if you want to
+  submit the package to CRAN.
+
+  Before submitting to CRAN, be sure to run {\tt R CMD check} with the
+  lesser-known {\tt --as-cran} flag, which checks further things.
+
+  On Windows, use {\tt R CMD INSTALL --build} to create a {\tt .zip}
+  file of the ``compiled'' package.
+}
+\end{frame}
+
+
+\begin{frame}[fragile]{Roxygen2 comments}
+
+\vspace{24pt}
+
+\begin{lstlisting}
+#  RSkittleBrewer
+#' Candy-based color palettes
+#'
+#' Vectors of colors corresponding to different candies.
+#'
+#' @param flavor Character string for candy-based color palette.
+#'
+#' @export
+#' @return Vector of character strings representing the chosen...
+#'
+#' @examples
+#' plotSkittles()
+#' plotSmarties()
+#'
+#' @seealso \code{\link{plotSkittles}},
+#'   \code{\link{plotSmarties}}
+#' @keywords hplot
+RSkittleBrewer <-
+...
+\end{lstlisting}
+
+
+\note{
+  The {\tt .Rd} files are a pain to create and maintain. Plus, you'll
+  end up writing documentation in two places: in the R code, and then
+  in the separate {\tt .Rd} files.
+
+  Roxygen2 is a system for writing structured comments in the R code
+  that get converted to {\tt .Rd} files. You just maintain the
+  documentation in one place: in the R code.
+  The Roxygen comments start with {\tt \#'}. The first line is the
+  title; the second is the description.
+
+  The individual {\tt {\textbackslash}item}'s within {\tt arguments} become {\tt
+    @param}. The {\tt {\textbackslash}value} field becomes {\tt @return}.
+
+  You still need to know a bit about the {\tt .Rd} format; for
+  example, the {\tt {\textbackslash}code\{{\textbackslash}link\{blah\}\}}.
+
+  Roxygen2 will across create the {\tt NAMESPACE} file. That's what
+  {\tt @export} is for.
+
+  You may also be interested in the Rd2roxygen package, for converting
+  a package with hand-written {\tt .Rd} files to the Roxygen2 system.
+}
+\end{frame}
+
+
+
+\begin{frame}[fragile]{Makefile}
+
+\vspace{24pt}
+
+\begin{lstlisting}
+# build package documentation
+doc:
+	R -e 'library(devtools);document(roclets=c("namespace", "rd"))'
+\end{lstlisting}
+
+\note{
+  Here's the {\tt Makefile} I use to build the {\tt .Rd} files: I use
+  the {\tt document()} function within the {\tt devtools} package.
+}
+\end{frame}
+
+
+\begin{frame}[fragile]{\tt .Rbuildignore}
+
+\vspace{12pt}
+
+\begin{lstlisting}
+Makefile
+\end{lstlisting}
+
+\note{You'll want to include a {\tt .Rbuildignore} file in your
+  package directory, containing the single line ``{\tt
+    Makefile}''. This tells R about files to {\nhilit not} include
+ in the {\tt .tar.gz} file it builds. You'd get complaints from {\tt R
+   CMD check} otherwise.
+}
+\end{frame}
+
+
+\begin{frame}[c]{}
+
+
+\centerline{That's it!}
+
+\note{That's all you need to make a package.
+
+  There's more, but you should start with just that stuff.
 }
 \end{frame}
 
