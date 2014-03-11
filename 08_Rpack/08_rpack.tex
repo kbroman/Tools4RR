@@ -235,7 +235,9 @@ plotSmarties()
   arguments are, and what output it produces.
 
   You can further provide examples (which can also serve as tests) and
-  links to related functions.
+  links to related functions. The examples need to be {\nhilit fast}
+  ($\ll$ 5 sec), because they're run frequently. (CRAN checks every
+  package every day on multiple systems.)
 
   Writing these help files is tedious! That's where Roxygen2 comes in.
 }
@@ -358,7 +360,7 @@ doc:
 
 \begin{frame}[fragile]{\tt .Rbuildignore}
 
-\vspace{12pt}
+\vspace{24pt}
 
 \begin{lstlisting}
 Makefile
@@ -369,6 +371,45 @@ Makefile
     Makefile}''. This tells R about files to {\nhilit not} include
  in the {\tt .tar.gz} file it builds. You'd get complaints from {\tt R
    CMD check} otherwise.
+}
+\end{frame}
+
+
+\begin{frame}[fragile]{Include a {\tt README} or {\tt README.md} file}
+
+\vspace{6pt}
+
+\begin{lstlisting}
+fun with R Colors
+=================
+
+If you want high-quality, scientifically-researched color
+schemes for your R plots, check out
+[RColorBrewer](http://cran.r-project.org/web/packages/RColorBrewer).
+If you want your plots to be colored the same way as packs of
+Skittles (or M&Ms), then this package (RSkittleBrewer) is the
+way to go.
+
+### install
+with `devtools`:
+
+```S
+devtools::install_github('RSkittleBrewer', 'alyssafrazee')
+```
+
+### use
+There are only three functions in this package.
+
+Call `RSkittleBrewer` on a flavor to get a vector of R color
+names that correspond to that Skittle flavor.
+...
+\end{lstlisting}
+
+\note{Include a {\tt README} or {\tt README.md} file; R will ignore
+  it, but it will show up on GitHub.
+
+  You can use {\tt ReadMe} or {\tt ReadMe.md}, but then you need to
+  include it in the {\tt .Rbuildignore} file or R will complain.
 }
 \end{frame}
 
@@ -384,5 +425,76 @@ Makefile
 }
 \end{frame}
 
+
+\begin{frame}{Package vignettes}
+
+\bbi
+\item Include \emph{vignettes\/} to demonstrate the use of your
+  package.
+\item It's simplest to use R Markdown.
+  \bi
+  \item Create a {\tt vignettes/} subdirectory.
+  \item Place a {\tt .Rmd} file there.
+  \item The name of the file becomes the name of the vignette.
+  \ei
+\item Include the following at the top of the {\tt .Rmd} file
+  \bi
+  \item[] {\lolit \ttfn \%{\textbackslash}VignetteEngine\{knitr::knitr\}}
+  \item[] {\lolit \ttfn \%{\textbackslash}VignetteIndexEntry\{Intro to RSkittleBrewer\}}
+  \ei
+
+\item Load the package in an initial chunk
+
+  \bi
+  \item[] {\lolit \ttfn library(RSkittleBrewer)}
+  \ei
+\ei
+
+\note{In my experience, people tend not to read detailed
+  documentation, but they like tutorials. This is what \emph{vignettes\/}
+  are for.
+
+  It's easiest to write vignettes in R Markdown (allowed in R 3.0
+  onwards). You create a subdirectory {\tt vignettes/} and put the
+  usual sort of {\tt .Rmd} files there. You just need to add a couple
+  of special lines to the top of the file: to tell R to use knitr to
+  build the vignette, and to give a title to the vignette.
+
+  In your {\tt .Rmd} file, you'll need to load the package before you
+  start using it.
+}
+\end{frame}
+
+\begin{frame}{Package vignettes}
+
+\bbi
+\item Add the following line to your {\tt DESCRIPTION} file.
+  \bi
+  \item[] {\lolit \ttfn VignetteBuilder: knitr}
+  \ei
+
+\item The following lists the vignettes for a package and then opens
+  a selected vignette.
+
+  \bi
+  \item[] {\lolit \ttfn library(RSkittleBrewer)}
+  \item[] {\lolit \ttfn vignette(package="RSkittleBrewer")}
+  \item[] {\lolit \ttfn vignette("RSkittleBrewer", "RSkittleBrewer")}
+  \ei
+\ei
+
+\note{There's one other little detail: you need to mention knitr as
+  the vignette builder in your {\tt DESCRIPTION} file.
+
+  If you submit the package to CRAN, links to the vignettes will be listed on
+  web page for the package. You might also refer to them in your {\tt
+  README} file.
+
+  Within R, you can use the {\tt vignette} function to view the
+  available vignettes for a package and to open a particular
+  vignette. (With R Markdown vignettes, the compiled html file
+  will be opened in your web browser.)
+}
+\end{frame}
 
 \end{document}
