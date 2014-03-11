@@ -1,0 +1,238 @@
+\documentclass[12pt,t]{beamer}
+\usepackage{graphicx}
+\setbeameroption{hide notes}
+\setbeamertemplate{note page}[plain]
+\usepackage{listings}
+
+\input{../LaTeX/header.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% end of header
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Writing R packages}
+\subtitle{Tools for Reproducible Research}
+\author{\href{http://www.biostat.wisc.edu/~kbroman}{Karl Broman}}
+\institute{Biostatistics \& Medical Informatics, UW{\textendash}Madison}
+\date{\href{http://www.biostat.wisc.edu/~kbroman}{\tt \scriptsize \color{foreground} biostat.wisc.edu/{\textasciitilde}kbroman}
+\\[-4pt]
+\href{http://github.com/kbroman}{\tt \scriptsize \color{foreground} github.com/kbroman}
+\\[-4pt]
+\href{https://twitter.com/kwbroman}{\tt \scriptsize \color{foreground} @kwbroman}
+\\[-4pt]
+{\scriptsize Course web: \href{http://bit.ly/tools4rr}{\tt bit.ly/tools4rr}}
+}
+
+\begin{document}
+
+{
+\setbeamertemplate{footline}{} % no page number here
+\frame{
+  \titlepage
+
+\note{R packages and the Comprehensive R Archive Network (CRAN) are
+  important features of R. R packages provide a simple way to distribute R
+  code and documentation. And they really are rather simple to create.
+
+  Write an R package to keep track of the misc.\ R functions
+  that you write and reuse. Write an R package to distribute the data
+  and software that accompany a paper.
+
+  The most painful part of writing an R package is the construction of
+  the documentation files, which are in a special {\tt .Rd}
+  format. But the Roxygen2 tool makes this rather easy: you write
+  comments preceding each R function, in a specially structured way,
+  and then use the Roxygen2 tool to create the {\tt .Rd} files for you.
+}
+} }
+
+
+
+
+\begin{frame}{Why write an R package?}
+
+\vspace{18pt}
+
+\bbi
+\item To distribute R code and documentation
+\item To keep track of the misc.\ R functions you write and
+  {\hilit reuse}
+\item To distribute the data and software that accompany a paper.
+\ei
+
+\note{R packages can be big and important. 
+
+     But that shouldn't scare you off. Assembling a few R functions
+     within a package will make it vastly easier for {\nhilit you} to
+     use them regularly. You don't even need to distribute the package.
+
+     And really, the R package system is an incredibly important
+     feature of R. Packages on CRAN are basically guaranteed to be
+     installable, as they are regularly built, installed, and tested
+     on multiple systems.
+}
+\end{frame}
+
+
+\begin{frame}[c]{}
+
+\figh{Figs/R-exts.png}{0.9}
+
+\note{The Writing R Extensions manual is the key source for the
+  specifications of R packages. It's rough going in parts, but if you want to
+  get a package on CRAN, you should read it.
+}
+\end{frame}
+
+
+\begin{frame}[c]{A simple example: RSkittleBrewer}
+
+\figh{Figs/RSkittleBrewer.png}{0.8}
+\note{I was going to write a short example R package, but Alyssa
+  Frazee saved me the effort. Here package is a perfect little example
+  to illustrate how to write a package. 
+
+  It's also a great example of a small but really useful package.
+  One small function could be widely useful; you just need to package
+  it and tell people about it.
+}
+\end{frame}
+
+
+\begin{frame}[fragile]{R package contents}
+
+\vspace{24pt}
+
+\begin{lstlisting}
+RSkittleBrewer/
+
+    DESCRIPTION
+    NAMESPACE
+
+    R/RSkittleBrewer.R
+    R/plotSkittles.R
+    R/plotSmarties.R
+
+    man/RSkittleBrewer.Rd
+    man/plotSkittles.Rd
+    man/plotSmarties.Rd
+\end{lstlisting}
+
+\note{
+  In the simplest form, an R package is a directory containing: a {\tt DESCRIPTION}
+  file (describing the package), a {\tt NAMESPACE} file (indicating
+  which functions are available to users), an {\tt R/} directory
+  containing R code in {\tt .R} files, and a {\tt man/} directory
+  containing documentation in {\tt .Rd} files.
+}
+\end{frame}
+
+\begin{frame}[fragile]{{\tt DESCRIPTION} file}
+
+\vspace{24pt}
+
+\begin{lstlisting}
+Package: RSkittleBrewer
+Version: 1.01
+Author: Alyssa Frazee
+Maintainer: Alyssa Frazee <afrazee@jhsph.edu>
+License: MIT + file LICENSE
+Title: fun with R colors
+Description: for those times you want to make plots with...
+URL: https://github.com/alyssafrazee/RSkittleBrewer
+\end{lstlisting}
+
+\note{
+  The {\tt DESCRIPTION} file is pretty self-explanatory. It just
+  contains basic information about the package and its author.
+
+  The simplest way to create this sort of file is to copy and edit one
+  from some other package.
+
+  The only part that might be unclear is the {\tt License} field. You
+  need to choose a license. We'll talk about this on the very last day
+  of the course. 
+
+  For now, I'd suggest choosing between the GPL-3
+  (the GNU Public License v3) and MIT licenses. GPL-3 has a
+  ``pass-through'' provision: software that incorporates GPL-3 code
+  must also be licensed as GPL-3. This is a good but restrictive
+  thing. The MIT license is the most bare-bones license possible: it
+  basically just says ``Do what you want, but don't blame me.''
+
+  An R package with the MIT license needs to also include a {\tt
+  LICENSE} file or R will complain; copy and edit the one from the
+  RSkittleBrewer package.
+}
+\end{frame}
+
+
+
+\begin{frame}[fragile]{{\tt NAMESPACE} file}
+
+\vspace{24pt}
+
+\begin{lstlisting}
+export(RSkittleBrewer)
+export(plotSkittles)
+export(plotSmarties)
+\end{lstlisting}
+
+
+
+\note{
+  The {\tt NAMESPACE} file is a bit technical: it tells R what
+  functions that will be accessible to users.
+
+  The point of this is to keep different packages from stepping on
+  each others' toes.
+}
+\end{frame}
+
+
+
+
+\begin{frame}[fragile]{An {\tt .Rd} file}
+
+\vspace{12pt}
+
+\small
+\begin{lstlisting}
+\name{RSkittleBrewer}
+\alias{RSkittleBrewer}
+\title{Candy-based color palettes}
+\description{Vectors of colors corresponding to different
+             candies.}
+\usage{RSkittleBrewer(flavor = c("original", "tropical", 
+                      "wildberry", "M&M", "smarties"))
+}
+\arguments{
+  \item{flavor}{Character string for candy-based color
+  palette.}
+}
+\value{Vector of character strings representing the chosen
+       set of colors.}
+\examples{
+plotSkittles()
+plotSmarties()
+}
+\keyword{hplot}
+\seealso{ \code{\link{plotSkittles}},
+          \code{\link{plotSmarties}} }
+\end{lstlisting}
+
+\note{
+  The R documentation format is very LaTeX-like.
+
+  It describes what the function does, what its
+  arguments are, and what output it produces.
+
+  You can further provide examples (which can also serve as tests) and
+  links to related functions.
+
+  Writing these help files is tedious! That's where Roxygen2 comes in.
+}
+\end{frame}
+
+
+\end{document}
