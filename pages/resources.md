@@ -124,11 +124,12 @@ title:  Resources and further reading
 
 - [Hadley Wickham](http://had.co.nz)'s [Advanced R book](http://adv-r.had.co.nz/)
 - [Jeff Leek on developing R packages](https://github.com/jtleek/rpackages)
-- Documenting R
-  [packages](http://adv-r.had.co.nz/Documenting-packages.html) and [functions](http://adv-r.had.co.nz/Documenting-functions.html)
-- [Rd2roxygen package](http://yihui.name/Rd2roxygen/): Translate Rd
-  files to roxygen comments
-- [Travis CI](http://travis-ci.com/) [for R](http://yihui.name/en/2013/04/travis-ci-general-purpose/)
+- Documenting R [packages](http://adv-r.had.co.nz/Documenting-packages.html) and [functions](http://adv-r.had.co.nz/Documenting-functions.html)
+- [Rd2roxygen package](http://yihui.name/Rd2roxygen/): Translate Rd files to roxygen comments
+- [Building R packages on Windows](http://cran.us.r-project.org/bin/windows/Rtools/)
+- [Karl's largely out-of-date page about building R packages on Windows](http://www.biostat.wisc.edu/~kbroman/Rintro/Rwinpack.html)
+- [R for Mac developer's page](http://r.research.att.com/)
+- [oR for Mac tools](http://r.research.att.com/tools/)
 
 ### Testing and debugging
 
@@ -138,6 +139,7 @@ title:  Resources and further reading
    [Advanced R book](http://adv-r.had.co.nz)
 - Marick, [The craft of software testing (book)](http://www.amazon.com/exec/obidos/ASIN/0131774115/7210-20)
 - Agans, [Debugging (book)](http://www.amazon.com/exec/obidos/ASIN/0814474578/7210-20)
+- [Travis CI](http://travis-ci.com/) [for R](http://yihui.name/en/2013/04/travis-ci-general-purpose/)
 
 ### Big jobs
 
