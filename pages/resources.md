@@ -139,6 +139,8 @@ title:  Resources and further reading
 - [Hadley Wickham's paper on testthat](http://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf)
 - [Testing](http://adv-r.had.co.nz/Testing.html) in [Hadley Wickham](http://had.co.nz)'s
    [Advanced R book](http://adv-r.had.co.nz)
+- [Jeff Leek's notes on developing R packages](https://github.com/jtleek/rpackages)
+   talk a bit about [unit tests](https://github.com/jtleek/rpackages#unit-tests)
 - Marick, [The craft of software testing (book)](http://www.amazon.com/exec/obidos/ASIN/0131774115/7210-20)
 - Agans, [Debugging (book)](http://www.amazon.com/exec/obidos/ASIN/0814474578/7210-20)
 - [Travis CI](http://travis-ci.com/) [for R](http://yihui.name/en/2013/04/travis-ci-general-purpose/)
