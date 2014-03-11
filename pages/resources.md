@@ -125,13 +125,14 @@ title:  Resources and further reading
 - [Hadley Wickham](http://had.co.nz)'s [Advanced R book](http://adv-r.had.co.nz/)
 - [Jeff Leek on developing R packages](https://github.com/jtleek/rpackages)
 - Documenting R [packages](http://adv-r.had.co.nz/Documenting-packages.html) and [functions](http://adv-r.had.co.nz/Documenting-functions.html)
+- [Writing R extensions (official manual)](http://cran.r-project.org/manuals.html):
+\[[pdf](http://cran.r-project.org/doc/manuals/r-release/R-exts.pdf) | [html](http://cran.r-project.org/doc/manuals/r-release/R-exts.html)\]
+- [How to build package vignettes with knitr](http://yihui.name/knitr/demo/vignette)
 - [Rd2roxygen package](http://yihui.name/Rd2roxygen/): Translate Rd files to roxygen comments
 - [Building R packages on Windows](http://cran.us.r-project.org/bin/windows/Rtools/)
 - [Karl's largely out-of-date page about building R packages on Windows](http://www.biostat.wisc.edu/~kbroman/Rintro/Rwinpack.html)
 - [R for Mac developer's page](http://r.research.att.com/)
 - [R for Mac tools](http://r.research.att.com/tools/)
-- [Writing R extensions (official manual)](http://cran.r-project.org/manuals.html):
-\[[pdf](http://cran.r-project.org/doc/manuals/r-release/R-exts.pdf) | [html](http://cran.r-project.org/doc/manuals/r-release/R-exts.html)\]
 
 ### Testing and debugging
 
