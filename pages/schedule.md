@@ -54,6 +54,12 @@ tagline: Spring, 2014
     \]
 
 **Mar 14**: Writing [R](http://www.r-project.org) packages; [roxygen2](https://github.com/klutometis/roxygen)
+    \[
+    [S](../assets/lectures/08_rpack.pdf) |
+    [N](../assets/lectures/08_rpack_withnotes.pdf) |
+    [C](https://github.com/kbroman/Tools4RR/tree/master/08_Rpack/Examples/ReadMe.md)
+    \]
+
 
 **Mar 21**: **No class (Spring break)**
 
