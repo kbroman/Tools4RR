@@ -129,7 +129,9 @@ title:  Resources and further reading
 - [Building R packages on Windows](http://cran.us.r-project.org/bin/windows/Rtools/)
 - [Karl's largely out-of-date page about building R packages on Windows](http://www.biostat.wisc.edu/~kbroman/Rintro/Rwinpack.html)
 - [R for Mac developer's page](http://r.research.att.com/)
-- [oR for Mac tools](http://r.research.att.com/tools/)
+- [R for Mac tools](http://r.research.att.com/tools/)
+- [Writing R extensions (official manual)](http://cran.r-project.org/manuals.html):
+\[[pdf](http://cran.r-project.org/doc/manuals/r-release/R-exts.pdf) | [html](http://cran.r-project.org/doc/manuals/r-release/R-exts.html)\]
 
 ### Testing and debugging
 
