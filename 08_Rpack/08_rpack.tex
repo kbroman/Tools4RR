@@ -497,4 +497,51 @@ names that correspond to that Skittle flavor.
 }
 \end{frame}
 
+\begin{frame}{Optional stuff}
+
+\bbi
+\item {\tt NEWS} file describing changes in each version of the
+  package.
+\item {\tt inst/CITATION} file describing how to cite your package.
+\item {\tt inst/doc/} directory any sort of misc.\ documentation
+  (e.g., pre-compiled computationally heavy vignettes)
+\item {\tt src/} directory containing C/C++/Fortran code
+\item {\tt demo/} directory with demonstrations (like vignette, but
+  to be executed in real-time).
+\item {\tt tests/} and/or {\tt inst/tests/} directories containing
+  different tests.
+\ei
+
+
+\note{We could go on and on about packages. Here are some of the key
+  additional things to consider adding to your package.
+
+  The {\tt inst/} subdirectory is ignored by R but its contents get
+  moved back to the root directory for the package when installed. If
+  you want your {\tt README} file to be named {\tt ReadMe}, you'd put
+  it here.
+}
+\end{frame}
+
+
+\begin{frame}{Summary}
+
+\bbi
+\item R packages really aren't that hard.
+\item R packages are really useful.
+  \bi
+  \item Distributing software and data
+  \item Organizing code for a paper
+  \item Organizing your misc.\ R functions
+  \ei
+\item Look at others' packages, and learn from them.
+\ei
+
+
+\note{It's surprising to me just how many plain R scripts are sitting
+  on people's web pages. Getting them into a package is really not
+  that hard and would make the material {\nhilit much} more useful.
+}
+\end{frame}
+
 \end{document}
