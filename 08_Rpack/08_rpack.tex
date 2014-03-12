@@ -56,7 +56,7 @@
 \bbi
 \item To distribute R code and documentation
 \item To keep track of the misc.\ R functions you write
-  {\hilit and reuse}
+  {\only<2|handout>{\hilit}and reuse}
 \item To distribute data and software accompanying a paper.
 \ei
 
@@ -534,6 +534,44 @@ names that correspond to that Skittle flavor.
 \end{frame}
 
 
+
+\begin{frame}{devtools}
+
+\vspace{12pt}
+
+Get to know the \href{http://github.com/hadley/devtools}{devtools} package.
+
+\vspace{12pt}
+
+\bi
+\item {\tt dev\_mode()}
+\item {\tt load\_all()}
+\item {\tt install\_github()}, {\tt install\_bitbucket}, \dots
+\item {\tt document()}
+\item {\tt build()}
+\item {\tt check()}
+\item {\tt check\_doc()}
+\item {\tt run\_examples()}
+\item {\tt test()} [next time]
+\ei
+
+
+\note{I've tried to characterize package development as super simple,
+  but all coding involves considerable testing, debugging, and
+  exploration, and re-building and re-installing R packages can be
+  tedious.
+
+  The devtools package reduces a lot of the hassle. Try it out!
+
+  On Mac OSX Mavericks (10.9), gnutar is gone, and devtools gives an
+  error. The simplest solution is to make a symbolic link from tar to
+  gnutar:
+
+  \qquad  {\tt sudo ln -s /usr/bin/tar /usr/bin/gnutar}
+}
+\end{frame}
+
+
 \begin{frame}{Summary}
 
 \bbi
@@ -545,7 +583,7 @@ names that correspond to that Skittle flavor.
   \item Organizing your misc.\ R functions
   \ei
 \item Look at others' packages, and learn from them.
-\item Look at the tools in the
+\item Adopt the tools in the
   \href{http://github.com/hadley/devtools}{devtools} package.
 \ei
 
@@ -553,9 +591,6 @@ names that correspond to that Skittle flavor.
 \note{It's surprising to me just how many plain R scripts are sitting
   on people's web pages. Getting them into a package is really not
   that hard and would make the material {\nhilit much} more useful.
-
-  The devtools package has a lot of tools for reducing some of the
-  hassles of R package development.
 }
 \end{frame}
 
