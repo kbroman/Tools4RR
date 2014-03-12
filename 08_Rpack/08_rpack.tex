@@ -262,6 +262,14 @@ R CMD INSTALL --library=~/Rlibs RSkittleBrewer_1.1.tar.gz
 R CMD INSTALL --build RSkittleBrewer_1.1.tar.gz
 \end{lstlisting}
 
+\bigskip
+\begin{lstlisting}
+# also consider (within R):
+library(devtools)
+build("/path/to/RSkittleBrewer")
+build("/path/to/RSkittleBrewer", binary=TRUE)
+\end{lstlisting}
+
 \note{
   To install your package, you first need to {\nhilit build} it. {\tt
     R CMD build} creates the {\tt .tar.gz} source file that you'd
@@ -282,7 +290,8 @@ R CMD INSTALL --build RSkittleBrewer_1.1.tar.gz
   lesser-known {\tt --as-cran} flag, which checks further things.
 
   On Windows, use {\tt R CMD INSTALL --build} to create a {\tt .zip}
-  file of the ``compiled'' package.
+  file of the ``compiled'' package. You can also use the {\tt build()}
+  function from the devtools package.
 }
 \end{frame}
 
@@ -348,7 +357,7 @@ RSkittleBrewer <-
 \begin{lstlisting}
 # build package documentation
 doc:
-	R -e 'library(devtools);document(roclets=c("namespace", "rd"))'
+  R -e 'library(devtools);document(roclets=c("namespace", "rd"))'
 \end{lstlisting}
 
 \note{
