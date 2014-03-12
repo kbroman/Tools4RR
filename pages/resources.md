@@ -122,9 +122,12 @@ title:  Resources and further reading
 
 ### R packages
 
-- [Hadley Wickham](http://had.co.nz)'s [Advanced R book](http://adv-r.had.co.nz/)
+- Start at the Package Development section from [Hadley Wickham](http://had.co.nz)'s [Advanced R book](http://adv-r.had.co.nz/)
+- Documenting R
+  [packages](http://adv-r.had.co.nz/Documenting-packages.html) and
+  [functions](http://adv-r.had.co.nz/Documenting-functions.html), also
+  from [Hadley Wickham](http://had.co.nz)'s [Advanced R book](http://adv-r.had.co.nz/)
 - [Jeff Leek on developing R packages](https://github.com/jtleek/rpackages)
-- Documenting R [packages](http://adv-r.had.co.nz/Documenting-packages.html) and [functions](http://adv-r.had.co.nz/Documenting-functions.html)
 - [Writing R extensions (official manual)](http://cran.r-project.org/manuals.html):
 \[[pdf](http://cran.r-project.org/doc/manuals/r-release/R-exts.pdf) | [html](http://cran.r-project.org/doc/manuals/r-release/R-exts.html)\]
 - [How to build package vignettes with knitr](http://yihui.name/knitr/demo/vignette)
