@@ -552,7 +552,7 @@ Get to know the \href{http://github.com/hadley/devtools}{devtools} package.
 \item {\tt check()}
 \item {\tt check\_doc()}
 \item {\tt run\_examples()}
-\item {\tt test()} [next time]
+\item {\tt test()} {\lolit \, (next time)}
 \ei
 
 
@@ -562,6 +562,15 @@ Get to know the \href{http://github.com/hadley/devtools}{devtools} package.
   tedious.
 
   The devtools package reduces a lot of the hassle. Try it out!
+
+  {\tt dev\_mode()} puts you in ``development mode'' so that package
+  installs won't affect your regular R package directory. {\tt load\_all()} does
+  the equivalent of installing and reloading a package.  (otherwise,
+  you might exit R, re-build the package, re-install, invoke R, and
+  re-load the package).
+
+  You can use {\tt install\_github()} to install a package directly from
+  GitHub.
 
   On Mac OSX Mavericks (10.9), gnutar is gone, and devtools gives an
   error. The simplest solution is to make a symbolic link from tar to
