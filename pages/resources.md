@@ -127,6 +127,7 @@ title:  Resources and further reading
   [packages](http://adv-r.had.co.nz/Documenting-packages.html) and
   [functions](http://adv-r.had.co.nz/Documenting-functions.html), also
   from [Hadley Wickham](http://had.co.nz)'s [Advanced R book](http://adv-r.had.co.nz/)
+- [devtools package](http://github.com/hadley/devtools)
 - [Jeff Leek on developing R packages](https://github.com/jtleek/rpackages)
 - [Writing R extensions (official manual)](http://cran.r-project.org/manuals.html):
 \[[pdf](http://cran.r-project.org/doc/manuals/r-release/R-exts.pdf) | [html](http://cran.r-project.org/doc/manuals/r-release/R-exts.html)\]
