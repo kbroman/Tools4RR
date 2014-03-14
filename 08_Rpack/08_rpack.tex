@@ -515,11 +515,11 @@ names that correspond to that Skittle flavor.
 \item {\tt inst/CITATION} file describing how to cite your package.
 \item {\tt inst/doc/} directory any sort of misc.\ documentation
   (e.g., pre-compiled computationally heavy vignettes)
+\item {\tt data/} directory containing data
 \item {\tt src/} directory containing C/C++/Fortran code
 \item {\tt demo/} directory with demonstrations (like vignettes, but
   to be executed in real-time).
-\item {\tt tests/} and/or {\tt inst/tests/} directories containing
-  software tests.
+\item {\tt tests/} and/or {\tt inst/tests/} containing tests.
 \ei
 
 
@@ -530,6 +530,11 @@ names that correspond to that Skittle flavor.
   moved back to the root directory for the package when installed. If
   you want your {\tt README} file to be named {\tt ReadMe}, you'd put
   it here.
+
+  It's useful to include example data sets. Your package could contain
+  {\nhilit only} data! You should document them. See
+  {\tt http://stackoverflow.com/questions/2310409}
+
 }
 \end{frame}
 
