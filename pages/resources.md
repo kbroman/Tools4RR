@@ -165,6 +165,7 @@ title:  Resources and further reading
 
 - [LaTeX Beamer](https://bitbucket.org/rivanvx/beamer/wiki/Home)
 - [Beamer Quickstart](http://www.math.umbc.edu/~rouben/beamer)
+- [LaTeX templates for conference posters](http://www.latextemplates.com/cat/conference-posters)
 - [Slidify](http://slidify.org/)
 - [Get started with slidify](http://slidify.org/start.html)
 - [Slides on slidify](http://slidify.org/samples/intro/) from
