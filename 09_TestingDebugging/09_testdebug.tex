@@ -61,7 +61,25 @@ With what variety of inputs did you try?
 
 \end{frame}
 
+\begin{frame}[c]{}
 
+\vspace{100pt}
+
+"It's not that we don't test our code, it's that we don't store our
+tests so they can be re-run automatically."
+
+\vspace{36pt}
+
+\hfill \lolit {\textendash} Hadley Wickham
+
+\vspace{60pt}
+{\footnotesize
+\hfill \href{http://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf}{R Journal 3(1):5{\textendash}10, 2011}
+}
+
+\note{
+}
+\end{frame}
 
 \begin{frame}{Types of tests}
 
@@ -302,6 +320,112 @@ unlink("junk.csv")
 }
 \end{frame}
 
+
+
+\begin{frame}{\href{http://github.com/hadley/testthat}{\tt testthat} package}
+
+\vspace{-12pt}
+
+\bbi
+\item Expectations
+ \bi
+ \item[] {\tt expect\_equal(10, 10 + 1e-7)}
+ \item[] {\tt expect\_identical(10, 10)}
+ \item[] {\tt expect\_equivalent(c("one"=1), 1)}
+ \item[] {\tt expect\_warning(log(-1))}
+ \item[] {\tt expect\_error(1 + "a")}
+ \ei
+\item Tests
+ \bi
+ \item[] {\tt test\_that("winsorize small vectors", \{ ... \})}
+ \ei
+\item Contexts
+ \bi
+ \item[] {\tt context("Group of related tests")}
+ \ei
+\item Store tests in {\tt inst/tests/}
+\item {\tt tests/run-all.R} file containing
+ \bi
+ \item[] {\tt library(testthat) \\
+              library({\color{hilit} mypkg}) \\
+              test\_package("{\color{hilit} mypkg}")}
+ \ei
+\ei
+
+
+\note{
+  The {\tt testthat} package greatly simplies unit testing of code in
+  R packages.
+
+  There are a bunch of functions for defining ``expectations.''
+  Basically, for testing whether something worked as expected. (It can
+  be good to check that something gives an error when it's supposed to
+  give an error.)
+
+  You then define a set of tests, with a character string to explain
+  where the problem is, if there is a problem.
+
+  You can group tests into ``contexts.'' When the tests run, that
+  character string will be printed, so you can see what part of the
+  code is being tested.
+
+  Put your tests in {\tt .R} files within {\tt inst/tests}. Put
+  another file within {\tt tests/} that will ensure that these tests
+  are run when you do {\tt R CMD check}.
+}
+\end{frame}
+
+
+\begin{frame}[c,fragile]{Example {\tt testthat} test}
+
+
+\begin{lstlisting}
+context("winsorise")
+
+test_that("winsorize works for small vectors", {
+
+  x <-       c(2, 3, 7, 9, 6, NA, 5, 8, NA, 0, 4, 1, 10)
+  result1 <- c(2, 3, 7, 9, 6, NA, 5, 8, NA, 1, 4, 1,  7)
+  result2 <- c(2, 3, 7, 8, 6, NA, 5, 8, NA, 2, 4, 2,  8)
+
+  expect_identical(winsorize(x, 0.1), result1)
+  expect_identical(winsorize(x, 0.2), result2)
+
+})
+\end{lstlisting}
+
+
+
+\note{
+  These are the sort of tests you might do with the testthat
+  package. The value of this: finally, we are checking whether the
+  code is giving the right answer!
+
+  These are called unit tests. Ideally, you include tests like this
+  for every function you write.
+}
+\end{frame}
+
+
+\begin{frame}[c,fragile]{Workflow}
+
+\bbi
+\item Write tests as you're coding.
+\item {\tt test()}
+ \bi
+ \item with {\tt devtools}, and working in your package directory
+ \ei
+\item {\tt auto\_test("R", "inst/tests")}
+ \bi
+ \item automatically runs tests when any file changes
+ \ei
+\ei
+
+\note{
+  Read Hadley's paper about {\tt testthat}. It's pretty easy to
+  incorporate testing into your development workflow.
+}
+\end{frame}
 
 
 \begin{frame}[c]{Debugging}
