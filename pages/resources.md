@@ -142,7 +142,7 @@ title:  Resources and further reading
 
 - [assertthat](https://github.com/hadley/assertthat) and [testthat](https://github.com/hadley/testthat) packages
 - [Hadley Wickham's paper on testthat](http://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf)
-- [Testing](http://adv-r.had.co.nz/Testing.html) and [Debugging](http://adv-r.had.co.nz/Exceptions-Debugging.html) in [Hadley Wickham](http://had.co.nz)'s
+- [Testing](http://adv-r.had.co.nz/Testing.html) and [debugging](http://adv-r.had.co.nz/Exceptions-Debugging.html) in [Hadley Wickham](http://had.co.nz)'s
    [Advanced R book](http://adv-r.had.co.nz)
 - [Dr. Climate](http://drclimate.wordpress.com/) [blog post on testing your code](http://drclimate.wordpress.com/2013/10/10/testing-your-code/)
 - [Jeff Leek's notes on developing R packages](https://github.com/jtleek/rpackages)
