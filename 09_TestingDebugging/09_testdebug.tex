@@ -52,5 +52,139 @@ With what variety of inputs did you try it?
 
 
 
+\begin{frame}{Types of tests}
+
+\vspace{18pt}
+
+\bbi
+\onslide<2->{\item Check inputs}
+\item \only<2|handout 0>{\lolit} Unit tests
+\item \only<2|handout 0>{\lolit} Regression tests
+\item \only<2|handout 0>{\lolit} Integration tests
+\ei
+
+\note{
+}
+\end{frame}
+
+
+
+
+\begin{frame}{Tests in R packages}
+
+\vspace{18pt}
+
+\bbi
+\item Examples in {\tt .Rd} files
+\item Vignettes
+\item {\tt tests/} directory
+\ei
+
+\note{{\tt R CMD check} is your friend.
+
+(Sure, {\nhilit your} package is correct, but what about all of those
+other R packages? If it's not on CRAN, it's {\nhilit probably crap}.)
+}
+\end{frame}
+
+
+
+
+
+\begin{frame}[c]{Debugging}
+
+\centerline{Step 1: Reproduce the problem}
+
+\vspace{24pt}
+
+\onslide<2->{\centerline{Step 2: Turn it into a test}}
+
+
+\note{
+}
+\end{frame}
+
+
+
+
+\begin{frame}{Learn to use debugging tools}
+
+
+\bbi
+\item {\tt cat}
+\item {\tt traceback}
+\item RStudio
+\item Eclipse
+\item gdb
+\ei
+
+\note{
+}
+\end{frame}
+
+
+
+\begin{frame}[c]{Debugging}
+
+
+\centerline{Isolate the problem: where do things go bad?}
+
+\note{``Divide and conquer.''
+}
+\end{frame}
+
+
+
+
+\begin{frame}[c]{Debugging}
+
+
+\centerline{Don't make the same mistake twice.}
+
+\note{If you figure out some mistake you've made, search for all other
+  possible instances of that mistake.
+}
+\end{frame}
+
+
+
+
+
+
+
+
+
+\begin{frame}[c]{The most pernicious bugs}
+
+\centerline{The code is right, but your thinking is wrong}
+
+\vspace{24pt}
+
+\onslide<2->{\centerline{You don't understand your programming language}}
+
+\vspace{24pt}
+
+\onslide<3->{\centerline{\hilit $\rightarrow$ Write trivial programs to
+    test your understanding.}}
+
+\note{Consider that your algorithm may be garbage.
+Try an independent implementation.
+}
+\end{frame}
+
+
+
+
+\begin{frame}[c]{Profiling}
+
+\centerline{Don't try to optimize until the {\hilit very} end}
+
+
+\note{
+}
+\end{frame}
+
+
+
 
 \end{document}
