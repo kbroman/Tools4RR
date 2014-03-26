@@ -32,6 +32,17 @@
 
 \note{We spend a lot of time debugging. We'd spend a lot less time if
   we tested our code properly.
+
+  We want to get the right answers. We can't be sure that we've done
+  so without testing our code.
+
+  We want to set up a formal testing system, so that we can be
+  confident in our code, and so that problems are identified and
+  corrected early.
+
+  Even with a careful testing system, we'll still spend time
+  debugging. Debugging can be frustrating, but the right tools and
+  skills can speed the process.
 }
 } }
 
@@ -42,7 +53,7 @@
 
 \centerline{"I tried it, and it worked."}
 
-\note{This is about the limit of most software testing.
+\note{This is about the limit of most programmers' testing efforts.
 
 {\nhilit But}: Does it still work? Can you reproduce what you did?
 With what variety of inputs did you try it?
@@ -53,8 +64,6 @@ With what variety of inputs did you try it?
 
 
 \begin{frame}{Types of tests}
-
-\vspace{18pt}
 
 \bbi
 \onslide<2->{\item Check inputs}
@@ -70,9 +79,62 @@ With what variety of inputs did you try it?
 
 
 
-\begin{frame}{Tests in R packages}
+\begin{frame}[fragile]{Check inputs}
 
-\vspace{18pt}
+
+\begin{lstlisting}
+winsorize <-
+function(x, q=0.006)
+{
+  stopifnot(is.numeric(x))
+  stopifnot(is.numeric(q), length(q)==1, q>=0, q<=1)
+
+  lohi <- quantile(x, c(q, 1-q), na.rm=TRUE)
+  if(diff(lohi) < 0) lohi <- rev(lohi)
+
+  x[!is.na(x) & x < lohi[1]] <- lohi[1]
+  x[!is.na(x) & x > lohi[2]] <- lohi[2]
+  x
+}
+\end{lstlisting}
+
+
+\note{
+}
+\end{frame}
+
+
+
+
+\begin{frame}[fragile]{assertthat package}
+
+
+\begin{lstlisting}
+#' import assertthat
+winsorize <-
+function(x, q=0.006)
+{
+  assert_that(is.numeric(x))
+  assert_that(is.number(q), q>=0, q<=1)
+
+  lohi <- quantile(x, c(q, 1-q), na.rm=TRUE)
+  if(diff(lohi) < 0) lohi <- rev(lohi)
+
+  x[!is.na(x) & x < lohi[1]] <- lohi[1]
+  x[!is.na(x) & x > lohi[2]] <- lohi[2]
+  x
+}
+\end{lstlisting}
+
+
+\note{
+}
+\end{frame}
+
+
+
+
+\begin{frame}{Tests in R packages}
 
 \bbi
 \item Examples in {\tt .Rd} files
@@ -100,7 +162,13 @@ other R packages? If it's not on CRAN, it's {\nhilit probably crap}.)
 \onslide<2->{\centerline{Step 2: Turn it into a test}}
 
 
-\note{
+\note{Try to create the minimal example the produces the problem. This
+  helps both for refining your understanding of the problem and for
+  speed in testing.
+
+  Once you've created a minimal example that produces the problem,
+  {\nhilit add that to your battery of automated tests!} The problem
+  may suggest related tests to also add.
 }
 \end{frame}
 
