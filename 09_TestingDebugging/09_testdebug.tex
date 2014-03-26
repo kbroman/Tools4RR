@@ -407,6 +407,45 @@ test_that("winsorize works for small vectors", {
 \end{frame}
 
 
+\begin{frame}[c,fragile]{Example {\tt testthat} test}
+
+
+\begin{lstlisting}
+test_that("winsorize works for a long vector", {
+
+  set.seed(94745689)
+  n <- 1000
+  nmis <- 10
+  p <- 0.05
+  input <- rnorm(n)
+  input[sample(1:n, nmis)] <- NA
+  quL <- quantile(input, p, na.rm=TRUE)
+  quH <- quantile(input, 1-p, na.rm=TRUE)
+
+  result <- winsorize(input, p)
+  middle <- !is.na(input) & input >= quL & input <= quH
+  low <- !is.na(input) & input <= quL
+  high <- !is.na(input) & input >= quH
+
+  expect_identical(is.na(input), is.na(result))
+  expect_identical(input[middle], result[middle])
+  expect_true( all(result[low] == quL) )
+  expect_true( all(result[high] == quH) )
+
+})
+\end{lstlisting}
+
+
+
+\note{
+  Here's a bigger, more interesting test.
+
+  The code to test a function will generally be longer than the
+  function itself.
+}
+\end{frame}
+
+
 \begin{frame}[c,fragile]{Workflow}
 
 \bbi
@@ -449,7 +488,21 @@ test_that("winsorize works for small vectors", {
 
 
 
+\begin{frame}[c,fragile]{What to test?}
 
+\bbi
+\item You can't test {\hilit everything}.
+\item Focus on the {\hilit boundaries}
+   \bi
+   \item Vector of length 0 or 1
+   \item ...
+   \ei
+\item Test handling of missing data.
+\ei
+
+\note{
+}
+\end{frame}
 
 
 
