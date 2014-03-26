@@ -1,0 +1,56 @@
+\documentclass[12pt,t]{beamer}
+\usepackage{graphicx}
+\setbeameroption{hide notes}
+\setbeamertemplate{note page}[plain]
+\usepackage{listings}
+
+\input{../LaTeX/header.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% end of header
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Testing and debugging}
+\subtitle{Tools for Reproducible Research}
+\author{\href{http://www.biostat.wisc.edu/~kbroman}{Karl Broman}}
+\institute{Biostatistics \& Medical Informatics, UW{\textendash}Madison}
+\date{\href{http://www.biostat.wisc.edu/~kbroman}{\tt \scriptsize \color{foreground} biostat.wisc.edu/{\textasciitilde}kbroman}
+\\[-4pt]
+\href{http://github.com/kbroman}{\tt \scriptsize \color{foreground} github.com/kbroman}
+\\[-4pt]
+\href{https://twitter.com/kwbroman}{\tt \scriptsize \color{foreground} @kwbroman}
+\\[-4pt]
+{\scriptsize Course web: \href{http://bit.ly/tools4rr}{\tt bit.ly/tools4rr}}
+}
+
+\begin{document}
+
+{
+\setbeamertemplate{footline}{} % no page number here
+\frame{
+  \titlepage
+
+\note{We spend a lot of time debugging. We'd spend a lot less time if
+  we tested our code properly.
+}
+} }
+
+
+
+
+\begin{frame}[c]{}
+
+\centerline{"I tried it, and it worked."}
+
+\note{This is about the limit of most software testing.
+
+{\nhilit But}: Does it still work? Can you reproduce what you did?
+With what variety of inputs did you try it?
+}
+
+\end{frame}
+
+
+
+
+\end{document}
