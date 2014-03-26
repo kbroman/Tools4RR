@@ -185,3 +185,9 @@ title:  Resources and further reading
 ### Software Licenses
 
 - [Coding horror blog](http://www.codinghorror.com/blog/2007/04/pick-a-license-any-license.html)
+- [Understanding open source and free software licensing (book)](http://oreilly.com/openbook/osfreesoft/book/)
+- [Creative Commons licenses](https://creativecommons.org/licenses/)
+- [tl;dr legal: Software licenses in plain English](https://tldrlegal.com/)
+- [MIT license at wikipedia](http://en.wikipedia.org/wiki/MIT_License)
+- [Gnu General Public License](https://www.gnu.org/copyleft/gpl.html)
+- [Quick guide to GPL](http://www.gnu.org/licenses/quick-guide-gplv3.html)
