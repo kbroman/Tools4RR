@@ -67,30 +67,30 @@ With what variety of inputs did you try?
 
 \bbi
 \onslide<2->{\item Check inputs
-\bi
-\item Stop if the inputs aren't as expected
-\ei
+  \bi
+  \item Stop if the inputs aren't as expected.
+  \ei
 }
 \item Unit tests
-\bi
-\item For each small function: does it give the right results in
+  \bi
+  \item For each small function: does it give the right results in
   specific cases?
-\ei
+  \ei
 \item Integration tests
-\bi
-\item Check that larger multi-function tasks are working
-\ei
+  \bi
+  \item Check that larger multi-function tasks are working.
+  \ei
 \item Regression tests
-\bi
-\item Compare output to saved results, to check that things that
-  worked continue working.
-\ei
+  \bi
+  \item Compare output to saved results, to check that things that
+    worked continue working.
+  \ei
 \ei
 
 \note{Your first line of defense should be to include checks of the
   inputs to a function: If they don't meet your specifications, you
   should issue an error or warning.
-  But that's not really {\nhilit testing}. 
+  But that's not really {\nhilit testing}.
 
   Your main effort should focus on {\nhilit unit tests}. For each
   small function (and your code {\nhilit should} be organized as a
@@ -216,22 +216,91 @@ function(x, q=0.006)
 
 
 
-\begin{frame}{Tests in R packages}
+\begin{frame}{\tt Tests in R packages}
 
 \bbi
 \item Examples in {\tt .Rd} files
 \item Vignettes
 \item {\tt tests/} directory
+  \bi
+  \item {\tt some\_test.R} and {\tt some\_test.Rout.save}
+  \ei
 \ei
 
-\note{{\tt R CMD check} is your friend.
+\vspace{24pt}
 
-(Sure, {\nhilit your} package is correct, but what about all of those
-other R packages? If it's not on CRAN, it's {\nhilit probably crap}.)
+\centerline{\hilit {\tt R CMD check} is your friend.}
+
+
+\note{
+  Sure, {\nhilit your} package is correct, but what about all of those
+  other R packages? If it's not on CRAN, it's {\nhilit probably crap}.
+
+  The examples and vignettes should focus on helping users to
+  understand how to use the code. But since get run whenever
+  {\tt R CMD check} is run, they also serve as crude tests that the
+  package is working. But not that this is only testing for {\nhilit
+  errors}; it's not checking that the code is giving {\nvhilit the
+  right answers}.
+
+  Things that you put in the {\tt tests} directory can be more
+  rigorous: these are basically regression tests.
+
+  If you want your package on CRAN, you'll need all of these tests and
+  examples to be {\nhilit fast}, as CRAN runs {\tt R CMD check} on
+  every package every day on multiple systems.
 }
 \end{frame}
 
 
+\begin{frame}[c,fragile]{An example example}
+
+\begin{lstlisting}
+#' @examples
+#' x <- sample(c(1:10, rep(NA, 10), 21:30))
+#' winsorize(x, 0.2)
+\end{lstlisting}
+
+\note{
+  This example doesn't provide a proper {\nhilit test}.  You'll get a
+  note if it gives an error, but you don't get any indication about
+  whether it's giving the right answer.
+}
+\end{frame}
+
+
+
+\begin{frame}[c,fragile]{A {\tt tests/} example}
+
+\begin{lstlisting}
+library(qtl)
+
+# read data
+csv <- read.cross("csv", "", "listeria.csv")
+
+# write
+write.cross(csv, "csv", filestem="junk")
+
+# read back in
+csv2 <- read.cross("csv", "", "junk.csv",
+                   genotypes=c("AA", "AB", "BB",
+                               "not BB", "not AA"))
+
+# check for a change
+comparecrosses(csv, csv2)
+
+unlink("junk.csv")
+\end{lstlisting}
+
+\note{
+  An advantage of the {\tt tests/} subdirectory is that you can more
+  easily test input/output.
+
+  A useful technique here: if you have a pair of functions that are
+  the inverse of each other (e.g., write and read), check that if you
+  apply one and then the other, you get back to the original.
+}
+\end{frame}
 
 
 
@@ -253,6 +322,9 @@ other R packages? If it's not on CRAN, it's {\nhilit probably crap}.)
   may suggest related tests to also add.
 }
 \end{frame}
+
+
+
 
 
 
