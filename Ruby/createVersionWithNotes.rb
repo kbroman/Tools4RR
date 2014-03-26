@@ -11,7 +11,7 @@ ifile.readlines.each do |z|
   z = z.sub("hide", "show") if /\\setbeameroption{hide notes}/ =~ z
   z = z.sub("[12pt,t]", "[12pt,t,handout]") if /\\documentclass\[12pt,t\]{beamer}/ =~ z
 
-  ofile.write("\\def\\notescolors{1}\n") if /input/ =~ z # add line saying to use notes colors
+  ofile.write("\\def\\notescolors{1}\n") if /^\\input{/ =~ z # add line saying to use notes colors
 
   ofile.write(z)
 end
