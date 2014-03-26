@@ -36,11 +36,11 @@
   We want to get the right answers. We can't be sure that we've done
   so without testing our code.
 
-  We want to set up a formal testing system, so that we can be
-  confident in our code, and so that problems are identified and
+  Set up a formal testing system, so that you can be
+  confident in your code, and so that problems are identified and
   corrected early.
 
-  Even with a careful testing system, we'll still spend time
+  Even with a careful testing system, you'll still spend time
   debugging. Debugging can be frustrating, but the right tools and
   skills can speed the process.
 }
@@ -55,8 +55,8 @@
 
 \note{This is about the limit of most programmers' testing efforts.
 
-{\nhilit But}: Does it still work? Can you reproduce what you did?
-With what variety of inputs did you try it?
+{\nhilit But}: Does it {\nvhilit still} work? Can you reproduce what you did?
+With what variety of inputs did you try?
 }
 
 \end{frame}
@@ -66,20 +66,91 @@ With what variety of inputs did you try it?
 \begin{frame}{Types of tests}
 
 \bbi
-\onslide<2->{\item Check inputs}
-\item \only<2|handout 0>{\lolit} Unit tests
-\item \only<2|handout 0>{\lolit} Regression tests
-\item \only<2|handout 0>{\lolit} Integration tests
+\onslide<2->{\item Check inputs
+\bi
+\item Stop if the inputs aren't as expected
+\ei
+}
+\item Unit tests
+\bi
+\item For each small function: does it give the right results in
+  specific cases?
+\ei
+\item Integration tests
+\bi
+\item Check that larger multi-function tasks are working
+\ei
+\item Regression tests
+\bi
+\item Compare output to saved results, to check that things that
+  worked continue working.
+\ei
 \ei
 
-\note{
+\note{Your first line of defense should be to include checks of the
+  inputs to a function: If they don't meet your specifications, you
+  should issue an error or warning.
+  But that's not really {\nhilit testing}. 
+
+  Your main effort should focus on {\nhilit unit tests}. For each
+  small function (and your code {\nhilit should} be organized as a
+  series of small functions), write small tests to check that the
+  function gives the correct output in specific cases.
+
+  In addition, create larger {\nhilit integration tests} to check that
+  larger features are working. It's best to construct these as
+  {\nhilit regression tests}: print out the output and check that it
+  matches some saved version. This way, if some change you've made
+  leads to a change in the results, you'll notice it automatically and
+  immediately.
 }
 \end{frame}
 
 
 
 
-\begin{frame}[fragile]{Check inputs}
+\begin{frame}[c,fragile]{Check inputs}
+
+
+\begin{lstlisting}
+winsorize <-
+function(x, q=0.006)
+{
+  if(!is.numeric(x)) stop("x should be numeric")
+
+  if(!is.numeric(q)) stop("q should be numeric")
+  if(length(q) > 1) {
+    q <- q[1]
+    warning("length(q) > 1; using q[1]")
+  }
+  if(q < 0 || q > 1) stop("q should be in [0,1]")
+
+  lohi <- quantile(x, c(q, 1-q), na.rm=TRUE)
+  if(diff(lohi) < 0) lohi <- rev(lohi)
+
+  x[!is.na(x) & x < lohi[1]] <- lohi[1]
+  x[!is.na(x) & x > lohi[2]] <- lohi[2]
+  x
+}
+\end{lstlisting}
+
+
+\note{
+  The {\tt winsorize} function in my R/broman package hadn't included
+  any checks that the inputs were okay.
+
+  The simplest thing to do is to include some {\tt if} statements with
+  calls to {\tt stop} or {\tt warning}.
+
+  The input {\tt x} is supposed to be a numeric vector, and {\tt q} is
+  supposed to be a single number between 0 and 1.
+}
+\end{frame}
+
+
+
+
+\begin{frame}[c,fragile]{Check inputs}
 
 
 \begin{lstlisting}
@@ -99,14 +170,14 @@ function(x, q=0.006)
 \end{lstlisting}
 
 
-\note{
+\note{The {\tt stopifnot} function makes this a bit easier.
 }
 \end{frame}
 
 
 
 
-\begin{frame}[fragile]{assertthat package}
+\begin{frame}[c,fragile]{\href{http://github.com/hadley/assertthat}{\tt assertthat} package}
 
 
 \begin{lstlisting}
@@ -114,6 +185,8 @@ function(x, q=0.006)
 winsorize <-
 function(x, q=0.006)
 {
+  if(all(is.na(x)) || is.null(x)) return(x)
+
   assert_that(is.numeric(x))
   assert_that(is.number(q), q>=0, q<=1)
 
@@ -127,7 +200,16 @@ function(x, q=0.006)
 \end{lstlisting}
 
 
-\note{
+\note{Hadley Wickham's {\tt assertthat} package adds some functions that
+  simplify some of this.
+
+  How is the {\tt assertthat} package used in practice? Look at
+  packages which depend on it, such as {\tt dplyr}. Download the
+  source for {\tt dplyr} and try {\tt grep assert\_that dplyr/R/*} and
+  you'll see a bunch of examples if its use.
+
+  Also try {\tt grep stopifnot dplyr/R/*} and you'll see that both
+  are being used.
 }
 \end{frame}
 
