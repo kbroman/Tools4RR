@@ -64,6 +64,11 @@ tagline: Spring, 2014
 **Mar 21**: **No class (Spring break)**
 
 **Mar 28**: Software testing and debugging
+    \[
+    [S](../assets/lectures/09_testdebug.pdf) |
+    [N](../assets/lectures/09_testdebug_withnotes.pdf) |
+    [C](https://github.com/kbroman/Tools4RR/tree/master/09_TestingDebugging/Examples/ReadMe.md)
+    \]
 
 **Apr 4**:  Big jobs/simulations; caching computations
 
