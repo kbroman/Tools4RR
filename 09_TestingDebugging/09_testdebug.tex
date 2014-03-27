@@ -446,7 +446,7 @@ test_that("winsorize works for a long vector", {
 \end{frame}
 
 
-\begin{frame}[c,fragile]{Workflow}
+\begin{frame}{Workflow}
 
 \bbi
 \item Write tests as you're coding.
@@ -465,6 +465,25 @@ test_that("winsorize works for a long vector", {
   incorporate testing into your development workflow.
 }
 \end{frame}
+
+
+\begin{frame}{What to test?}
+
+\bbi
+\item You can't test {\hilit everything}.
+\item Focus on the {\hilit boundaries}
+   \bi
+   \item Vector of length 0 or 1
+   \item ...
+   \ei
+\item Test handling of missing data.
+\ei
+
+\note{
+}
+\end{frame}
+
+
 
 
 \begin{frame}[c]{Debugging}
@@ -488,21 +507,6 @@ test_that("winsorize works for a long vector", {
 
 
 
-\begin{frame}[c,fragile]{What to test?}
-
-\bbi
-\item You can't test {\hilit everything}.
-\item Focus on the {\hilit boundaries}
-   \bi
-   \item Vector of length 0 or 1
-   \item ...
-   \ei
-\item Test handling of missing data.
-\ei
-
-\note{
-}
-\end{frame}
 
 
 
