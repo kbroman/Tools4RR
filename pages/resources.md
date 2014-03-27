@@ -147,6 +147,7 @@ title:  Resources and further reading
 - [Dr. Climate](http://drclimate.wordpress.com/) [blog post on testing your code](http://drclimate.wordpress.com/2013/10/10/testing-your-code/)
 - [Jeff Leek's notes on developing R packages](https://github.com/jtleek/rpackages)
    talk a bit about [unit tests](https://github.com/jtleek/rpackages#unit-tests)
+- [Software Carpentry](http://software-carpentry.org) on [testing](http://software-carpentry.org/v4/test/)
 - Marick, [The craft of software testing (book)](http://www.amazon.com/exec/obidos/ASIN/0131774115/7210-20)
 - Agans, [Debugging (book)](http://www.amazon.com/exec/obidos/ASIN/0814474578/7210-20)
 - [Travis CI](http://travis-ci.com/) [for R](http://yihui.name/en/2013/04/travis-ci-general-purpose/)
