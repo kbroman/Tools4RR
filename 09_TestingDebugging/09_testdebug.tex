@@ -78,6 +78,7 @@ tests so they can be re-run automatically."
 }
 
 \note{
+  This is from Hadley's paper on his {\tt testthat} package.
 }
 \end{frame}
 
@@ -117,10 +118,10 @@ tests so they can be re-run automatically."
 
   In addition, create larger {\nhilit integration tests} to check that
   larger features are working. It's best to construct these as
-  {\nhilit regression tests}: print out the output and check that it
-  matches some saved version. This way, if some change you've made
-  leads to a change in the results, you'll notice it automatically and
-  immediately.
+  {\nhilit regression tests}: compare the output to some saved version
+  (e.g. by printing the results and comparing files). This way, if
+  some change you've made leads to a change in the results, you'll
+  notice it automatically and immediately.
 }
 \end{frame}
 
@@ -255,18 +256,23 @@ function(x, q=0.006)
   other R packages? If it's not on CRAN, it's {\nhilit probably crap}.
 
   The examples and vignettes should focus on helping users to
-  understand how to use the code. But since get run whenever
-  {\tt R CMD check} is run, they also serve as crude tests that the
-  package is working. But not that this is only testing for {\nhilit
-  errors}; it's not checking that the code is giving {\nvhilit the
-  right answers}.
+  understand how to use the code. But since they get run whenever {\tt
+  R CMD check} is run, they also serve as crude tests that the
+  package is working. But note that this is only testing for things
+  that {\nhilit halt the code}; it's not checking that the code is
+  {\nvhilit giving the right answers}.
 
   Things that you put in the {\tt tests} directory can be more
-  rigorous: these are basically regression tests.
+  rigorous: these are basically regression tests. The R output (in the
+  file {\tt some\_test.Rout}) will be compared to a saved version, if
+  available.
 
   If you want your package on CRAN, you'll need all of these tests and
   examples to be {\nhilit fast}, as CRAN runs {\tt R CMD check} on
   every package every day on multiple systems.
+
+  The {\tt R CMD check} system is another important reason for
+  assembling R code as a package.
 }
 \end{frame}
 
@@ -317,6 +323,8 @@ unlink("junk.csv")
   A useful technique here: if you have a pair of functions that are
   the inverse of each other (e.g., write and read), check that if you
   apply one and then the other, you get back to the original.
+
+  Note that {\tt unlink("junk.csv")} deletes the file.
 }
 \end{frame}
 
@@ -354,7 +362,7 @@ unlink("junk.csv")
 
 
 \note{
-  The {\tt testthat} package greatly simplies unit testing of code in
+  The {\tt testthat} package simplies unit testing of code in
   R packages.
 
   There are a bunch of functions for defining ``expectations.''
@@ -401,8 +409,11 @@ test_that("winsorize works for small vectors", {
   package. The value of this: finally, we are checking whether the
   code is giving the right answer!
 
-  These are called unit tests. Ideally, you include tests like this
-  for every function you write.
+  Ideally, you include tests like this for every function you write.
+
+  It's not really clear that the second test here is needed. If the
+  first test is successful, what's the chance that the second will
+  fail?
 }
 \end{frame}
 
@@ -450,11 +461,11 @@ test_that("winsorize works for a long vector", {
 
 \bbi
 \item Write tests as you're coding.
-\item {\tt test()}
+\item Run {\tt test()}
  \bi
  \item with {\tt devtools}, and working in your package directory
  \ei
-\item {\tt auto\_test("R", "inst/tests")}
+\item Consider {\tt auto\_test("R", "inst/tests")}
  \bi
  \item automatically runs tests when any file changes
  \ei
@@ -473,17 +484,64 @@ test_that("winsorize works for a long vector", {
 \item You can't test {\hilit everything}.
 \item Focus on the {\hilit boundaries}
    \bi
+   \item Depends on the nature of the problem
    \item Vector of length 0 or 1
-   \item ...
+   \item Things exactly matching; things with no matches.
    \ei
 \item Test handling of missing data.
+   \bi
+   \item {\tt NA}, {\tt Inf}, {\tt -Inf}
+   \ei
+\item Automate the construction of test cases, or at least create a
+  table of inputs and expected outputs and then run through the values
+  in the table.
 \ei
 
 \note{
+  You want your code to produce the correct output for {\nhilit any}
+  input, but you can't test all possible inputs, and you don't really
+  need to.
+
+  This is an experimental design question: what is the minimal set of
+  inputs to verify, with little uncertainty, that the code is correct?
+
+  We generally focus on boundary conditions, as those tend to be the
+  places where things go wrong.
+
+  The mishandling of different kinds of missing data is also a common
+  source of problems and so deserving of special tests.
 }
 \end{frame}
 
 
+
+
+\begin{frame}{Debugging tools}
+
+
+\bbi
+\item {\tt cat}, {\tt print}
+\item {\tt traceback}, {\tt browser}, {\tt debug}
+\item \href{http://www.rstudio.com/ide/docs/debugging/overview}{RStudio breakpoints}
+\item \href{http://www.eclipse.org/eclipse}{Eclipse}/\href{http://www.walware.de/goto/statet}{StatET}
+\item \href{http://www.sourceware.org/gdb/}{gdb}
+\ei
+
+\note{
+  I'm going to say just a little bit about debugging.
+
+  I still tend to just insert {\tt cat} or {\tt print} statements to
+  isolate a problem.
+
+  R does include a number of debugging tools, and RStudio has made
+  these even easier to use.
+
+  Eclipse/StatET is another development environment for R; it seems
+  hard to set up.
+
+  The GNU project debugger (gdb) is useful for compiled code.
+}
+\end{frame}
 
 
 \begin{frame}[c]{Debugging}
@@ -510,21 +568,6 @@ test_that("winsorize works for a long vector", {
 
 
 
-\begin{frame}{Learn to use debugging tools}
-
-
-\bbi
-\item {\tt cat}
-\item {\tt traceback}
-\item RStudio
-\item Eclipse
-\item gdb
-\ei
-
-\note{
-}
-\end{frame}
-
 
 
 \begin{frame}[c]{Debugging}
@@ -532,7 +575,11 @@ test_that("winsorize works for a long vector", {
 
 \centerline{Isolate the problem: where do things go bad?}
 
-\note{``Divide and conquer.''
+\note{
+  The most common strategy I use in debugging involves a sort of
+  divide-and-conquer: if R is crashing, figure out exactly where. If
+  data are getting corrupted, step back to find out where it's gone
+  from good to bad.
 }
 \end{frame}
 
@@ -544,8 +591,10 @@ test_that("winsorize works for a long vector", {
 
 \centerline{Don't make the same mistake twice.}
 
-\note{If you figure out some mistake you've made, search for all other
+\note{
+  If you figure out some mistake you've made, search for all other
   possible instances of that mistake.
+
 }
 \end{frame}
 
@@ -559,35 +608,48 @@ test_that("winsorize works for a long vector", {
 
 \begin{frame}[c]{The most pernicious bugs}
 
-\centerline{The code is right, but your thinking is wrong}
+\centerline{The code is right, but your thinking is wrong.}
 
 \vspace{24pt}
 
-\onslide<2->{\centerline{You don't understand your programming language}}
+\onslide<2->{\centerline{You were mistaken about what the code would do.}}
 
 \vspace{24pt}
 
 \onslide<3->{\centerline{\hilit $\rightarrow$ Write trivial programs to
     test your understanding.}}
 
-\note{Consider that your algorithm may be garbage.
-Try an independent implementation.
+\note{
+  A number of times I've combed through code looking for the problem,
+  but there really wasn't a problem in the code: the problem was just
+  that my understanding of the algorithm was wrong.
+
+  Or I was mistaken about some basic aspect of R.
+
+  It can be useful to write small tests, to check your understanding.
+
+  For an EM algorithm, always evaluate the likelihood function.
+  It should be non-decreasing.
 }
 \end{frame}
 
 
 
+\begin{frame}{Summary}
 
-\begin{frame}[c]{Profiling}
-
-\centerline{Don't try to optimize until the {\hilit very} end}
-
+\bbi
+\item If you don't test your code, how do you know it works?
+\item If you test your code, save and automate those tests.
+\item Check the input to each function.
+\item Write unit tests for each function.
+\item Write some larger regression tests.
+\item Turn bugs into tests.
+\ei
 
 \note{
+  Testing isn't fun. Like much of this course: somewhat painful
+  initial investment, with great potential pay-off in the long run.
 }
 \end{frame}
-
-
-
 
 \end{document}
