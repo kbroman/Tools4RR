@@ -78,7 +78,7 @@ tests so they can be re-run automatically."
 }
 
 \note{
-  This is from Hadley's paper on his {\tt testthat} package.
+  This is from Hadley's paper about his {\tt testthat} package.
 }
 \end{frame}
 
@@ -252,9 +252,6 @@ function(x, q=0.006)
 
 
 \note{
-  Sure, {\nhilit your} package is correct, but what about all of those
-  other R packages? If it's not on CRAN, it's {\nhilit probably crap}.
-
   The examples and vignettes should focus on helping users to
   understand how to use the code. But since they get run whenever {\tt
   R CMD check} is run, they also serve as crude tests that the
@@ -463,17 +460,25 @@ test_that("winsorize works for a long vector", {
 \item Write tests as you're coding.
 \item Run {\tt test()}
  \bi
- \item with {\tt devtools}, and working in your package directory
+ \item[] with {\tt devtools}, and working in your package directory
  \ei
 \item Consider {\tt auto\_test("R", "inst/tests")}
  \bi
- \item automatically runs tests when any file changes
+ \item[] automatically runs tests when any file changes
+ \ei
+\item Periodically run {\tt R CMD check}
+ \bi
+ \item[] also {\tt R CMD check --as-cran}
  \ei
 \ei
 
 \note{
   Read Hadley's paper about {\tt testthat}. It's pretty easy to
   incorporate testing into your development workflow.
+
+  It's really important to write the tests {\nhilit as you're
+  coding}. You're will check to see if the code works; save the test
+  code as a formal test.
 }
 \end{frame}
 
@@ -484,28 +489,31 @@ test_that("winsorize works for a long vector", {
 \item You can't test {\hilit everything}.
 \item Focus on the {\hilit boundaries}
    \bi
-   \item Depends on the nature of the problem
-   \item Vector of length 0 or 1
-   \item Things exactly matching; things with no matches.
+   \item (Depends on the nature of the problem)
+   \item Vectors of length 0 or 1
+   \item Things exactly matching
+   \item Things with no matches
    \ei
 \item Test handling of missing data.
    \bi
-   \item {\tt NA}, {\tt Inf}, {\tt -Inf}
+   \item[] {\tt NA}, {\tt Inf}, {\tt -Inf}
    \ei
-\item Automate the construction of test cases, or at least create a
-  table of inputs and expected outputs and then run through the values
-  in the table.
+\item Automate the construction of test cases
+  \bi
+  \item Create a table of inputs and expected outputs
+  \item Run through the values in the table
+  \ei
 \ei
 
 \note{
   You want your code to produce the correct output for {\nhilit any}
-  input, but you can't test all possible inputs, and you don't really
+  input, but you can't test {\nhilit all} possible inputs, and you don't really
   need to.
 
   This is an experimental design question: what is the minimal set of
-  inputs to verify, with little uncertainty, that the code is correct?
+  inputs to verify that the code is correct, with little uncertainty?
 
-  We generally focus on boundary conditions, as those tend to be the
+  We generally focus on boundary cases, as those tend to be the
   places where things go wrong.
 
   The mishandling of different kinds of missing data is also a common
@@ -514,6 +522,44 @@ test_that("winsorize works for a long vector", {
 \end{frame}
 
 
+\begin{frame}[c,fragile]{Another example}
+
+\begin{lstlisting}
+test_that("running mean with constant x or position", {
+
+  n <- 100
+  x <- rnorm(n)
+  pos <- rep(0, n)
+
+  expect_equal( runningmean(pos, x, window=1), rep(mean(x), n) )
+  expect_equal( runningmean(pos, x, window=1, what="median"),
+                rep(median(x), n) )
+  expect_equal( runningmean(pos, x, window=1, what="sd"),
+                rep(sd(x), n) )
+
+  x <- rep(0, n)
+  pos <- runif(n, 0, 5)
+
+  expect_equal( runningmean(pos, x, window=1), x)
+  expect_equal( runningmean(pos, x, window=1, what="median"), x)
+  expect_equal( runningmean(pos, x, window=5, what="sd"),
+                rep(0, n))
+})
+\end{lstlisting}
+
+\note{
+  Here's another example of unit tests, for a function calculating a
+  running mean.
+
+  Writing these tests revealed a bug in the code: with
+  constant $x$'s, the code should give SD = 0, but it was giving {\tt
+  NaN}'s due to round-off error that led to $\sqrt{\epsilon}$ for
+  $\epsilon < 0$.
+
+  This situation {\nhilit can} come up in practice, and this is
+  exactly the sort of boundary case where problems tend to arise.
+}
+\end{frame}
 
 
 \begin{frame}{Debugging tools}
