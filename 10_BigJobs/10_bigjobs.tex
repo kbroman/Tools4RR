@@ -1,0 +1,106 @@
+\documentclass[12pt,t]{beamer}
+\usepackage{graphicx}
+\setbeameroption{hide notes}
+\setbeamertemplate{note page}[plain]
+\usepackage{listings}
+
+\input{../LaTeX/header.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% end of header
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Big jobs/simulations}
+\subtitle{Tools for Reproducible Research}
+\author{\href{http://www.biostat.wisc.edu/~kbroman}{Karl Broman}}
+\institute{Biostatistics \& Medical Informatics, UW{\textendash}Madison}
+\date{\href{http://www.biostat.wisc.edu/~kbroman}{\tt \scriptsize \color{foreground} biostat.wisc.edu/{\textasciitilde}kbroman}
+\\[-4pt]
+\href{http://github.com/kbroman}{\tt \scriptsize \color{foreground} github.com/kbroman}
+\\[-4pt]
+\href{https://twitter.com/kwbroman}{\tt \scriptsize \color{foreground} @kwbroman}
+\\[-4pt]
+{\scriptsize Course web: \href{http://bit.ly/tools4rr}{\tt bit.ly/tools4rr}}
+}
+
+\begin{document}
+
+{
+\setbeamertemplate{footline}{} % no page number here
+\frame{
+  \titlepage
+
+\note{
+  Reproducibility is a bit harder for computational tasks that take
+  more than just a couple of hours.
+
+  And I've had papers where the computations required more than a year
+  of CPU time (split across many computers).
+
+  The problems are: (a) it's hard for someone to re-do all of that
+  work, and (b) large-scale calculations tend to be organized in a
+  system-dependent way, so even if time weren't a factor, it'd be that
+  much harder to transfer the calculations to another system.
+
+  Simulations have some special issues (e.g., saving the seeds for
+  random number generators), and they are notoriously irreproducible.
+}
+} }
+
+
+
+
+\begin{frame}{Unix basics}
+
+\bbi
+\item[] {\tt nice +19 R CMD BATCH input.R output.txt \&}
+
+\item[] {\tt fg} 
+\item[] {\tt ctrl-Z}
+\item[] {\tt bg}
+
+\item[] {\tt ps ux}
+\item[] {\tt top}
+
+\item[] {\tt kill}
+\item[] {\tt kill -9}
+
+\ei
+
+
+\note{
+  Use {\tt R CMD BATCH} to run an R job in the background.
+
+  Use {\tt \&} to put it in the background.
+
+  Use {\tt nice +19} to give it low priority.
+
+  Use {\tt fg} to bring a job back into the foreground.
+
+  Use {\tt ctrl-Z} to suspend a current job; then use {\tt bg} to put it
+  in the background.
+
+  Use {\tt ps ux} or {\tt top} to view current jobs.
+
+  Use {\tt kill} or {\tt kill -9} with a process ID ({\tt PID} in the
+  output of {\tt ps} and {\tt top}) to kill a job.
+}
+\end{frame}
+
+
+\begin{frame}{So what's the big deal?}
+
+\bbi
+\item You don't want {\tt knitr} running for a year.
+
+\item You don't want to re-run things if you don't have to.
+\ei
+
+\note{
+  It may not seem like ``big jobs'' are that big of a deal, but in my
+  mind this is the only real difficulty.
+
+}
+\end{frame}
+
+\end{document}
