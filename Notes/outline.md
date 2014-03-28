@@ -241,6 +241,10 @@ Example: [tweet re function names](https://twitter.com/richierocks/status/388609
 #### Apr 11:  Knitr with latex for papers
 
 - including more on figures and tables?
+- talk about bibtex
+- \section, \section*
+- stack exchange site
+
 
 ---
 
