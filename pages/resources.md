@@ -145,6 +145,7 @@ title:  Resources and further reading
 - [Testing](http://adv-r.had.co.nz/Testing.html) and [debugging](http://adv-r.had.co.nz/Exceptions-Debugging.html) in [Hadley Wickham](http://had.co.nz)'s
    [Advanced R book](http://adv-r.had.co.nz)
 - [Dr. Climate](http://drclimate.wordpress.com/) [blog post on testing your code](http://drclimate.wordpress.com/2013/10/10/testing-your-code/)
+- [Yihui Xie](http://yihui.name)'s [testit](http://github.com/yihui/testit) package
 - [Jeff Leek's notes on developing R packages](https://github.com/jtleek/rpackages)
    talk a bit about [unit tests](https://github.com/jtleek/rpackages#unit-tests)
 - [Software Carpentry](http://software-carpentry.org) on [testing](http://software-carpentry.org/v4/test/)
