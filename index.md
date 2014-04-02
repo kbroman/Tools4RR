@@ -52,6 +52,7 @@ data analyses, papers, presentations, posters) are reproducible.
 
 **Project**: There will be one small project, developed over the course of
 the semester:
+
 - Implement something in [R](http://www.r-project.org) (e.g., simulation + fancy plot).
 - Develop it in a [git](http://git-scm.com) repository on
     [github](http://github.com) or [bitbucket](http://bitbucket.org).
@@ -61,5 +62,6 @@ the semester:
 ---
 
 Sources on [github](http://github.com):
+
 - The [source for the website](https://github.com/kbroman/Tools4RR/tree/gh-pages)
 - The [source for other material (e.g., lecture slides)](https://github.com/kbroman/Tools4RR/tree/master)
