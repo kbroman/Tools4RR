@@ -44,6 +44,14 @@
 
   Simulations have some special issues (e.g., saving the seeds for
   random number generators), and they are notoriously irreproducible.
+
+  We at least want to fully document the process: we want capture exact
+  code in an automated workflow, so the results could at least be
+  reproduced on the same system.
+
+  And we want that code to be modular and readable, so that it
+  {\nhilit could} be restructured for a different system, if
+  necessary.
 }
 } }
 
@@ -57,7 +65,7 @@ and suppose I noticed a simple way to speed it up.
 
 \bigskip
 
-{\hilit But what should I do first?}
+{\hilit What should I do first?}
 
 \only<2->{
 \bbi
@@ -86,12 +94,38 @@ and suppose I noticed a simple way to speed it up.
 
 
 
+
+
+\begin{frame}{So what's the big deal?}
+
+\bbi
+\item You don't want {\tt knitr} running for a year.
+
+\item You don't want to re-run things if you don't have to.
+\ei
+
+\note{
+  It may not seem like ``big jobs'' are that big of a deal, but in my
+  mind this is the only real difficulty in reproducible research.
+
+  Okay, there's also the difficulty that some data can't be generally
+  distributed due to confidentiality issues.
+
+  But aside from subjects' confidentiality, the only real problem is
+  how to manage and capture the really long-running computational
+  analyses where even on the same system it can be a gargantuan effort
+  to reproduce the results.
+}
+\end{frame}
+
+
+
 \begin{frame}{Unix basics}
 
 \bbi
 \item[] {\tt nice +19 R CMD BATCH input.R output.txt \&}
 
-\item[] {\tt fg} 
+\item[] {\tt fg}
 \item[] {\tt ctrl-Z}
 \item[] {\tt bg}
 
@@ -120,23 +154,185 @@ and suppose I noticed a simple way to speed it up.
 
   Use {\tt kill} or {\tt kill -9} with a process ID ({\tt PID} in the
   output of {\tt ps} and {\tt top}) to kill a job.
+
+  Note: In my experience, Windows sucks at managing multiple
+  processes. Windows XP was not bad at this, but Windows XP is dead.
 }
 \end{frame}
 
 
-\begin{frame}{So what's the big deal?}
+
+\begin{frame}{Disk thrashing}
+
+
+\note{
+  A common problem is having multiple jobs on a machine attempt to use
+  more than the available memory on the machine, so then the machine
+  starts swapping data from RAM to disk, and all the jobs slow to a crawl.
+
+  If a machine starts disk thrashing, it can be hard to log on and
+  kill the jobs.
+
+  The solution: anticipate (and then watch) memory usage.
+
+  Another thing I did: miscalculated the number of files to be
+  produced by a job, but a couple of orders of magnitude. It turns out
+  that if you go beyond some limit on the number of files in a
+  directory, you can totally kill a storage system.
+}
+\end{frame}
+
+
+\begin{frame}{Biggish jobs in knitr}
 
 \bbi
-\item You don't want {\tt knitr} running for a year.
-
-\item You don't want to re-run things if you don't have to.
+\item Self-caching
+\item Built-in {\tt cache=TRUE}
+\item Split the work and wrike a {\tt Makefile}
 \ei
 
 \note{
-  It may not seem like ``big jobs'' are that big of a deal, but in my
-  mind this is the only real difficulty.
+}
+\end{frame}
+
+
+\begin{frame}[c,fragile]{Self-caching}
+
+\begin{lstlisting}
+file <- "cache/myfile.RData"
+
+if(file.exists(file)) {
+  load(file)
+} else{
+
+  ...
+
+  save(object1, object2, object3, file=file)
+}
+\end{lstlisting}
+
+\note{
+  This is
+}
+\end{frame}
+
+
+\begin{frame}[c]{A cache gone bad}
+
+\figh{Figs/cache_gone_bad.png}{0.65}
+
+\note{
+  This is Fig.\ 11.14 from my book, A guide to QTL mapping with R/qtl.
+
+  I saw it immediately upon flipping through my first paper copy of
+  the printed book.
+
+  I'd cached some results, but then changed the underlying software
+  in a fundamental way and didn't update the cache.
+}
+\end{frame}
+
+
+\begin{frame}{Knitr's cache system}
+
+\note{
+}
+\end{frame}
+
+
+
+\begin{frame}{Lazy loading}
+
+\note{
+}
+\end{frame}
+
+
+
+
+\begin{frame}{Systems for distributed computing}
+
+\bbi
+\item Condor
+\item "By hand"
+  \bi
+  \item e.g., perl script + basic R file
+  \ei
+\item Other condor-like systems?
+\ei
+
+\note{
+}
+\end{frame}
+
+
+\begin{frame}{Common issues}
+
+\bbi
+\item Forgetting {\tt save}
+\item A bug in the {\tt save} command
+\ei
+
+\note{
+}
+\end{frame}
+
+
+
+
+\begin{frame}{RNG seeds}
+
+{\tt set.seed(91820205 + i)}
+
+\note{
+  RNG = Random number generator
+
+  Simulations split across multiple CPUs each need their own seed.
 
 }
 \end{frame}
+
+
+
+\begin{frame}{Save everything}
+
+\bbi
+\item seeds
+\item input
+\item output
+\item version numbers (with {\tt sessionInfo})
+\item raw results
+\item script to combine results
+\item combined results
+\item {\tt ReadMe} describing the point
+\ei
+
+\note{
+  This stuff (particular code input \& text output) doesn't take up
+  much space. Compartmentalize it and save it.
+}
+\end{frame}
+
+
+\begin{frame}{Another problem}
+
+{\tt make} clobbers some important result
+
+\bbi
+\item Have your script check and refuse-to-overwrite the output files.
+\ei
+
+\note{
+
+}
+\end{frame}
+
+
+\begin{frame}{Summary}
+
+\note{
+}
+\end{frame}
+
 
 \end{document}
