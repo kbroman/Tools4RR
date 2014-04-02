@@ -48,6 +48,42 @@
 } }
 
 
+\begin{frame}{But first\dots}
+
+\vspace{18pt}
+
+Suppose I've just written an R function and it seems to work,
+and suppose I noticed a simple way to speed it up.
+
+\bigskip
+
+{\hilit But what should I do first?}
+
+\only<2->{
+\bbi
+\item Make it an R package}
+\only<3->{\item Write a test or two}
+\only<4->{\item Commit it to a git repository}
+\only<2->{\ei}
+
+\note{
+  My point here is to reinforce the things we've been covering in the
+  course.
+
+  Everything will be a lot easier if you put the code into an R
+  package. For the minimal package, all you need are the {\tt
+  DESCRIPTION} and {\tt NAMESPACE} files.
+
+  And before you start editing the code, you should write a small
+  test. Then you'll have evidence that it currently works, and
+  the tests will help show that it's still working after your modifications.
+
+  And before you start editing the code, {\nvhilit {\tt git commit}} what you
+  have to far! If it turns out that your new idea doesn't work, will
+  you be able to get back to what you had originally?
+}
+\end{frame}
+
 
 
 \begin{frame}{Unix basics}
