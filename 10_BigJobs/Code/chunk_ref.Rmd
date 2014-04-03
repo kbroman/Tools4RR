@@ -1,0 +1,26 @@
+
+Chunk A:
+
+```{r chunkA}
+x <- y <- z <- 5
+```
+
+Chunk B (not run):
+
+```{r chunkB, echo=TRUE, eval=FALSE}
+x <- 1
+```
+
+`x` is `r x`.
+
+Chunk C (run but not shown) is here.
+
+```{r chunkC, echo=FALSE, results="hide"}
+y <- 2
+<<chunkB>>
+z <- 3
+```
+
+Now `x` is `r x`.
+
+And `y` and `z` are `r y` and `r z`.
