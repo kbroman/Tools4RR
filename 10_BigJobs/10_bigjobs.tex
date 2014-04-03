@@ -75,7 +75,7 @@ and suppose I noticed a simple way to speed it up.
 \only<2->{\ei}
 
 \note{
-  My point here is to reinforce the things we've been covering in the
+  My aim here is to reinforce the things we've been covering in the
   course.
 
   Everything will be a lot easier if you put the code into an R
@@ -87,7 +87,7 @@ and suppose I noticed a simple way to speed it up.
   the tests will help show that it's still working after your modifications.
 
   And before you start editing the code, {\nvhilit {\tt git commit}} what you
-  have to far! If it turns out that your new idea doesn't work, will
+  have so far! If it turns out that your new idea doesn't work, will
   you be able to get back to what you had originally?
 }
 \end{frame}
@@ -111,7 +111,7 @@ and suppose I noticed a simple way to speed it up.
   Okay, there's also the difficulty that some data can't be generally
   distributed due to confidentiality issues.
 
-  But aside from subjects' confidentiality, the only real problem is
+  But aside from subjects' confidentiality, the main problem is
   how to manage and capture the really long-running computational
   analyses where even on the same system it can be a gargantuan effort
   to reproduce the results.
@@ -162,7 +162,18 @@ and suppose I noticed a simple way to speed it up.
 
 
 
-\begin{frame}{Disk thrashing}
+\begin{frame}[c]{Disk thrashing}
+
+\vspace{40pt}
+
+In computer science, thrashing occurs when a computer's virtual memory
+subsystem is in a constant state of paging\onslide<2->{, rapidly
+exchanging data in memory for data on disk, to the exclusion of most
+application-level processing.}
+
+\vspace{40pt}
+
+\hfill {\textendash} \href{http://en.wikipedia.org/wiki/Thrashing_(computer_science)}{Wikipedia}
 
 
 \note{
@@ -176,7 +187,7 @@ and suppose I noticed a simple way to speed it up.
   The solution: anticipate (and then watch) memory usage.
 
   Another thing I did: miscalculated the number of files to be
-  produced by a job, but a couple of orders of magnitude. It turns out
+  produced by a job, by a couple of orders of magnitude. It turns out
   that if you go beyond some limit on the number of files in a
   directory, you can totally kill a storage system.
 }
@@ -186,35 +197,91 @@ and suppose I noticed a simple way to speed it up.
 \begin{frame}{Biggish jobs in knitr}
 
 \bbi
-\item Self-caching
+\item Manual caching
 \item Built-in {\tt cache=TRUE}
-\item Split the work and wrike a {\tt Makefile}
+\item Split the work and write a {\tt Makefile}
 \ei
 
 \note{
+  You can put big computations within an R Markdown file, but
+  {\nhilit personally} I don't want to wait more than a couple of
+  minutes for it to compile. If it's going to take longer than that,
+  I'll split things up.
+
+  And if you are going to have some large computations with knitr, you
+  won't want to re-run {\nhilit all} of them every time you make even
+  the smallest change to the text!
+
+  That's where you want to {\nhilit cache} some computations: save the
+  results and just load the results rather than re-run the
+  code. Unless the {\nhilit code} changes, in which case you {\nhilit
+  do} want to re-run it (and any other code that may depend on the
+  results).
 }
 \end{frame}
 
 
-\begin{frame}[c,fragile]{Self-caching}
+\begin{frame}[c,fragile]{Manual caching}
 
 \begin{lstlisting}
+```{r a_code_chunk}
 file <- "cache/myfile.RData"
 
 if(file.exists(file)) {
   load(file)
 } else{
 
-  ...
+  ....
 
   save(object1, object2, object3, file=file)
 }
+```
 \end{lstlisting}
 
 \note{
-  This is
+  This is the ``by hand'' approach. If the file doesn't exist, run the
+  relevant code and save the needed results to the file. If the file
+  does exist, just load the file and skip the code.
+
+  If you want (or need) to re-run the code, you need to delete the
+  file {\nhilit manually}.
+
+  One issue: if you want the code to actually be {\nhilit shown}, you
+  need to repeat the code: in a chunk that is shown but isn't run, and
+  then in this chunk that is run but isn't shown.
+
+  You need to be very careful about dependencies.
 }
 \end{frame}
+
+
+\begin{frame}[c,fragile]{Chunk references}
+
+\begin{lstlisting}
+```{r not_shown, eval=FALSE}
+code_here <- 0
+```
+
+```{r a_code_chunk, echo=FALSE}
+file <- "cache/myfile.RData"
+
+if(file.exists(file)) {
+  load(file)
+} else{
+<<not_shown>>
+  save(code_here, file=file)
+}
+```
+\end{lstlisting}
+
+\note{
+  Here's how I'd avoid repeated code: use chunk references.
+
+  The {\tt <<not\_shown>>} is replaced by the code from that chunk with
+  that label.
+}
+\end{frame}
+
 
 
 \begin{frame}[c]{A cache gone bad}
@@ -222,6 +289,8 @@ if(file.exists(file)) {
 \figh{Figs/cache_gone_bad.png}{0.65}
 
 \note{
+  This is the sort of thing that can happen with manual caching.
+
   This is Fig.\ 11.14 from my book, A guide to QTL mapping with R/qtl.
 
   I saw it immediately upon flipping through my first paper copy of
@@ -233,11 +302,98 @@ if(file.exists(file)) {
 \end{frame}
 
 
-\begin{frame}{Knitr's cache system}
+\begin{frame}[fragile]{Knitr's cache system}
+
+\vspace{18pt}
+
+\begin{lstlisting}
+```{r chunk_name, cache=TRUE}
+load("a_big_file.RData")
+med <- apply(object, 2, median, na.rm=TRUE)
+```
+\end{lstlisting}
+
+\bbi
+\item Chunk is re-run if edited.
+\item Otherwise, objects from previous run are loaded.
+\item Don't cache things with side effects
+  \bi
+  \item[] e.g., {\tt options()}, {\tt par()}
+  \ei
+\ei
+
 
 \note{
+  Knitr has a nice built-in system for caching.
+
+  A chunk with {\tt cache=TRUE} will be run once and then all objects
+  saved. In future runs, the code won't be run, but rather the cached
+  objects will be loaded.
+
+  But some things {\nvhilit shouldn't} be cached. ``Side effects''
+  change the state of things; mostly, this is changing global
+  variables. If these are placed in a cached chunk, the side effects
+  won't be captured when the cache is loaded.
 }
 \end{frame}
+
+
+
+
+\begin{frame}[fragile]{Cache dependencies}
+
+\vspace{18pt}
+
+Manual dependencies
+\bigskip
+
+\begin{lstlisting}
+```{r chunkA, cache=TRUE}
+Sys.sleep(2)
+x <- 5
+```
+
+```{r chunkB, cache=TRUE, dependson="chunkA"}
+Sys.sleep(2)
+y <- x + 1
+```
+
+```{r chunkC, cache=TRUE, dependson="chunkB"}
+Sys.sleep(2)
+z <- y + 1
+```
+\end{lstlisting}
+
+\note{
+  You can indicate dependencies among chunks. Here, if {\tt chunkA} is
+  re-run, the other two will be as well.
+}
+\end{frame}
+
+
+\begin{frame}[fragile]{Cache dependencies}
+
+\vspace{18pt}
+
+Automatic dependencies
+\bigskip
+
+\begin{lstlisting}
+```{r setup, include=FALSE}
+opts_chunk$set(autodep = TRUE)
+dep_auto()
+```
+\end{lstlisting}
+
+
+\note{
+  There's also an automatic system for determining dependencies among chunks.
+
+  I've not used it.
+}
+\end{frame}
+
+
 
 
 
@@ -246,6 +402,15 @@ if(file.exists(file)) {
 \note{
 }
 \end{frame}
+
+
+
+\begin{frame}{Parallel computing}
+
+\note{
+}
+\end{frame}
+
 
 
 
@@ -266,29 +431,23 @@ if(file.exists(file)) {
 \end{frame}
 
 
-\begin{frame}{Common issues}
+
+
+\begin{frame}{Simulations}
 
 \bbi
-\item Forgetting {\tt save}
-\item A bug in the {\tt save} command
+\item Computer simulations require RNG seeds
+\item Multiple parallel jobs need different seeds.
+\item Use something like {\hilit \tt set.seed(91820205 + i)}
 \ei
-
-\note{
-}
-\end{frame}
-
-
-
-
-\begin{frame}{RNG seeds}
-
-{\tt set.seed(91820205 + i)}
 
 \note{
   RNG = Random number generator
 
   Simulations split across multiple CPUs each need their own seed.
-
+  In R, the seed is saved as {\tt .Random.seed}; if you start all of
+  the simulations from the same directory, they could all get exactly
+  the same seed.
 }
 \end{frame}
 
@@ -314,21 +473,44 @@ if(file.exists(file)) {
 \end{frame}
 
 
-\begin{frame}{Another problem}
-
-{\tt make} clobbers some important result
+\begin{frame}{Potential problems}
 
 \bbi
-\item Have your script check and refuse-to-overwrite the output files.
+\item Forgetting {\tt save}
+\item A bug in the {\tt save} command
+\item {\tt make} clobbers some important results
+  \bi
+  \item Script should refuse to overwrite output files
+  \ei
 \ei
 
 \note{
+  These are common mistakes I make.
 
+  I forget the {\tt save} command and so run a ton of computations and
+  then get no results.
+
+  Or my {\tt save} command has an error and so I run a ton of
+  computations and then it dies on the last line of the script.
+
+  Or I run {\tt make} and it starts re-running some analysis that I
+  don't want it to re-run, and it clobbers some important result and
+  then I {\nhilit have} to re-run it.
 }
 \end{frame}
 
 
+
+
+
 \begin{frame}{Summary}
+
+\bbi
+\item Careful organization and modularization.
+\item Save everything.
+\item Document everything.
+\item Learn the basic skills for distributed computing.
+\ei
 
 \note{
 }
