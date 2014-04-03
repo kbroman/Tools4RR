@@ -31,27 +31,28 @@
   \titlepage
 
 \note{
-  Reproducibility is a bit harder for computational tasks that take
-  more than just a couple of hours.
-
-  And I've had papers where the computations required more than a year
-  of CPU time (split across many computers).
+  Reproducibility can be considerably harder for computational tasks
+  that take more than just a couple of hours, and in some cases, the
+  computations for a project may require years of CPU time (split
+  across many computers).
 
   The problems are: (a) it's hard for someone to re-do all of that
   work, and (b) large-scale calculations tend to be organized in a
-  system-dependent way, so even if time weren't a factor, it'd be that
-  much harder to transfer the calculations to another system.
+  system-dependent way, so even if time weren't a factor, it'd be
+  harder to transfer the calculations to another system.
 
   Simulations have some special issues (e.g., saving the seeds for
   random number generators), and they are notoriously irreproducible.
 
-  We at least want to fully document the process: we want capture exact
-  code in an automated workflow, so the results could at least be
-  reproduced on the same system.
-
-  And we want that code to be modular and readable, so that it
-  {\nhilit could} be restructured for a different system, if
+  We at least want to fully document the process: we want capture the
+  exact code and workflow, so the results can be reproduced on the
+  same system.  And we want that code to be modular and readable, so
+  that it {\nhilit could} be restructured for a different system, if
   necessary.
+
+  I must admit that I don't always do this well. Part of this lecture
+  is more of a sketch of what I think one should do rather than what I
+  actually do.
 }
 } }
 
@@ -397,48 +398,82 @@ dep_auto()
 
 
 
-\begin{frame}{Lazy loading}
-
-\note{
-}
-\end{frame}
-
-
-
 \begin{frame}{Parallel computing}
 
+\vspace{18pt}
+
+If your computer has multiple processors, use {\tt library(parallel)}
+to make use of them.
+
+\bbi
+\item {\tt detectCores()}
+\item {\tt \hilit RNGkind("L'Eucyer-CMRG")} and {\tt \hilit mclapply} (Unix/Mac)
+\item {\tt \hilit makeCluster}, {\tt \hilit clustersetRNGStream}, {\tt
+  \hilit clusterApply}, and {\tt \hilit stopCluster} (Windows)
+\ei
+
 \note{
+  R has a built-in package for performing parallel computations. A
+  number of instances of R are invoked, calculations begun, and then
+  the results brought back together.
+
+  The code can be a bit ugly, but it's not so bad once you get used to
+  it.
+
+  See the links on the resources page,
+  {\tt http://kbroman.github.io/Tools4RR/pages/resources.html}
+
 }
 \end{frame}
-
-
-
 
 
 \begin{frame}{Systems for distributed computing}
 
 \bbi
-\item Condor
+\item \href{http://research.cs.wisc.edu/htcondor}{HTCondor} and the
+  UW-Madison \href{http://chtc.cs.wisc.edu/}{CHTC}
+\item \href{http://en.wikipedia.org/wiki/Comparison_of_cluster_software}{Other condor-like systems}
 \item "By hand"
   \bi
-  \item e.g., perl script + basic R file
+  \item e.g., perl script + template R script
   \ei
-\item Other condor-like systems?
 \ei
 
 \note{
+  For really big jobs, you'll want to distribute the computations
+  across multiple computers.
+
+  At UW-Madison, the main place to look is the Center for
+  High-Throughput Computing (CHTC), and the HTCondor software. This
+  provides a way of distributing enormous numbers of jobs across a
+  heterogeneous set of computers and collecting the results. The CHTC
+  provides great user support.
+
+  There exists other, similar systems for distributing and managing
+  jobs across clusters of computers. But at Madison, everyone uses
+  HTCondor.
+
+  My own approach is more primitive: I have a Perl script that
+  converts a template R script into a bunch of R input files (by
+  replacing every instance of ``{\tt SUB}'' in the template with a
+  job-specific index). It also creates a script to set those running.
+
+  In either case, you'd write another R script to combine the results
+  from the multiple jobs.
 }
 \end{frame}
-
-
 
 
 \begin{frame}{Simulations}
 
 \bbi
-\item Computer simulations require RNG seeds
+\item Computer simulations require RNG seeds ({\tt .Random.seed} in R).
 \item Multiple parallel jobs need different seeds.
+\item Don't rely on the current seed, or on having it generated from
+  the clock.
 \item Use something like {\hilit \tt set.seed(91820205 + i)}
+\item An alternative is create a big batch of simulated data sets in
+  advance.
 \ei
 
 \note{
@@ -448,18 +483,27 @@ dep_auto()
   In R, the seed is saved as {\tt .Random.seed}; if you start all of
   the simulations from the same directory, they could all get exactly
   the same seed.
+
+  I tend to include a call to {\tt set.seed} at the top of each R
+  script, with the seed being some big number plus an index for the
+  job.
+
+  You could, alternatively, generate all of the simulated data sets in
+  advance. An advantage of this is that it'd be easier to reproduce
+  the results later. Just be sure to save (and document) the code you
+  used to generate the data.
 }
 \end{frame}
 
 
 
-\begin{frame}{Save everything}
+\begin{frame}[c]{Save everything}
 
-\bbi
-\item seeds
+\bi
+\item RNG seeds
 \item input
 \item output
-\item version numbers (with {\tt sessionInfo})
+\item version numbers, with {\tt sessionInfo()}
 \item raw results
 \item script to combine results
 \item combined results
@@ -467,8 +511,35 @@ dep_auto()
 \ei
 
 \note{
-  This stuff (particular code input \& text output) doesn't take up
+  This stuff (particularly code input \& text output) doesn't take up
   much space. Compartmentalize it and save it.
+}
+\end{frame}
+
+
+\begin{frame}{One Makefile to rule them all}
+
+\bbi
+\item Separate directory for each batch of big computations.
+\item Makefile that controls the combination of the results (and
+  everything else).
+\item KnitR-based documents for the analysis/use of those results.
+\ei
+
+\note{
+  This is what I'm thinking, for projects that involve big
+  computations: compartmentalize those big computations into chunks,
+  each in a separate directory to contain all of the materials and
+  results.
+
+  Have one Makefile that handles the combination of those results as
+  well as the compilation of any KnitR-based files that describe and
+  carry out the further analyses.
+
+  The Makefile won't capture the entire workflow, but it will indicate
+  almost all of it, and the big jobs will be compartmentalized as
+  subdirectories, and the source of the major results will be
+  indicated in the Makefile.
 }
 \end{frame}
 
@@ -476,11 +547,11 @@ dep_auto()
 \begin{frame}{Potential problems}
 
 \bbi
-\item Forgetting {\tt save}
-\item A bug in the {\tt save} command
+\item Forgetting {\tt save()} in your distributed jobs
+\item A bug in the {\tt save()} command
 \item {\tt make} clobbers some important results
   \bi
-  \item Script should refuse to overwrite output files
+  \item Scripts should refuse to overwrite output files
   \ei
 \ei
 
@@ -513,6 +584,11 @@ dep_auto()
 \ei
 
 \note{
+  It's important to always end with a summary.
+
+  Research with long-running computations are hard to make fully
+  reproducible. Modularize the big jobs and document their
+  purpose. And document the relationships among things.
 }
 \end{frame}
 
