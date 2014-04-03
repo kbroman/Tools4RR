@@ -192,6 +192,7 @@ title:  Resources and further reading
 - [Python for biologists](http://pythonforbiologists.com/index.php/introduction-to-python-for-biologists/)
 - [IPython](http://ipython.org/)
 - [IPython notebook](http://ipython.org/notebook)
+- [Installing iPython](http://ipython.org/install.html): [Anaconda](http://continuum.io/downloads)
 
 
 ### Software Licenses
