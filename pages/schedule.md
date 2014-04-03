@@ -71,6 +71,12 @@ tagline: Spring, 2014
     \]
 
 **Apr 4**:  Big jobs/simulations; caching computations
+    \[
+    [S](../assets/lectures/10_bigjobs.pdf) |
+    [N](../assets/lectures/10_bigjobs_withnotes.pdf) |
+    [C](https://github.com/kbroman/Tools4RR/tree/master/10_BigJobs/Code)
+    \]
+
 
 **Apr 11**: Knitr with LaTeX for papers
 
