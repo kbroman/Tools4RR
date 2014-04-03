@@ -160,6 +160,13 @@ title:  Resources and further reading
 - [KnitR cache](http://yihui.name/knitr/demo/cache/)
   \[Also see [Knitr options](http://yihui.name/knitr/options)\]
 - [KnitR chunk references](http://yihui.name/knitr/demo/reference/)
+- [Parallel R (book)](http://www.amazon.com/exec/obidos/ASIN/1449309925/7210-20)
+- [A no BS guide to the basics of parallelization in R](http://librestats.com/2012/03/15/a-no-bs-guide-to-the-basics-of-parallelization-in-r/)
+  at [librestats](http://librestats.com/)
+- [Parallel Options for R slides](http://www.sdsc.edu/Events/summerinstitute/slides/Lockwood%20-%20Parallel%20R.pdf)
+  by [Glenn Lockwood](http://users.sdsc.edu/~glockwood/index.php)
+- [HTCondor](http://research.cs.wisc.edu/htcondor/)
+- [UW-Madison Center for High Throughput Computing](http://chtc.cs.wisc.edu)
 
 ### Latex
 
