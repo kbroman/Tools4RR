@@ -1,0 +1,20 @@
+## Illustration of knitr chunk dependencies
+
+Compile this, edit something outside a chunk and compile again.
+Then edit `chunkC` and compile. Then `chunkB` and then `chunkA`.
+Try all of that again, removing the `dependson` bits.
+
+```{r chunkA, cache=TRUE}
+Sys.sleep(2)
+x <- 5
+```
+
+```{r chunkB, cache=TRUE, dependson="chunkA"}
+Sys.sleep(2)
+y <- x + 1
+```
+
+```{r chunkC, cache=TRUE, dependson="chunkB"}
+Sys.sleep(2)
+z <- y + 1
+```

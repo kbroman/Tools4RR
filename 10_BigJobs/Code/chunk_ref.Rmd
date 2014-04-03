@@ -1,3 +1,4 @@
+## Illustration of knitr chunk references
 
 Chunk A:
 
