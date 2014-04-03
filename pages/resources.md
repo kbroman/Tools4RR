@@ -158,6 +158,8 @@ title:  Resources and further reading
 ### Big jobs
 
 - [KnitR cache](http://yihui.name/knitr/demo/cache/)
+  \[Also see [Knitr options](http://yihui.name/knitr/options)\]
+- [KnitR chunk references](http://yihui.name/knitr/demo/reference/)
 
 ### Latex
 
