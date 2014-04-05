@@ -167,6 +167,7 @@ title:  Resources and further reading
   by [Glenn Lockwood](http://users.sdsc.edu/~glockwood/index.php)
 - [HTCondor](http://research.cs.wisc.edu/htcondor/)
 - [UW-Madison Center for High Throughput Computing](http://chtc.cs.wisc.edu)
+- [Kill Linux processes easier with pkill](http://www.howtogeek.com/howto/linux/kill-linux-processes-easier-with-pkill/)
 
 ### Latex
 
