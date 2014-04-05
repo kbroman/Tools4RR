@@ -121,9 +121,9 @@ and suppose I noticed a simple way to speed it up.
 
 
 
-\begin{frame}{Unix basics}
+\begin{frame}[c]{Unix basics}
 
-\bbi
+\bi
 \item[] {\tt nice +19 R CMD BATCH input.R output.txt \&}
 
 \item[] {\tt fg}
@@ -135,6 +135,8 @@ and suppose I noticed a simple way to speed it up.
 
 \item[] {\tt kill}
 \item[] {\tt kill -9}
+
+\item[] {\tt pkill}
 
 \ei
 
@@ -154,7 +156,8 @@ and suppose I noticed a simple way to speed it up.
   Use {\tt ps ux} or {\tt top} to view current jobs.
 
   Use {\tt kill} or {\tt kill -9} with a process ID ({\tt PID} in the
-  output of {\tt ps} and {\tt top}) to kill a job.
+  output of {\tt ps} and {\tt top}) to kill a job. Use {\tt pkill} to
+  kill multiple jobs at once, using a pattern.
 
   Note: In my experience, Windows sucks at managing multiple
   processes. Windows XP was not bad at this, but Windows XP is dead.
