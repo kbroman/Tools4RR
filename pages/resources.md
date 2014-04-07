@@ -169,11 +169,19 @@ title:  Resources and further reading
 - [UW-Madison Center for High Throughput Computing](http://chtc.cs.wisc.edu)
 - [Kill Linux processes easier with pkill](http://www.howtogeek.com/howto/linux/kill-linux-processes-easier-with-pkill/)
 
-### Latex
+### LaTeX
 
-- [A hitchhiker's guide to LaTeX (pdf)](http://chaosbook.org/FAQ/lala.pdf)
 - [AucTex](https://www.gnu.org/software/auctex/), for working with
   LaTeX within emacs.
+- [LyX](http://www.lyx.org), a WYSIWYG application for LaTeX, with knitr
+- [WriteLaTeX](http://writelatex.com),
+  [Authorea](http://authorea.com),
+  [ShareLaTeX](http://sharelatex.com),
+  [Verbosus](http://verbosus.com): online collaborative LaTeX editors
+- [Setting up LaTeX](http://robjhyndman.com/hyndsight/latex-setup/) by [Rob Hyndman](http://robjhyndman.com)
+- [Getting started with LaTeX](http://www.maths.tcd.ie/~dwilkins/LaTeXPrimer/GSWLaTeX.pdf)
+- [A hitchhiker's guide to LaTeX (pdf)](http://chaosbook.org/FAQ/lala.pdf)
+
 
 
 ### Slides and posters
