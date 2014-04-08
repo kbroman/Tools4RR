@@ -6,7 +6,7 @@
 <<knitr_options, echo=FALSE, results="hide">>=
 opts_chunk$set(out.width="0.8\\textwidth", fig.height=5)
 library(broman) # used for myround()
-@ 
+@
 
 \begin{document}
 
@@ -22,5 +22,26 @@ abline(lm.out$coef, lwd=2, col="violetred")
 @
 
 The estimated slope is \Sexpr{myround(lm.out$coef[2], 1)}.
+
+\clearpage % skip to the next page
+
+Figure~\ref{fig:fig_with_caption} has a caption. It was produced as follows.
+
+<<fig_with_caption, fig.cap="Scatterplot of $y$ vs $x$, with regression line", fig.align="center">>=
+plot(x,y, las=1, pch=21, bg="slateblue")
+abline(lm.out$coef, lwd=2, col="violetred")
+@
+
+Note that knitr gave the figure a label from the chunk name, which we
+can use in cross-referencing the figure number.
+
+The label was with {\tt {\textbackslash}label\{fig:fig\_with\_caption\}}.
+
+We'd reference the figure with
+{\tt {\textbackslash}ref\{fig:fig\_with\_caption\}}.
+
+When you use {\tt fig.cap} in knitr, the figure becomes a ``float.''
+\LaTeX\/ decides where it's going to be placed. The placement of
+floats is \emph{the biggest pain\/} in using \LaTeX.
 
 \end{document}

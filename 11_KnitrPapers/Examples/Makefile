@@ -10,3 +10,4 @@ example.tex: example.Rnw
 
 example.pdf: example.tex
 	pdflatex example.tex
+	pdflatex example.tex
