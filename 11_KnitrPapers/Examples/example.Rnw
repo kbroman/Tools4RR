@@ -1,0 +1,25 @@
+\documentclass[12pt]{article}
+
+\title{An example document}
+\author{Karl Broman}
+
+<<knitr_options, echo=FALSE, results="hide">>=
+opts_chunk$set(out.width="0.8\\textwidth", fig.height=5)
+@ 
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty} % for some reason, this needs to _follow_ \maketitle
+
+<<example_chunk>>=
+x <- rnorm(100)
+y <- 5*x + rnorm(100)
+lm.out <- lm(y ~ x)
+plot(x,y, las=1, pch=21, bg="slateblue")
+abline(lm.out$coef, lwd=2, col="violetred")
+@
+
+The estimated slope is \Sexpr{myround(lm.out$coef[2], 1)}.
+
+\end{document}
