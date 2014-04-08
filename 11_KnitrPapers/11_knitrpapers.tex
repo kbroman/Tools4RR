@@ -185,8 +185,11 @@ Focus your compulsive behavior on things that matter.
 \author{Karl Broman}
 
 \begin{document}
-
 \maketitle
+
+<<load_library, echo=FALSE, results="hide">>=
+library(broman) # used for myround()
+@
 
 <<example_chunk>>=
 x <- rnorm(100)
@@ -197,7 +200,6 @@ abline(lm.out$coef)
 @
 
 The estimated slope is \Sexpr{myround(lm.out$coef[2], 1)}.
-
 \end{document}
 \end{lstlisting}
 \end{frame}
@@ -214,8 +216,11 @@ The estimated slope is \Sexpr{myround(lm.out$coef[2], 1)}.
 \author{Karl Broman}
 
 \begin{document}
-
 \maketitle
+
+<<load_library, echo=FALSE, results="hide">>=
+library(broman) # used for myround()
+@
 
 <<example_chunk, out.width="0.8\\textwidth">>=
 x <- rnorm(100)
@@ -226,7 +231,6 @@ abline(lm.out$coef)
 @
 
 The estimated slope is \Sexpr{myround(lm.out$coef[2], 1)}.
-
 \end{document}
 \end{lstlisting}
 
@@ -239,6 +243,10 @@ The estimated slope is \Sexpr{myround(lm.out$coef[2], 1)}.
   The main difference is the way in which code chunks are
   indicated. You use {\tt <<>>=} and {\tt @} for chunks, and
   {\tt {\textbackslash}Sexpr\{\}} for in-line code.
+
+  KnitR basically does a search-and-replace for code
+  chunks. Different patterns will be easier, depending on the nature
+  of the surrounding code.
 
   The chunk options are the same. Here, I used
   {\tt out.width="0.8{\textbackslash\textbackslash}textwidth"}
@@ -291,12 +299,51 @@ The estimated slope is \Sexpr{myround(lm.out$coef[2], 1)}.
 
 
 
-\begin{frame}{Including graphics}
+\begin{frame}[c,fragile]{Figure captions and floats}
+\addtocounter{framenumber}{-1}
+
+\begin{lstlisting}
+<<fig_with_caption, fig.cap="Scatterplot of $y$ vs $x$">>=
+x <- rnorm(100)
+y <- 5*x + rnorm(100)
+lm.out <- lm(y ~ x)
+plot(x,y)
+abline(lm.out$coef)
+@
+\end{lstlisting}
+
+\bigskip
+
+\begin{lstlisting}
+\begin{figure}[]
+\includegraphics{figure/fig_with_caption}
+
+\caption{Scatterplot of $y$ vs $x$\label{fig:fig_with_caption}}
+\end{figure}
+\end{lstlisting}
 
 
 \note{
+  If you use the chunk option {\tt fig.cap}, the figure will get a
+  caption.
+
+  But it will also be embedded within a {\tt figure} ``environment.''
+  (That is, between {\tt {\textbackslash}begin\{figure\}} and
+  {\tt {\textbackslash}end\{figure\}}.)
+
+  This makes it a ``float.'' \LaTeX\/ decides where it's going to be
+  placed. The placement of floats is {\nvhilit the biggest pain} in
+  using \LaTeX.
+
+  The figure also gets a label, from the chunk name. (The
+  {\tt {\textbackslash}label\{\}} bit.) This allows you to
+  cross-reference the figure, to have the figure number determined
+  automatically.
+
+  The cross-reference would be with {\tt {\textbackslash}ref\{fig:fig\_with\_caption\}}.
 }
 \end{frame}
+
 
 
 
