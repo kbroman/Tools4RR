@@ -5,6 +5,7 @@
 
 <<knitr_options, echo=FALSE, results="hide">>=
 opts_chunk$set(out.width="0.8\\textwidth", fig.height=5)
+library(broman) # used for myround()
 @ 
 
 \begin{document}
