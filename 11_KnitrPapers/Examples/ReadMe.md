@@ -6,3 +6,10 @@
 document.
 
 [Makefile](Makefile) is the Makefile to compile the above to PDFs.
+
+Also look at my various papers on GitHub (but these aren't all pretty):
+
+- [Fourteen years of R/qtl: Just barely sustainable](https://github.com/kbroman/Paper_Rqtl_Experiences)
+- [Mapping quantitative trait loci onto a phylogenetic tree](http://github.com/kbroman/phyloQTLpaper)
+- [Genotype probabilities at intermediate generations in the construction of recombinant inbred lines](http://github.com/kbroman/preCCProbPaper)
+- [Haplotype probabilities in advanced intercross populations](http://github.com/kbroman/ailProbPaper)
