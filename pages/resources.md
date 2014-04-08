@@ -179,8 +179,11 @@ title:  Resources and further reading
   [ShareLaTeX](http://sharelatex.com),
   [Verbosus](http://verbosus.com): online collaborative LaTeX editors
 - [Setting up LaTeX](http://robjhyndman.com/hyndsight/latex-setup/) by [Rob Hyndman](http://robjhyndman.com)
+- [A not so short introduction to LaTeX](http://www.ctan.org/tex-archive/info/lshort/english/)
 - [Getting started with LaTeX](http://www.maths.tcd.ie/~dwilkins/LaTeXPrimer/GSWLaTeX.pdf)
 - [A hitchhiker's guide to LaTeX (pdf)](http://chaosbook.org/FAQ/lala.pdf)
+- [Detexify<sup>2</sup>](http://detexify.kirelabs.org/classify.html) -
+  LaTeX symbol classifier
 
 
 
