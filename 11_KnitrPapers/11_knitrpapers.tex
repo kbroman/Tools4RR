@@ -10,7 +10,7 @@
 % end of header
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\title{KnitR + LaTeX $\rightarrow$ paper}
+\title{KnitR + \LaTeX\/ $\rightarrow$ paper}
 \subtitle{Tools for Reproducible Research}
 \author{\href{http://www.biostat.wisc.edu/~kbroman}{Karl Broman}}
 \institute{Biostatistics \& Medical Informatics, UW{\textendash}Madison}
@@ -36,19 +36,221 @@
   reports. KnitR with AsciiDoc is great for somewhat fancier
   reports. There are a number of efforts, especially with Pandoc, to
   use R Markdown for journal articles. But if you want fine control
-  over the appearance of a document, it's hard to beat LaTeX, and so
+  over the appearance of a document, it's hard to beat \LaTeX, and so
   I'm just going to focus on that.
 }
 } }
 
 
-\begin{frame}{About LaTeX}
+\begin{frame}[c,fragile]{\LaTeX}
 
+\begin{lstlisting}
+\documentclass[12pt]{article}
+
+\usepackage{graphicx}
+
+\title{An example document}
+\author{Karl Broman}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+\section{A section}
+
+This is a simple example of a \LaTeX\/ document for an article.
+Here's some in-line math: $y = \beta_0 + \beta_1 x + \epsilon$.
+
+And here's a display equation:
+
+$$ \hat{\beta} = (X'X)^{-1} X'y $$
+
+\end{document}
+\end{lstlisting}
 
 \note{
+  \LaTeX\/ is like html or Markdown: plain text with special codes to
+  indicate how things are to appear.
+
+  A \LaTeX\/ document always starts with {\tt {\textbackslash}documentclass}, then a
+  bunch of overall controlling information. The actual document is
+  between {\tt {\textbackslash}begin\{document\}} and {\tt {\textbackslash}end\{document\}}.
+
+  {\tt {\textbackslash}usepackage\{\}} is like {\tt library()} in R.
+
+  Ideally, you focus on {\nhilit semantics} rather than {\nhilit
+  style}: define the {\tt {\textbackslash}title\{\}} and {\tt {\textbackslash}author\{\}} and use
+  {\tt {\textbackslash}maketitle} to have them included in the document, and
+  indicate sections and subsections with {\tt {\textbackslash}section\{\}} and
+  {\tt {\textbackslash}subsection\{\}}.
+
+  For some reason, {\tt {\textbackslash}thispagestyle\{empty\}} (``don't
+  show page number on this page'') needs
+  to be placed {\nhilit after} {\tt {\textbackslash}maketitle}.
+
+  A key feature of \LaTeX\/ is the mathematics typesetting. There's no
+  better system. And your \LaTeX\/ skills can be immediately
+  transferred to your Markdown documents.
 }
 \end{frame}
 
+
+\begin{frame}{Why \LaTeX\/?}
+
+\bbi
+\item Fine control of document appearance
+\item Transparency of how that was achieved
+\item Version control (diff/merge)
+\item Typesetting equations
+\item Markdown's not quite ready, or sufficiently rich
+\ei
+
+
+\note{
+  It's {\nhilit a lot} of work to learn \LaTeX, so we need to be clear
+  about why we'd want to devote the effort to it.
+
+  For reproducible research, we need some sort of code-based document
+  system (i.e., {\nvhilit not Word!}), and \LaTeX\/ gives you the most
+  fine-grained control, if you need it. Ultimately, I hope, Markdown
+  will be sufficient, but for now, we often need \LaTeX\/.
+
+  The code-based control makes what you're trying to do
+  transparent.  And you should treat \LaTeX\/ like code: write clearly
+  and simply, and comment the tricky bits.
+
+  This sort of document also has the advantage of easy treatment of
+  {\tt diff} and {\tt merge} in a version control system like git.
+
+  The real power of \LaTeX\/ is in the typesetting of mathematical
+  equations. And what you learn on that aspect can be transferred to
+  your Markdown documents, using MathJax.
+}
+\end{frame}
+
+
+\begin{frame}[c]{}
+
+\vspace{10mm}
+
+\centerline{\Large simple \quad $\longleftrightarrow$ \quad flexible}
+
+\vspace{10mm}
+
+\onslide<2->{\centerline{\tt \scriptsize \lolit {\textbackslash}centerline\{{\textbackslash}Large simple
+{\textbackslash}quad \${\textbackslash}longleftrightarrow\$ {\textbackslash}quad flexible\}}}
+
+\note{
+  \LaTeX\/ sits at the right of the simple-to-flexible spectrum.
+}
+\end{frame}
+
+
+
+\begin{frame}[c]{}
+
+\centering
+Modify your desires to match the defaults.
+
+\vspace{36pt}
+
+Focus your compulsive behavior on things that matter.
+
+\note{
+  I've said this before, but I like to repeat it.
+
+  Focus on the text and the figures before worrying too much about
+  fine details of how they appear on the page.
+
+  And consider which is more important: a manuscript, web page, blog,
+  grant, course slides, course handout, report to collaborator,
+  scientific poster.
+
+  You can spend a ton of time trying to get things to look just
+  right. Ideally, you spend that time trying to construct a general
+  solution.  Or you can modify your desires to more closely match what
+  you get without any effort.
+}
+\end{frame}
+
+
+
+\begin{frame}<handout:0>[c,fragile]{KnitR + \LaTeX $\rightarrow$ Rnw}
+
+\begin{lstlisting}
+\documentclass[12pt]{article}
+
+\title{An example Rnw document}
+\author{Karl Broman}
+
+\begin{document}
+
+\maketitle
+
+<<example_chunk>>=
+x <- rnorm(100)
+y <- 5*x + rnorm(100)
+lm.out <- lm(y ~ x)
+plot(x,y)
+abline(lm.out$coef)
+@
+
+The estimated slope is \Sexpr{myround(lm.out$coef[2], 1)}.
+
+\end{document}
+\end{lstlisting}
+\end{frame}
+
+
+
+\begin{frame}[c,fragile]{KnitR + \LaTeX $\rightarrow$ Rnw}
+\addtocounter{framenumber}{-1}
+
+\begin{lstlisting}
+\documentclass[12pt]{article}
+
+\title{An example Rnw document}
+\author{Karl Broman}
+
+\begin{document}
+
+\maketitle
+
+<<example_chunk, out.width="0.8\\textwidth">>=
+x <- rnorm(100)
+y <- 5*x + rnorm(100)
+lm.out <- lm(y ~ x)
+plot(x,y)
+abline(lm.out$coef)
+@
+
+The estimated slope is \Sexpr{myround(lm.out$coef[2], 1)}.
+
+\end{document}
+\end{lstlisting}
+
+\note{
+  KnitR works well with LaTeX.
+
+  Most of what you learned about KnitR with RMarkdown transfers
+  directly to working with LaTeX.
+
+  The main difference is the way in which code chunks are
+  indicated. You use {\tt <<>>=} and {\tt @} for chunks, and
+  {\tt {\textbackslash}Sexpr\{\}} for in-line code.
+
+  The chunk options are the same. Here, I used
+  {\tt out.width="0.8{\textbackslash\textbackslash}textwidth"}
+  to make the figure appear as 80\% of the width of the page.
+
+  {\tt out.width} and {\tt out.height} need units as in \LaTeX\/ (built into
+  {\tt {\textbackslash\textbackslash}textwidth}; otherwise {\tt "in"}
+  or {\tt "cm"} or {\tt "pt"} or whatever).
+
+  {\tt fig.width} and {\tt fig.height} are as in R, with implied units.
+}
+\end{frame}
 
 \begin{frame}{LyX}
 
@@ -61,11 +263,32 @@
 \hfill \href{http://www.lyx.org/}{lyx.org}
 
 \note{
-  I create LaTeX documents in emacs. If you want something WYSIWYG,
+  I create \LaTeX\/ documents in emacs. If you want something WYSIWYG,
   consider LyX. KnitR is built-in, and Yihui Xie strongly endorses
   it.
 }
 \end{frame}
+
+
+\begin{frame}{Also}
+
+\bbi
+\item \href{http://writelatex.com}{WriteLaTeX}
+\item \href{http://authorea.com}{Authorea}
+\item \href{http://sharelatex.com}{ShareLaTeX}
+\item \href{http://verbosus.com}{Verbosus}
+\ei
+
+\note{
+  There are a bunch of online tools for creating LaTeX documents,
+  collaboratively.
+
+  I have no experience with these, but I've heard good things about
+  WriteLaTeX.
+}
+\end{frame}
+
+
 
 
 \begin{frame}{Including graphics}
@@ -77,7 +300,7 @@
 
 
 
-\begin{frame}{Tables in LaTeX}
+\begin{frame}{Tables in \LaTeX}
 
 
 \note{
