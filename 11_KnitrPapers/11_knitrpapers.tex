@@ -100,6 +100,45 @@ $$ \hat{\beta} = (X'X)^{-1} X'y $$
 \end{frame}
 
 
+\begin{frame}[c,fragile]{What I actually do}
+
+\begin{lstlisting}
+\documentclass[12pt]{article}
+
+\setlength{\headheight}{10pt}
+\setlength{\headsep}{15pt}
+\setlength{\topmargin}{-25pt}
+\setlength{\topskip}{0in}
+\setlength{\textheight}{8.7in}
+\setlength{\footskip}{0.3in}
+\setlength{\oddsidemargin}{0.0in}
+\setlength{\evensidemargin}{0.0in}
+\setlength{\textwidth}{6.5in}
+
+\begin{document}
+\begin{center}
+\textbf{\large An example document}
+
+\vspace{10mm}
+Karl Broman
+\end{center}
+
+\vspace{30mm}
+\textbf{\sffamily A section}
+\end{lstlisting}
+
+\note{
+  In reality, for a paper, I don't use {\tt {\textbackslash}maketile}
+  or {\tt {\textbackslash}section}, but rather just muck about,
+  hard-coding the placement of things.
+
+  But mine is not the recommended approach. If, for some reason, you
+  need to change the style, it's easier if your document is defined in
+  terms of {\nhilit semantics}.
+}
+\end{frame}
+
+
 \begin{frame}{Why \LaTeX\/?}
 
 \bbi
