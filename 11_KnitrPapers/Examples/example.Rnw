@@ -6,6 +6,7 @@
 <<knitr_options, echo=FALSE, results="hide">>=
 opts_chunk$set(out.width="0.8\\textwidth", fig.height=5)
 library(broman) # used for myround()
+set.seed(65020683)
 @
 
 \begin{document}
@@ -15,7 +16,7 @@ library(broman) # used for myround()
 
 <<example_chunk>>=
 x <- rnorm(100)
-y <- 5*x + rnorm(100)
+y <- x + rnorm(100)
 lm.out <- lm(y ~ x)
 plot(x,y, las=1, pch=21, bg="slateblue")
 abline(lm.out$coef, lwd=2, col="violetred")
@@ -57,7 +58,6 @@ numbers <- c("one", "two", "three", "four", "five",
 cap <- function(vec) paste0(toupper(substr(vec, 1, 1)),
                             substr(vec, 2, nchar(vec)))
 Numbers <- cap(numbers)
-set.seed(65020683)
 randnum <- sample(1:10, 1)
 @
 
@@ -78,5 +78,20 @@ y <- 3
 \Sexpr{Numbers[x]} grasshopper\Sexpr{ifelse(x>1, "s", "")}\dots
 
 \Sexpr{Numbers[y]} grasshopper\Sexpr{ifelse(y>1, "s", "")}\dots
+
+\section*{Tables}
+
+Tables in \LaTeX\/ are painful to create but super flexible.
+But to create them reproducibly, you'll want the R package xtable.
+
+Here's a table with the estimated regression coefficients from the
+linear regression above.
+
+<<table_coef, results="asis">>=
+library(xtable)
+xtable(lm.out, digits=c(0,2,2,1,2))
+@
+
+But I'm not very happy with the P = 0.00.
 
 \end{document}
