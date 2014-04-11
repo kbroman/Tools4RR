@@ -395,7 +395,6 @@ The estimated slope is \Sexpr{myround(lm.out$coef[2], 1)}.
 
 
 \begin{frame}[c,fragile]{Figure captions and floats}
-\addtocounter{framenumber}{-1}
 
 \begin{lstlisting}
 <<fig_with_caption, fig.cap="Scatterplot of $y$ vs $x$">>=
@@ -492,6 +491,58 @@ xtable(lm.out, digits=c(0,2,2,1,2))
   You don't have complete control, but you do have a ton of
   control. The xtableGallery vignette shows you much of what can be
   done.
+}
+\end{frame}
+
+
+\begin{frame}{Read proofs carefully}
+
+\vspace{12pt}
+
+As submitted
+\bigskip
+
+\figw{Figs/rigenome_as_submitted.png}{0.5}
+
+\bigskip \bigskip
+
+As printed
+\bigskip
+
+\figw{Figs/rigenome_error.png}{0.5}
+
+\vfill
+\hfill 
+{\lolit \scriptsize Broman (2005) Genetics 169:1133{\textendash}1146}
+
+\note{
+  Some journals re-type a bunch of your manuscript, sometimes
+  introducing errors.
+
+  So read proofs {\nhilit carefully}. (What pain!) And post a
+  preprint, say to arXiv.org or biorxiv.org.
+
+  The above is the most important equation in the paper, and I missed
+  that they'd introduced a mistake. 
+}
+\end{frame}
+
+
+
+
+\begin{frame}[c]{Re-type that!}
+
+\vspace{18pt}
+
+\figh{Figs/preCC_table.png}{0.65}
+
+\vfill
+\hfill 
+{\lolit \scriptsize Broman (2012) Genetics 190:403{\textendash}412}
+
+\note{
+  I have a few papers with {\nhilit a lot} of equations. I hope
+  they're not trying to re-type these. I generated them from code.
 }
 \end{frame}
 
