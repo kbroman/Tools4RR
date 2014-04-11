@@ -521,6 +521,14 @@ lm.out <- lm(y ~ x)
 library(xtable)
 xtable(lm.out, digits=c(0,2,2,1,2))
 @
+
+
+% a non-floating version
+<<table, results="asis">>=
+library(xtable)
+xtab <- xtable(lm.out, digits=c(0,2,2,1,2))
+print(xtab, floating=FALSE)
+@
 \end{lstlisting}
 
 \note{
@@ -528,6 +536,15 @@ xtable(lm.out, digits=c(0,2,2,1,2))
   You don't have complete control, but you do have a ton of
   control. The xtableGallery vignette shows you much of what can be
   done.
+
+  Note that a lot of the options are for {\tt print.xtable}, so look
+  at the help files for both {\tt xtable} and {\tt print.xtable}.
+
+  For example, if you {\nhilit don't} want a table to be ``floating,''
+  (within a {\tt table} environment, between
+  {\tt {\textbackslash}begin\{table\}} and
+  {\tt {\textbackslash}end\{table\}}),
+  you need to use {\tt print.table} with {\tt floating=FALSE}.
 }
 \end{frame}
 
@@ -549,7 +566,7 @@ As printed
 \figw{Figs/rigenome_error.png}{0.5}
 
 \vfill
-\hfill 
+\hfill
 {\lolit \scriptsize Broman (2005) Genetics 169:1133{\textendash}1146}
 
 \note{
@@ -560,7 +577,7 @@ As printed
   preprint, say to arXiv.org or bioRxiv.org.
 
   The above is the most important equation in the paper, and I missed
-  that they'd introduced a mistake. 
+  that they'd introduced a mistake.
 }
 \end{frame}
 
@@ -574,7 +591,7 @@ As printed
 \figh{Figs/preCC_table.png}{0.65}
 
 \vfill
-\hfill 
+\hfill
 {\lolit \scriptsize Broman (2012) Genetics 190:403{\textendash}412}
 
 \note{
