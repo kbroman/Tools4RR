@@ -42,6 +42,9 @@
   I can't hope to explain \LaTeX\/ properly in just this one
   lecture. My goals are to give the general gist, indicate resources
   and options, and show how to use KnitR with \LaTeX.
+
+  I also want to discuss some more general stategies for ensuring that
+  the results described in a journal article are fully reproducible.
 }
 } }
 
@@ -95,7 +98,7 @@ $$ \hat{\beta} = (X'X)^{-1} X'y $$
 
   A key feature of \LaTeX\/ is the mathematics typesetting. There's no
   better system. And your \LaTeX\/ skills can be immediately
-  transferred to your Markdown documents.
+  transferred to your Markdown documents, with MathJax.
 }
 \end{frame}
 
@@ -168,7 +171,8 @@ Karl Broman
 
   The real power of \LaTeX\/ is in the typesetting of mathematical
   equations. And what you learn on that aspect can be transferred to
-  your Markdown documents, using MathJax.
+  your Markdown documents, using MathJax. (But I already said that,
+  didn't I?)
 }
 \end{frame}
 
@@ -280,7 +284,7 @@ The estimated slope is \Sexpr{myround(lm.out$coef[2], 1)}.
 \note{
   KnitR works well with LaTeX.
 
-  Most of what you learned about KnitR with RMarkdown transfers
+  Most of what you learned about KnitR with R Markdown transfers
   directly to working with LaTeX.
 
   The main difference is the way in which code chunks are
@@ -292,7 +296,7 @@ The estimated slope is \Sexpr{myround(lm.out$coef[2], 1)}.
   of the surrounding code.
 
   The chunk options are the same. Here, I used
-  {\tt out.width="0.8{\textbackslash\textbackslash}textwidth"}
+  {\tt out.width="0.8{\textbackslash}textwidth"}
   to make the figure appear as 80\% of the width of the page.
 
   {\tt out.width} and {\tt out.height} need units as in \LaTeX\/ (built into
@@ -315,8 +319,9 @@ The estimated slope is \Sexpr{myround(lm.out$coef[2], 1)}.
 
 \note{
   I create \LaTeX\/ documents in emacs. If you want something WYSIWYG,
-  consider LyX. KnitR is built-in, and Yihui Xie strongly endorses
-  it.
+  consider LyX. KnitR is built in, and Yihui Xie strongly endorses
+  it. (LyX is not really ``WYSIWYG'' but rather ``WYSIWYM,'' but
+  that's what you want most, anyway.)
 }
 \end{frame}
 
@@ -336,6 +341,32 @@ The estimated slope is \Sexpr{myround(lm.out$coef[2], 1)}.
 
   I have no experience with these, but I've heard good things about
   WriteLaTeX.
+}
+\end{frame}
+
+
+
+
+\begin{frame}{Flavors of \LaTeX}
+
+\bbi
+\item \href{http://www.latex-project.org/}{\LaTeX}
+\item \href{http://en.wikipedia.org/wiki/PdfTeX}{pdflatex}
+\item \href{http://www.xelatex.org/}{xelatex}
+\item \href{http://www.luatex.org/}{lualatex}
+\ei
+
+\note{
+  In addition to regular \LaTeX, there's pdflatex (which I mostly
+  use). It has the advantage of being able to include pdf, jpg, and
+  png figures, and produces a PDF file directly.
+
+  XeLaTeX and LuaLaTeX are great for fonts and Unicode.
+
+  I've not mentioned that behind the scenes is \TeX, which is the
+  source of all of this. Believe or not, \LaTeX\/ exists because
+  \TeX\/ is even harder. PdfLatex, XeLaTeX, and LuoLaTeX, really
+  derive from PdfTeX, XeTex, and LuoTex.
 }
 \end{frame}
 
@@ -404,7 +435,11 @@ abline(lm.out$coef)
   cross-reference the figure, to have the figure number determined
   automatically.
 
-  The cross-reference would be with {\tt {\textbackslash}ref\{fig:fig\_with\_caption\}}.
+  The cross reference would be with {\tt {\textbackslash}ref\{fig:fig\_with\_caption\}}.
+
+  When you use cross references, you need to run \LaTeX\/ twice: once
+  to establish where things will sit on the page and how they are
+  numbered, and a second time to insert the cross references.
 }
 \end{frame}
 
@@ -427,9 +462,276 @@ abline(lm.out$coef)
 \end{frame}
 
 
-\begin{frame}{BibTeX for bibliographies}
+\begin{frame}[c,fragile]{BibTeX for bibliographies}
+
+\begin{lstlisting}
+%bibliography format
+\usepackage[authoryear]{natbib}
+\bibpunct{(}{)}{;}{a}{}{,}
+
+A number of investigators have developed methods for identifying
+such sample mix-ups \citep{Westra2011, Schadt2012, Lynch2012, 
+Ekstrom2012}, and a similar approach was applied by 
+\citet{Baggerly2008, Baggerly2009} in their forensic...
+
+\bibliographystyle{genetics}
+\renewcommand*{\refname}{\centerline{\normalsize\sffamily
+   \textbf{Literature Cited}}}
+\bibliography{samplemixups}
+\end{lstlisting}
+
+\bigskip
+
+\begin{lstlisting}
+@article{Baggerly2008,
+author = {Baggerly, Keith A. and Coombes, Kevin R.},
+journal = {J. Clin. Oncol.},
+pages = {1186--1187},
+title = {Run batch effects potentially compromise...},
+volume = {26},
+year = {2008} }
+\end{lstlisting}
+
 
 \note{
+  References with \LaTeX\/ are via BibTex, which is fabulous once you
+  get used to it. Most software to track references will produce
+  BibTex files for you.
+
+  The formatting of citations and the reference listings, to
+  match what the journal wants, can be painful. But I've figured out
+  what \emph{Genetics\/} wants, and I send all of my papers there.
+
+  The first box is the sort of code that would appear
+  in your \LaTeX\/ file: the bit at the top goes in the header (before
+  {\tt {\textbackslash}begin\{document\}}). The bit in the middle
+  shows how to cite papers: use {\tt {\textbackslash}citep} to get the
+  whole thing in parentheses, and use {\tt {\textbackslash}citet} to
+  get a reference like ``...applied by Baggerly and Coombes (2008, 2009)...''
+  The last bit in the first box produces the actual list of references.
+
+  The second box is the BibTex format for a particular reference.
+
+  When you use BibTeX, you tend to run {\tt pdflatex}, then {\tt
+  bibtex}, and then {\tt pdflatex} a couple of more times.
+}
+\end{frame}
+
+
+\begin{frame}{Organizing analyses}
+
+\bbi
+\item Directory for the main analysis project 
+  \bi
+  \item[] {\tt {\textasciitilde}/Projects/Blah}
+  \ei
+\item Directory for a paper 
+  \bi
+  \item[] {\tt {\textasciitilde}/Docs/Papers/Blah}
+  \ei
+\item Paper directory may have an analysis directory
+  \bi
+  \item[] {\tt {\textasciitilde}/Docs/Papers/Blah/Analysis}
+  \ei
+\item Symbolic links to {\tt .RData} files
+  \bi
+  \item[] {\tt ln -s {\textasciitilde}/Projects/Blah/DerivedData/blah.RData .}
+  \ei
+\item Each part well organized and fully reproducible.
+\item R Markdown reports documenting different aspects.
+\item Analysis with the paper may be re-done "properly."
+\ei
+
+\note{
+  This is how I organize a paper related to a larger project.
+
+  Some of the work in the main project may be re-done a bit
+  differently (or cleaner) in the analysis with the paper.
+
+  You don't want to re-do {\nhilit all} analyses for the paper, but
+  it'd also be nice to have the data and code related to the paper be
+  a bit more self-contained.
+
+  And usually when you're sitting down to write the paper, you have
+  better ideas about how to re-do things properly, and so it might be
+  a good idea to go ahead and re-do things.
+
+  Ideally, you'd separate out each aspect of the analysis: data
+  manipulation, data cleaning, and different parts of the analysis.
+
+  Have an R Markdown document describing each aspect, with the
+  actual manuscript and its figures and tables drawing from the
+  results of those R Markdown documents.
+}
+\end{frame}
+
+
+\begin{frame}[c,fragile]{Make every number reproducible.}
+
+\begin{lstlisting}
+<<define_numbers, echo=FALSE>>=
+numbers <- c("one", "two", "three", "four", "five",
+             "six", "seven", "eight", "nine", "ten")
+cap <- function(vec) paste0(toupper(substr(vec, 1, 1)), 
+                            substr(vec, 2, nchar(vec)))
+Numbers <- cap(numbers)
+n <- sample(1:10, 1)
+@ 
+
+Then if I want to talk about a number, like \Sexpr{n}, I can
+refer to it by name: \Sexpr{numbers[n]}. And I can start a
+sentence with it. \Sexpr{Numbers[n]} grasshoppers walked into a
+bar\dots
+
+But be careful about singular vs. plural, and so write
+\Sexpr{Numbers[n]} grasshopper\Sexpr{ifelse(n>1, "s", "")}
+walked\dots
+\end{lstlisting}
+
+\note{
+  Every statistic, figure and table in your manuscript should be fully
+  reproducible. So when you're citing statistics, use 
+  {\tt {\textbackslash}Sexpr\{\}} liberally.
+
+  This should inhibit you from writing numbers as words, though the
+  \LaTeX\/ code can get a bit ugly.
+
+  There's a bit of fanciness here about capitalization and about
+  ensuring that singular or plural nouns are correct. If 
+  {\tt {\textbackslash}Sexpr\{\}} produces a character string, it ends
+  up as plain text in your document
+
+  I'll use a lot of {\tt myround()} from my R/broman package, too.
+
+  Long explanations or descriptions of figures can't be fully
+  reproducible, but the figures themselves and any statistics you
+  mention should be.
+}
+\end{frame}
+
+
+\begin{frame}[c,fragile]{Keep the figures separate}
+
+\begin{lstlisting}
+# simple make file
+
+mypaper.pdf: mypaper.tex Figs/fig1.pdf Figs/fig2.pdf
+	pdflatex mypaper
+
+Figs/fig1.pdf: R/fig1.R
+	cd R;R CMD BATCH fig1.R fig1.Rout
+
+Figs/fig2.pdf: R/fig2.R
+	cd R;R CMD BATCH fig2.R fig2.Rout
+\end{lstlisting}
+
+\bigskip \bigskip
+
+
+\begin{lstlisting}
+\clearpage
+\includegraphics{Figs/fig1.pdf}
+
+\clearpage
+\includegraphics{Figs/fig2.pdf}
+\end{lstlisting}
+
+\note{
+  While you {\nhilit could} include all code in your {\tt .Rnw} file,
+  I prefer to pull out the code for my figures as separate files, and
+  then write a {\tt Makefile} for the manuscript construction and
+  include them with {\tt {\textbackslash}includegraphics}.
+
+  The advantage of this is the ability to reuse the figures in
+  talks or whatever. Also, journals will generally want the figures as
+  separate files. Finally, the code for my figures is often incredibly
+  long and ugly, so it's best to separate it out.
+
+  Ideally, the code for a figure would be structured as a function and
+  then a function call.  Put a bit more effort into the code, so that
+  you can reuse it later for a similar figure with different data.
+  At the very least, you should write the repeated bits as functions.
+
+  If your function takes arguments that define the placement of
+  things (padding for text and so forth), then the fine adjustments of the
+  figure appearance would be easier.
+}
+\end{frame}
+
+
+\begin{frame}{Version Control}
+
+\bbi
+\item Your manuscript is under version control, right?
+\onslide<2->{\item Local or private repository for the whole thing
+  \bi
+  \item including reviewers' reports and my response
+  \item PDF of submitted and final manuscript
+  \ei
+\item Snapshot of the final version as a public repository
+  \bi
+  \item I don't really want to show the whole history
+  \ei 
+}
+\ei
+
+\note{
+  Git is as good for tracking manuscripts and data analyses as it is
+  for tracking code. Use it!
+
+  But I don't want to make {\nhilit everything} public, and I want to
+  include private stuff in my repository.
+
+  I've been using just a local repository, but I'm moving towards
+  having a private repository hosted on BitBucket.
+
+  I'll put a snapshot of the final version, and maybe a few final
+  changes, on GitHub.
+}
+\end{frame}
+
+
+\begin{frame}{Word}
+
+\bbi
+\item With papers led by a collaborator, I'm usually stuck with Word.
+\item But my analyses and figures are fully reproducible.
+\item Create an R Markdown document with the detailed results. 
+\ei
+
+\note{
+  Often, you'll be stuck with Word. And you can't reproducibly insert
+  numbers into Word.
+
+  So have a separate R Markdown report with the detailed results,
+  including every statistic that will get inserted into Word.
+
+  And take control of the figures and ensure that they are
+  reproducible (and respectable).
+
+  Teach your collaborators to at least have their figures be
+  reproducible?
+}
+\end{frame}
+
+
+
+\begin{frame}{Summary}
+
+\bbi
+\item \LaTeX\/ is brilliant for fine control and for equations
+\item Floating figures and tables can be a pain
+\item You use KnitR with \LaTeX\/ much the same way as you'd used it
+  with Markdown.
+\item Ensure that every statistic, figure, and table in your paper are
+  fully reproducible.
+\item Use xtable to make tables.
+\item Separate out the code for the figures.
+\item Use version control!
+\ei
+
+\note{
+  Summaries are helpful.
 }
 \end{frame}
 

@@ -25,6 +25,8 @@ The estimated slope is \Sexpr{myround(lm.out$coef[2], 1)}.
 
 \clearpage % skip to the next page
 
+\section*{Floating figures}
+
 Figure~\ref{fig:fig_with_caption} has a caption. It was produced as follows.
 
 <<fig_with_caption, fig.cap="Scatterplot of $y$ vs $x$, with regression line", fig.align="center">>=
@@ -43,5 +45,38 @@ We'd reference the figure with
 When you use {\tt fig.cap} in knitr, the figure becomes a ``float.''
 \LaTeX\/ decides where it's going to be placed. The placement of
 floats is \emph{the biggest pain\/} in using \LaTeX.
+
+\section*{Reproducible statistics}
+
+I use the following sort of code in order to use integers by name.
+Ordinarily, I'd use {\tt echo=FALSE}.
+
+<<define_numbers>>=
+numbers <- c("one", "two", "three", "four", "five",
+             "six", "seven", "eight", "nine", "ten")
+cap <- function(vec) paste0(toupper(substr(vec, 1, 1)),
+                            substr(vec, 2, nchar(vec)))
+Numbers <- cap(numbers)
+set.seed(65020683)
+randnum <- sample(1:10, 1)
+@
+
+Then if I want to talk about a number, like \Sexpr{randnum}, I can
+refer to it by name: \Sexpr{numbers[randnum]}. And I can start a
+sentence with it. \Sexpr{Numbers[randnum]} grasshoppers walked into a
+bar\dots
+
+But what if that the number had been \emph{one}? I'd have written
+``one grasshoppers.'' So I need to use
+{\tt {\textbackslash}Sexpr\{ifelse(x>1, "s", "")\}}.
+
+<<num>>=
+x <- 1
+y <- 3
+@
+
+\Sexpr{Numbers[x]} grasshopper\Sexpr{ifelse(x>1, "s", "")}\dots
+
+\Sexpr{Numbers[y]} grasshopper\Sexpr{ifelse(y>1, "s", "")}\dots
 
 \end{document}
