@@ -189,7 +189,10 @@ title:  Resources and further reading
 - [xtable](http://cran.r-project.org/web/packages/xtable/index.html),
   an R package for creating LaTeX and HTML tables
 - [xtableGallery (pdf vignette)](http://cran.r-project.org/web/packages/xtable/vignettes/xtableGallery.pdf)
-
+- [UnicodeIt](http://unicodeit.net/) (for Mac) - convert latex expressions into
+  unicode characters
+- [LaTeXit](http://www.chachatelier.fr/latexit/latexit-home.php) (for
+  Mac) - LaTeX-based equation editor
 
 ### Slides and posters
 
