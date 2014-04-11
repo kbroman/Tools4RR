@@ -5,6 +5,14 @@
 [example.Rnw](example.Rnw) is a simple example of a KnitR/LaTeX
 document.
 
+[bibtex_example.tex](bibtex_example.tex) is a simple example of a
+LaTeX document with BibTeX references.
+
+[bibtex_example.bib](bibtex_example.bib) is the corresponding
+bibliography file.
+
+[genetics.bst](genetics.bst) is a BibTeX style file for [_Genetics_](http://www.genetics.org).
+
 [Makefile](Makefile) is the Makefile to compile the above to PDFs.
 
 Also look at my various papers on GitHub (but these aren't all pretty):

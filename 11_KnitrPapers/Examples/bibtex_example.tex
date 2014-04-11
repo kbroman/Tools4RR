@@ -1,0 +1,26 @@
+\documentclass[12pt]{article}
+
+%bibliography format
+\usepackage[authoryear]{natbib}
+\bibpunct{(}{)}{;}{a}{}{,}
+
+\title{An example to show the use of BibTeX}
+\author{Karl Broman}
+
+\begin{document}
+
+\maketitle
+
+A number of investigators have developed methods for identifying such
+sample mix-ups \citep{Westra2011, Schadt2012, Lynch2012, Ekstrom2012},
+and a similar approach was applied by \citet{Baggerly2008,
+Baggerly2009} in their forensic bioinformatics analyses of the Duke
+debacle.  We have developed a further approach that is simple but
+effective.  We illustrate its use through a particularly dramatic
+example.
+
+\bibliographystyle{genetics}
+\renewcommand*{\refname}{\centerline{\normalsize\sffamily \textbf{Literature Cited}}}
+\bibliography{bibtex_example}
+
+\end{document}

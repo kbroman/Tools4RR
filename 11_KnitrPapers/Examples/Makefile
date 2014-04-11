@@ -1,4 +1,4 @@
-all: article.pdf example.pdf
+all: article.pdf example.pdf bibtex_example.pdf
 
 R_OPTS=--no-save --no-restore --no-init-file --no-site-file # --vanilla, but without --no-environ
 
@@ -11,3 +11,9 @@ example.tex: example.Rnw
 example.pdf: example.tex
 	pdflatex example.tex
 	pdflatex example.tex
+
+bibtex_example.pdf: bibtex_example.tex bibtex_example.bib genetics.bst
+	pdflatex bibtex_example
+	bibtex bibtex_example
+	pdflatex bibtex_example
+	pdflatex bibtex_example
