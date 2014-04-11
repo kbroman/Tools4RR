@@ -79,6 +79,11 @@ tagline: Spring, 2014
 
 
 **Apr 11**: Knitr with LaTeX for papers
+    \[
+    [S](../assets/lectures/11_knitrpapers.pdf) |
+    [N](../assets/lectures/11_knitrpapers_withnotes.pdf) |
+    [C](https://github.com/kbroman/Tools4RR/tree/master/11_KnitrPapers/Examples)
+    \]
 
 **Apr 18**: Knitr with LaTeX for talks and posters
 
