@@ -43,7 +43,7 @@
   lecture. My goals are to give the general gist, indicate resources
   and options, and show how to use KnitR with \LaTeX.
 
-  I also want to discuss some more general stategies for ensuring that
+  I also want to discuss some more general strategies for ensuring that
   the results described in a journal article are fully reproducible.
 }
 } }
@@ -131,7 +131,7 @@ Karl Broman
 \end{lstlisting}
 
 \note{
-  In reality, for a paper, I don't use {\tt {\textbackslash}maketile}
+  In reality, for a paper, I don't use {\tt {\textbackslash}maketitle}
   or {\tt {\textbackslash}section}, but rather just muck about,
   hard-coding the placement of things.
 
@@ -365,7 +365,7 @@ The estimated slope is \Sexpr{myround(lm.out$coef[2], 1)}.
 
   I've not mentioned that behind the scenes is \TeX, which is the
   source of all of this. Believe or not, \LaTeX\/ exists because
-  \TeX\/ is even harder. PdfLatex, XeLaTeX, and LuoLaTeX, really
+  \TeX\/ is even harder. PdfLaTeX, XeLaTeX, and LuoLaTeX, really
   derive from PdfTeX, XeTex, and LuoTex.
 }
 \end{frame}
@@ -446,18 +446,52 @@ abline(lm.out$coef)
 
 
 
-\begin{frame}{Tables in \LaTeX}
+\begin{frame}[fragile]{Tables in \LaTeX}
 
+\vspace{18pt}
+
+\begin{lstlisting}
+\begin{tabular}{rrrrr} \hline
+& Estimate & Std. Error & t value & Pr($>$$|$t$|$) \\  \hline
+(Intercept) & 0.04 & 0.11 &  0.4 & 0.69 \\
+      x     & 0.98 & 0.10 & 10.0 & 0.00 \\ \hline
+\end{tabular}
+\end{lstlisting}
 
 \note{
+  Tables in \LaTeX\/ are a pain, but they offer extremely fine
+  control.
+
+  But writing this sort of code ({\tt \&} indicates breaks between
+  columns, {\tt {\textbackslash}{\textbackslash}} indicates the end of
+  a row) {\nhilit reproducibly} is hard.
 }
 \end{frame}
 
 
 
-\begin{frame}{xtable}
+\begin{frame}[fragile]{xtable}
+
+\vspace{18pt}
+
+\begin{lstlisting}
+<<generate_and_fit>>=
+x <- rnorm(100)
+y <- x + rnorm(100)
+lm.out <- lm(y ~ x)
+@
+
+<<table, results="asis">>=
+library(xtable)
+xtable(lm.out, digits=c(0,2,2,1,2))
+@
+\end{lstlisting}
 
 \note{
+  xtable is a superb R package for producing \LaTeX\/ tables.
+  You don't have complete control, but you do have a ton of
+  control. The xtableGallery vignette shows you much of what can be
+  done.
 }
 \end{frame}
 
@@ -470,8 +504,8 @@ abline(lm.out$coef)
 \bibpunct{(}{)}{;}{a}{}{,}
 
 A number of investigators have developed methods for identifying
-such sample mix-ups \citep{Westra2011, Schadt2012, Lynch2012, 
-Ekstrom2012}, and a similar approach was applied by 
+such sample mix-ups \citep{Westra2011, Schadt2012, Lynch2012,
+Ekstrom2012}, and a similar approach was applied by
 \citet{Baggerly2008, Baggerly2009} in their forensic...
 
 \bibliographystyle{genetics}
@@ -494,13 +528,14 @@ year = {2008} }
 
 
 \note{
-  References with \LaTeX\/ are via BibTex, which is fabulous once you
+  References with \LaTeX\/ are via BibTeX, which is fabulous once you
   get used to it. Most software to track references will produce
-  BibTex files for you.
+  BibTeX files for you.
 
-  The formatting of citations and the reference listings, to
-  match what the journal wants, can be painful. But I've figured out
-  what \emph{Genetics\/} wants, and I send all of my papers there.
+  The formatting of citations and the reference listings, to match
+  what the journal wants, can be painful. But I've figured out how to
+  produce what \emph{Genetics\/} wants, and I send all of my papers
+  there.
 
   The first box is the sort of code that would appear
   in your \LaTeX\/ file: the bit at the top goes in the header (before
@@ -510,7 +545,7 @@ year = {2008} }
   get a reference like ``...applied by Baggerly and Coombes (2008, 2009)...''
   The last bit in the first box produces the actual list of references.
 
-  The second box is the BibTex format for a particular reference.
+  The second box is the BibTeX format for a particular reference.
 
   When you use BibTeX, you tend to run {\tt pdflatex}, then {\tt
   bibtex}, and then {\tt pdflatex} a couple of more times.
@@ -521,11 +556,11 @@ year = {2008} }
 \begin{frame}{Organizing analyses}
 
 \bbi
-\item Directory for the main analysis project 
+\item Directory for the main analysis project
   \bi
   \item[] {\tt {\textasciitilde}/Projects/Blah}
   \ei
-\item Directory for a paper 
+\item Directory for a paper
   \bi
   \item[] {\tt {\textasciitilde}/Docs/Papers/Blah}
   \ei
@@ -572,11 +607,11 @@ year = {2008} }
 <<define_numbers, echo=FALSE>>=
 numbers <- c("one", "two", "three", "four", "five",
              "six", "seven", "eight", "nine", "ten")
-cap <- function(vec) paste0(toupper(substr(vec, 1, 1)), 
+cap <- function(vec) paste0(toupper(substr(vec, 1, 1)),
                             substr(vec, 2, nchar(vec)))
 Numbers <- cap(numbers)
 n <- sample(1:10, 1)
-@ 
+@
 
 Then if I want to talk about a number, like \Sexpr{n}, I can
 refer to it by name: \Sexpr{numbers[n]}. And I can start a
@@ -590,14 +625,14 @@ walked\dots
 
 \note{
   Every statistic, figure and table in your manuscript should be fully
-  reproducible. So when you're citing statistics, use 
+  reproducible. So when you're citing statistics, use
   {\tt {\textbackslash}Sexpr\{\}} liberally.
 
   This should inhibit you from writing numbers as words, though the
   \LaTeX\/ code can get a bit ugly.
 
   There's a bit of fanciness here about capitalization and about
-  ensuring that singular or plural nouns are correct. If 
+  ensuring that singular or plural nouns are correct. If
   {\tt {\textbackslash}Sexpr\{\}} produces a character string, it ends
   up as plain text in your document
 
@@ -671,7 +706,7 @@ Figs/fig2.pdf: R/fig2.R
 \item Snapshot of the final version as a public repository
   \bi
   \item I don't really want to show the whole history
-  \ei 
+  \ei
 }
 \ei
 
@@ -696,7 +731,7 @@ Figs/fig2.pdf: R/fig2.R
 \bbi
 \item With papers led by a collaborator, I'm usually stuck with Word.
 \item But my analyses and figures are fully reproducible.
-\item Create an R Markdown document with the detailed results. 
+\item Create an R Markdown document with the detailed results.
 \ei
 
 \note{
