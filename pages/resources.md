@@ -217,3 +217,4 @@ title:  Resources and further reading
 - [MIT license at wikipedia](http://en.wikipedia.org/wiki/MIT_License)
 - [Gnu General Public License](https://www.gnu.org/copyleft/gpl.html)
 - [Quick guide to GPL](http://www.gnu.org/licenses/quick-guide-gplv3.html)
+- [VertNet guide to copyright and licenses for dataset publication](http://www.vertnet.org/resources/datalicensingguide.html)
