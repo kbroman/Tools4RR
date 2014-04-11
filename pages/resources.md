@@ -184,7 +184,9 @@ title:  Resources and further reading
 - [A hitchhiker's guide to LaTeX (pdf)](http://chaosbook.org/FAQ/lala.pdf)
 - [Detexify<sup>2</sup>](http://detexify.kirelabs.org/classify.html) -
   LaTeX symbol classifier
-
+- [xtable](http://cran.r-project.org/web/packages/xtable/index.html),
+  an R package for creating LaTeX and HTML tables
+- [xtableGallery (pdf vignette)](http://cran.r-project.org/web/packages/xtable/vignettes/xtableGallery.pdf)
 
 
 ### Slides and posters
