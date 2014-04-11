@@ -222,6 +222,43 @@ Focus your compulsive behavior on things that matter.
 \end{frame}
 
 
+\begin{frame}[c,fragile]{Stuff I use a lot}
+
+\begin{lstlisting}
+% other fonts
+\usepackage{palatino}
+\usepackage{times}
+
+\setlength{\rightskip}{0pt plus 1fil} % makes ragged right
+
+\newcommand{\LOD}{\text{LOD}}
+
+\usepackage{setspace}
+\setstretch{2.0}
+
+\addtocounter{framenumber}{-1}
+
+% make figures S1, S2, ...
+\renewcommand{\thefigure}{\textbf{S\arabic{figure}}}
+\renewcommand{\figurename}{\textbf{Figure}}
+
+% bigger space between rows in tables
+\renewcommand{\arraystretch}{1.5}
+
+% paragraphs not indented but have space between
+\setlength{\parskip}{6pt}
+\setlength{\parindent}{0pt}
+\end{lstlisting}
+
+
+\note{
+  These are bits of \LaTeX\/ code that I use a lot.
+}
+\end{frame}
+
+
+
+
 
 \begin{frame}<handout:0>[c,fragile]{KnitR + \LaTeX $\rightarrow$ Rnw}
 
@@ -520,7 +557,7 @@ As printed
   introducing errors.
 
   So read proofs {\nhilit carefully}. (What pain!) And post a
-  preprint, say to arXiv.org or biorxiv.org.
+  preprint, say to arXiv.org or bioRxiv.org.
 
   The above is the most important equation in the paper, and I missed
   that they'd introduced a mistake. 
