@@ -1,1 +1,5 @@
 beamer_example.tex
+slidify_example/.cache
+slidify_example/assets
+slidify_example/index.html
+slidify_example/index.md
