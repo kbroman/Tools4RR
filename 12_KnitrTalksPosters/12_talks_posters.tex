@@ -76,7 +76,7 @@
   share and exchange slides with friends.
 
   But we've all seen terrible font problems in important
-  presentations, mostly due to incompatibilities between 
+  presentations, mostly due to incompatibilities between
   Windows and Mac versions of Powerpoint: fonts should be, but aren't,
   embedded in the presentation.
 
@@ -146,7 +146,7 @@
 \end{lstlisting}
 
 \note{
-  The first thing to do is to get rid of all of the junk. 
+  The first thing to do is to get rid of all of the junk.
 
   Also, I prefer light text on a dark background.
 
@@ -172,7 +172,7 @@
 %      ...   heros/qhv2.004otf.zip
 \setsansfont
   [ ExternalLocation = ../fonts/ ,
-    UprightFont = *-regular , 
+    UprightFont = *-regular ,
     BoldFont = *-bold ,
     ItalicFont = *-italic ,
     BoldItalicFont = *-bolditalic ]{texgyreheros}
@@ -195,7 +195,7 @@
 \title{Put title here}
 \subtitle{And maybe a subtitle}
 \author{Author name}
-\institute{Biostatistics \& Medical Informatics, 
+\institute{Biostatistics \& Medical Informatics,
    UW{\textendash}Madison}
 \date{\tt \scriptsize biostat.wisc.edu/{\textasciitilde}kbroman}
 
@@ -213,7 +213,7 @@
 \end{lstlisting}
 
 \note{
-  The title slide is created with {\tt {\textbackslash}titlepage}, 
+  The title slide is created with {\tt {\textbackslash}titlepage},
   having first defined {\tt {\textbackslash}title},
   {\tt {\textbackslash}author}, etc.
 
@@ -318,10 +318,89 @@
   {\tt {\textbackslash}includegraphics}. I got a good macro from Sam
   Younkin to simplify this.
 
-  But you could use a knitr code chunk, in the same way we discussed
-  with manuscripts, in the last lecture.
 }
 \end{frame}
+
+
+
+\begin{frame}[c,fragile]{Figures with KnitR}
+
+\begin{lstlisting}
+<<knitr_options, echo=FALSE>>=
+opts_chunk$set(echo=FALSE, fig.height=7, fig.width=10)
+change_colors <-
+function(bg=rgb(24,24,24, maxColorValue=255), fg="white")
+  par(bg=bg, fg=fg, col=fg, col.axis=fg, col.lab=fg,
+      col.main=fg, col.sub=fg)
+@
+
+<<a_figure>>=
+change_colors()
+par(las=1)
+n <- 100
+x <- rnorm(n)
+y <- 2*x + rnorm(n)
+plot(x, y, pch=16, col="slateblue")
+@
+\end{lstlisting}
+
+\note{
+  You could use a knitr code chunk, in the same way we discussed
+  with manuscripts, in the last lecture.
+
+
+}
+\end{frame}
+
+
+
+
+\begin{frame}[c,fragile]{Slides with notes}
+
+\begin{lstlisting}
+\documentclass[12pt,t]{beamer}
+\setbeameroption{hide notes}
+\setbeamertemplate{note page}[plain]
+\end{lstlisting}
+
+\bigskip
+
+\begin{lstlisting}
+\documentclass[12pt,t,handout]{beamer}
+\setbeameroption{show notes}
+\setbeamertemplate{note page}[plain]
+\def\notescolors{1}
+\end{lstlisting}
+
+\bigskip
+
+\begin{lstlisting}
+\ifx\notescolors\undefined % slides
+  \definecolor{foreground}{RGB}{255,255,255}
+  \definecolor{background}{RGB}{24,24,24}
+\else % notes
+  \definecolor{background}{RGB}{255,255,255}
+  \definecolor{foreground}{RGB}{24,24,24}
+\fi
+\end{lstlisting}
+
+\note{
+  To create a version of your slides with notes, include
+  {\tt {\textbackslash}note\{ \}} on every slide.
+
+  I then include the code in the top box in the slide version, the
+  middle box in the note version, and the stuff at the bottom in both.
+  The bit at the bottom selects colors to be light text on a dark
+  background in the slides and dark text on a light
+  background in the notes version.
+
+  I then use {\tt pdfnup} (part of PDFjam) to make 2-up pages (slides
+  at the top, notes at the bottom). The only problem with {\tt pdfnup}
+  is that it strips off all of the hyperlinks.
+}
+\end{frame}
+
+
 
 
 
