@@ -5,6 +5,9 @@
 [example.Rnw](example.Rnw) is a simple example of a KnitR/LaTeX
 document.
 
+[table_examples.Rnw](table_examples.Rnw) includes additional examples
+of [xtable](http://cran.r-project.org/web/packages/xtable) with KnitR/LaTex.
+
 [bibtex_example.tex](bibtex_example.tex) is a simple example of a
 LaTeX document with BibTeX references.
 

@@ -1,0 +1,73 @@
+\documentclass[12pt]{article}
+
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{hyperref}
+\usepackage{tabularx}
+
+\hypersetup{pdfpagemode=UseNone} % don't show bookmarks on initial view
+
+% define a couple of colors
+\definecolor{lightblue}{RGB}{155,255,255}
+\definecolor{hilit}{RGB}{122,0,128}
+
+\hypersetup{colorlinks, urlcolor={hilit}} % link colors
+
+
+\title{More table examples}
+\author{Karl Broman}
+
+<<knitr_options, echo=FALSE, results="hide">>=
+opts_chunk$set(out.width="0.8\\textwidth", fig.height=5)
+library(xtable)
+@
+
+\begin{document}
+
+\maketitle
+
+The following is taken from
+\href{http://stackoverflow.com/questions/16579562/r-knitr-xtable-alternating-row-colors/16580525#16580525}{a
+  stackoverflow question}: A table with alternate rows shaded.
+
+<<table_alternate_gray, results="asis">>=
+n <- 6
+dat <- data.frame(id=1:n, x=rnorm(n), y=rnorm(n))
+
+# index is -1 for header row and 0, 1, ... for real rows
+coloredrows <- seq(-1, n, by=2)
+ncolored <- length(coloredrows)
+rowcolor <- c("\\rowcolor{lightblue}",
+              rep("\\rowcolor{lightgray}", ncolored-1))
+
+print(xtable(dat), include.rownames=FALSE, hline.after=NULL,
+      add.to.row=list(pos=as.list(coloredrows),
+                      command=rowcolor))
+@
+
+\clearpage
+
+Here's an example based on one from the
+\href{http://cran.r-project.org/web/packages/xtable/vignettes/xtableGallery.pdf}{xtableGallery vignette},
+with long text in some cells.
+
+<<table_long_text, results="asis">>=
+df <- data.frame(c("item 1", "A", "W"),
+                 c("item 2 is too wide for the cell", 
+                   "B", "X"),
+                 c("item 3", "C", "Y"),
+                 c("item 4", 
+                   "D --- with an exceedingly long note",
+                   "Z"))
+names(df) <- paste("label", 1:ncol(df))
+
+xtab <- xtable(df)
+align(xtab) <- "llXlX"
+print(xtab, tabular.environment="tabularx",
+      include.rownames=FALSE,
+      width="\\textwidth",
+      add.to.row=list(pos=list(1), # color middle row
+                      command="\\rowcolor{lightgray}"))
+@
+
+\end{document}
