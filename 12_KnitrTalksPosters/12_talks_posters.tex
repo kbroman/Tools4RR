@@ -31,9 +31,313 @@
   \titlepage
 
 \note{
+  It's arguably less critical that presentation slides or a poster be
+  reproducible. Nevertheless, there can be great personal advantage to
+  the automated generation of figures and such in slides or a poster:
+  if the primary data should change, or if some analysis mistake is
+  discovered, it will be easier to revise the presentation.
+
+  My primary goal is to get you to ditch Powerpoint/Keynote in favor
+  of reproducible alternatives. I will primarily focus on the Beamer
+  package for LaTeX, for both slides and posters. But I will also
+  touch upon the use of slidify to make Markdown-based slides for a
+  talk.
 }
 } }
 
 
+\begin{frame}{Powerpoint/Keynote}
+
+\begin{minipage}[t]{0.45\textwidth}
+
+\bbi
+\item[+] Standard
+\item[+] Easy to share slides
+\item[+] WYSIWYG (mostly)
+\item[+] Fancy animations
+\ei
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.45\textwidth}
+
+\bbi
+\item[\textendash] Font problems
+\item[\textendash] Lots of copy-paste
+\item[\textendash] Hard to get equations
+\item[\textendash] Not reproducible
+\ei
+
+\end{minipage}
+
+\note{
+  Powerpoint and Keynote do have their advantages, the principal one
+  being that everyone is using these tools, which makes it easy to
+  share and exchange slides with friends.
+
+  But we've all seen terrible font problems in important
+  presentations, mostly due to incompatibilities between 
+  Windows and Mac versions of Powerpoint: fonts should be, but aren't,
+  embedded in the presentation.
+
+  And insert of figures requires tedious copy-paste, usually followed
+  by manual resizing and adjustment of figure placement.
+
+  And if the figures are revised (because the data changed or some
+  mistake was found in the analysis), we'll have to repeat all of
+  that.
+}
+\end{frame}
+
+
+\begin{frame}[c]{\LaTeX\/ Beamer package}
+
+\figh{Figs/Copenhagen-default-default-01.png}{0.75}
+
+\note{
+  Believe it or not, I'd mostly been making \LaTeX\/ slides using
+  the {\tt article} document class: revise the page size and make the
+  fonts big.
+
+  The Beamer package for \LaTeX\/ is way easier, but I was turned off
+  by the standard slides that people were producing with Beamer, such
+  as the one shown: far too much junk on the screen, and on every
+  single slide.
+
+  You can get rid of all of that, and then Beamer can actually be
+  quite convenient for producing slides. All of the slides I'm making
+  for this course are produced with Beamer.
+
+  There's good facility for adding simply animations (progressively
+  showing or hiding different elements on the slide).
+
+  You {\nhilit are} writing \LaTeX, so the coding can be a bit verbose.
+}
+\end{frame}
+
+
+
+\begin{frame}[c,fragile]{Get rid of the junk}
+
+\begin{lstlisting}
+\usetheme{default}
+\beamertemplatenavigationsymbolsempty
+
+\definecolor{foreground}{RGB}{255,255,255}
+\definecolor{background}{RGB}{24,24,24}
+\definecolor{title}{RGB}{107,174,214}
+\definecolor{subtitle}{RGB}{102,255,204}
+\definecolor{hilit}{RGB}{102,255,204}
+\definecolor{lolit}{RGB}{155,155,155}
+
+\setbeamercolor{titlelike}{fg=title}
+\setbeamercolor{subtitle}{fg=subtitle}
+\setbeamercolor{institute}{fg=lolit}
+\setbeamercolor{normal text}{fg=foreground,bg=background}
+\setbeamercolor{item}{fg=foreground} % color of bullets
+\setbeamercolor{subitem}{fg=lolit}
+\setbeamercolor{itemize/enumerate subbody}{fg=lolit}
+\setbeamertemplate{itemize subitem}{{\textendash}}
+\setbeamerfont{itemize/enumerate subbody}{size=\footnotesize}
+\setbeamerfont{itemize/enumerate subitem}{size=\footnotesize}
+
+\newcommand{\hilit}{\color{hilit}}
+\newcommand{\lolit}{\color{lolit}}
+\end{lstlisting}
+
+\note{
+  The first thing to do is to get rid of all of the junk. 
+
+  Also, I prefer light text on a dark background.
+
+  The tricky part is that Beamer has special names for
+  everything.
+
+  It would be best if I created a new theme, but I don't want to take
+  the time to figure that out.
+}
+\end{frame}
+
+\begin{frame}[c,fragile]{Also, slide numbers and fonts}
+
+\begin{lstlisting}
+% slide number
+\setbeamertemplate{footline}{%
+ \raisebox{5pt}{\makebox[\paperwidth]{\hfill\makebox[20pt]{\lolit
+  \scriptsize\insertframenumber}}}\hspace*{5pt}}
+
+% font
+\usepackage{fontspec}
+% http://www.gust.org.pl/projects/e-foundry/tex-gyre/
+%      ...   heros/qhv2.004otf.zip
+\setsansfont
+  [ ExternalLocation = ../fonts/ ,
+    UprightFont = *-regular , 
+    BoldFont = *-bold ,
+    ItalicFont = *-italic ,
+    BoldItalicFont = *-bolditalic ]{texgyreheros}
+% Palatino for notes
+\setbeamerfont{note page}{family*=pplx,size=\footnotesize}
+\end{lstlisting}
+
+\note{
+  I also want the slide number in the bottom-right, and I want a
+  different font: something a bit more blocky, which I think is easier
+  to read on the screen.
+}
+\end{frame}
+
+
+
+\begin{frame}[c,fragile]{Title slide}
+
+\begin{lstlisting}
+\title{Put title here}
+\subtitle{And maybe a subtitle}
+\author{Author name}
+\institute{Biostatistics \& Medical Informatics, 
+   UW{\textendash}Madison}
+\date{\tt \scriptsize biostat.wisc.edu/{\textasciitilde}kbroman}
+
+\begin{document}
+
+{
+\setbeamertemplate{footline}{} % no slide number here
+\frame{
+  \titlepage
+
+\note{
+  Summary of the talk, as a note.
+}
+} }
+\end{lstlisting}
+
+\note{
+  The title slide is created with {\tt {\textbackslash}titlepage}, 
+  having first defined {\tt {\textbackslash}title},
+  {\tt {\textbackslash}author}, etc.
+
+  The extra curly braces are to get the ``no slide number'' to apply
+  just to the title slide. You can put notes on slides and then make a
+  version that has the slide above the notes. See what I do with the
+  slides for this course, or ask me for help.
+}
+\end{frame}
+
+
+\begin{frame}<handout:0>[c,fragile]{Typical slide}
+
+\begin{lstlisting}
+\begin{frame}{Title of slide}
+
+\bbi
+ \item Bullet 1
+ \item Bullet 2
+ \item Bullet 3
+\ei
+
+\note{
+  Put a note here
+}
+ \end{frame} % delete the leading space
+\end{lstlisting}
+
+\end{frame}
+
+
+\begin{frame}[c,fragile]{Typical slide}
+\addtocounter{framenumber}{-1}
+
+\begin{lstlisting}
+\begin{frame}{Title of slide}
+
+\vspace{24pt} \begin{itemize} \itemsep8pt
+ \item Bullet 1
+ \item Bullet 2
+ \item Bullet 3
+\end{itemize}
+
+\note{
+  Put a note here
+}
+ \end{frame} % delete the leading space
+\end{lstlisting}
+
+\note{
+  A typical slide is set between {\tt {\textbackslash}begin\{frame\}\{title\}}
+  and {\tt {\textbackslash}end\{frame\}}.
+
+  You get bullet points with the {\tt itemize} environment. I'll mess
+  around a bit with {\tt {\textbackslash}vspace} and
+  {\tt {\textbackslash}itemsep}. And I'll create shortcuts with
+  {\tt {\textbackslash}newcommand} for these.
+
+  I couldn't figure out how to get {\tt {\textbackslash}end\{frame\}}
+  to appear in a slide, but adding a leading space worked. In
+  practice, {\nhilit don't} include the space.
+}
+\end{frame}
+
+
+
+\begin{frame}<handout:0>[c,fragile]{Slide with a figure}
+
+\begin{lstlisting}
+\begin{frame}{Title of slide}
+
+\figh{Figs/a_figure.png}{0.75}
+
+
+\note{
+  Put a note here
+}
+ \end{frame} % delete the leading space
+\end{lstlisting}
+
+\end{frame}
+
+
+
+\begin{frame}[c,fragile]{Slide with a figure}
+\addtocounter{framenumber}{-1}
+
+\begin{lstlisting}
+\begin{frame}{Title of slide}
+
+\centerline{\includegraphics[height=0.75\textheight]{%
+            Figs/a_figure.png}}
+
+\note{
+  Put a note here
+}
+ \end{frame} % delete the leading space
+\end{lstlisting}
+
+\note{
+  I'd typically generate figures externally and include them with
+  {\tt {\textbackslash}includegraphics}. I got a good macro from Sam
+  Younkin to simplify this.
+
+  But you could use a knitr code chunk, in the same way we discussed
+  with manuscripts, in the last lecture.
+}
+\end{frame}
+
+
+
+\begin{frame}{Summary}
+
+\bbi
+\item Use LaTeX/Beamer or Slidify to create reproducible slides.
+\item Use LaTeX/Beamer to create reproducible posters.
+\item Include KnitR code chunks to create figures directly.
+\item Or keep the code for figures separate (which I tend to do).
+\ei
+
+\note{
+  To make reproducible slides/posters, you need to dump PowerPoint.
+
+}
+\end{frame}
 
 \end{document}
