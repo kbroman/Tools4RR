@@ -7,10 +7,10 @@
 
 <<knitr_options, echo=FALSE>>=
 opts_chunk$set(echo=FALSE, fig.height=7, fig.width=10)
-dark_background <- function()
-  par(bg=rgb(24,24,24, maxColorValue=255), fg="white",
-      col="white", col.axis="white", col.lab="white",
-      col.main="white", col.sub="white")
+change_colors <-
+function(bg=rgb(24,24,24, maxColorValue=255), fg="white")
+  par(bg=bg, fg=fg, col=fg, col.axis=fg, col.lab=fg,
+      col.main=fg, col.sub=fg)
 @ 
 
 
@@ -145,7 +145,7 @@ dark_background <- function()
 \begin{frame}{A figure}
   
 <<a_figure>>=
-dark_background()
+change_colors()
 par(las=1)
 n <- 100
 x <- rnorm(n)
