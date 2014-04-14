@@ -11,7 +11,7 @@ change_colors <-
 function(bg=rgb(24,24,24, maxColorValue=255), fg="white")
   par(bg=bg, fg=fg, col=fg, col.axis=fg, col.lab=fg,
       col.main=fg, col.sub=fg)
-@ 
+@
 
 
 % get rid of junk
@@ -143,7 +143,7 @@ function(bg=rgb(24,24,24, maxColorValue=255), fg="white")
 
 
 \begin{frame}{A figure}
-  
+
 <<a_figure>>=
 change_colors()
 par(las=1)
@@ -151,7 +151,7 @@ n <- 100
 x <- rnorm(n)
 y <- 2*x + rnorm(n)
 plot(x, y, pch=16, col="slateblue")
-@   
+@
 
 \note{
   A Knitr-based figure
