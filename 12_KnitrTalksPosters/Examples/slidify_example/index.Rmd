@@ -1,0 +1,81 @@
+---
+title       : Slidify example
+subtitle    : Tools for reproducible research
+author      : Karl Broman
+job         : UW-Madison
+framework   : io2012   # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : standalone # {standalone, draft}
+---
+
+<style>
+.title-slide {
+  background-color: #EEE;
+}
+  
+.title-slide hgroup > h1, 
+.title-slide hgroup > h2 {
+  color: #005;
+}
+</style>
+
+## First steps
+
+    library(devtools)
+    install_github("slidify", "ramnathv")
+    install_github("slidifyLibraries", "ramnathv")
+
+    library(slidify)
+    author("slidify_example")
+
+    # edit index.Rmd
+
+    slidify("index.Rmd")
+
+--- .class #id 
+
+## Change default colors on first slide
+
+    <style>
+    .title-slide {
+      background-color: #EEE;
+    }
+  
+    .title-slide hgroup > h1, 
+    .title-slide hgroup > h2 {
+      color: #005;
+    }
+    </style>
+
+
+---
+
+## Bullets
+
+- Bullet 1
+- Bullet 2
+- Bullet 3
+- Bullet 4
+
+---
+
+## A figure
+
+```{r a_figure, echo=FALSE, fig.align="center"}
+par(las=1)
+n <- 100
+x <- rnorm(n)
+y <- 2*x + rnorm(n)
+plot(x, y, pch=16, col="slateblue")
+```
+
+---
+
+## Animated bullets
+
+> - Bullet 1
+> - Bullet 2
+> - Bullet 3
+> - Bullet 4
