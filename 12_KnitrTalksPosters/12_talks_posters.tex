@@ -401,7 +401,62 @@ plot(x, y, pch=16, col="slateblue")
 \end{frame}
 
 
+\begin{frame}[c,fragile]{Simple animations}
 
+\begin{lstlisting}
+\begin{frame}{Bullets entering one at a time}
+
+\bbi
+\item Bullet 1
+\onslide<2->{\item Bullet 2}
+\onslide<3->{\item Bullet 3}
+\onslide<4->{\item Bullet 4}
+\ei
+
+\note{
+  Do this sparingly.
+}
+ \end{frame} % delete the leading space
+\end{lstlisting}
+
+\note{
+  It's easy to add a bit of animation, such as with bullets appearing
+  one by one. Use {\tt {\textbackslash}onslide} or 
+  {\tt {\textbackslash}only}.
+
+  Here, the bullets will appear one at a time.
+
+  Beamer just expands the PDF, with this slide becoming multiple
+  pages.
+}
+\end{frame}
+
+
+
+
+\begin{frame}[c,fragile]{Simple animations}
+
+\begin{lstlisting}
+\begin{frame}{Bullets entering one at a time}
+
+\bbi
+\item {\lolit \only<1>{\color{foreground}} Bullet 1}
+\item {\lolit \only<2>{\color{foreground}} Bullet 2}
+\item {\lolit \only<3>{\color{foreground}} Bullet 3}
+\item {\lolit \only<4>{\color{foreground}} Bullet 4}
+\ei
+
+\note{
+  Do this sparingly.
+}
+ \end{frame} % delete the leading space
+\end{lstlisting}
+
+\note{
+  In this version, the bullets will go from dim to bright, one at a
+  time.
+}
+\end{frame}
 
 
 \begin{frame}{Summary}
