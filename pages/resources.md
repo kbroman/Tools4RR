@@ -207,7 +207,7 @@ title:  Resources and further reading
   from the Johns Hopkins Data Science Coursera course
 - [Modern, simple presentations written in R Markdown](http://benjaminlmoore.wordpress.com/2014/02/24/slidify-presentations-in-r-markdown/)
   by [Benomics](http://benjaminlmoore.wordpress.com)
-- [How to give a scientific presentation (pdf)](http://www.biostat.wisc.edu/~kbroman/presentations/giving_talks)
+- [How to give a scientific presentation (pdf)](http://www.biostat.wisc.edu/~kbroman/presentations/giving_talks.pdf)
   \[[source on github](https://github.com/kbroman/Talks_GivingTalks)\]
 - [PDFjam](http://www2.warwick.ac.uk/fac/sci/statistics/staff/academic-research/firth/software/pdfjam)
 
