@@ -73,16 +73,15 @@
 \note{
   Powerpoint and Keynote do have their advantages, the principal one
   being that everyone is using these tools, which makes it easy to
-  share and exchange slides with friends.
+  share slides with friends.
 
   But we've all seen terrible font problems in important
   presentations, mostly due to incompatibilities between
   Windows and Mac versions of Powerpoint: fonts should be, but aren't,
   embedded in the presentation.
 
-  And insert of figures requires tedious copy-paste, usually followed
+  And insertion of figures requires tedious copy-paste, usually followed
   by manual resizing and adjustment of figure placement.
-
   And if the figures are revised (because the data changed or some
   mistake was found in the analysis), we'll have to repeat all of
   that.
@@ -95,23 +94,22 @@
 \figh{Figs/Copenhagen-default-default-01.png}{0.75}
 
 \note{
-  Believe it or not, I'd mostly been making \LaTeX\/ slides using
-  the {\tt article} document class: revise the page size and make the
+  Until recently, I'd been making \LaTeX\/ slides using the {\tt
+  article} document class, just revising the page size and make the
   fonts big.
 
-  The Beamer package for \LaTeX\/ is way easier, but I was turned off
+  The Beamer package for \LaTeX\/ is easier, but I was turned off
   by the standard slides that people were producing with Beamer, such
   as the one shown: far too much junk on the screen, and on every
   single slide.
 
-  You can get rid of all of that, and then Beamer can actually be
-  quite convenient for producing slides. All of the slides I'm making
+  You can get rid of all of that. All of the slides I'm making
   for this course are produced with Beamer.
 
-  There's good facility for adding simply animations (progressively
+  There's good facility for adding simple animations (progressively
   showing or hiding different elements on the slide).
 
-  You {\nhilit are} writing \LaTeX, so the coding can be a bit verbose.
+  But you {\nhilit are} writing \LaTeX, so the coding can be a bit verbose.
 }
 \end{frame}
 
@@ -334,7 +332,7 @@ function(bg=rgb(24,24,24, maxColorValue=255), fg="white")
       col.main=fg, col.sub=fg)
 @
 
-<<a_figure>>=
+<<pdf_figure>>=
 change_colors()
 par(las=1)
 n <- 100
@@ -347,12 +345,47 @@ plot(x, y, pch=16, col="slateblue")
 \note{
   You could use a knitr code chunk, in the same way we discussed
   with manuscripts, in the last lecture.
-
-
 }
 \end{frame}
 
 
+\begin{frame}[c,fragile]{Figures with KnitR}
+
+\begin{lstlisting}
+% << >>= all on one line!
+<<png_figure, dev="png", fig.align="center",
+  dev.args=list(pointsize=30),
+  fig.height=15, fig.width=15, out.height="0.75\\textheight",
+  out.width="0.75\\textheight">>=
+change_colors(bg=rgb(32,32,32,maxColorValue=255))
+par(las=1)
+n <- 251
+x <- y <- seq(-pi, pi, len=n)
+z <- matrix(ncol=n, nrow=n)
+for(i in seq(along=x))
+  for(j in seq(along=y))
+    z[i,j] <- sin(x[i]) + cos(y[j])
+image(x,y,z)
+@
+\end{lstlisting}
+
+\note{
+  To create a PNG figure (which can give much smaller file sizes for
+  things like an image or a dense scatterplot), use the chunk option
+  {\tt dev="png"}.
+
+  For some reason, RGB colors don't match well between PNG files and
+  the PDF, so I have to much about to get the background of the PNG to
+  match the background on the slides.
+
+  It's also a bit of work to get the resolution and text size just
+  right.
+
+  I split the initial line defining the code chunk across multiple
+  lines here, so it could all be seen, but in practice the whole
+  {\tt << >>=} bit needs to be on one line.
+}
+\end{frame}
 
 
 \begin{frame}[c,fragile]{Slides with notes}
