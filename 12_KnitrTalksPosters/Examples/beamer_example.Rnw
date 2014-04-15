@@ -142,9 +142,9 @@ function(bg=rgb(24,24,24, maxColorValue=255), fg="white")
 \end{frame}
 
 
-\begin{frame}{A figure}
+\begin{frame}{A PDF figure}
 
-<<a_figure>>=
+<<pdf_figure>>=
 change_colors()
 par(las=1)
 n <- 100
@@ -154,7 +154,30 @@ plot(x, y, pch=16, col="slateblue")
 @
 
 \note{
-  A Knitr-based figure
+  A Knitr-based figure; the default is a PDF.
+}
+\end{frame}
+
+
+\begin{frame}{A PNG figure}
+
+<<png_figure, dev="png", fig.align="center", dev.args=list(pointsize=30), fig.height=15, fig.width=15, out.height="0.75\\textheight", out.width="0.75\\textheight">>=
+change_colors(bg=rgb(32,32,32,maxColorValue=255))
+par(las=1)
+n <- 251
+x <- y <- seq(-pi, pi, len=n)
+z <- matrix(ncol=n, nrow=n)
+for(i in seq(along=x))
+  for(j in seq(along=y))
+    z[i,j] <- sin(x[i]) + cos(y[j])
+image(x,y,z)
+@
+
+
+\note{
+  To create a PNG figure (which can give much smaller file sizes for
+  things like an image or a dense scatterplot), use the chunk option
+  {\tt dev="png"}.
 }
 \end{frame}
 
