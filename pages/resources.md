@@ -193,6 +193,7 @@ title:  Resources and further reading
   unicode characters
 - [LaTeXit](http://www.chachatelier.fr/latexit/latexit-home.php) (for
   Mac) - LaTeX-based equation editor
+- [LaTeX table generator](http://www.tablesgenerator.com/)
 
 ### Slides and posters
 
