@@ -597,17 +597,22 @@ install_github("slidify", "ramnathv")
 install_github("slidifyLibraries", "ramnathv")
 
 library(slidify)
+setwd("~/Docs/Talks/")
 author("slidify_example")
 
-# edit slidify_example/index.Rmd
+# edit ~/Docs/Talks/slidify_example/index.Rmd
 
 slidify("index.Rmd")
+browseURL("index.html")
 \end{lstlisting}
 
 \note{
-  To use slidify, download the slidify and slidifyLibraries
-  packages from GitHub, and use {\tt author()} to create the file to edit, and
+  To use slidify, download the slidify and slidifyLibraries packages
+  from GitHub, and use {\tt author()} to create the file to edit, and
   then {\tt slidify()} to compile the result.
+
+  Note that {\tt author("slidify\_example")} changes the working
+  directory.
 }
 \end{frame}
 

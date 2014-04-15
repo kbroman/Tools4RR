@@ -5,7 +5,7 @@ author      : Karl Broman
 job         : Biostatistics & Medical Informatics, UW-Madison
 framework   : io2012        # {io2012, html5slides, shower, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
-hitheme     : tomorrow      # 
+hitheme     : tomorrow      #
 widgets     : [mathjax]     # {mathjax, quiz, bootstrap}
 mode        : standalone    # {selfcontained, standalone, draft}
 ---
@@ -14,8 +14,8 @@ mode        : standalone    # {selfcontained, standalone, draft}
 .title-slide {
   background-color: #EEE;
 }
-  
-.title-slide hgroup > h1, 
+
+.title-slide hgroup > h1,
 .title-slide hgroup > h2 {
   color: #005;
 }
@@ -28,13 +28,15 @@ mode        : standalone    # {selfcontained, standalone, draft}
     install_github("slidifyLibraries", "ramnathv")
 
     library(slidify)
+    setwd("~/Docs/Talks/")
     author("slidify_example")
 
-    # edit slidify_example/index.Rmd
+    # edit ~/Docs/Talks/slidify_example/index.Rmd
 
     slidify("index.Rmd")
+    browseURL("index.html")
 
---- .class #id 
+--- .class #id
 
 ## Change default colors on first slide
 
@@ -42,8 +44,8 @@ mode        : standalone    # {selfcontained, standalone, draft}
     .title-slide {
       background-color: #EEE;
     }
-  
-    .title-slide hgroup > h1, 
+
+    .title-slide hgroup > h1,
     .title-slide hgroup > h2 {
       color: #005;
     }
