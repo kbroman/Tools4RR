@@ -212,6 +212,7 @@ title:  Resources and further reading
   \[[source on github](https://github.com/kbroman/Talks_GivingTalks)\]
 - [PDFjam](http://www2.warwick.ac.uk/fac/sci/statistics/staff/academic-research/firth/software/pdfjam)
 - [LaTeX poster templates](http://www.latextemplates.com/cat/conference-posters)
+- [Nathaniel Johnston's poster template](http://www.nathanieljohnston.com/2009/08/latex-poster-template/)
 
 ### Python
 
