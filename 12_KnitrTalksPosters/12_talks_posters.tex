@@ -671,18 +671,147 @@ mode        : standalone    # {selfcontained, standalone, draft}
 \end{frame}
 
 
+\begin{frame}<handout:0>{Beamer-based posters}
+
+\bigskip
+
+\figh{Figs/mathbio2011.png}{0.75}
+
+\bigskip
+
+\hfill \href{https://github.com/kbroman/Poster_SampleMixups}{\tt
+    \lolit \scriptsize github.com/kbroman/Poster\_SampleMixups}
+\end{frame}
+
+\begin{frame}<handout:0>{Beamer-based posters}
+\addtocounter{framenumber}{-1}
+
+\bigskip
+
+\figh{Figs/enar2014.png}{0.75}
+
+\bigskip
+
+\hfill \href{https://github.com/kbroman/Poster_ENAR2014}{\tt
+    \lolit \scriptsize github.com/kbroman/Poster\_ENAR2014}
+\end{frame}
+
+
+\begin{frame}[c,fragile]{Beamer-based posters}
+\addtocounter{framenumber}{-1}
+
+\begin{lstlisting}
+\documentclass[final,plain]{beamer}
+\usepackage[size=custom,width=152.4,height=91.44,scale=1.2]{%
+    beamerposter}
+
+\newlength{\sepwid}
+\newlength{\onecolwid}
+\newlength{\halfcolwid}
+\newlength{\twocolwid}
+\newlength{\threecolwid}
+
+\setlength{\sepwid}{0.0192\paperwidth}
+\setlength{\onecolwid}{0.176\paperwidth}
+\setlength{\halfcolwid}{0.0784\paperwidth}
+\setlength{\twocolwid}{0.3712\paperwidth}
+\setlength{\threecolwid}{0.5664\paperwidth}
+\setlength{\topmargin}{-0.5in}
+\usetheme{confposter}
+\end{lstlisting}
+
+
+\note{
+  Beamer can be used to make posters, too. It's a lot of work, but
+  with my latest poster, I'm finally convinced of the value of these
+  large-format posters.
+
+  At UW-Madison, the Digital Media Center will print posters for you
+  (\$5 per square foot for paper; \$7 per square foot for cloth). The
+  cloth ones eliminate the need to carry a tube, but they need to be
+  packed gently and probably still require a bit of ironing on the
+  other end.
+
+  {\tt width} and {\tt height} are in centimeters. Use {\tt scale} to
+  increase the font sizes overall. Then carefully calculate the {\tt
+    sepwid}, {\tt onecolwid}, etc., so that everything fits just right.
+}
+\end{frame}
+
+% this is to get \end{frame} within the lstlisting environment
+% See http://tex.stackexchange.com/questions/73366/
+\newsavebox{\codeboxseven}
+\begin{lrbox}{\codeboxseven}
+\begin{lstlisting}
+\title{Data visualizations should be more interactive}
+\author{Karl W Broman}
+\institute{University of Wisconsin--Madison}
+
+\begin{frame}[t]
+\begin{columns}[t]
+  \begin{column}{\sepwid}\end{column} % empty spacer column
+  \begin{column}{\onecolwid}
+    \begin{exampleblock}{\Large Introduction}{
+      \begin{itemize} \itemsep18pt
+        \item Bullet 1
+        \item Bullet 2
+      \end{itemize}
+    }
+  \colonevsep % between blocks
+    \begin{block}{Barriers}{
+    }
+  \end{column}
+\end{columns}
+\end{frame}
+\end{lstlisting}
+\end{lrbox}
+
+\begin{frame}[c]{Basic code for a poster}
+
+\usebox{\codeboxseven}
+
+\note{
+  The whole thing is within a single {\tt frame} environment, and then
+  with {\tt columns} and {\tt column}.
+
+  The blocks within a column are within {\tt exampleblock} or {\tt block}
+  environments.
+}
+\end{frame}
+
+
+
+\begin{frame}[c,fragile]{Between-block spacing}
+
+\begin{lstlisting}
+\newcommand{\colonevsep}{\vspace{16mm}}
+\newcommand{\coltwovsep}{\vspace{35.5mm}}
+\newcommand{\colthreevsep}{\vspace{14mm}}
+\newcommand{\colfourvsep}{\vspace{16mm}}
+\newcommand{\colfivevsep}{\vspace{23mm}}
+\end{lstlisting}
+
+\note{
+  I define different between-block spacings for each column, to get
+  them all to have the same length.
+}
+\end{frame}
+
 \begin{frame}{Summary}
 
 \bbi
 \item Use LaTeX/Beamer or Slidify to create reproducible slides.
 \item Use LaTeX/Beamer to create reproducible posters.
 \item Include KnitR code chunks to create figures directly.
-\item Or keep the code for figures separate (which I tend to do).
+\item Or keep the code for figures separate.
 \ei
 
 \note{
   To make reproducible slides/posters, you need to dump PowerPoint.
 
+  With each of these approaches, you can use KnitR code chunks. But I
+  still tend to produce the figures separately and include them with
+  {\tt {\textbackslash}includegraphics}.
 }
 \end{frame}
 
