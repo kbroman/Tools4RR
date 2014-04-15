@@ -421,7 +421,7 @@ plot(x, y, pch=16, col="slateblue")
 
 \note{
   It's easy to add a bit of animation, such as with bullets appearing
-  one by one. Use {\tt {\textbackslash}onslide} or 
+  one by one. Use {\tt {\textbackslash}onslide} or
   {\tt {\textbackslash}only}.
 
   Here, the bullets will appear one at a time.
@@ -459,6 +459,142 @@ plot(x, y, pch=16, col="slateblue")
 \end{frame}
 
 
+
+\begin{frame}<handout:0>[c]{Slidify and R Markdown}
+
+\figh{Figs/slidify.png}{0.75}
+
+\end{frame}
+
+
+\begin{frame}[c,fragile]{Slidify and R Markdown}
+\addtocounter{framenumber}{-1}
+
+\begin{lstlisting}
+## Slide title
+
+- Bullet 1
+- Bullet 2
+- Bullet 3
+- Bullet 4
+
+---
+
+## A figure
+
+```{r a_figure, echo=FALSE, fig.align="center"}
+par(las=1)
+n <- 100
+x <- rnorm(n)
+y <- 2*x + rnorm(n)
+plot(x, y, pch=16, col="slateblue")
+```
+\end{lstlisting}
+
+\note{
+  Slidify makes it super easy to create html-based slides with R
+  Markdown. Three dashes separate slides, and two pound symbols
+  (section heading) indicate the slide title.
+
+  The chief advantage is that you can make nice slides with very little
+  markup. And there are a ton of options, like having embedded
+  quizzes.
+
+  The disadvantage is that it's a bit harder to get fine control of
+  the layout. And I've found it a bit risky to use html-based slides
+  for a presentation. PDF is more trustworthy.
+
+  In principle, you can use pandoc to convert the slides to PDF, but
+  I've not been happy with the result. You could also print them from
+  the browser, but I only got a good result with Safari. (Firefox
+  included some links on the first page, and Chrome produced total
+  garbage.)
+}
+\end{frame}
+
+
+\begin{frame}[c,fragile]{Using slidify}
+
+\begin{lstlisting}
+library(devtools)
+install_github("slidify", "ramnathv")
+install_github("slidifyLibraries", "ramnathv")
+
+library(slidify)
+author("slidify_example")
+
+# edit slidify_example/index.Rmd
+
+slidify("index.Rmd")
+\end{lstlisting}
+
+\note{
+  To use slidify, just download the slidify and slidifyLibraries
+  packages, and use {\tt author()} to create the file to edit, and
+  then {\tt slidify()} to compile the result.
+}
+\end{frame}
+
+
+\begin{frame}[c,fragile]{YAML header}
+
+\begin{lstlisting}
+---
+title       : Slidify example
+subtitle    : Tools for reproducible research
+author      : Karl Broman
+job         : Biostatistics & Medical Informatics, UW-Madison
+framework   : io2012        # {io2012, html5slides, shower, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      #
+widgets     : [mathjax]     # {mathjax, quiz, bootstrap}
+mode        : standalone    # {selfcontained, standalone, draft}
+---
+\end{lstlisting}
+
+\note{
+  There's a bit at the top of the file to define the slide title and
+  layout.
+
+  {\tt framework} defines the slide style. {\tt highlighter} is the
+  method to give syntax highlighting. With {\tt mode} ``standalone,''
+  some otherwise-external files are embedded in the html file.
+
+  YAML is a ``human-readable data serialization format.''
+  (Serialization means it can be easily transmitted over a network.)
+  It's a well-defined way of describing potentially complex
+  data objects.
+}
+\end{frame}
+
+
+
+\begin{frame}[c,fragile]{Change the title slide colors}
+
+\begin{lstlisting}
+<style>
+.title-slide {
+  background-color: #EEE;
+}
+
+.title-slide hgroup > h1,
+.title-slide hgroup > h2 {
+  color: #005;
+}
+</style>
+\end{lstlisting}
+
+\note{
+  The default colors for the title slide with framework {\tt io2012}
+  are really terrible. Include a bit of CSS code in your {\tt .Rmd}
+  file to fix that.
+
+  There are a bunch of named colors in html, or you can use codes like
+  {\tt \#005;} or {\tt \#000055;} for RGB (R=00, G=00, B=55).
+}
+\end{frame}
+
+
 \begin{frame}{Summary}
 
 \bbi
@@ -473,5 +609,8 @@ plot(x, y, pch=16, col="slateblue")
 
 }
 \end{frame}
+
+
+
 
 \end{document}
