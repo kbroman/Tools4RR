@@ -211,6 +211,7 @@ title:  Resources and further reading
 - [How to give a scientific presentation (pdf)](http://www.biostat.wisc.edu/~kbroman/presentations/giving_talks.pdf)
   \[[source on github](https://github.com/kbroman/Talks_GivingTalks)\]
 - [PDFjam](http://www2.warwick.ac.uk/fac/sci/statistics/staff/academic-research/firth/software/pdfjam)
+- [LaTeX poster templates](http://www.latextemplates.com/cat/conference-posters)
 
 ### Python
 
