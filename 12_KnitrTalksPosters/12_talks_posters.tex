@@ -223,8 +223,10 @@
 \end{frame}
 
 
-\begin{frame}<handout:0>[c,fragile]{Typical slide}
-
+% this is to get \end{frame} within the lstlisting environment
+% See http://tex.stackexchange.com/questions/73366/
+\newsavebox{\codeboxone}
+\begin{lrbox}{\codeboxone}
 \begin{lstlisting}
 \begin{frame}{Title of slide}
 
@@ -237,15 +239,21 @@
 \note{
   Put a note here
 }
- \end{frame} % delete the leading space
+\end{frame}
 \end{lstlisting}
+\end{lrbox}
+
+\begin{frame}<handout:0>[c,fragile]{Typical slide}
+
+\usebox{\codeboxone}
 
 \end{frame}
 
 
-\begin{frame}[c,fragile]{Typical slide}
-\addtocounter{framenumber}{-1}
-
+% this is to get \end{frame} within the lstlisting environment
+% See http://tex.stackexchange.com/questions/73366/
+\newsavebox{\codeboxtwo}
+\begin{lrbox}{\codeboxtwo}
 \begin{lstlisting}
 \begin{frame}{Title of slide}
 
@@ -258,8 +266,14 @@
 \note{
   Put a note here
 }
- \end{frame} % delete the leading space
+\end{frame}
 \end{lstlisting}
+\end{lrbox}
+
+\begin{frame}[c,fragile]{Typical slide}
+\addtocounter{framenumber}{-1}
+
+\usebox{\codeboxtwo}
 
 \note{
   A typical slide is set between {\tt {\textbackslash}begin\{frame\}\{title\}}
@@ -269,17 +283,14 @@
   around a bit with {\tt {\textbackslash}vspace} and
   {\tt {\textbackslash}itemsep}. And I'll create shortcuts with
   {\tt {\textbackslash}newcommand} for these.
-
-  I couldn't figure out how to get {\tt {\textbackslash}end\{frame\}}
-  to appear in a slide, but adding a leading space worked. In
-  practice, {\nhilit don't} include the space.
 }
 \end{frame}
 
 
-
-\begin{frame}<handout:0>[c,fragile]{Slide with a figure}
-
+% this is to get \end{frame} within the lstlisting environment
+% See http://tex.stackexchange.com/questions/73366/
+\newsavebox{\codeboxthree}
+\begin{lrbox}{\codeboxthree}
 \begin{lstlisting}
 \begin{frame}{Title of slide}
 
@@ -289,16 +300,21 @@
 \note{
   Put a note here
 }
- \end{frame} % delete the leading space
+\end{frame}
 \end{lstlisting}
+\end{lrbox}
+
+
+\begin{frame}<handout:0>[c,fragile]{Slide with a figure}
+
+\usebox{\codeboxthree}
 
 \end{frame}
 
-
-
-\begin{frame}[c,fragile]{Slide with a figure}
-\addtocounter{framenumber}{-1}
-
+% this is to get \end{frame} within the lstlisting environment
+% See http://tex.stackexchange.com/questions/73366/
+\newsavebox{\codeboxfour}
+\begin{lrbox}{\codeboxfour}
 \begin{lstlisting}
 \begin{frame}{Title of slide}
 
@@ -308,14 +324,19 @@
 \note{
   Put a note here
 }
- \end{frame} % delete the leading space
+\end{frame}
 \end{lstlisting}
+\end{lrbox}
+
+
+\begin{frame}[c,fragile]{Slide with a figure}
+\addtocounter{framenumber}{-1}
+
+\usebox{\codeboxfour}
 
 \note{
   I'd typically generate figures externally and include them with
-  {\tt {\textbackslash}includegraphics}. I got a good macro from Sam
-  Younkin to simplify this.
-
+  {\tt {\textbackslash}includegraphics}.
 }
 \end{frame}
 
@@ -344,7 +365,7 @@ plot(x, y, pch=16, col="slateblue")
 
 \note{
   You could use a knitr code chunk, in the same way we discussed
-  with manuscripts, in the last lecture.
+  for manuscripts, in the last lecture.
 }
 \end{frame}
 
@@ -375,7 +396,7 @@ image(x,y,z)
   {\tt dev="png"}.
 
   For some reason, RGB colors don't match well between PNG files and
-  the PDF, so I have to much about to get the background of the PNG to
+  the PDF, so I have to muck about to get the background of the PNG to
   match the background on the slides.
 
   It's also a bit of work to get the resolution and text size just
@@ -427,6 +448,10 @@ image(x,y,z)
   background in the slides and dark text on a light
   background in the notes version.
 
+  I wrote a ruby script to create a notes version from the slide
+  version (replace the code in the top box with the code in the middle
+  box).
+
   I then use {\tt pdfnup} (part of PDFjam) to make 2-up pages (slides
   at the top, notes at the bottom). The only problem with {\tt pdfnup}
   is that it strips off all of the hyperlinks.
@@ -434,8 +459,10 @@ image(x,y,z)
 \end{frame}
 
 
-\begin{frame}[c,fragile]{Simple animations}
-
+% this is to get \end{frame} within the lstlisting environment
+% See http://tex.stackexchange.com/questions/73366/
+\newsavebox{\codeboxfive}
+\begin{lrbox}{\codeboxfive}
 \begin{lstlisting}
 \begin{frame}{Bullets entering one at a time}
 
@@ -449,8 +476,13 @@ image(x,y,z)
 \note{
   Do this sparingly.
 }
- \end{frame} % delete the leading space
+\end{frame}
 \end{lstlisting}
+\end{lrbox}
+
+\begin{frame}[c,fragile]{Simple animations}
+
+\usebox{\codeboxfive}
 
 \note{
   It's easy to add a bit of animation, such as with bullets appearing
@@ -465,10 +497,10 @@ image(x,y,z)
 \end{frame}
 
 
-
-
-\begin{frame}[c,fragile]{Simple animations}
-
+% this is to get \end{frame} within the lstlisting environment
+% See http://tex.stackexchange.com/questions/73366/
+\newsavebox{\codeboxsix}
+\begin{lrbox}{\codeboxsix}
 \begin{lstlisting}
 \begin{frame}{Bullets entering one at a time}
 
@@ -482,8 +514,15 @@ image(x,y,z)
 \note{
   Do this sparingly.
 }
- \end{frame} % delete the leading space
+\end{frame}
 \end{lstlisting}
+\end{lrbox}
+
+
+
+\begin{frame}[c,fragile]{Simple animations}
+
+\usebox{\codeboxsix}
 
 \note{
   In this version, the bullets will go from dim to bright, one at a
@@ -542,6 +581,10 @@ plot(x, y, pch=16, col="slateblue")
   the browser, but I only got a good result with Safari. (Firefox
   included some links on the first page, and Chrome produced total
   garbage.)
+
+  Personally, I'm going to stick with Beamer for important
+  presentations, but slidify seems good for informal presentations
+  (e.g., to collaborators) or for a course.
 }
 \end{frame}
 
@@ -562,8 +605,8 @@ slidify("index.Rmd")
 \end{lstlisting}
 
 \note{
-  To use slidify, just download the slidify and slidifyLibraries
-  packages, and use {\tt author()} to create the file to edit, and
+  To use slidify, download the slidify and slidifyLibraries
+  packages from GitHub, and use {\tt author()} to create the file to edit, and
   then {\tt slidify()} to compile the result.
 }
 \end{frame}
@@ -623,7 +666,7 @@ mode        : standalone    # {selfcontained, standalone, draft}
   file to fix that.
 
   There are a bunch of named colors in html, or you can use codes like
-  {\tt \#005;} or {\tt \#000055;} for RGB (R=00, G=00, B=55).
+  ``{\tt \#005;}'' or ``{\tt \#000055;}'' for RGB (R=00, G=00, B=55).
 }
 \end{frame}
 
