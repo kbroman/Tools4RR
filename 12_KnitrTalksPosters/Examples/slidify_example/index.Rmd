@@ -3,11 +3,11 @@ title       : Slidify example
 subtitle    : Tools for reproducible research
 author      : Karl Broman
 job         : Biostatistics & Medical Informatics, UW-Madison
-framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+framework   : io2012        # {io2012, html5slides, shower, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
 widgets     : [mathjax]     # {mathjax, quiz, bootstrap}
-mode        : standalone    # {standalone, draft}
+mode        : standalone    # {selfcontained, standalone, draft}
 ---
 
 <style>
@@ -52,7 +52,7 @@ mode        : standalone    # {standalone, draft}
 
 ---
 
-## Bullets
+## Slide title
 
 - Bullet 1
 - Bullet 2
@@ -78,7 +78,6 @@ plot(x, y, pch=16, col="slateblue")
 > - Bullet 1
 > - Bullet 2
 > - Bullet 3
-> - Bullet 4
 
 ---
 
