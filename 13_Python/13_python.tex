@@ -31,6 +31,17 @@
   \titlepage
 
 \note{
+  I'm a big proponent of the use of multiple programming languages:
+  use different languages for different types of tasks.
+
+  Statisticians, in particular, should be proficient in some
+  ``scripting language'' (e.g., Perl, Python, or Ruby). These types of
+  languages give you far more flexibility for manipulating data files.
+
+  I've long used Perl, but I've switched to Ruby, and I'm trying to
+  also be proficient in Python. I prefer Ruby to Python, but Python is
+  much more widely used, and so if you're going to just learn one such
+  language, learn Python. (And {\nvhilit don't learn Perl!})
 }
 } }
 
@@ -48,20 +59,64 @@
 \ei
 
 \note{
+  For statisticians, the most important use of Python is for the
+  manipulation of data files. These scripting languages are great for
+  manipulating text, and data files are mostly plain text files.
+
+  In addition, I find a scripting language critical for performing
+  simulations to evaluate others' command-line-based programs. They're
+  also good for web-related stuff.
+
+  Python can also serve as an alternative to R for data analysis and
+  graphics. And iPython notebooks are a big deal for reproducible
+  research (and they can be used more broadly than Python).
 }
 \end{frame}
 
 
-\begin{frame}[c]{Python 2 vs Python 3}
+\begin{frame}{Python 2 vs Python 3}
+
+\bbi
+\item Most people are using Python version 2.7
+\item Python 3 was introduced in {\vhilit 2006}
+  \bi
+  \item A number of large changes
+  \item Some important Python programs haven't been ported
+  \item Few people seem to be using it day-to-day
+  \ei
+\item You should probably stick with Python 2
+\ei
 
 \note{
+  The biggest annoyance about Python is the two competing versions,
+  Python 2 and Python 3. For now, you should probably stick with
+  Python 2.
 }
 \end{frame}
 
 
-\begin{frame}[c]{Installing Python}
+\begin{frame}{Installing Python}
+
+\bbi
+\item On Mac or Unix, Python should be pre-installed
+  \bi
+  \item[] {\tt python --version}
+  \ei
+\item For Windows, or to be current, install \href{https://store.continuum.io/cshop/anaconda}{Anaconda}
+  \bi
+  \item[] Includes NumPy, SciPy, Pandas, iPython, Matplotlib, \dots
+  \item[] \href{http://continuum.io/downloads}{\tt
+    continuum.io/downloads}
+  \ei
+\ei
 
 \note{
+  When you're just starting to learn, you can just stick with the
+  pre-installed version of Python, if you are on some flavor of Unix.
+
+  Long term, I recommend Anaconda, which is an easy-to-install Python
+  with basically all of the scientific packages you'd want. Installing
+  these by hand seems really painful; installing Anaconda is easy.
 }
 \end{frame}
 
