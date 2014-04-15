@@ -2,11 +2,11 @@
 title       : Slidify example
 subtitle    : Tools for reproducible research
 author      : Karl Broman
-job         : UW-Madison
-framework   : io2012   # {io2012, html5slides, shower, dzslides, ...}
+job         : Biostatistics & Medical Informatics, UW-Madison
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
-widgets     : []            # {mathjax, quiz, bootstrap}
+widgets     : [mathjax]     # {mathjax, quiz, bootstrap}
 mode        : standalone # {standalone, draft}
 ---
 
@@ -30,7 +30,7 @@ mode        : standalone # {standalone, draft}
     library(slidify)
     author("slidify_example")
 
-    # edit index.Rmd
+    # edit slidify_example/index.Rmd
 
     slidify("index.Rmd")
 
@@ -79,3 +79,10 @@ plot(x, y, pch=16, col="slateblue")
 > - Bullet 2
 > - Bullet 3
 > - Bullet 4
+
+---
+
+## MathJax
+
+
+$$ \theta = \alpha^\beta - \gamma $$
