@@ -86,6 +86,12 @@ tagline: Spring, 2014
     \]
 
 **Apr 18**: Knitr with LaTeX for talks and posters
+    \[
+    [S](../assets/lectures/12_talks_posters.pdf) |
+    [N](../assets/lectures/12_talks_posters_withnotes.pdf) |
+    [C](https://github.com/kbroman/Tools4RR/tree/master/12_KnitrTalksPosters/Examples)
+    \]
+
 
 **Apr 25**: [Python](http://www.python.org/) for data/text manipulation
 
