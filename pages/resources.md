@@ -221,7 +221,7 @@ title:  Resources and further reading
 - [IPython notebook](http://ipython.org/notebook)
 - [Installing iPython](http://ipython.org/install.html): [Anaconda](http://continuum.io/downloads)
 - [Practical computing for biologists (book)](http://www.amazon.com/exec/obidos/ASIN/0878933913/7210-20)
-
+- [Bioinformatics programming using Python (book)](http://www.amazon.com/exec/obidos/ASIN/059615450X/7210-20)
 
 ### Software Licenses
 
