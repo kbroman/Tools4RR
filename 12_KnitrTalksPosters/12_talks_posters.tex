@@ -115,12 +115,27 @@
 
 
 
-\begin{frame}[c,fragile]{Get rid of the junk}
+\begin{frame}[fragile]{Get rid of the junk}
+
+\vspace{18pt}
 
 \begin{lstlisting}
 \usetheme{default}
-\beamertemplatenavigationsymbolsempty
 
+\beamertemplatenavigationsymbolsempty
+\end{lstlisting}
+
+\note{
+  The first thing to do is to get rid of all of the junk.
+
+  It's surprisingly easy: default theme and remove navigation symbols.
+}
+\end{frame}
+
+
+\begin{frame}[c,fragile]{Change colors}
+
+\begin{lstlisting}
 \definecolor{foreground}{RGB}{255,255,255}
 \definecolor{background}{RGB}{24,24,24}
 \definecolor{title}{RGB}{107,174,214}
@@ -144,9 +159,7 @@
 \end{lstlisting}
 
 \note{
-  The first thing to do is to get rid of all of the junk.
-
-  Also, I prefer light text on a dark background.
+  I prefer light text on a dark background.
 
   The tricky part is that Beamer has special names for
   everything.
