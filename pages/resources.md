@@ -13,6 +13,7 @@ title:  Resources and further reading
 - Roger Peng's 2009 ENAR course: [Methods for Reproducible Research](http://www.biostat.jhsph.edu/~rpeng/ENAR2009/)
 - [Reproducible Research in Signal Processing - What, why, and how](http://infoscience.epfl.ch/record/136640)
 - [Replication, reproduction, and remixing in research software](http://ivory.idyll.org/blog/research-software-reuse.html)
+- [Implementing reproducible research (book; chapter PDFs online)](http://implementing.reproducibleresearch.org)
 
 ### Make
 
