@@ -1,0 +1,181 @@
+\documentclass[12pt,t]{beamer}
+\usepackage{graphicx}
+\setbeameroption{hide notes}
+\setbeamertemplate{note page}[plain]
+\usepackage{listings}
+
+\input{../LaTeX/header.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% end of header
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Licenses; human subjects data}
+\subtitle{Tools for Reproducible Research}
+\author{\href{http://www.biostat.wisc.edu/~kbroman}{Karl Broman}}
+\institute{Biostatistics \& Medical Informatics, UW{\textendash}Madison}
+\date{\href{http://www.biostat.wisc.edu/~kbroman}{\tt \scriptsize \color{foreground} biostat.wisc.edu/{\textasciitilde}kbroman}
+\\[-4pt]
+\href{http://github.com/kbroman}{\tt \scriptsize \color{foreground} github.com/kbroman}
+\\[-4pt]
+\href{https://twitter.com/kwbroman}{\tt \scriptsize \color{foreground} @kwbroman}
+\\[-4pt]
+{\scriptsize Course web: \href{http://bit.ly/tools4rr}{\tt bit.ly/tools4rr}}
+}
+
+\begin{document}
+
+{
+\setbeamertemplate{footline}{} % no page number here
+\frame{
+  \titlepage
+
+\note{
+  An often neglected aspect in discussions of reproducible research:
+  software and data need to be licensed. If you want your software and
+  data to be reused, you need to provide an explicit license that
+  explains exactly how the software and data may be reused.
+
+  I'm going to try to explain the issues and give suggestions about
+  licenses to consider. But I {\nhilit just barely} understand what
+  I'm talking about, and I'm definitely {\nhilit not a lawyer}. I
+  don't guarantee that this (or anything else I say) is correct.
+
+  If you will be sharing data on human subjects, or, for that matter,
+  just working with data on human subjects, you need to be extra
+  careful. I'll try to sketch the basic concerns.
+}
+} }
+
+
+\begin{frame}[c]{}
+
+\centerline{{\hilit Note:} I just barely understand this stuff.}
+
+\note{
+  Let me repeat: I {\nhilit just barely} understand what I'm talking
+  about, and I'm definitely {\nhilit not a lawyer}. I don't guarantee
+  that this (or anything else I say) is correct.
+}
+\end{frame}
+
+
+\begin{frame}{Copyright}
+
+\bbi
+\item Copyright is automatic
+\item In "works for hire," the employer holds the copyright
+\item In academics, it is customary that researchers control copyright
+\ei
+
+\note{
+  Since 1976, works you create are automatically copyrighted. That
+  includes data, software, papers, books, talks, posters, course syllabi,
+  and lecture notes.
+
+  In many job situations, your employer will own the copyright on
+  works that you create as part of your employment.
+
+  But in academic settings, it is traditional that researchers retain
+  copyright on the works they create. But there are exceptions, and
+  universities are increasingly interested in generating income from
+  the intellectual property of their faculty. 
+
+  Also, students are treated somewhat different from other
+  employees. Academic staff may be treated differently from faculty,
+  for that matter.
+
+  Ideally, the exact rules are written down somewhere. Find the rules
+  and read them, and ask questions about them.
+}
+\end{frame}
+
+
+\begin{frame}{Software licenses}
+
+\bbi
+\item Critical if you {\hilit want} your code to be reused
+\item I choose between the MIT license and the GPL.
+\item {\hilit Don't} use Creative Commons licenses for software!
+\ei
+
+\note{
+  If you don't indicate a license for your software, others {\hilit
+  can't} reuse it. You need to be explicit about whether and how your
+  software may be reused, by providing a license.
+
+  I choose between the MIT license and the GNU General Public License
+  (GPL). The MIT license is as open as possible: do whatever you want,
+  just don't sue me. The GPL is ``viral,'' in thatextends to
+  derivative works: software that incorporates code under the GPL must
+  also be under the GPL.
+
+  The Creative Commons licenses may work for data, but they're more
+  for text, music, video, and such things. They {\nhilit should not}
+  be used for code, as they are not compatible with other standard
+  software licenses, such as the GPL. That means that you wouldn't be
+  able to mix in code that was licensed under the GPL.
+}
+\end{frame}
+
+
+\begin{frame}{MIT license}
+
+
+\note{
+}
+\end{frame}
+
+
+\begin{frame}{GPL v3}
+
+
+\note{
+}
+\end{frame}
+
+
+\begin{frame}{Creative Commons licenses}
+
+\note{
+
+}
+\end{frame}
+
+
+\begin{frame}{Data licenses}
+
+\note{
+}
+\end{frame}
+
+
+\begin{frame}{Human subjects research}
+
+\note{
+}
+\end{frame}
+
+
+\begin{frame}{HIPPA}
+
+\note{
+}
+\end{frame}
+
+
+\begin{frame}{Internal Review Boards}
+
+\note{
+}
+\end{frame}
+
+
+\begin{frame}{Summary}
+
+\note{
+}
+\end{frame}
+
+
+\end{document}
