@@ -5,7 +5,7 @@
 # This is a python version of the perl script discussed in my "Intro to perl"
 # at http://www.biostat.wisc.edu/~kbroman/perlintro/index.html#ex2
 #
-# This script requires python3
+# This is the python 3 version; see also python2.py
 
 import re
 
