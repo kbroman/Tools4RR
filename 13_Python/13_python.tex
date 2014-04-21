@@ -170,8 +170,8 @@ $\qquad$ {\tt families.txt} $\qquad \longrightarrow \qquad$ {\tt data.gen}
 $\qquad$ {\tt genotypes.txt}
 
 \note{
-  We can't really hope that I'll teach you Python in 50 minutes, but
-  we'll try. And we'll do so by going through a medium-sized script to
+  I can't really hope that to teach you Python in 50 minutes, but I'll
+  try. In this crash course, I'll go through a medium-sized script to
   combine a few data files and convert them into a different form.
 
   {\tt markers.txt} contains a list of ordered genetic markers. {\tt
@@ -344,7 +344,7 @@ class Person:
 \note{
   The first line ({\tt \#!/usr/bin/env python}) makes it so you can run
   this script from the command line by just typing its name. Using
-  {\tt /usr/bin/env} allows that Python might be located it a
+  {\tt /usr/bin/env} allows that Python might be located in a
   different place on different systems.
 
   To make the script executable (on unix), type {\tt chmod +x convert2.py}
@@ -357,7 +357,7 @@ class Person:
   Instead of using braces to delineate blocks of code, Python uses
   indentation. I was initially turned off by this, but I've been
   converted to the idea (mostly from having written a lot of
-  CoffeeScript code) You're going to indent anyway; why not have that
+  CoffeeScript code). You're going to indent anyway; why not have that
   indentation be meaningful?
 
   You define functions with {\tt def name (param):}
@@ -390,13 +390,17 @@ if __name__ == '__main__':
 \end{lstlisting}
 
 \note{
+  The {\tt convert2.py} script is just a bunch of function definitions
+  (and one {\tt class}).
 
-
+  This bit at the bottom is executed only if the script is
+  run from the command line. It does all of the real work: read in the
+  data and then write it back out as a {\tt .gen} file.
 }
 \end{frame}
 
 
-\begin{frame}{Functions, modules not scripts}
+\begin{frame}{Functions \& modules not scripts}
 
 \bbi
 \item Write a set of reusable functions
@@ -413,18 +417,368 @@ if __name__ == '__main__':
 }
 \end{frame}
 
+\begin{frame}[fragile]{Try it out}
 
-\begin{frame}[fragile]{Making it executable}
+\vspace{12pt}
 
 \begin{lstlisting}
+$ convert2.py
+$ diff data.gen data_save.gen
 \end{lstlisting}
+
+\vspace{12pt}
+
+\begin{lstlisting}
+$ python         # (or ipython)
+
+>>> import convert2
+
+>>> help(convert2)
+>>> help(convert2.read_markers)
+
+>>> markers = convert2.read.markers("markers.txt")
+>>> markers[0]
+>>> len(markers)
+>>> markers[-1]
+>>> markers[0:2]
+>>> markers[0:-1]
+>>> markers[5:]
+>>> markers[:5]
+>>> markers[0:7:2]
+
+>>> quit()
+\end{lstlisting}
+
+\note{
+  If you type {\tt convert2.py} from the command line, it will run the
+  script and create the {\tt data.gen} file, which you'll see (with
+  {\tt diff}) matches the target {\tt data\_save.gen} file.
+
+  Or you can type {\tt python} (or {\tt ipython}) at the command line
+  and then import the module and run some of the functions by hand.
+
+  The {\tt read.markers} function reads in the ordered list of markers
+  as a vector. Vectors in Python are indexed starting at 0. You can
+  use the {\tt len} function (like {\tt length()} in R) to get the
+  length.
+
+  You can grab slices with {\tt :}, but note that they {\nhilit don't}
+  include the last element in the range.
+
+  And negative values are from the end, with {\tt -1} being the
+  {\nhilit last} value.
+
+  Also, you can use {\tt start:end:by}. Remember that {\tt end} is
+  {\nhilit not} included.
+}
+\end{frame}
+
+
+
+
+\begin{frame}[fragile]{Read the marker names}
+
+\vspace{18pt}
+
+\begin{lstlisting}
+def read_markers (filename):
+  '''Read an ordered list of marker names from a file.'''
+  with open(filename, 'r') as f:
+    lines = f.readlines()
+  return [line.strip() for line in lines]
+\end{lstlisting}
+
+\note{
+  \vspace{-8pt}
+  This is the function to read the ordered list of markers.
+  It takes a single argument: the name of the file.
+
+  The first line (between the triple single-quotes) is a description
+  that will be shown if you import the module and type
+  {\tt help(convert2.read\_markers)}.
+  The triple single-quotes allow the string to go across multiple
+  lines. It's not necessary here. Strings in Python can be defined
+  using single- or double-quotes, just like in R.
+
+  The {\tt with} business looks a bit odd, but it ensures that the
+  file will be closed if anything goes wrong. I could just as well
+  have written {\tt lines=open(filename).readlines()}
+  (The {\tt 'r'}, for reading, is the default.)
+  After that bit of code, {\tt lines} contains a vector with one
+  marker name per line.
+
+  The last line contains a ``list comprehension.'' It's a sort of
+  one-line {\tt for} loop, which just applies the {\tt strip()}
+  function to each element of the {\tt lines} vector (removing any
+  end-of-line character).
+
+  {\tt read\_markers} and {\tt open} are ordinary functions, much like
+  those in R. {\tt readlines} and {\tt strip} are object-oriented
+  ``methods.'' Think of them as functions where the first argument
+  precedes the function name.
+}
+\end{frame}
+
+
+
+
+\begin{frame}[fragile]{\tt class Person}
+
+\vspace{18pt}
+
+\begin{lstlisting}
+class Person:
+  '''Person class, to contain the data on a subject.'''
+  def __init__ (self, family, id, dad, mom, sex):
+    self.family = family
+    self.id = id
+    self.dad = dad
+    self.mom = mom
+    self.sex = "0" if sex == "2" else sex # convert 1/2 -> 1/0
+    self.famid = family + '-' + id
+    self.gen = {}
+\end{lstlisting}
+
+\vspace{18pt}
+
+Example use:
+
+\vspace{6pt}
+
+\begin{lstlisting}
+ind = Person("1", "3", "1", "2", "2")
+\end{lstlisting}
+
+
+\note{
+  I first define a class to contain the data for a single
+  subject. It contains a function {\tt \_\_init\_\_} for initializing
+  an instance of a class (the data object for a single subject).
+
+  Within that function, {\tt self} refers to the newly defined
+  instance of the class, and {\tt self.family}, etc., are the way to
+  refer to the elements of the class.
+
+  I'd define a {\tt Person} object by calling
+
+  {\tt Person(family, id, dad, mom, sex)}
+}
+\end{frame}
+
+
+
+\begin{frame}[fragile]{\tt read\_families}
+
+\vspace{18pt}
+
+\begin{lstlisting}
+def read_families (filename):
+  '''Read family info and return a hash of people.'''
+  with open(filename, 'r') as file:
+    file.readline() # header row
+    people = {}
+    for line in file:
+      vals = line.strip().split()
+      person = Person(vals[0],vals[1],vals[2],vals[3],vals[4])
+      people[person.famid] = person
+  return people
+\end{lstlisting}
+
+\note{
+  This is the function to read the family information.
+
+  I use {\tt with open() as file:} to open the file again. If anything
+  goes wrong, the file will be automatically ``closed.''
+
+  I use {\tt readline} to read (but ignore) the header line.
+
+  {\tt people = \{\}} initializes a ``hash.'' This is like an
+  unordered vector that is indexed by strings rather than numeric
+  indices.  I'm going to create a hash of {\tt Person} objects,
+  indicated by strings like {\tt "1-2"} for individual {\tt 2} in
+  family {\tt 1}.
+
+  I use a {\tt for} loop over lines in the file. For each line, I
+  {\tt strip} off any end-of-line character and then {\tt split} it
+  at the white space, into a vector.
+
+  I first call {\tt Person} to define the {\tt person} object, as then
+  {\tt person.famid} is defined, and I want to use that as the ``hash
+  key.''
+
+  Note the backslash in the second-to-last line; this allows me to
+  split a long line into two. If I left it off, Python would give an
+  error.
+}
+\end{frame}
+
+
+
+
+\begin{frame}[fragile]{\tt read\_genotypes}
+
+\vspace{18pt}
+
+\begin{lstlisting}
+def parse_genotype (string):
+  '''Clean up string -> genotype'''
+  string = re.sub(r'\s+', '', string)
+  string = "0/0" if string == "" else string
+  return re.sub(r'/', ' ', string)
+
+def read_genotypes (filename, people):
+  '''Read genotype data, fill in genotypes within people hash'''
+  with open(filename, 'r') as file:
+
+    header = file.readline().strip().split()
+    header = header[1:] # omit the first field, "Marker"
+
+    for line in file:
+      marker = re.sub(r'\s+', '', line[:9])
+      line = line[9:]
+      for i in range(len(header)):
+        person = header[i]
+        start = i*7
+        people[person].gen[marker] = \
+          parse_genotype(line[start:(start+7)])
+\end{lstlisting}
+
+\note{
+  The first function here cleans up a genotype string a bit. It strips
+  off any white space, substitutes {\tt 0/0} in the case of a blank,
+  and replaces the slash with a space. So a string like {\tt "78/125 "}
+  will be converted to {\tt "78 125"}.
+
+  The {\tt re.sub} function is for doing text substitutions with
+  regular expressions. In ``{\tt r'{\textbackslash}s+'}'' the {\tt r}
+  means raw text and the {\tt {\textbackslash}s+} means any amount of
+  white space.
+
+  In the {\tt read\_genotypes} function, I grab all but the first
+  element of the header line, which match what I'm using as the keys
+  for my {\tt people} hash.
+  I then go through the rest of the file, one line at a time: I grab
+  the marker name (getting rid of any blank characters) and then go
+  through the rest of the line, 7 characters at a time.
+
+  If you look back at the {\tt Person} class, you'll see that I'd
+  initialized {\tt gen} as a hash (with {\tt self.gen = \{\}}). I'm
+  filling this in, indexed by marker names.
+
+  The function doesn't return anything, because it modifies the input
+  {\tt person} object (as a side effect).
+}
+\end{frame}
+
+
+
+
+\begin{frame}[fragile]{Some helper functions}
+
+\vspace{18pt}
+
+\begin{lstlisting}
+def get_families (people):
+  '''Return a vector of distinct families'''
+  return set([people[key].family for key in people])
+
+def get_family_members (people, family):
+  '''Return a vector of subjects within a family.'''
+  return [people[key] for key in people \
+          if people[key].family == family]
+
+def writeln (file, line, end="\n"):
+  '''Write a single line to a file.'''
+  file.write(str(line) + end)
+\end{lstlisting}
+
+\note{
+  Here are a few helper functions that I use in the last {\tt
+  write\_genfile} function.
+
+  {\tt get\_families} returns a vector of {\nhilit distinct} family
+  IDs. I use a {\nhilit list comprehension} again, which gives a
+  vector with all of the family names. Then {\tt set} turns this into
+  a ``set'' of distinct values. It acts here sort of like {\tt
+  unique()} in R.
+
+  {\tt get\_family\_members} returns a vector of the family members in
+  a given family. Note that it returns a vector of {\tt Person}
+  objects. And note that I'm using a list comprehension again, but
+  with an additional {\tt if} qualification.
+
+  {\tt writeln} is just a little wrapper for the {\tt file.write}
+  function, to write a string to a file. Note that in this function,
+  the {\tt end} argument has a default value, much like in R
+  functions.
+}
+\end{frame}
+
+
+
+
+\begin{frame}[c,fragile]{\tt write\_genfile}
+
+\begin{lstlisting}
+def write_genfile (filename, people, markers):
+  '''Write genotype data to a file, in CRI-MAP format.'''
+  with open(filename, 'w') as file:
+
+    families = sorted(get_families(people))
+    writeln(file, len(families))
+
+    writeln(file, len(markers))
+    for marker in markers:
+      writeln(file, marker)
+
+    for family in families:
+      writeln(file, family)
+      members = sorted(get_family_members(people, family), \
+                       key=lambda person: int(person.id))
+      writeln(file, len(members))
+
+      for person in members:
+        writeln(file, "%s %s %s %s" % (person.id, \
+                person.mom, person.dad, person.sex))
+
+        for marker in markers:
+          writeln(file, person.gen[marker], " ")
+        writeln(file, "")
+\end{lstlisting}
+
+\note{
+  This is the function to write the CRI-MAP file. There are three
+  interesting bits here.
+
+  First, {\tt sorted()} returns a sorted version of a vector.
+  I use it twice, the second time with {\tt key=lambda person: int(person.id)} \\
+  which is an anonymous function for sorting {\tt Person} objects by
+  their individual IDs (numerically).
+
+  The second bit is\\
+  {\tt "\%s \%s \%s \%s" \% (person.id, person.mom, person.dad, person.sex)} \\
+  which is like {\tt sprintf}, in that I'm formatting a bunch of stuff as a string.
+
+  The third interesting bit is {\tt for person in members:}\\
+  in which I'm looping over the elements of a vector of {\tt Person} objects.
+  {\tt person} is not just an index but is a full {\tt Person} object.
+}
+\end{frame}
+
+
+
+
+\begin{frame}{Unit tests}
 
 \note{
 }
 \end{frame}
 
 
-\begin{frame}{Unit tests}
+
+
+
+\begin{frame}{Summary}
 
 \note{
 }
