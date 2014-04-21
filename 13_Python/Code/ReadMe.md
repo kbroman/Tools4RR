@@ -10,9 +10,7 @@ single file in the format used by the CRI-MAP program.
 - [`genotypes.txt`](genotypes.txt) &mdash; genotype data
 - [`families.txt`](families.txt) &mdash; family information
 - [`markers.txt`](markers.txt) &mdash; ordered markers
-
 - [`data_save.gen`](data_save.gen) &mdash; desired output file
-
 - [`convert2.py`](convert2.py) &mdash; python 2 version of script
 - [`convert3.py`](convert3.py) &mdash; python 3 version of script
 
