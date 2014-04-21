@@ -41,7 +41,7 @@
   I've long used Perl, but I've switched to Ruby, and I'm trying to
   also be proficient in Python. I prefer Ruby to Python, but Python is
   much more widely used, and so if you're going to just learn one such
-  language, learn Python. (And {\nvhilit don't learn Perl!})
+  language, learn Python.
 }
 } }
 
@@ -60,8 +60,8 @@
 
 \note{
   For statisticians, the most important use of Python is for the
-  manipulation of data files. These scripting languages are great for
-  manipulating text, and data files are mostly plain text files.
+  manipulation of data files. This sort of script language is great
+  for manipulating text, and data files are mostly plain text files.
 
   In addition, I find a scripting language critical for performing
   simulations to evaluate others' command-line-based programs. They're
@@ -85,12 +85,18 @@
   \item Few people seem to be using it day-to-day
   \ei
 \item You should probably stick with Python 2
+  \bi
+  \item But be aware of differences
+  \ei
 \ei
 
 \note{
   The biggest annoyance about Python is the two competing versions,
   Python 2 and Python 3. For now, you should probably stick with
   Python 2.
+
+  Python 3 is much better than Python 2, but it hasn't penetrated the
+  Python community sufficiently.
 }
 \end{frame}
 
@@ -147,7 +153,271 @@
 }
 \end{frame}
 
+
+
+\begin{frame}{Into the thick of it}
+
+\vspace{18pt}
+
+{\hilit Learn Python through one example}
+
+\vspace{18pt}
+
+$\qquad$ {\tt markers.txt}
+
+$\qquad$ {\tt families.txt} $\qquad \longrightarrow \qquad$ {\tt data.gen}
+
+$\qquad$ {\tt genotypes.txt}
+
+\note{
+  We can't really hope that I'll teach you Python in 50 minutes, but
+  we'll try. And we'll do so by going through a medium-sized script to
+  combine a few data files and convert them into a different form.
+
+  {\tt markers.txt} contains a list of ordered genetic markers. {\tt
+    families.txt} contains information about subjects' familial
+  relationships. {\tt genotypes.txt} contains subjects' genotypes.
+
+  We're going to convert these data into the form used by the CRI-MAP
+  program (an old program for contructing genetic maps).
+}
+\end{frame}
+
+
+\begin{frame}[c,fragile]{Input: \tt markers.txt}
+
+\begin{lstlisting}
+D20S103
+D20S482
+D20S851
+D20S604
+D20S1143
+D20S470
+D20S477
+D20S478
+D20S481
+D20S159
+D20S480
+D20S451
+D20S171
+D20S164
+\end{lstlisting}
+
+\note{
+  This is the {\tt markers.txt} file. It just has one marker name per
+  line.
+}
+\end{frame}
+
+
+\begin{frame}[fragile]{Input: \tt families.txt}
+
+\vspace{18pt}
+
+\begin{lstlisting}
+Family Individual Father Mother Sex
+     1          1      0      0   1
+     1          2      0      0   2
+     1          3      1      2   1
+     1          4      1      2   2
+     1          5      1      2   2
+     2          1      0      0   1
+     2          2      0      0   2
+     2          3      1      2   1
+     2          4      1      2   1
+     3          1      0      0   1
+     3          2      0      0   2
+     3          3      1      2   2
+     3          4      1      2   1
+     3          5      1      2   1
+     3          6      1      2   2
+
+...
+
+     5          6      1      2   2
+     5          7      1      2   1
+\end{lstlisting}
+
+\note{
+  This is the {\tt families.txt} file; each line is one subject. In
+  the {\tt Father} and {\tt Mother} columns, {\tt 0} indicates
+  missing: a founding individual in that family.  In the {\tt Sex}
+  column, {\tt 2} = female and {\tt 1} = male.
+}
+\end{frame}
+\begin{frame}[c,fragile]{Input: \tt genotypes.txt}
+
+\begin{lstlisting}
+Marker   1-1    1-2    1-3    1-4    1-5    2-1    2-2     ...
+D20S103         100/98 98/98  98/98  98/98  100/100100/96  ...
+D20S1143 176/172180/176176/180       172/180172/176172/172 ...
+D20S159  350/358366/354350/354350/354358/366354/350366/354 ...
+D20S164         191/207207/207215/191215/207191/207207/215 ...
+D20S171  141/135141/137141/141141/137135/137141/139143/135 ...
+D20S451  324/308320/316324/316308/320       308/324312/316 ...
+D20S470  306/302302/306302/306306/302302/302302/294310/266 ...
+D20S477  256/252260/252252/252       256/252256/252        ...
+D20S478         267/263263/263263/263263/267255/271263/247 ...
+D20S480         304/284       304/284304/284296/296300/300 ...
+D20S481  229/237241/237237/237229/237237/237245/245        ...
+D20S482  155/159159/167159/159155/167159/167147/155159/155 ...
+D20S604  151/147       147/135151/143151/143       147/143 ...
+D20S851  132/140148/144132/144132/148132/148       144/140 ...
+\end{lstlisting}
+
+\note{
+  The {\tt genotypes.txt} file is a bit ugly. Rows are markers and
+  individuals are in fixed-width columns, with the genotypes being two
+  numeric alleles separated by a slash. Blank fields correspond to
+  missing data.
+}
+\end{frame}
+
+
+
+\begin{frame}[fragile]{Output: \tt data.gen}
+
+\vspace{18pt}
+
+\begin{lstlisting}
+5
+14
+D20S103
+D20S482
+...
+D20S171
+D20S164
+1
+5
+1 0 0 1
+0 0 155 159 132 140 151 147 176 172 306 302 256 252 0 0 ...
+2 0 0 0
+100 98 159 167 148 144 0 0 180 176 302 306 260 252 267 ...
+3 2 1 1
+98 98 159 159 132 144 147 135 176 180 302 306 252 252 ...
+4 2 1 0
+98 98 155 167 132 148 151 143 0 0 306 302 0 0 263 263 ...
+5 2 1 0
+98 98 159 167 132 148 151 143 172 180 302 302 256 252 ...
+2
+4
+...
+\end{lstlisting}
+
+\note{
+  The file we're converting to, {\tt data.gen} in the format used by
+  CRI-MAP, is a bit weird: Number of families, number of markers, the
+  marker names in order, and then for each family, the family ID, the
+  number of subjects in that family, and then the subjects. For each
+  subject, there's a line with individual, mom, dad, and sex ({\tt 0}
+  = female, {\tt 1} = male), and then a line with genotype data, with
+  two numbers for each marker, with {\tt 0}'s for missing values.
+}
+\end{frame}
+
+\begin{frame}[c,fragile]{The top of the Python script}
+
+\begin{lstlisting}
+#!/usr/bin/env python
+# Combine the data in "genotypes.txt", "markers.txt" and
+# "families.txt" and convert them into a CRI-MAP .gen file
+#
+# This is the python 2 version
+
+import re
+
+def read_markers (filename):
+  '''Read an ordered list of marker names from a file.'''
+  with open(filename, 'r') as f:
+    lines = f.readlines()
+  return [line.strip() for line in lines]
+
+class Person:
+  '''Person class, to contain the data on a subject.'''
+  def __init__ (self,family, id, dad, mom, sex):
+    self.family = family
+    self.id = id
+
+...
+\end{lstlisting}
+
+\note{
+  The first line ({\tt \#!/usr/bin/env python}) makes it so you can run
+  this script from the command line by just typing its name. Using
+  {\tt /usr/bin/env} allows that Python might be located it a
+  different place on different systems.
+
+  To make the script executable (on unix), type {\tt chmod +x convert2.py}
+
+  In python, comments begin with {\tt \#} (as in R).
+
+  {\tt import re} imports the {\tt re} module (for regular
+  expressions).
+
+  Instead of using braces to delineate blocks of code, Python uses
+  indentation. I was initially turned off by this, but I've been
+  converted to the idea (mostly from having written a lot of
+  CoffeeScript code) You're going to indent anyway; why not have that
+  indentation be meaningful?
+
+  You define functions with {\tt def name (param):}
+
+  Unlike R, function must have a {\tt return} statement if you want to
+  return a value.
+}
+\end{frame}
+
+
+\begin{frame}[fragile]{The bottom of the Python script}
+
+\vspace{18pt}
+
+\begin{lstlisting}
+if __name__ == '__main__':
+  # file names
+  gfile = "genotypes.txt" # genotype data
+  mfile = "markers.txt"   # list of markers, in order
+  ffile = "families.txt"  # family information
+  ofile = "data.gen"      # output file
+
+  # read the data
+  markers = read_markers(mfile)
+  people = read_families(ffile)
+  read_genotypes(gfile, people)
+
+  # write the data
+  write_genfile(ofile, people, markers)
+\end{lstlisting}
+
+\note{
+
+
+}
+\end{frame}
+
+
 \begin{frame}{Functions, modules not scripts}
+
+\bbi
+\item Write a set of reusable functions
+\item Your code will be easier to read
+\item You may actually reuse the code, this way
+\ei
+
+\note{
+  With Python (and R), there's a tendency to write a long mess of a
+  script. It's better to focus on writing a set of reusable functions.
+
+  With the given example script, you can use {\tt import convert2} to
+  load the functions into python, like any other module.
+}
+\end{frame}
+
+
+\begin{frame}[fragile]{Making it executable}
+
+\begin{lstlisting}
+\end{lstlisting}
 
 \note{
 }
