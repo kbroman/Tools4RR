@@ -13,6 +13,7 @@ import math
 
 
 def read_csv (filename):
+  "Read in a CSV file as a matrix stored by rows"
   with open(filename, 'r') as file:
     colnames = file.readline().strip().split(',')
     
@@ -26,6 +27,7 @@ def read_csv (filename):
 
 
 def transpose_matrix (matrix):
+  "Transpose a matrix so that it's stored by columns"
   nrow = len(matrix)
   ncol = len(matrix[0])
 
@@ -67,6 +69,7 @@ def mean (vect):
   return sum/float(n)
 
 
+
 def median (vect):
   "Calculate the median of a vector; missing values assumed to be 'NA'."
   # sort and strip NAs
@@ -83,6 +86,7 @@ def median (vect):
   # even number of items
   return (v[n/2] + v[(n/2)-1])/2.0
   
+
 
 def sd (vect):
   "Calculate the SD of a vector; missing values assumed to be 'NA'."
