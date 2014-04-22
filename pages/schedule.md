@@ -101,6 +101,9 @@ tagline: Spring, 2014
     \]
 
 **May 2**:  [Python](http://www.python.org/) Laboratory
+    \[
+    [C](https://github.com/kbroman/Tools4RR/tree/master/14_Python_Lab/)
+    \]
 
 **May 9**:  Software/data licenses, copyright, and human subjects/HIPPA
 
