@@ -1,10 +1,10 @@
-#!/usr/bin/env python
-# Test one of the functions in convert2.py
+#!/usr/bin/env python3
+# Test one of the functions in convert3.py
 #
-# on the command line, type "test_convert2.py"
+# on the command line, type "test_convert3.py"
 
 import unittest
-from convert2 import *
+from convert3 import *
 
 class check_parse_genotype(unittest.TestCase):
   def test_parse_genotype(self):
