@@ -796,9 +796,71 @@ if __name__ == '__main__':
 
 
 
-\begin{frame}{Unit tests}
+\begin{frame}[fragile]{Unit tests: Nose}
+
+\vspace{18pt}
+
+\begin{lstlisting}
+# This is nosetest_convert2.py
+#
+# At command line, type "nosetests nosetest_convert2.py"
+
+from nose.tools import assert_equal
+from convert2 import *
+
+def test_parse_genotype():
+  assert_equal(parse_genotype("       "),   "0 0")
+  assert_equal(parse_genotype("100/98 "),   "100 98")
+  assert_equal(parse_genotype("90/96  "),   "90 96")
+  assert_equal(parse_genotype("90/ 96  "),  "90 96")
+  assert_equal(parse_genotype("  3 / 8  "), "3 8")
+\end{lstlisting}
 
 \note{
+  Nose is simple tool for making Python unit tests. The above example
+  is a minimal use of the tool.
+
+  At the command line, with tests in the file {\tt
+  nosetest\_convert2.py}, you'd type {\tt nosetests
+  nosetest\_convert2.py}
+
+  The {\tt nose.tools} module contains a bunch of assertion
+  functions. Here, I'm just using {\tt assert\_equal}.
+}
+\end{frame}
+
+
+\begin{frame}[fragile]{Unit tests: {\tt unittest}}
+
+\vspace{18pt}
+
+\begin{lstlisting}
+#!/usr/bin/env python
+# Test one of the functions in convert2.py
+#
+# on the command line, type "test_convert2.py"
+
+import unittest
+from convert2 import *
+
+class check_parse_genotype(unittest.TestCase):
+  def test_parse_genotype(self):
+    self.assertEqual(parse_genotype("       "),   "0 0")
+    self.assertEqual(parse_genotype("100/98 "),   "100 98")
+    self.assertEqual(parse_genotype("90/96  "),   "90 96")
+    self.assertEqual(parse_genotype("90/ 96  "),  "90 96")
+    self.assertEqual(parse_genotype("  3 / 8  "), "3 8")
+
+if __name__ == '__main__':
+  unittest.main()
+\end{lstlisting}
+
+\note{
+  Python also has a built-in {\tt unittest} module, but its use
+  requires a bit more gunk. I don't totally understand all of this.
+
+  Like Nose, there are a variety of different assertion functions that
+  you can use.
 }
 \end{frame}
 
@@ -808,7 +870,25 @@ if __name__ == '__main__':
 
 \begin{frame}{Summary}
 
+\bbi
+\item Learn a scripting language, like Python
+  \bi
+  \item Not just for manipulating data files, but worth the effort
+    just for that.
+  \ei
+\item Force yourself to use it
+\ei
+
 \note{
+  Applied statisticians need to be savvy with data file
+  manipulation.
+
+  Don't let your scientific collaborators do any copy-paste to move
+  data around; any data file manipulation should be done with
+  a computer program.
+
+  In the long run, knowing Python, you'll be more self-sufficient and
+  versatile.
 }
 \end{frame}
 
