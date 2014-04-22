@@ -13,5 +13,7 @@ single file in the format used by the CRI-MAP program.
 - [`data_save.gen`](data_save.gen) &mdash; desired output file
 - [`convert2.py`](convert2.py) &mdash; python 2 version of script
 - [`convert3.py`](convert3.py) &mdash; python 3 version of script
+- [`test_convert2.py`](test_convert2.py) &mdash; unit test for one of
+  the functions in [`convert2.py`](convert2.py)
 
 Also see the [Ruby version](https://github.com/kbroman/RubyBroman/blob/master/ParseGenotypeData/convert.rb).
