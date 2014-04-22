@@ -12,6 +12,8 @@ Here are the relevant files:
 
 - [`data.csv`](data.csv) &mdash; the data file to consider
 - [`stats.py`](stats.py) &mdash; the script to be filled in
+- [`stats2.py`](stats2.py) &mdash; partly-filled version: just
+  fill in the functions to calculate the statistics
 - [`test_stats.py`](test_stats.py) &mdash; unit tests, if time allows
 
 Also relevant:
