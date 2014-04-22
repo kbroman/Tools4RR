@@ -94,6 +94,11 @@ tagline: Spring, 2014
 
 
 **Apr 25**: [Python](http://www.python.org/) for data/text manipulation
+    \[
+    [S](../assets/lectures/13_python.pdf) |
+    [N](../assets/lectures/13_python_withnotes.pdf) |
+    [C](https://github.com/kbroman/Tools4RR/tree/master/13_Python/Code)
+    \]
 
 **May 2**:  [Python](http://www.python.org/) Laboratory
 
