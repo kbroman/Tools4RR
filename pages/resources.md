@@ -229,6 +229,7 @@ title:  Resources and further reading
 - [Python scripting for computational science (book)](http://www.amazon.com/exec/obidos/ASIN/3540739157/7210-20)
 - [Python unittest introduction](http://pythontesting.net/framework/unittest/unittest-introduction)
 - [Python nose unit testing quick start](http://blog.jameskyle.org/2010/10/nose-unit-testing-quick-start)
+- [Differences between Python 2 and 3](http://inventwithpython.com/appendixa.html)
 
 ### Software Licenses
 
