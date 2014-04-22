@@ -963,6 +963,7 @@ for v in h.itervalues():
 \end{lstlisting}
 
 \note{
+  \vspace{-8pt}
   {\tt for} loops over lists successively take each possible value in
   the list. If you want the indices, you need to create a vector of
   indices with {\tt range}. Or use {\tt xrange}, which is avoids
@@ -971,6 +972,7 @@ for v in h.itervalues():
 
   {\tt xrange} is in Python2 only; in Python 3, just use {\tt
   range}. The Python3 {\tt range} is really the Python2 {\tt xrange}.
+  So actually in Python3, the first line needs to be {\tt vec = list(range(4))}.
 
   {\tt for} loops over dictionaries (aka hashes) successively take
   each possible key. You can use {\tt iteriterms()} to iterate over
