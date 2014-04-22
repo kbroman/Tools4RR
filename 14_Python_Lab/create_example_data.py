@@ -26,6 +26,9 @@ and colsd being vectors of column means and SDs, respectively."""
   return x
 
 
+def matrix_to_rounded_str(matrix):
+  return [[("%.4f" % val) for val in row] for row in matrix]
+
 def make_some_missing (matrix, nmis_per_col):
   nrow = len(matrix)
   ncol = len(matrix[0])
@@ -40,12 +43,9 @@ def make_some_missing (matrix, nmis_per_col):
     for i in mis[j]:
       x[i][j] = "NA"
 
-def matrix_to_str(matrix):
-  return [[str(val) for val in row] for row in matrix]
-
 def write_matrix_as_csv(matrix, filename):
   with open(filename, "w") as file:
-    header = ["V" + str(col) for col in range(len(matrix[0]))]
+    header = ["col" + str(col+1) for col in range(len(matrix[0]))]
     file.write(",".join(header) + "\n")
     
     for row in range(len(matrix)):
@@ -55,6 +55,6 @@ def write_matrix_as_csv(matrix, filename):
 if __name__ == '__main__':
   random.seed(86061812)
   x = random_matrix(100, [1.0, 3.0, 5.0, 7.0, 9.0], [0.5, 1.0, 1.5, 2.0, 2.5])
+  x = matrix_to_rounded_str(x)
   make_some_missing(x, [5, 10, 15, 20, 25])
-  x = matrix_to_str(x)
   write_matrix_as_csv(x, "data.csv")
