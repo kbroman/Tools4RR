@@ -7,8 +7,6 @@
 #
 # This is the python 2 version; see also convert3.py
 
-import re
-
 def read_markers (filename):
   '''Read an ordered list of marker names from a file.'''
   with open(filename, 'r') as f:
@@ -39,9 +37,9 @@ def read_families (filename):
 
 def parse_genotype (string):
   '''Clean up string -> genotype'''
-  string = re.sub(r'\s+', '', string)
+  string = string.replace(' ', '')
   string = "0/0" if string == "" else string
-  return re.sub(r'/', ' ', string)
+  return string.replace('/', ' ')
 
 def read_genotypes (filename, people):
   '''Read genotype data, fill in genotypes within people hash'''
@@ -51,7 +49,7 @@ def read_genotypes (filename, people):
     header = header[1:] # omit the first field, "Marker"
 
     for line in file:
-      marker = re.sub(r'\s+', '', line[:9])
+      marker = line[:9].replace(' ', '')
       line = line[9:]
       for i in range(len(header)):
         person = header[i]
