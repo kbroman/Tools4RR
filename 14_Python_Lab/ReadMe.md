@@ -18,5 +18,5 @@ Also relevant:
 
 - [`create_example_data.py`](create_example_data.py) &mdash; the Python script I wrote to
   generate the [`data.csv`](data.csv) file.
-- [`answers_DONT_PEEK.py`](answers_DONT_PEEK.py) &mdash; my solutions
+- [`solns_DONT_PEEK.py`](solns_DONT_PEEK.py) &mdash; my solutions
   (don't look at this until later)
