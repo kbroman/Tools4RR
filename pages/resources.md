@@ -218,6 +218,9 @@ title:  Resources and further reading
 ### Python
 
 - [Python for biologists](http://pythonforbiologists.com/index.php/introduction-to-python-for-biologists/)
+- [Programming with pythong](http://software-carpentry.org/v5/book.html#programming-with-python)
+  in the [Software Carpentry](http://software-carpentry.org) [book](http://software-carpentry.org/v5/book.html)
+- [Python Scientific lecture notes](http://scipy-lectures.github.io/)
 - [IPython](http://ipython.org/)
 - [IPython notebook](http://ipython.org/notebook)
 - [Installing iPython](http://ipython.org/install.html): [Anaconda](http://continuum.io/downloads)
