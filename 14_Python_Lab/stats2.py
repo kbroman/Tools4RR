@@ -4,6 +4,12 @@
 #
 # In this version, you just need to calculate the statistics
 #
+# Run this as
+#
+#  stats2.py filename
+#
+# You can leave off the filename, in which case it is taken to be "data.csv"
+#
 # Fill in the body of the functions below, to
 # read in csv file and for each column calculate
 #  - Number of non-missing values
@@ -19,12 +25,12 @@ def read_csv (filename):
   "Read in a CSV file as a matrix stored by rows"
   with open(filename, 'r') as file:
     colnames = file.readline().strip().split(',')
-    
+
     matrix = []
     for line in file:
       vect = line.strip().split(',')
       matrix.append(vect)
-  
+
   return (colnames, matrix)
 
 
@@ -45,7 +51,7 @@ def strip_NA (vect):
 
 
 def count_missing (vect):
-  """Count the number of missing values in a vector; 
+  """Count the number of missing values in a vector;
 missing values assumed to be 'NA'."""
   # return a count of the number of missing values
   # in the input vector
@@ -55,7 +61,7 @@ missing values assumed to be 'NA'."""
 def count_notmissing (vect):
   """Count the number of non-missing values in a vector;
 missing values assumed to be 'NA'."""
-  # return a count of the number of non-missing values 
+  # return a count of the number of non-missing values
   # in the input vector
 
 
@@ -69,18 +75,25 @@ def mean (vect):
 def median (vect):
   "Calculate the median of a vector; missing values assumed to be 'NA'."
   # return the median of the input vect, omitting 'NA' values
-  
+
 
 
 def sd (vect):
   "Calculate the SD of a vector; missing values assumed to be 'NA'."
-  # return the SD of the input vect, ommiting 'NA' values  
-  
+  # return the SD of the input vect, ommiting 'NA' values
+
 
 
 if __name__ == '__main__':
-  file = "data.csv"
+  # get file name from command line; otherwise "data.csv"
+  import sys
+  args = sys.argv
+  file = "data.csv" if len(args)<=1 else args[1]
+
+  # read data matrix
   colnames, mat = read_csv(file)
+
+  # transpose matrix so it's organized by columns
   tmat = transpose_matrix(mat)
 
   # print results

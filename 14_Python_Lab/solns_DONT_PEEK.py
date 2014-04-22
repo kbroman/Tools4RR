@@ -2,6 +2,12 @@
 #
 # Solution to python lab
 #
+# Run this as
+#
+#  solns_DONT_PEEK.py filename
+#
+# You can leave off the filename, in which case it is taken to be "data.csv"
+#
 # Read in csv file and for each column calculate
 #  - Number of non-missing values
 #  - Mean
@@ -16,12 +22,12 @@ def read_csv (filename):
   "Read in a CSV file as a matrix stored by rows"
   with open(filename, 'r') as file:
     colnames = file.readline().strip().split(',')
-    
+
     matrix = []
     for line in file:
       vect = line.strip().split(',')
       matrix.append(vect)
-  
+
   return (colnames, matrix)
 
 
@@ -42,7 +48,7 @@ def strip_NA (vect):
 
 
 def count_missing (vect):
-  """Count the number of missing values in a vector; 
+  """Count the number of missing values in a vector;
 missing values assumed to be 'NA'."""
   return vect.count('NA')
 
@@ -78,37 +84,44 @@ def median (vect):
   n = len(v)
   if n==0:
     return None
-    
+
   # odd number of items
   if n % 2:
     return v[(n-1)//2] # // is "integer division" (avoids error in python3)
-  
+
   # even number of items
   return (v[n//2] + v[n//2-1])/2.0
-  
+
 
 
 def sd (vect):
   "Calculate the SD of a vector; missing values assumed to be 'NA'."
   # strip NAs
   v = strip_NA(vect)
-  
+
   n = len(v)
   if n<2:
     return None
-    
+
   mu = mean(v)
   ssq = 0.0
   for val in v:
     ssq += (val - mu)**2
 
   return math.sqrt(ssq/float(n-1))
-  
-  
+
+
 
 if __name__ == '__main__':
-  file = "data.csv"
+  # get file name from command line; otherwise "data.csv"
+  import sys
+  args = sys.argv
+  file = "data.csv" if len(args)<=1 else args[1]
+
+  # read data matrix
   colnames, mat = read_csv(file)
+
+  # transpose matrix so it's organized by columns
   tmat = transpose_matrix(mat)
 
   # print results
