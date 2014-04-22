@@ -35,6 +35,12 @@ def transpose_matrix (matrix):
 
 
 
+def strip_NA (vect):
+  "Strip 'NA' values from a vector and convert to floats"
+  return [float(val) for val in vect if val != "NA"]
+
+
+
 def count_missing (vect):
   """Count the number of missing values in a vector; 
 missing values assumed to be 'NA'."""
@@ -46,12 +52,6 @@ def count_notmissing (vect):
   """Count the number of non-missing values in a vector;
 missing values assumed to be 'NA'."""
   return len(vect) - count_missing(vect)
-
-
-
-def strip_NA (vect):
-  "Strip 'NA' values from a vector and convert to floats"
-  return [float(val) for val in vect if val != "NA"]
 
 
 
