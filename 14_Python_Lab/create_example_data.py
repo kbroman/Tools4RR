@@ -46,7 +46,7 @@ def write_matrix_as_csv(matrix, filename):
   with open(filename, "w") as file:
     header = ["col" + str(col+1) for col in range(len(matrix[0]))]
     file.write(",".join(header) + "\n")
-    
+
     for row in range(len(matrix)):
       file.write(",".join(matrix[row]) + "\n")
 
