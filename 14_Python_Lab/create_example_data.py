@@ -22,9 +22,12 @@ and colsd being vectors of column means and SDs, respectively."""
 
 
 def matrix_to_rounded_str(matrix):
+  "Replace matrix values with strings rounded to 4 decimal places"
   return [[("%.4f" % val) for val in row] for row in matrix]
 
 def make_some_missing (matrix, nmis_per_col):
+  """Replace some matrix values with 'NA'; nmis_per_col is a single integer
+or a vector integers, of length ncol(matrix)"""
   nrow = len(matrix)
   ncol = len(matrix[0])
 
@@ -39,6 +42,7 @@ def make_some_missing (matrix, nmis_per_col):
       x[i][j] = "NA"
 
 def write_matrix_as_csv(matrix, filename):
+  "Write a matrix as a comma-delimited file"
   with open(filename, "w") as file:
     header = ["col" + str(col+1) for col in range(len(matrix[0]))]
     file.write(",".join(header) + "\n")
