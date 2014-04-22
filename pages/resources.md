@@ -230,6 +230,7 @@ title:  Resources and further reading
 - [Python unittest introduction](http://pythontesting.net/framework/unittest/unittest-introduction)
 - [Python nose unit testing quick start](http://blog.jameskyle.org/2010/10/nose-unit-testing-quick-start)
 - [Differences between Python 2 and 3](http://inventwithpython.com/appendixa.html)
+- [What's new in Python 3.0 (vs 2.6)](https://docs.python.org/3.1/whatsnew/3.0.html)
 
 ### Software Licenses
 
