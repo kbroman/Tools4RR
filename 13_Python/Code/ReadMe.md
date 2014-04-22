@@ -14,9 +14,9 @@ single file in the format used by the CRI-MAP program.
 - [`convert2.py`](convert2.py) &mdash; python 2 version of script
 - [`convert3.py`](convert3.py) &mdash; python 3 version of script
 - [`nosetest_convert2.py`](nosetest_convert2.py) &mdash; unit test for one of
-  the functions in [`convert2.py`](convert2.py), using [nose tools](https://nose.readthedocs.org/en/latest/)
+  the functions in [`convert2.py`](convert2.py), using [nose](https://nose.readthedocs.org/en/latest/)
 - [`nosetest_convert3.py`](nosetest_convert3.py) &mdash; unit test for one of
-  the functions in [`convert3.py`](convert3.py), using [nose tools](https://nose.readthedocs.org/en/latest/)
+  the functions in [`convert3.py`](convert3.py), using [nose](https://nose.readthedocs.org/en/latest/)
 - [`test_convert2.py`](test_convert2.py) &mdash; unit test for one of
   the functions in [`convert2.py`](convert2.py), using the standard
   Python [unittest module](https://docs.python.org/2/library/unittest.html)
