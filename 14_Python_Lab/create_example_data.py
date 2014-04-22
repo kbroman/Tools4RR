@@ -15,13 +15,8 @@ and colsd being vectors of column means and SDs, respectively."""
 
   ncol = len(colmean)
 
-  # create empty matrix
-  x = [[None for col in range(ncol)] for row in range(nrow)]
-
-  # fill with Gaussian deviates
-  for i in range(nrow):
-    for j in range(ncol):
-      x[i][j] = random.gauss(colmean[j], colsd[j])
+  # generate data as matrix, using nested list comprehension
+  x = [[random.gauss(colmean[col], colsd[col]) for col in range(ncol)] for row in range(nrow)]
 
   return x
 
