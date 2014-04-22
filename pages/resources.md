@@ -226,6 +226,7 @@ title:  Resources and further reading
 - [Installing iPython](http://ipython.org/install.html): [Anaconda](http://continuum.io/downloads)
 - [Practical computing for biologists (book)](http://www.amazon.com/exec/obidos/ASIN/0878933913/7210-20)
 - [Bioinformatics programming using Python (book)](http://www.amazon.com/exec/obidos/ASIN/059615450X/7210-20)
+- [Python scripting for computational science (book)](http://www.amazon.com/exec/obidos/ASIN/3540739157/7210-20)
 - [Python unittest introduction](http://pythontesting.net/framework/unittest/unittest-introduction)
 - [Python nose unit testing quick start](http://blog.jameskyle.org/2010/10/nose-unit-testing-quick-start)
 
