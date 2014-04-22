@@ -8,13 +8,13 @@
 # This is the python 3 version; see also convert2.py
 
 def read_markers (filename):
-  '''Read an ordered list of marker names from a file.'''
+  "Read an ordered list of marker names from a file."
   with open(filename, 'r') as f:
     lines = f.readlines()
   return [line.strip() for line in lines]
 
 class Person:
-  '''Person class, to contain the data on a subject.'''
+  "Person class, to contain the data on a subject."
   def __init__ (self,family, id, dad, mom, sex):
     self.family = family
     self.id = id
@@ -25,7 +25,7 @@ class Person:
     self.gen = {}
 
 def read_families (filename):
-  '''Read family info and return a hash of people.'''
+  "Read family info and return a hash of people."
   with open(filename, 'r') as file:
     file.readline() # header row
     people = {}
@@ -36,13 +36,13 @@ def read_families (filename):
   return people
 
 def parse_genotype (string):
-  '''Clean up string -> genotype'''
+  "Clean up string -> genotype"
   string = string.replace(' ', '')
   string = "0/0" if string == "" else string
   return string.replace('/', ' ')
 
 def read_genotypes (filename, people):
-  '''Read genotype data, fill in genotypes within people hash'''
+  "Read genotype data, fill in genotypes within people hash"
   with open(filename, 'r') as file:
 
     header = file.readline().strip().split()
@@ -57,15 +57,15 @@ def read_genotypes (filename, people):
         people[person].gen[marker] = parse_genotype(line[start:(start+7)])
 
 def get_families (people):
-  '''Return a vector of distinct families'''
+  "Return a vector of distinct families"
   return set([people[key].family for key in people])
 
 def get_family_members (people, family):
-  '''Return a vector of subjects within a family.'''
+  "Return a vector of subjects within a family."
   return [people[key] for key in people if people[key].family == family]
 
 def write_genfile (filename, people, markers):
-  '''Write genotype data to a file, in CRI-MAP format.'''
+  "Write genotype data to a file, in CRI-MAP format."
   with open(filename, 'w') as file:
 
     families = sorted(get_families(people))
