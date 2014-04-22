@@ -650,7 +650,9 @@ def read_genotypes (filename, people):
   for my {\tt people} hash.
   I then go through the rest of the file, one line at a time: I grab
   the marker name (getting rid of any spaces) and then go
-  through the rest of the line, 7 characters at a time.
+  through the rest of the line, 7 characters at a
+  time. {\tt range(n)} returns the vector {\tt [0,} {\tt 1,} \dots{\tt
+  , n-1]}.
 
   If you look back at the {\tt Person} class, you'll see that I'd
   initialized {\tt gen} as a hash (with {\tt self.gen = \{\}}). I'm
