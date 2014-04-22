@@ -81,10 +81,10 @@ def median (vect):
     
   # odd number of items
   if n % 2:
-    return v[(n-1)/2]
+    return v[(n-1)//2] # // is "integer division" (avoids error in python3)
   
   # even number of items
-  return (v[n/2] + v[(n/2)-1])/2.0
+  return (v[n//2] + v[n//2-1])/2.0
   
 
 
