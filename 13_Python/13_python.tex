@@ -683,8 +683,8 @@ def get_families (people):
   return set([people[key].family for key in people])
 
 def get_family_members (people, family):
-  "Return a vector of subjects within a family."
-  return [people[key] for key in people \
+  "Return a vector of famids for subjects within a family."
+  return [key for key in people \
           if people[key].family == family]
 
 def writeln (file, line, end="\n"):
@@ -702,10 +702,9 @@ def writeln (file, line, end="\n"):
   a ``set'' of distinct values. It acts here sort of like {\tt
   unique()} in R.
 
-  {\tt get\_family\_members} returns a vector of the family members in
-  a given family. Note that it returns a vector of {\tt Person}
-  objects. And note that I'm using a list comprehension again, but
-  with an additional {\tt if} qualification.
+  {\tt get\_family\_members} returns a vector of the famid codes for
+  the family members in a given family. I'm using a list comprehension
+  again, but with an additional {\tt if} qualification.
 
   {\tt writeln} is just a little wrapper for the {\tt write}
   function, to write a string to a file. Note that in this function,
@@ -723,7 +722,6 @@ def writeln (file, line, end="\n"):
 def write_genfile (filename, people, markers):
   "Write genotype data to a file, in CRI-MAP format."
   with open(filename, 'w') as file:
-
     families = sorted(get_families(people))
     writeln(file, len(families))
 
@@ -734,12 +732,13 @@ def write_genfile (filename, people, markers):
     for family in families:
       writeln(file, family)
       members = sorted(get_family_members(people, family), \
-                       key=lambda person: int(person.id))
+                       key=lambda famid: int(people[famid].id))
       writeln(file, len(members))
 
-      for person in members:
+      for famid in members:
+        person = people[famid]
         writeln(file, "%s %s %s %s" % (person.id, \
-                person.mom, person.dad, person.sex))
+                      person.mom, person.dad, person.sex))
 
         for marker in markers:
           writeln(file, person.gen[marker], " ")
@@ -747,21 +746,17 @@ def write_genfile (filename, people, markers):
 \end{lstlisting}
 
 \note{
-  This is the function to write the CRI-MAP file. There are three
+  This is the function to write the CRI-MAP file. There are two
   interesting bits here.
 
   First, {\tt sorted()} returns a sorted version of a vector.
-  I use it twice, the second time with {\tt key=lambda person: int(person.id)} \\
+  I use it twice, the second time with {\tt key=lambda famid: int(people[famid].id)} \\
   which is an anonymous function for sorting {\tt Person} objects by
   their individual IDs (numerically).
 
-  The second bit is\\
+  The second interesting bit is\\
   {\tt "\%s \%s \%s \%s" \% (person.id, person.mom, person.dad, person.sex)} \\
   which is like {\tt sprintf}, in that I'm formatting a bunch of stuff as a string.
-
-  The third interesting bit is {\tt for person in members:}\\
-  in which I'm looping over the elements of a vector of {\tt Person} objects.
-  {\tt person} is not just an index but is a full {\tt Person} object.
 }
 \end{frame}
 
