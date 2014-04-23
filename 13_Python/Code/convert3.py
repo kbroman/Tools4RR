@@ -61,8 +61,8 @@ def get_families (people):
   return set([people[key].family for key in people])
 
 def get_family_members (people, family):
-  "Return a vector of subjects within a family."
-  return [people[key] for key in people if people[key].family == family]
+  "Return a vector of famids for subjects within a family."
+  return [key for key in people if people[key].family == family]
 
 def write_genfile (filename, people, markers):
   "Write genotype data to a file, in CRI-MAP format."
@@ -77,10 +77,11 @@ def write_genfile (filename, people, markers):
 
     for family in families:
       print(family, file=file)
-      members = sorted(get_family_members(people, family), key=lambda person: int(person.id))
+      members = sorted(get_family_members(people, family), key=lambda famid: int(people[famid].id))
       print(len(members), file=file)
 
-      for person in members:
+      for famid in members:
+        person = people[famid]
         print("%s %s %s %s" % (person.id, person.mom, person.dad, person.sex), file=file)
 
         for marker in markers:

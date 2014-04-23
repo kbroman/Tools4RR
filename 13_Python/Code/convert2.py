@@ -61,8 +61,8 @@ def get_families (people):
   return set([people[key].family for key in people])
 
 def get_family_members (people, family):
-  "Return a vector of subjects within a family."
-  return [people[key] for key in people if people[key].family == family]
+  "Return a vector of famids for subjects within a family."
+  return [key for key in people if people[key].family == family]
 
 def writeln (file, line, end="\n"):
   "Write a single line to a file."
@@ -81,10 +81,11 @@ def write_genfile (filename, people, markers):
 
     for family in families:
       writeln(file, family)
-      members = sorted(get_family_members(people, family), key=lambda person: int(person.id))
+      members = sorted(get_family_members(people, family), key=lambda famid: int(people[famid].id))
       writeln(file, len(members))
 
-      for person in members:
+      for famid in members:
+        person = people[famid]
         writeln(file, "%s %s %s %s" % (person.id, person.mom, person.dad, person.sex))
 
         for marker in markers:
