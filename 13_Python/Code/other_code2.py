@@ -68,3 +68,40 @@ dict( [[k, v**3] for k,v in h.iteritems()] )
 x = [k+1 for k in range(6)]
 y = [True, False, True, False, False, False]
 [x[i] for i in range(len(x)) if y[i]]
+
+# more on strings
+x = "bread and jam"
+y = x.split(" ")
+z = " ".join(y)
+
+dir(x)
+# help(x.index) #<- causes process to suspend
+
+x.endswith("jam")
+x.startswith("bre")
+x.count("a")
+x.find("and")
+x.find("jelly")
+x.index("and")
+# x.index("jelly") #<- this gives an error
+
+x.replace("jam", "jelly")
+
+x.capitalize()
+x.title()
+x.upper()
+x.upper().lower()
+
+# regular expressions
+import re
+
+x = "Bread and Jam"
+re.findall(r'[A-Z]', x)
+re.split(r'[A-Z]', x)
+re.sub(r'[A-Z]', '', x)
+
+ph = "555-12-3456"
+re.findall(r'-', ph)
+re.findall(r'\d+', ph)
+re.split(r'\D', ph)
+re.sub(r'\D', '', ph)

@@ -1025,6 +1025,76 @@ y = [True, False, True, False, False, False]
 \end{frame}
 
 
+\begin{frame}[c,fragile]{More with strings}
+
+\begin{lstlisting}
+x = "bread and jam"
+y = x.split(" ")
+z = " ".join(y)
+
+dir(x)
+help(x.index)
+
+x.endswith("jam")
+x.startswith("bre")
+x.count("a")
+x.find("and")
+x.find("jelly")
+x.index("and")
+x.index("jelly")
+
+x.replace("jam", "jelly")
+
+x.capitalize()
+x.title()
+x.upper()
+x.upper().lower()
+\end{lstlisting}
+
+\note{
+  Python has also sorts of methods for doing things with strings.
+
+  Use {\tt dir} to get a list, eg {\tt dir(str)}, {\tt dir("")}, or
+  {\tt dir(x)} where {\tt x} is a string.
+
+  Use {\tt help} to get a description of one of the methods, eg
+  {\tt help(str.find)}, {\tt help("".find)}, or {\tt help(x.find)}.
+}
+\end{frame}
+
+
+
+\begin{frame}[fragile]{Regular expressions}
+
+\vspace{18pt}
+
+\begin{lstlisting}
+import re
+
+x = "Bread and Jam"
+re.findall(r'[A-Z]', x)
+re.split(r'[A-Z]', x)
+re.sub(r'[A-Z]', '', x)
+
+ph = "555-12-3456"
+re.findall(r'-', ph)
+re.findall(r'\d+', ph)
+re.split(r'\D', ph)
+re.sub(r'\D', '', ph)
+\end{lstlisting}
+
+\note{
+  A big reason to use scripting languages is for regular expression
+  facilities. But I find regular expressions cumbersome in Python relative
+  to Perl or Ruby. 
+
+  There is some messiness about backslashes, so it's best with regular
+  expressions to use ``raw strings'' by preceding the string with an
+  {\tt r}, as so: {\tt r'blah'}.
+}
+\end{frame}
+
+
 \begin{frame}[fragile]{Unit tests: Nose}
 
 \vspace{18pt}
