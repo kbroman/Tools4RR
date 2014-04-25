@@ -68,11 +68,7 @@ def mean (vect):
   if n == 0:
     return None
 
-  sum = 0.0
-  for val in v:
-    sum += float(val)
-
-  return sum/float(n)
+  return sum(v)/float(n)
 
 
 
@@ -104,9 +100,7 @@ def sd (vect):
     return None
 
   mu = mean(v)
-  ssq = 0.0
-  for val in v:
-    ssq += (val - mu)**2
+  ssq = sum([(val - mu)**2 for val in v])
 
   return math.sqrt(ssq/float(n-1))
 
