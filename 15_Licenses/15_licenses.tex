@@ -54,7 +54,7 @@
 \item Manuscripts/journal articles
 \item Books
 \item Software
-\item Data
+\item Data set
 \item Ideas, inventions
 \item Lab/research notebooks
 \item Instructional materials
@@ -86,9 +86,11 @@
   Different kinds of intellectual property is protected in different
   ways. I'm going to focus on copyright.
 
-  An important point to mention here is that an {\nhilit idea} or
-  {\nhilit algorithm} can't be copyrighted, but those can be protected
-  with a patent.
+  An important point to mention here is that an {\nhilit idea},
+  {\nhilit fact} or {\nhilit algorithm} can't be copyrighted. Ideas
+  and algorithms can be protected with a patent, but {\nhilit facts}
+  (including individual data points) can be neither copyrighted nor
+  patented.
 
   So, for example, copyright protection says that you may not be able
   to copy and use someone's exact code, but you can grab all of the
@@ -234,7 +236,7 @@ Reproduction for criticism/commentary, teaching, and research
 
   I choose between the MIT license and the GNU General Public License
   (GPL). The MIT license is as open as possible: do whatever you want,
-  just don't sue me. The GPL is ``viral,'' in that extends to
+  just don't sue me. The GPL is ``viral'' (they say ``copyleft'') in that extends to
   derivative works: software that incorporates code under the GPL must
   also be under the GPL.
 
@@ -243,6 +245,28 @@ Reproduction for criticism/commentary, teaching, and research
   be used for code, as they are not compatible with other standard
   software licenses, such as the GPL. That means that you wouldn't be
   able to mix in code that was licensed under the GPL.
+}
+\end{frame}
+
+
+\begin{frame}[c]{}
+
+\vspace{48pt}
+
+\centerline{\large Pick a license, any license}
+
+\vspace{72pt}
+
+\hfill
+{\textendash} \href{http://blog.codinghorror.com/pick-a-license-any-license/}{Jeff Atwood}
+
+\note{
+  I can't emphasize this enough. If you release your software without
+  a license, no one can modify it or incorporate it into their own
+  software, as it's under copyright protection.
+
+  If you want your software to be reused, pick a license, and make the
+  licensing absolutely clear.
 }
 \end{frame}
 
@@ -276,10 +300,8 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 
 \note{
-  The MIT license is more of a template.
-
-  But it basically says: do whatever you want with the software, but
-  be sure to include this notice, and don't sue me.
+  The MIT license basically says: do whatever you want with the
+  software, but be sure to include this notice, and don't sue me.
 
   Those are the key things you want: protect yourself from liability,
   and make plain that people can be free to reuse the software.
@@ -336,8 +358,66 @@ License along with this program.  If not, see
 
 \begin{frame}{Creative Commons licenses}
 
-\note{
+\bbi
+\item CC0 {\lolit (Public Domain)}
+\item CC BY {\lolit (Attribution)}
+\item CC BY-SA {\lolit (Attribution-ShareAlike)}
+\item CC BY-ND {\lolit (Attribution-NoDerivs)}
+\item CC BY-NC {\lolit (Attribution-NonCommercial)}
+\item CC BY-NC-SA {\lolit (Attribution-NonCommercial-ShareAlike)}
+\item CC BY-NC-ND {\lolit (Attribution-NonCommercial-NoDerivs)}
+\ei
 
+\note{
+  The Creative Commons licenses are really useful for things like
+  manuscripts, data files, videos, web sites, and such.
+
+  You shouldn't use them for software, as they can't be mixed with the
+  GPL, and they make no explicit mention of source or object code.
+  In the FAQ at Creative Commons, they explicitly recommend {\nhilit
+  against} the use of CC licenses for software.
+
+  BY means people must cite you as the originator.
+
+  SA means that derivative works must be distributed under the same
+  license (like the GPL).
+
+  ND means the work must be distributed in its entirety, without any
+  changes.
+
+  NC means the work can't be used in a commercial setting.
+}
+\end{frame}
+
+
+\begin{frame}{CC licenses: issues to consider}
+
+\bbi
+\item BY may be an unnecessary hassle.
+\item CC-BY on a paper would allow a company to include it in a book
+  \bi
+  \item but maybe you don't care
+  \ei
+\item ND is {\vhilit really} restrictive
+ \bi
+ \item all or none
+ \item no modifications at all
+ \ei
+\item NC means people in a company can't use it at all
+ \bi
+ \item might not be useable within a course
+ \ei
+\ei
+
+\note{
+  There are a lot of issues to consider.
+
+  I'd recommend avoiding ND and probably also NC.
+
+  Personally, I'm going with CC0 (by academic tradition, people should
+  still cite you) or CC-BY. It means that a company could grab my
+  stuff and make money off of it. But I'm fine with that. I'd rather
+  see the results of my efforts put to further use.
 }
 \end{frame}
 
