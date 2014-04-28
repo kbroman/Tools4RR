@@ -246,6 +246,8 @@ title:  Resources and further reading
 - [Works for hire (pdf from US Copyright Office)](http://www.copyright.gov/circs/circ09.pdf)
 - [Copyright and fair use](https://academictech.doit.wisc.edu/blend/create/copyright)
 - [Fair use (US Copyright Office)](http://www.copyright.gov/title17/92chap1.html#107)
+- [Copyright of facts and data](http://www.lib.umich.edu/copyright/facts-and-data) \[concise\]
+- [Database legal protections](http://www.bitlaw.com/copyright/database.html) \[detailed\]
 - UW-Madison:
   - [Intellectual property rights](https://grad.wisc.edu/acadpolicy/#responsibleconductofresearch)
   - [Intellectual property policies and prodcedures (pdf)](https://kb.wisc.edu/images/group156/32996/IntellectualPropertyPoliciesandProceduresforUniversityResearch.pdf)    
