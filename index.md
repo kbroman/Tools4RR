@@ -42,7 +42,7 @@ data analyses, papers, presentations, posters) are reproducible.
 [1116 Biochem, 420 Henry Mall](http://map.wisc.edu/s/psk50tw2)
 \[[directions](pages/directions.html)\]
 
-**[Schedule](pages/schedule.html)**
+**[Schedule](pages/schedule.html)** (with links to lecture notes)
 
 **[Resources and further reading](pages/resources.html)**
 
