@@ -133,6 +133,7 @@ title:  Resources and further reading
   from [Hadley Wickham](http://had.co.nz)'s [Advanced R book](http://adv-r.had.co.nz/)
 - [devtools package](http://github.com/hadley/devtools)
 - [Jeff Leek on developing R packages](https://github.com/jtleek/rpackages)
+- [Hilary Parker on making a simple R package](http://hilaryparker.com/2014/04/29/writing-an-r-package-from-scratch/)
 - [Writing R extensions (official manual)](http://cran.r-project.org/manuals.html):
 \[[pdf](http://cran.r-project.org/doc/manuals/r-release/R-exts.pdf) | [html](http://cran.r-project.org/doc/manuals/r-release/R-exts.html)\]
 - [How to build package vignettes with knitr](http://yihui.name/knitr/demo/vignette)
