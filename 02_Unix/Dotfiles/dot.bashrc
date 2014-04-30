@@ -8,8 +8,6 @@ export NODE_PATH=~/.bin/nvm/v0.8.18/lib/node_modules/
 # ruby
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
-
-export path
 export PATH=/usr/local/bin:$PATH
 export PATH=$HOME/.anaconda/anaconda/bin:$PATH
 export PATH=$HOME/.anaconda/anaconda/envs/py33/bin:$PATH
@@ -32,10 +30,7 @@ export MANPATH=$MANPATH:/usr/X11R6/man
 export LD_LIBRARY_PATH=/usr/local/lib
 
 
-PS1="[\h]\w[\!]\$ "
-
 export GS_OPTIONS="-dAutoRotatePages=/None"
-
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 
 noclobber=1    # prevent overwriting of files
