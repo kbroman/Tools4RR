@@ -47,6 +47,44 @@
 } }
 
 
+\begin{frame}{Course summary}
+
+\vspace{12pt}
+
+\bi
+\itemsep8pt
+\item Make everything you do script-based
+  \bi
+  \item code + data $\rightarrow$ product
+  \ei
+\item Use version control (git and GitHub/Bitbucket)
+\item Take your time; organize
+\item Write clear code; make R packages
+\item Write unit tests
+\item Capture exploratory data analysis
+  \bi
+  \item what you did, saw, and thought (and why)
+  \ei
+\item KnitR + Markdown for reports
+\item KnitR + \LaTeX\ for papers, talks, and posters
+\item Use licenses to make reusability clear
+\ei
+
+\note{
+  This is the last lecture in the course, so I thought I should
+  summarize what we've talked about. And I thought I should put this
+  first, because otherwise I might not get to it.
+
+  The central element in ensuring reproducibility: take your time and
+  organize your work.
+
+  Invest effort now to save effort (or embarrassment) later.
+
+  Use of Markdown for talks and papers will continue to improve. A
+  year from now, it will likely be sufficient.
+}
+\end{frame}
+
 
 \begin{frame}{Intellectual property}
 
@@ -54,7 +92,7 @@
 \item Manuscripts/journal articles
 \item Books
 \item Software
-\item Data set
+\item Data sets
 \item Ideas, inventions
 \item Lab/research notebooks
 \item Instructional materials
@@ -134,7 +172,7 @@
   increasingly interested in generating income from the intellectual
   property of their faculty.
 
-  Also, students may be treated somewhat different from other
+  Also, students may be treated somewhat differently from other
   employees. Academic staff may be treated differently from faculty,
   for that matter. Ideally, the exact rules are written down
   somewhere. Find the rules and read them, and ask questions about
@@ -162,6 +200,9 @@
 \note{
   Copyright protection gives the author exclusive rights to the work
   and to derivatives of the work.
+
+  Thus, the default is that no one can copy, modify, or redistribute
+  your code.
 }
 \end{frame}
 
@@ -177,9 +218,10 @@ Reproduction for criticism/commentary, teaching, and research
 \vspace{12pt}
 
 \bi
+\itemsep8pt
 \item For non-commercial or nonprofit educational purposes
 \item Can't be a substantial portion of the work
-\item Can't effect the value/market of the original work
+\item Can't affect the value/market of the original work
 \ei
 
 \note{
@@ -422,37 +464,178 @@ License along with this program.  If not, see
 \end{frame}
 
 
-\begin{frame}{Data licenses}
+\begin{frame}{Data copyright}
+
+\bbi
+\item Individual data points are generally considered {\hilit facts}
+  \bi
+  \item Can't be copyrighted
+  \ei
+\item Compilations of data can be copyrighted
+  \bi
+  \item Involves some creativity, so an "original work of authorship"
+  \ei
+\item But someone can just extract and reformat the data
+\item Can assign a license to the data files to prevent extraction and
+  redistribution
+\item See \href{http://bitlaw.com/copyright/database.html}{\tt bitlaw.com/copyright/database.html}
+\ei
 
 \note{
+  Data are viewed as facts and so they {\nhilit can't} be copyrighted.
+
+  Your data file or database, though, {\nhilit can} be copyrighted,
+  if its compilation involves some creativity, and that would
+  generally be true for scientific data files.
+
+  So people can't redistribute your data files unless you say it's
+  okay. But they may be able to extract and reformat the data and then
+  distribute that. 
+
+  If you want to prevent extraction and redistribution, the data files
+  need a license, which would say the end user is prohibited from
+  extracting data for uses other than intended.
+}
+\end{frame}
+
+
+
+\begin{frame}{Keep data open}
+
+\bbi
+\item Cite the source; cite the relevant papers
+\item Talk to the originator of the data
+  \bi
+  \item Even if redistribution is legal, don't piss them off.
+  \ei
+\item For your own data, use
+  \href{https://creativecommons.org/publicdomain/zero/1.0/}{CC0}
+  (public domain)
+\item If you want more control, talk to a lawyer
+\ei
+
+\note{
+  Statisticians, in particular, should want data to be openly
+  available. And so you should cite the source of data and any
+  relevant papers, not just because that's the academic tradition, but
+  also because we want to reward, as much as possible, people who
+  make data accessible.
+
+  Even if it's perfectly legal for you to re-distribute data, you
+  should talk to the originator of the data before doing so. You don't
+  want them to get annoyed and then stop distributing data in the
+  future.
+
+  If you want data to be reused, just put it in the public domain.
+  Don't add any extra complexities, like CC-BY.
+
+  If you want to control reuse or redistribution, talk to a lawyer. It
+  seems really complicated. 
 }
 \end{frame}
 
 
 \begin{frame}{Human subjects research}
 
+\bbi
+\only<1-2|handout 0>{\item Avoid human subjects research
+  \bi
+  \item[] {\hilit \only<1|handout 0>{\color{background}} (just kidding!)}
+  \ei
+}
+\only<3->{
+\item If there are humans involved, they're human subjects
+  \bi
+  \item e.g., surveys
+  \ei
+\item Human subjects research must be reviewed by an 
+  Institutional Review Board (IRB)
+\item Not everything is {\hilit research}
+  \bi
+  \item e.g., data used solely in a course
+  \ei
+\item Most things are research
+  \bi
+  \item If you publish a paper about it, it's research
+  \ei
+\item Anonymized data may be {\hilit exempt}
+  \bi
+  \item But the IRB wants to make that determination
+  \ei
+}
+\ei
+
 \note{
+  Any research on human subjects must be reviewed by an IRB.
+  
+  If you're considering publishing a paper about it, and if humans are
+  involved, it's human subjects research. That includes things like
+  surveys. So informed consent, and review by IRB, with a clearly
+  defined protocol and protection of data.
+
+  You can do a survey {\nhilit within a class} and it may not be
+  research, but then you can't publish the results.
+
+  The NIH considers the analysis of anonymized human data to be ``not
+  human subjects research,'' and it may be exempt from full IRB
+  review, but IRBs generally want to make such determinations
+  themselves: you need to fill out some amount of paperwork.
 }
 \end{frame}
 
 
-\begin{frame}{HIPPA}
+\begin{frame}{HIPAA}
+
+\bbi
+\item HIPAA = Health Insurance Portability and Accountability Act of 1996
+\item Special rules about medical data with {\hilit any}
+  identifying information
+  \bi
+  \item Private
+  \item Secure
+  \ei
+\item Full zip code may be considered identifying information.
+\item Dates of test results are considered identifying information.
+\ei
 
 \note{
+  HIPAA is really important, but it's also a real pain.
+
+  The key thing is that medical data with {\nhilit any} identifing
+  information needs a whole bunch of paperwork if
+  transferred/disclosed, and there need to be special security
+  measures.
+
+  And the definition of ``identifying information'' is surprisingly
+  broad.
 }
 \end{frame}
 
-
-\begin{frame}{Internal Review Boards}
-
-\note{
-}
-\end{frame}
 
 
 \begin{frame}{Summary}
 
+\bbi
+\item Pick a license, any license
+\item Use MIT or GPL for software
+\item Use CC0 for data
+\item Cite sources of software and data
+\item Talk to the source of data
+\item Be careful with human data
+  \bi
+  \item If you're unsure, ask for help
+  \ei
+\ei
+
 \note{
+  If you don't {\nhilit license} your software, it can't be modified
+  or reused.
+
+  Make data open, and be sure to reward those who make data and
+  software accessible. 
+
+  Be careful with human data, particularly if there's anything
+  remotely identifiable.
 }
 \end{frame}
 
