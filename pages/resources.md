@@ -242,14 +242,21 @@ title:  Resources and further reading
 - [MIT license at wikipedia](http://en.wikipedia.org/wiki/MIT_License)
 - [GNU General Public License](https://www.gnu.org/copyleft/gpl.html)
 - [GPL frequently asked questions](https://www.gnu.org/licenses/gpl-faq.html)
-- [VertNet guide to copyright and licenses for dataset publication](http://www.vertnet.org/resources/datalicensingguide.html)
 - [Copyright basics (pdf from US Copyright Office)](http://www.copyright.gov/circs/circ01.pdf)
 - [Works for hire (pdf from US Copyright Office)](http://www.copyright.gov/circs/circ09.pdf)
-- [Copyright and fair use](https://academictech.doit.wisc.edu/blend/create/copyright)
 - [Fair use (US Copyright Office)](http://www.copyright.gov/title17/92chap1.html#107)
+- [Copyright basics](http://library.wisc.edu/copyright/#copyright-basics)
+- [Copyright and fair use](https://academictech.doit.wisc.edu/blend/create/copyright)
 - [Copyright of facts and data](http://www.lib.umich.edu/copyright/facts-and-data) \[concise\]
 - [Database legal protections](http://www.bitlaw.com/copyright/database.html) \[detailed\]
+- [VertNet guide to copyright and licenses for dataset publication](http://www.vertnet.org/resources/datalicensingguide.html)
 - UW-Madison:
   - [Intellectual property rights](https://grad.wisc.edu/acadpolicy/#responsibleconductofresearch)
   - [Intellectual property policies and prodcedures (pdf)](https://kb.wisc.edu/images/group156/32996/IntellectualPropertyPoliciesandProceduresforUniversityResearch.pdf)    
   - [Copyrightable instructions materials](http://www.uwsa.edu/fadmin/gapp/gapp27.htm)
+
+### Human subjects research
+
+- [HIPAA](http://hipaa.wisc.edu/)
+- [Human Research Protection Program at UW-Madison](http://grad.wisc.edu/respolcomp/hrpp/)
+- [De-identification of HIPAA data](http://www.hhs.gov/ocr/privacy/hipaa/understanding/coveredentities/De-identification/guidance.html)
