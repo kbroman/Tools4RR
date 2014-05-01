@@ -105,7 +105,11 @@ tagline: Spring, 2014
     [C](https://github.com/kbroman/Tools4RR/tree/master/14_Python_Lab/)
     \]
 
-**May 9**:  Software/data licenses, copyright, and human subjects/HIPPA
+**May 9**:  Software/data licenses, copyright, and human subjects/HIPAA
+    \[
+    [S](../assets/lectures/15_licenses.pdf) |
+    [N](../assets/lectures/15_licenses_withnotes.pdf)
+    \]
 
 ---
 
