@@ -235,6 +235,8 @@ title:  Resources and further reading
 
 ### Software Licenses
 
+- [What computational scientists need to know about Intellectual property law: A primer (pdf)](https://osf.io/yi8k2/)
+  by [Victoria Stodden](http://stodden.net)
 - [Coding horror blog](http://www.codinghorror.com/blog/2007/04/pick-a-license-any-license.html)
 - [Understanding open source and free software licensing (book)](http://oreilly.com/openbook/osfreesoft/book/)
 - [Creative Commons licenses](https://creativecommons.org/licenses/)
