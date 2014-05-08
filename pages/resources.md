@@ -233,10 +233,11 @@ title:  Resources and further reading
 - [Differences between Python 2 and 3](http://inventwithpython.com/appendixa.html)
 - [What's new in Python 3.0 (vs 2.6)](https://docs.python.org/3.1/whatsnew/3.0.html)
 
-### Software Licenses
+### Copyright and software/data licenses
 
-- [What computational scientists need to know about Intellectual property law: A primer (pdf)](https://osf.io/yi8k2/)
-  by [Victoria Stodden](http://stodden.net)
+- [Victoria Stodden](http://stodden.net):
+  - [What computational scientists need to know about Intellectual property law (pdf)](https://osf.io/yi8k2/)
+  - [The legal framework for reproducible scientific research (pdf)](http://www.stanford.edu/~vcs/papers/LFRSR12012008.pdf)
 - [Coding horror blog](http://www.codinghorror.com/blog/2007/04/pick-a-license-any-license.html)
 - [Understanding open source and free software licensing (book)](http://oreilly.com/openbook/osfreesoft/book/)
 - [Creative Commons licenses](https://creativecommons.org/licenses/)
