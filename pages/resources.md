@@ -21,7 +21,7 @@ title:  Resources and further reading
 - [Manual for make](http://www.gnu.org/software/make/manual/make.html)
 - [rake](http://rake.rubyforge.org) (ruby-based build program, similar
   to make)
-- [Minimal Make tutorial](http://kbroman.github.io/minimal_make)
+- [Minimal Make tutorial](http://kbroman.org/minimal_make)
 - [Managing projects with GNU make](http://oreilly.com/catalog/make3/book/)
   book (part of the
   [Open Books project](http://oreilly.com/openbook/))
@@ -46,7 +46,7 @@ title:  Resources and further reading
 - [Cygwin](http://www.cygwin.com/)
 - [A command-line murder mystery](https://github.com/veltman/clmystery)
 - Book: [Learning the bash shell](http://www.amazon.com/exec/obidos/ASIN/0596009658/7210-20)
-- [Karl](http://www.biostat.wisc.edu/~kbroman)'s [`.bash_profile`](../assets/dot.bash_profile) and
+- [Karl](http://kbroman.org)'s [`.bash_profile`](../assets/dot.bash_profile) and
   [`.bashrc`](../assets/dot.bashrc) files
 
 ### RStudio, emacs, vim
@@ -55,7 +55,7 @@ title:  Resources and further reading
 - [RStudio documentation](https://support.rstudio.com/hc/en-us)
 - [Emacs Wiki](http://www.emacswiki.org/emacs/)
 - Book: [Learning GNU Emacs, 3rd ed](http://www.amazon.com/exec/obidos/ASIN/0596006489/7210-20)
-- [Karl](http://www.biostat.wisc.edu/~kbroman)'s
+- [Karl](http://kbroman.org)'s
   [`.emacs`](../assets/dot.emacs) file
 - [Viper mode](http://www.emacswiki.org/emacs/ViperMode) to mimic vi key bindings in emacs
   \[[Manual](http://www.gnu.org/software/emacs/manual/html_node/viper/) | [Installation](http://www.gnu.org/software/emacs/manual/html_node/viper/Loading-Viper.html#Loading-Viper)\]
@@ -70,7 +70,7 @@ title:  Resources and further reading
 ### Knitr, Markdown, Asciidoc
 
 - [knitr](http://yihui.name/knitr/)
-- [knitr in a knutshell](http://kbroman.github.io/knitr_knutshell/)
+- [knitr in a knutshell](http://kbroman.org/knitr_knutshell/)
 - [R Markdown](http://www.rstudio.com/ide/docs/r_markdown)
 - [Using R Markdown with RStudio](http://www.rstudio.com/ide/docs/authoring/using_markdown)
 - [Equations in R Markdown](http://www.rstudio.com/ide/docs/authoring/using_markdown_equations)
@@ -81,14 +81,14 @@ title:  Resources and further reading
 - [xtable](http://cran.r-project.org/web/packages/xtable/index.html),
   an R package for creating LaTeX and HTML tables
 - [asciidoc](http://www.methods.co.nz/asciidoc/)
-- [knitr resources](http://kbroman.github.io/knitr_knutshell/pages/resources.html)
+- [knitr resources](http://kbroman.org/knitr_knutshell/pages/resources.html)
 - [polymode](https://github.com/vitoshka/polymode), an emacs mode that
   handles R Markdown nicely
 
 
 ### Git, Github and Bitbucket
 
-- [git/github guide](http://kbroman.github.io/github_tutorial)
+- [git/github guide](http://kbroman.org/github_tutorial)
 - [GitHub](http://github.com)
 - [Free 2-year "micro" account for students (?)](http://education.github.com) (allows 5
   private repositories)
