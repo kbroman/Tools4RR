@@ -3,7 +3,7 @@
 Materials for a one-credit course on tools for reproducible
 research at UW&ndash;Madison in Spring, 2014.
 
-- The [website](http://kbroman.github.io/Tools4RR)
+- The [website](http://kbroman.org/Tools4RR)
 - The [source for the website](https://github.com/kbroman/Tools4RR/tree/gh-pages)
 - The [source for other material (e.g., lecture slides)](https://github.com/kbroman/Tools4RR/tree/master)
 
