@@ -240,6 +240,8 @@ title:  Resources and further reading
   - [The legal framework for reproducible scientific research (pdf)](http://www.stanford.edu/~vcs/papers/LFRSR12012008.pdf)
 - [Coding horror blog](http://www.codinghorror.com/blog/2007/04/pick-a-license-any-license.html)
 - [Understanding open source and free software licensing (book)](http://oreilly.com/openbook/osfreesoft/book/)
+- [The whys and hows of licensing scientific code](http://www.astrobetter.com/the-whys-and-hows-of-licensing-scientific-code/)
+  by [Jake VanderPlas](http://www.astrobetter.com/author/jakevdp/)
 - [Creative Commons licenses](https://creativecommons.org/licenses/)
 - [tl;dr legal: Software licenses in plain English](https://tldrlegal.com/)
 - [MIT license at wikipedia](http://en.wikipedia.org/wiki/MIT_License)
