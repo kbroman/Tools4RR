@@ -126,7 +126,10 @@ title:  Resources and further reading
 
 ### R packages
 
-- Start at the Package Development section from [Hadley Wickham](http://had.co.nz)'s [Advanced R book](http://adv-r.had.co.nz/)
+- [Hadley Wickham](http://had.co.nz)'s [R Packages book](http://r-pkgs.had.co.nz/)
+- [Hilary Parker](http://hilaryparker.com/)'s
+  [post about writing R packages](http://hilaryparker.com/2014/04/29/writing-an-r-package-from-scratch/)
+- My [R package primer](http://kbroman.org/pkg_primer)
 - Documenting R
   [packages](http://adv-r.had.co.nz/Documenting-packages.html) and
   [functions](http://adv-r.had.co.nz/Documenting-functions.html), also
