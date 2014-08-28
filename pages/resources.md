@@ -127,22 +127,23 @@ title:  Resources and further reading
 ### R packages
 
 - [Hadley Wickham](http://had.co.nz)'s [R Packages book](http://r-pkgs.had.co.nz/)
-- [Hilary Parker](http://hilaryparker.com/)'s
-  [post about writing R packages](http://hilaryparker.com/2014/04/29/writing-an-r-package-from-scratch/)
-- My [R package primer](http://kbroman.org/pkg_primer)
 - Documenting R
-  [packages](http://adv-r.had.co.nz/Documenting-packages.html) and
-  [functions](http://adv-r.had.co.nz/Documenting-functions.html), also
-  from [Hadley Wickham](http://had.co.nz)'s [Advanced R book](http://adv-r.had.co.nz/)
+  [packages](http://r-pkgs.had.co.nz/vignettes.html) and
+  [functions](http://r-pkgs.had.co.nz/man.html),
+  from [that book](http://r-pkgs.had.co.nz/)
+- My [R package primer](http://kbroman.org/pkg_primer)
 - [devtools package](http://github.com/hadley/devtools)
 - [Jeff Leek on developing R packages](https://github.com/jtleek/rpackages)
 - [Hilary Parker on making a simple R package](http://hilaryparker.com/2014/04/29/writing-an-r-package-from-scratch/)
 - [Writing R extensions (official manual)](http://cran.r-project.org/manuals.html):
 \[[pdf](http://cran.r-project.org/doc/manuals/r-release/R-exts.pdf) | [html](http://cran.r-project.org/doc/manuals/r-release/R-exts.html)\]
+- [Developing R packages with RStudio](https://support.rstudio.com/hc/en-us/articles/200486488-Developing-Packages-with-RStudio)
 - [How to build package vignettes with knitr](http://yihui.name/knitr/demo/vignette)
 - [Rd2roxygen package](http://yihui.name/Rd2roxygen/): Translate Rd files to roxygen comments
 - [Building R packages on Windows](http://cran.us.r-project.org/bin/windows/Rtools/)
 - [Karl's largely out-of-date page about building R packages on Windows](http://www.biostat.wisc.edu/~kbroman/Rintro/Rwinpack.html)
+- [A web service](http://win-builder.r-project.org/) for building and
+  checking R packages for Windows
 - [R for Mac developer's page](http://r.research.att.com/)
 - [R for Mac tools](http://r.research.att.com/tools/)
 
