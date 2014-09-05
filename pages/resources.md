@@ -15,6 +15,7 @@ title:  Resources and further reading
 - [Replication, reproduction, and remixing in research software](http://ivory.idyll.org/blog/research-software-reuse.html)
 - [Implementing reproducible research (book; chapter PDFs online)](http://implementing.reproducibleresearch.org)
 
+
 ### Make
 
 - [GNU make](http://www.gnu.org/software/make)
@@ -49,6 +50,7 @@ title:  Resources and further reading
 - [Karl](http://kbroman.org)'s [`.bash_profile`](../assets/dot.bash_profile) and
   [`.bashrc`](../assets/dot.bashrc) files
 
+
 ### RStudio, emacs, vim
 
 - [RStudio](http://www.rstudio.com/ide/download/desktop)
@@ -66,6 +68,7 @@ title:  Resources and further reading
   \[[github](https://github.com/vim-scripts/Vim-R-plugin)\], like ESS
   for Vim
 - Book: [Learning the vi and Vim editors](http://www.amazon.com/exec/obidos/ASIN/059652983X/7210-20)
+
 
 ### Knitr, Markdown, Asciidoc
 
@@ -149,6 +152,7 @@ title:  Resources and further reading
 - [R for Mac developer's page](http://r.research.att.com/)
 - [R for Mac tools](http://r.research.att.com/tools/)
 
+
 ### Testing and debugging
 
 - [assertthat](https://github.com/hadley/assertthat) and [testthat](https://github.com/hadley/testthat) packages
@@ -165,6 +169,7 @@ title:  Resources and further reading
 - [Travis CI](http://travis-ci.com/) [for R](http://yihui.name/en/2013/04/travis-ci-general-purpose/)
 - [Debugging with RStudio](http://www.rstudio.com/ide/docs/debugging/overview)
 
+
 ### Big jobs
 
 - [KnitR cache](http://yihui.name/knitr/demo/cache/)
@@ -178,6 +183,7 @@ title:  Resources and further reading
 - [HTCondor](http://research.cs.wisc.edu/htcondor/)
 - [UW-Madison Center for High Throughput Computing](http://chtc.cs.wisc.edu)
 - [Kill Linux processes easier with pkill](http://www.howtogeek.com/howto/linux/kill-linux-processes-easier-with-pkill/)
+
 
 ### LaTeX
 
@@ -203,6 +209,7 @@ title:  Resources and further reading
   Mac) - LaTeX-based equation editor
 - [LaTeX table generator](http://www.tablesgenerator.com/)
 
+
 ### Slides and posters
 
 - [LaTeX Beamer](https://bitbucket.org/rivanvx/beamer/wiki/Home)
@@ -222,6 +229,7 @@ title:  Resources and further reading
 - [LaTeX poster templates](http://www.latextemplates.com/cat/conference-posters)
 - [Nathaniel Johnston's poster template](http://www.nathanieljohnston.com/2009/08/latex-poster-template/)
 
+
 ### Python
 
 - [Python for biologists](http://pythonforbiologists.com/index.php/introduction-to-python-for-biologists/)
@@ -238,6 +246,7 @@ title:  Resources and further reading
 - [Python nose unit testing quick start](http://blog.jameskyle.org/2010/10/nose-unit-testing-quick-start)
 - [Differences between Python 2 and 3](http://inventwithpython.com/appendixa.html)
 - [What's new in Python 3.0 (vs 2.6)](https://docs.python.org/3.1/whatsnew/3.0.html)
+
 
 ### Copyright and software/data licenses
 
@@ -265,6 +274,7 @@ title:  Resources and further reading
   - [Intellectual property rights](https://grad.wisc.edu/acadpolicy/#responsibleconductofresearch)
   - [Intellectual property policies and prodcedures (pdf)](https://kb.wisc.edu/images/group156/32996/IntellectualPropertyPoliciesandProceduresforUniversityResearch.pdf)    
   - [Copyrightable instructions materials](http://www.uwsa.edu/fadmin/gapp/gapp27.htm)
+
 
 ### Human subjects research
 
