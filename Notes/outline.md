@@ -306,7 +306,7 @@ But I *do* want to show both beamer and slidify, and the use of pandoc
 - [Settling into Unix](http://matt.might.net/articles/settling-into-unix/)
 - [Shell programming with bash](http://matt.might.net/articles/bash-by-example/)
 - [Top ten reasons not to share your code](http://www.siam.org/news/news.php?id=2064)
-- Hadley Wickham [paper on Tidy Data](http://vita.had.co.nz/papers/tidy-data.pdf)
+- Hadley Wickham [paper on Tidy Data](http://www.jstatsoft.org/v59/i10)
 
 
 #### Additional software tools
