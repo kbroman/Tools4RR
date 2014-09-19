@@ -111,7 +111,7 @@ title:  Resources and further reading
 
 ### Organizing projects and data
 
-- [Hadley Wickham](http://had.co.nz)'s [paper on Tidy Data](http://vita.had.co.nz/papers/tidy-data.pdf)
+- [Hadley Wickham](http://had.co.nz)'s [paper on Tidy Data](http://www.jstatsoft.org/v59/i10)
 - [KnitR](http://yihui.name/knitr)'s [`stitch()` and `spin()`](http://yihui.name/knitr/demo/stitch)
 - [Nine simple ways to make it easier to (re)use your data (paper)](http://library.queensu.ca/ojs/index.php/IEE/article/view/4608)
 - [Some simple guidelines for effective data management (paper)](http://www.esajournals.org/doi/abs/10.1890/0012-9623-90.2.205)
