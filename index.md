@@ -38,7 +38,7 @@ data analyses, papers, presentations, posters) are reproducible.
 
 **Lectures**: Fridays, 11:00&ndash;11:50am
 
-**[Schedule](pages/schedule.html)** (with links to lecture notes)
+**[Schedule](pages/schedule.html)** (_<font color="#9411dB">with links to lecture notes</font>_)
 
 **[Resources and further reading](pages/resources.html)**
 
