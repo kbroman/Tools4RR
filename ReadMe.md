@@ -1,7 +1,8 @@
 ## Tools for Reproducible Research
 
-Materials for a one-credit course on tools for reproducible
-research at UW&ndash;Madison in Spring, 2014.
+Materials for a one-credit course on tools for reproducible research
+at UW&ndash;Madison held in Spring, 2014; to be repeated in Spring,
+2015.
 
 - The [website](http://kbroman.org/Tools4RR)
 - The [source for the website](https://github.com/kbroman/Tools4RR/tree/gh-pages)
