@@ -28,7 +28,7 @@ tagline: Spring, 2015
     \]
 
 
-**Feb 13**: No lecture
+**Feb 13**: **No class**
 
 
 **Feb 20**: Version control with [git](http://git-scm.com/) & [github](https://github.com/)/[bitbucket](https://bitbucket.org/)
