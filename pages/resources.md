@@ -95,6 +95,8 @@ title:  Resources and further reading
 - [GitHub](http://github.com)
 - [Free 2-year "micro" account for students (?)](http://education.github.com) (allows 5
   private repositories)
+- [Working with RStudio, git, github](http://stat545-ubc.github.io/git00_index.html)
+  (from [Jenny Bryan](http://www.stat.ubc.ca/~jenny/)'s [Data Science course](http://stat545-ubc.github.io/))
 - [Pro Git book](http://git-scm.com/book)
 - The [git documentation](http://git-scm.com/documentation)
 - The [github help pages](https://help.github.com/)
