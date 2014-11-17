@@ -38,15 +38,13 @@ tagline: Spring, 2015
     [C](https://github.com/kbroman/Tools4RR/tree/master/04_Git/GitCommands/git_notes.md)
     \]
 
-<!-- Not sure where to fit this, or whether to keep this and drop the python lab
-**Feb 21**: [git](http://git-scm.com)/[GitHub](https://github.com)
+**Feb 27**: [git](http://git-scm.com)/[GitHub](https://github.com)
   Laboratory
       \[
       [C](https://github.com/kbroman/Tools4RR/blob/master/05_Git_Lab/git_lab.md)
       \]
--->
 
-**Feb 27**: Organizing projects; capturing exploratory analysis
+**Mar 6**: Organizing projects; capturing exploratory analysis
     \[
     [S](../assets/lectures/06_org_eda.pdf) |
     [N](../assets/lectures/06_org_eda_withnotes.pdf) |
@@ -54,7 +52,7 @@ tagline: Spring, 2015
     \]
 
 
-**Mar 6**:  Writing clear code
+**Mar 13**:  Writing clear code
     \[
     [S](../assets/lectures/07_clearcode.pdf) |
     [N](../assets/lectures/07_clearcode_withnotes.pdf) |
@@ -62,7 +60,7 @@ tagline: Spring, 2015
     \]
 
 
-**Mar 13**: Writing [R](http://www.r-project.org) packages; [roxygen2](https://github.com/klutometis/roxygen)
+**Mar 20**: Writing [R](http://www.r-project.org) packages; [roxygen2](https://github.com/klutometis/roxygen)
     \[
     [S](../assets/lectures/08_rpack.pdf) |
     [N](../assets/lectures/08_rpack_withnotes.pdf) |
@@ -70,7 +68,7 @@ tagline: Spring, 2015
     \]
 
 
-**Mar 20**: Software testing and debugging
+**Mar 27**: Software testing and debugging
     \[
     [S](../assets/lectures/09_testdebug.pdf) |
     [N](../assets/lectures/09_testdebug_withnotes.pdf) |
@@ -78,7 +76,10 @@ tagline: Spring, 2015
     \]
 
 
-**Mar 27**:  Big jobs/simulations; caching computations
+**Apr 3**: **No class (Spring break)**
+
+
+**Apr 10**:  Big jobs/simulations; caching computations
     \[
     [S](../assets/lectures/10_bigjobs.pdf) |
     [N](../assets/lectures/10_bigjobs_withnotes.pdf) |
@@ -86,10 +87,7 @@ tagline: Spring, 2015
     \]
 
 
-**Apr 3**: **No class (Spring break)**
-
-
-**Apr 10**: Knitr with LaTeX for papers
+**Apr 17**: Knitr with LaTeX for papers
     \[
     [S](../assets/lectures/11_knitrpapers.pdf) |
     [N](../assets/lectures/11_knitrpapers_withnotes.pdf) |
@@ -97,7 +95,7 @@ tagline: Spring, 2015
     \]
 
 
-**Apr 17**: Knitr with LaTeX for talks and posters
+**Apr 24**: Knitr with LaTeX for talks and posters
     \[
     [S](../assets/lectures/12_talks_posters.pdf) |
     [N](../assets/lectures/12_talks_posters_withnotes.pdf) |
@@ -105,7 +103,7 @@ tagline: Spring, 2015
     \]
 
 
-**Apr 24**: [Python](http://www.python.org/) for data/text manipulation
+**May 1**: [Python](http://www.python.org/) for data/text manipulation
     \[
     [S](../assets/lectures/13_python.pdf) |
     [N](../assets/lectures/13_python_withnotes.pdf) |
@@ -113,11 +111,12 @@ tagline: Spring, 2015
     \]
 
 
+<!--
 **May 1**:  [Python](http://www.python.org/) Laboratory
     \[
     [C](https://github.com/kbroman/Tools4RR/tree/master/14_Python_Lab/)
     \]
-
+-->
 
 **May 8**:  Software/data licenses, copyright, and human subjects/HIPAA
     \[
