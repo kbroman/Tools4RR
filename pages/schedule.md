@@ -68,18 +68,21 @@ tagline: Spring, 2015
     \]
 
 
-**Mar 27**: Software testing and debugging
+**Mar 27**: **No class**
+
+
+
+**Apr 3**: **No class (Spring break)**
+
+
+**Apr 10**:  Software testing and debugging
     \[
     [S](../assets/lectures/09_testdebug.pdf) |
     [N](../assets/lectures/09_testdebug_withnotes.pdf) |
     [C](https://github.com/kbroman/Tools4RR/tree/master/09_TestingDebugging/Examples/ReadMe.md)
     \]
 
-
-**Apr 3**: **No class (Spring break)**
-
-
-**Apr 10**:  Big jobs/simulations; caching computations
+**Apr 17**: Big jobs/simulations; caching computations
     \[
     [S](../assets/lectures/10_bigjobs.pdf) |
     [N](../assets/lectures/10_bigjobs_withnotes.pdf) |
@@ -87,19 +90,11 @@ tagline: Spring, 2015
     \]
 
 
-**Apr 17**: Knitr with LaTeX for papers
+**Apr 24**: Knitr with LaTeX for papers
     \[
     [S](../assets/lectures/11_knitrpapers.pdf) |
     [N](../assets/lectures/11_knitrpapers_withnotes.pdf) |
     [C](https://github.com/kbroman/Tools4RR/tree/master/11_KnitrPapers/Examples)
-    \]
-
-
-**Apr 24**: Knitr with LaTeX for talks and posters
-    \[
-    [S](../assets/lectures/12_talks_posters.pdf) |
-    [N](../assets/lectures/12_talks_posters_withnotes.pdf) |
-    [C](https://github.com/kbroman/Tools4RR/tree/master/12_KnitrTalksPosters/Examples)
     \]
 
 
@@ -111,12 +106,6 @@ tagline: Spring, 2015
     \]
 
 
-<!--
-**May 1**:  [Python](http://www.python.org/) Laboratory
-    \[
-    [C](https://github.com/kbroman/Tools4RR/tree/master/14_Python_Lab/)
-    \]
--->
 
 **May 8**:  Software/data licenses, copyright, and human subjects/HIPAA
     \[
@@ -128,4 +117,20 @@ tagline: Spring, 2015
 
 S = slides; N = slides with notes; C = code
 
-**[Resources and further reading](resources.html)**
+---
+
+- [Resources and further reading](resources.html)
+
+- Skipped material
+
+  - Knitr with LaTeX for talks and posters
+      \[
+      [S](../assets/lectures/12_talks_posters.pdf) |
+      [N](../assets/lectures/12_talks_posters_withnotes.pdf) |
+      [C](https://github.com/kbroman/Tools4RR/tree/master/12_KnitrTalksPosters/Examples)
+      \]
+
+  - [Python](http://www.python.org/) Laboratory
+      \[
+      [C](https://github.com/kbroman/Tools4RR/tree/master/14_Python_Lab/)
+      \]
