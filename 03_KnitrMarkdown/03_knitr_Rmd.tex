@@ -63,7 +63,7 @@
 \centerline{\Large \href{http://kbroman.github.io/knitr_knutshell}{\tt bit.ly/knitrknutshell}}
 
 \note{I wrote a short tutorial on knitr, covering a bit more than I'll
-  cover in this lecture. 
+  cover in this lecture.
 
   I'd be glad for suggestions, corrections, or questions.
 }
@@ -144,7 +144,7 @@ What if you used the wrong version of the data?
 
 \href{https://github.com/kbroman/Tools4RR/blob/master/03_KnitrMarkdown/Examples/example1.Rmd}{Input to knitr}:
 \begin{lstlisting}
-We see that this is an intercross with `r nind(sug)` 
+We see that this is an intercross with `r nind(sug)`
 individuals. There are `r nphe(sug)` phenotypes, and genotype
 data at `r totmar(sug)` markers across the `r nchr(sug)`
 autosomes.  The genotype data is quite complete.
@@ -158,7 +158,7 @@ plot(sug)
 
 \href{https://github.com/kbroman/Tools4RR/blob/master/03_KnitrMarkdown/Examples/example1.md}{Output from knitr}:
 \begin{lstlisting}
-We see that this is an intercross with 163 
+We see that this is an intercross with 163
 individuals. There are 6 phenotypes, and genotype
 data at 93 markers across the 19
 autosomes.  The genotype data is quite complete.
@@ -167,14 +167,14 @@ autosomes.  The genotype data is quite complete.
 plot(sug)
 ```
 
-![plot of chunk summary_plot](RmdFigs/summary_plot.png) 
+![plot of chunk summary_plot](RmdFigs/summary_plot.png)
 \end{lstlisting}
 
 
 \note{The basic idea in knitr is that your regular text document will
   be interrupted by chunks of code delimited in a special way.
 
-  This example is with R Markdown. 
+  This example is with R Markdown.
 
   There are in-line bits of code indicated with backticks.
   When the document is processed by knitr, they'll be evaluated and
@@ -228,7 +228,7 @@ in monospace.</p>
 language that web pages are written in. html really isn't that hard;
 it's just cumbersome.
 
-An html document contains pairs of tags to indicate content, like 
+An html document contains pairs of tags to indicate content, like
 {\tt <h1>} and {\tt </h1>} to indicate that the enclosed text is a
 ``level one header'', or {\tt <em>} and {\tt </em>} to indicate emphasis
 (generally italics). A web browser will parse the html tags and
@@ -236,7 +236,7 @@ render the web page, often using a cascading style sheet (CSS) to
 define the precise style of the different elements.
 
 Note that there are six levels of headers, with tags
-{\tt <h1>}, {\tt <h2>}, {\tt <h3>}, \dots, {\tt <h6>}. 
+{\tt <h1>}, {\tt <h2>}, {\tt <h3>}, \dots, {\tt <h6>}.
 Think of these as the title,
 section, subsection, sub-subsection, \dots
 }
@@ -340,12 +340,12 @@ And it's easy to create links, like to
 
 \bi
 \itemsep12pt
-\item \href{http://www.rstudio.com/ide/docs/r_markdown}{R Markdown} is a variant of Markdown, developed at
+\item \href{http://rmarkdown.rstudio.com}{R Markdown} is a variant of Markdown, developed at
   \href{http://www.rstudio.com}{RStudio.com}
 \item Markdown + KnitR + extras
 \item A few extra marks
 \item \href{http://www.rstudio.com/ide/docs/authoring/using_markdown_equations}{\LaTeX\ equations}
-\item Bundle images into the final html file 
+\item Bundle images into the final html file
 \ei
 
 \note{R Markdown is a variant of Markdown developed by the folks at
@@ -396,7 +396,7 @@ help(read.cross)
 
 You can (and should) assign names to the code chunks. It will make it
 easier to fix errors, and figure files will be named based on the
-name of the chunk that produces them. 
+name of the chunk that produces them.
 
 Code chunks can also have options, like {\tt include=FALSE} and {\tt eval=FALSE}.
 And you can define global options, which will apply to all subsequent
@@ -410,7 +410,7 @@ chunks.
 \vspace{6pt}
 
 \renewcommand{\arraystretch}{1.3}
-\begin{tabular}{ll} 
+\begin{tabular}{ll}
 {\tt echo=FALSE}     & \lolit Don't include the code \\
 {\tt results="hide"} & \lolit Don't include the output \\
 {\tt include=FALSE}  & \lolit Don't show code or output \\
@@ -445,7 +445,7 @@ There are \href{http://yihui.name/knitr/options#chunk_options}{lots of chunk opt
 \begin{lstlisting}
 ```{r knitr_options, include=FALSE}
 opts_chunk$set(fig.width=12, fig.height=4, fig.path='Figs/',
-               warning=FALSE, message=FALSE, 
+               warning=FALSE, message=FALSE,
                include=FALSE, echo=FALSE)
 set.seed(53079239)
 ```
@@ -471,6 +471,9 @@ plot(x, y)
 
   And I'll set some default choice for figure heights and widths but
   then adjust them a bit in particular figures.
+
+  You may need to include {\tt {\textbackslash}library(knitr)} before the
+  {\tt opts\_chunk\$set()} (for example, within RStudio).
 }
 \end{frame}
 
@@ -491,7 +494,7 @@ opts_knit$set(progress = TRUE, verbose = TRUE)
 \vfill
 \bi
 \itemsep12pt
-\item It's easy to confuse global \href{http://yihui.name/knitr/options#chunk_options}{chunk options} with 
+\item It's easy to confuse global \href{http://yihui.name/knitr/options#chunk_options}{chunk options} with
 \href{http://yihui.name/knitr/options#package_options}{package options}.
 \item I've not used package options.
 \item So focus on {\tt \hilit opts\_chunk\$set()} not {\tt
@@ -499,7 +502,7 @@ opts_knit$set(progress = TRUE, verbose = TRUE)
 \ei
 
 \note{If you are doing something fancy, you may need knitr package
-  options, but I've not used them. 
+  options, but I've not used them.
 
   I've gotten confused about them, though: {\tt opts\_chunk\$set}
   vs. {\tt opts\_knit\$set}.
@@ -513,7 +516,7 @@ opts_knit$set(progress = TRUE, verbose = TRUE)
 \vspace{24pt}
 
 \begin{lstlisting}
-We see that this is an intercross with `r nind(sug)` 
+We see that this is an intercross with `r nind(sug)`
 individuals. There are `r nphe(sug)` phenotypes, and genotype
 data at `r totmar(sug)` markers across the `r nchr(sug)`
 autosomes.  The genotype data is quite complete.
@@ -553,7 +556,7 @@ autosomes.  The genotype data is quite complete.
 \item {\tt cor(x,y)} might produce {\tt \vhilit 0.8992877}, but
 I want {\tt \hilit 0.90}.
 
-\item {\tt round(cor(x,y), 2)}, would give {\tt \vhilit 0.9}, but I want 
+\item {\tt round(cor(x,y), 2)}, would give {\tt \vhilit 0.9}, but I want
 {\tt \hilit 0.90}.
 
 \item You could use {\tt sprintf("\%.2f", cor(x,y))}, but
@@ -565,7 +568,7 @@ I want {\tt \hilit 0.90}.
 \item {\tt myround(cor(x,y), 2)} solves both issues.
 \ei
 
-\note{I'm very particular about rounding. You should too.
+\note{I'm very particular about rounding. You should be too.
 
   If you're a C programmer, sprintf seems natural. No one else agrees.
 
@@ -665,7 +668,7 @@ knitr_example.html: knitr_example.Rmd
    (tell future users what to do)
 \item Include a chunk with {\tt sessionInfo()} at the end
 \item For simulations, use {\tt set.seed} in your first
-   chunk. 
+   chunk.
 \ei
 
 \note{That you've used knitr doesn't mean the work is really {\nvhilit
@@ -673,7 +676,7 @@ knitr_example.html: knitr_example.Rmd
   others, they need to know what packages were used and how to compile it,
   and then they need to be able to compile it on their system.
 
-  The complicated alternative to {\tt R --vanilla} is if you want to 
+  The complicated alternative to {\tt R --vanilla} is if you want to
   still load {\tt {\textasciitilde}/.Renviron}, for example, to define
   {\tt R\_LIBS}.
 
@@ -713,7 +716,7 @@ plot(x,y)
 \bi
 \itemsep8pt
 \item The default is for KnitR/R Markdown is to use the {\tt png()}
-  graphics device. 
+  graphics device.
 \item Use another graphics device with the chunk option {\tt dev}.
 \item Pass arguments to the graphics device via the chunk
   option {\tt dev.args}.
@@ -807,4 +810,3 @@ Focus your compulsive behavior on things that matter.
 
 
 \end{document}
-
