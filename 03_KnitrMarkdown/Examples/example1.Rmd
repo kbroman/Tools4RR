@@ -1,5 +1,5 @@
 <link href="http://kevinburke.bitbucket.org/markdowncss/markdown.css" rel="stylesheet"></link>
-<link href="http://www.biostat.wisc.edu/~kbroman/markdown_modified.css" rel="stylesheet"></link>
+<link href="http://kbroman.org/qtlcharts/assets/vignettes/markdown_modified.css" rel="stylesheet"></link>
 
 ## Knitr/R Markdown example
 
