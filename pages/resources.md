@@ -261,6 +261,8 @@ title:  Resources and further reading
 - [Understanding open source and free software licensing (book)](http://oreilly.com/openbook/osfreesoft/book/)
 - [The whys and hows of licensing scientific code](http://www.astrobetter.com/the-whys-and-hows-of-licensing-scientific-code/)
   by [Jake VanderPlas](http://www.astrobetter.com/author/jakevdp/)
+- [A quick guide to software licensing for the scientist-programmer](http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2Fjournal.pcbi.1002598)
+  (Morin et al. PLoS Comput Biol 8:e1002598, 2012)
 - [Creative Commons licenses](https://creativecommons.org/licenses/)
 - [tl;dr legal: Software licenses in plain English](https://tldrlegal.com/)
 - [MIT license at wikipedia](http://en.wikipedia.org/wiki/MIT_License)
