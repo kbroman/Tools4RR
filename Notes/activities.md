@@ -1,5 +1,9 @@
 ## Ideas for activities
 
+- For each day, have a super-brief summary of the lecture.
+- For each activity, have a slide with the instructions + basic commands
+
+
 **Jan 23**: Introduction; basic principles; [GNU Make](http://www.gnu.org/software/make/)
 
 - Plain lecture
@@ -20,9 +24,10 @@
 **Feb 20**: Version control with [git](http://git-scm.com/) & [github](https://github.com/)/[bitbucket](https://bitbucket.org/)
 
 - git setup + connection to github
-- use of git locally
-- practice personal connection to github
-
+- use of git locally: `init`, `add`, `commit`, `status`, `log`
+- practice branching and merging
+- going back
+- practice personal connection to github?
 
 **Feb 27**: [git](http://git-scm.com)/[GitHub](https://github.com) Laboratory
 
