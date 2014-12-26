@@ -2,6 +2,7 @@
 layout: page
 title: Tools for Reproducible Research
 tagline: Spring, 2015
+description: A course on tools for reproducible research, UW-Madison
 ---
 
 

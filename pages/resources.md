@@ -1,6 +1,7 @@
 ---
 layout: page
 title:  Resources and further reading
+description: Links to resources on reproducible research
 ---
 
 ### Reproducible research

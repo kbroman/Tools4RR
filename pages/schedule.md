@@ -2,6 +2,7 @@
 layout: page
 title:  Schedule
 tagline: Spring, 2015
+description: Schedule (and links to lecture notes) for the Tools for Reproducible Research course
 ---
 
 (_Schedule subject to change._)
