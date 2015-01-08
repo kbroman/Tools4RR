@@ -237,8 +237,8 @@ description: Links to resources on reproducible research
 ### Python
 
 - [Python for biologists](http://pythonforbiologists.com/index.php/introduction-to-python-for-biologists/)
-- [Programming with pythong](http://software-carpentry.org/v5/book.html#programming-with-python)
-  in the [Software Carpentry](http://software-carpentry.org) [book](http://software-carpentry.org/v5/book.html)
+- [Programming with python](http://software-carpentry.org/v5/novice/python/index.html)
+  from [Software Carpentry](http://software-carpentry.org)
 - [Python Scientific lecture notes](http://scipy-lectures.github.io/)
 - [IPython](http://ipython.org/)
 - [IPython notebook](http://ipython.org/notebook)
