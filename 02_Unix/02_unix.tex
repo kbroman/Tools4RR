@@ -250,7 +250,6 @@ alias Rcc='R CMD check --as-cran --library=/Users/kbroman/Rlibs'
 
 The most important variable is {\tt PATH}: it defines the set of
 directories where the shell will look for executable programs.
-
 If ``{\tt .}'' isn't part of your {\tt PATH}, you'll need to type
 something like {\tt ./myscript.py} to execute a script in your working
 directory. So put ``{\tt .}'' in your {\tt PATH}.
@@ -258,10 +257,12 @@ directory. So put ``{\tt .}'' in your {\tt PATH}.
 My {\tt .bash\_profile} file sources a {\tt .bashrc} file; I don't
 quite understand when one is used versus the other. Google ``{\tt .bashrc
 vs .bash\_profile}.''
-
 There are links to my {\tt .bash\_profile} and {\tt .bashrc} files on
 the resources page at the course web site; some of it might just be
 total crap.
+
+If you're using Windows and Git Bash, the {\tt .bash\_profile} file
+will be in your Documents folder.
 
 Important note: use of aliases within your code will create
 reproducibility issues; another user will need those same aliases.
