@@ -11,7 +11,7 @@ description: Schedule (and links to lecture notes) for the Tools for Reproducibl
     \[
     [S](../assets/lectures/01_intro.pdf) |
     [N](../assets/lectures/01_intro_withnotes.pdf) |
-    [C](https://github.com/kbroman/Tools4RR/tree/master/01_Intro/Examples)
+    [C](https://github.com/kbroman/Tools4RR/tree/master/01_Intro/Examples) |
     [H](../assets/homework/01_homework.pdf)
     \]
 
