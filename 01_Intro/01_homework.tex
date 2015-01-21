@@ -1,0 +1,102 @@
+\documentclass[12pt]{article}
+
+\usepackage{times}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+\hypersetup{pdfpagemode=UseNone} % don't show bookmarks on initial view
+\definecolor{hilit}{RGB}{122,0,128}
+\hypersetup{colorlinks, urlcolor={hilit}}
+\newcommand{\ttsm}{\tt \small}
+
+
+% revise margins
+\setlength{\headheight}{0.0in}
+\setlength{\topmargin}{0.0in}
+\setlength{\headsep}{0.0in}
+\setlength{\textheight}{8.65in}
+\setlength{\footskip}{0.35in}
+\setlength{\oddsidemargin}{0.0in}
+\setlength{\evensidemargin}{0.0in}
+\setlength{\textwidth}{6.5in}
+
+\setlength{\parskip}{6pt}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+Tools for Reproducible Research \\
+Week 1 Homework
+
+\bigskip
+
+\begin{enumerate}
+\addtocounter{enumi}{-1}
+\item Install a bunch of software on your laptop.
+
+  \begin{enumerate}
+  \item Windows
+
+    \begin{itemize}
+    \item \href{http://cran.rstudio.com/bin/windows/base/}{R}
+    \item \href{http://cran.rstudio.com/bin/windows/Rtools/Rtools32.exe}{Rtools}
+    \item \href{http://www.rstudio.com/products/rstudio/download/}{RStudio}
+    \item \href{http://msysgit.github.io/}{Git Bash}
+    \item An editor, such as \href{http://notepad-plus-plus.org/download}{Notepad++}
+    \item \href{http://miktex.org/download}{MikTeX} (for LaTeX)
+      (You'll want to add MikTex to your {\ttsm PATH}; see
+      \href{http://superuser.com/questions/502358/easier-way-to-change-environment-variables-in-windows-8}{this page}.)
+    \end{itemize}
+
+
+  \item Mac
+
+    \begin{itemize}
+    \item \href{http://cran.rstudio.com/bin/macosx/}{R}
+    \item \href{http://www.rstudio.com/products/rstudio/download}{RStudio}
+    \item Xcode command line tools (see
+      \href{http://railsapps.github.io/xcode-command-line-tools.html}{this
+        page})
+    \item \href{http://git-scm.com/download/mac}{git} (or
+      via \href{http://brew.sh/}{Homebrew}: {\ttsm brew install git})
+    \item Perhaps \href{http://iterm2.com/}{iTerm2}
+    \item \href{https://tug.org/mactex/}{MacTeX} (for LaTeX)
+    \end{itemize}
+
+  \end{enumerate}
+
+\item Visit the following doodle poll and indicate your preferred
+  times for office hours.
+
+  \href{http://doodle.com/rrw8skdzadnymide}{\ttsm bit.ly/BromanSpring2015OfficeHours}
+
+
+\item Download the course repository.
+
+  \begin{enumerate}
+  \item Open a terminal window.
+  \item Type {\ttsm git clone git://github.com/kbroman/Tools4RR}
+  \end{enumerate}
+
+\item Try out GNU Make.
+
+  \begin{enumerate}
+  \item Change to the Lec 1 examples directory: \\
+    {\ttsm cd Tools4RR/01\_Intro/Examples}
+  \item Create a subdirectory for the figures: \\
+    {\ttsm mkdir Figs}
+  \item Use make to create {\ttsm Figs/fig1.pdf}: \\
+    {\ttsm make Figs/fig1.pdf}
+  \item Make the whole paper:\\
+    {\ttsm make}
+  \item Use the {\ttsm Makefile\_fancy} file to remove all the
+    pdfs:\\
+    {\ttsm make -f Makefile\_fancy clean}
+  \end{enumerate}
+
+\end{enumerate}
+
+
+\end{document}

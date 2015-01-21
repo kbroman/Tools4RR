@@ -12,6 +12,10 @@ ${LEC}.pdf: ${LEC}.tex ../LaTeX/header.tex
 
 notes: ${LEC}_withnotes.pdf
 all: ${LEC}.pdf notes web dropbox
+hw: ${LECNUM}_homework.pdf
+
+${LECNUM}_homework.pdf: ${LECNUM}_homework.tex
+	pdflatex $<
 
 ${LEC}_withnotes.pdf: ${LEC}_withnotes.tex ../LaTeX/header.tex
 	xelatex ${LEC}_withnotes
