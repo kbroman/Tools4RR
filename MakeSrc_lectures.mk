@@ -5,11 +5,12 @@
 WEBDIR = ../Web/assets/lectures
 DROPBOXDIR = ~/Dropbox/Teaching/Tools4RR
 
+pdf: ${LEC}.pdf notes
+
 ${LEC}.pdf: ${LEC}.tex ../LaTeX/header.tex
 	xelatex ${LEC}
 
 notes: ${LEC}_withnotes.pdf
-pdf: ${LEC}.pdf notes
 all: ${LEC}.pdf notes web dropbox
 
 ${LEC}_withnotes.pdf: ${LEC}_withnotes.tex ../LaTeX/header.tex
