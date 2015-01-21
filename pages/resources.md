@@ -51,6 +51,7 @@ description: Links to resources on reproducible research
 - Book: [Learning the bash shell](http://www.amazon.com/exec/obidos/ASIN/0596009658/7210-20)
 - [Karl](http://kbroman.org)'s [`.bash_profile`](../assets/dot.bash_profile) and
   [`.bashrc`](../assets/dot.bashrc) files
+- [How to install the Xcode command line tools (Mac)](http://railsapps.github.io/xcode-command-line-tools.html)
 
 
 ### RStudio, emacs, vim
