@@ -1,8 +1,0 @@
-
-Activity for first class: have pairs/trios talk to each other
-
-1. What percent of scientific (or statistics) articles have code
-   available for reproducing the results?
-
-2. What are your main concerns, in keeping the data and software for a
-   project well-organized?
