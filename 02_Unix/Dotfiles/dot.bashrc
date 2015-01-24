@@ -1,9 +1,7 @@
 # .bashrc
 
 # node.js
-. ~/.bin/nvm/nvm.sh             # node version manager
-nvm use v0.8.18  > /dev/null     # current version of node
-export NODE_PATH=~/.bin/nvm/v0.8.18/lib/node_modules/
+export NODE_PATH=/usr/local/lib/node
 
 # ruby
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
@@ -12,23 +10,11 @@ export PATH=/usr/local/bin:$PATH
 export PATH=$HOME/.anaconda/anaconda/bin:$PATH
 export PATH=$HOME/.anaconda/anaconda/envs/py33/bin:$PATH
 export PATH=$PATH:.:$HOME/.bin:$HOME/.bin/genetics:$HOME/Projects/Db:$HOME/.bin/genetics/qtlcart
-export PATH=$PATH:$HOME/Projects/Fuchs_May05/ELOD/Perl 
+export PATH=$PATH:$HOME/Projects/Fuchs_May05/ELOD/Perl
 export PATH=$PATH:/usr/local/gcc4.0/bin
 export PATH=$PATH:$HOME/.bin/genetics/bowtie-0.12.7:$HOME/.bin/genetics/samtools-0.1.12a:$HOME/.bin/genetics/tophatInstall/bin:$HOME/.bin/genetics/ncbi-blast-2.2.24+/bin
-export SHELL=/bin/bash 
+export SHELL=/bin/bash
 export MANPATH=$MANPATH:/usr/X11R6/man
-
-# latex stuff located in /opt/local/share/texmf-dist/tex/latex
-#   [now actually /opt/local/share/texmf-texlive-dist/tex/latex/]
-#    if you add stuff; run "sudo texhash"
-# 
-# to ensure that latex uses letter paper, do:
-#      sudo texinfo dvips paper letterPaper
-# or   sudo texconfig paper letter
-
-# need the following to use boost
-export LD_LIBRARY_PATH=/usr/local/lib
-
 
 export GS_OPTIONS="-dAutoRotatePages=/None"
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
@@ -49,7 +35,7 @@ alias ll='ls -lh'
 alias 'll.'='ls -Alh'
 alias md='mkdir'
 alias rd='rmdir'
-alias rmb='rm .*~ *~ *.bak *.bk!' 
+alias rmb='rm .*~ *~ *.bak *.bk!'
 alias rmdvi='\rm *.dvi *.aux *.log'
 
 alias lprrotate='enscript -r -MLetter'
@@ -60,13 +46,12 @@ alias gvl='gv -landscape'
 alias gitpush='git push;git push --tags'
 
 alias Ri='R CMD INSTALL --library=/Users/kbroman/Rlibs'
-alias Rcc='R CMD check --as-cran --library=/Users/kbroman/Rlibs'
 alias Rc='R CMD check --library=/Users/kbroman/Rlibs'
+alias Rcc='R CMD check --as-cran --library=/Users/kbroman/Rlibs'
 alias Rb='R CMD build --force --resave-data'
+alias Rbb='R CMD build --no-build-vignettes'
 
 alias host='echo $HOSTNAME'
-alias KarlBook4='ssh -2 -X KarlBook4.local'
-alias fig='ssh -2 -X fig.local'
 
 alias so='source ~/.bash_profile'
 
