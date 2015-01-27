@@ -41,7 +41,8 @@ data analyses, papers, presentations, posters) are reproducible.
 [1116 Biochem, 420 Henry Mall](http://map.wisc.edu/s/psk50tw2)
 \[[directions](pages/directions.html)\]
 
-**Office hours**: Wed &amp; Thur, 2:30&ndash;3:30pm (or by appointment)
+**Office hours**: Wed &amp; Thur, 2:30&ndash;3:30pm (or by
+  appointment) [**not available 29 Jan**]
 
 **[Schedule](pages/schedule.html)** (_<font color="#9411dB">with links to lecture notes</font>_)
 
