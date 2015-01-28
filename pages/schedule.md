@@ -19,7 +19,9 @@ description: Schedule (and links to lecture notes) for the Tools for Reproducibl
     \[
     [S](../assets/lectures/02_unix.pdf) |
     [N](../assets/lectures/02_unix_withnotes.pdf) |
-    [C](https://github.com/kbroman/Tools4RR/tree/master/02_Unix/Dotfiles)
+    [C](https://github.com/kbroman/Tools4RR/tree/master/02_Unix/Dotfiles) |
+    [H](../assets/homework/02_homework.pdf) |
+    [HS](../assets/homework/02_hw_solutions.pdf)
     \]
 
 **Feb 6**:  [Knitr](http://yihui.name/knitr/) with [Markdown](http://daringfireball.net/projects/markdown/) for basic reports
@@ -117,7 +119,8 @@ description: Schedule (and links to lecture notes) for the Tools for Reproducibl
 
 ---
 
-S = slides; N = slides with notes; C = code; H = homework
+S = slides; N = slides with notes; C = code; H = homework; HS =
+homework solutions
 
 ---
 
