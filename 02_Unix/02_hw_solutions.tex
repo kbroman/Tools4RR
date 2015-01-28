@@ -43,12 +43,33 @@ Week 2 Homework \textbf{Solutions}
 
   \item How many {\ttsm .txt} files are there?
 
+    {\tt ls -l names/*.txt | wc -l}
+
+    There are \textbf{134} text files.
+
   \item How many total lines are in those {\ttsm .txt} files?
+
+    {\tt wc -l names/*.txt | grep total}
+
+    There are \textbf{1,792,091} total lines.
 
   \item Across all of the files, how many lines contain the name
     ``Pat''?
 
+    {\tt grep 'Pat,' names/*.txt | wc -l}
+
+    There are \textbf{213} lines with the name ``Pat''.
+
   \item How many contain the name ``Pat'' as a boy? As a girl?
+
+    {\tt grep 'Pat,M,' names/*.txt | wc -l}
+
+    There are \textbf{124} lines with the name ``Pat'' as a boy.
+
+    {\tt grep 'Pat,F,' names/*.txt | wc -l}
+
+    There are \textbf{89} lines with the name ``Pat'' as a girl.
+
   \end{enumerate}
 
 \end{enumerate}
