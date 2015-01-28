@@ -381,7 +381,8 @@ $ fg
 
 \note{Use {\tt \&} to run a job in the background.
 
-Use ctrl-Z to suspend the current job. Then use {\tt bg} to then put it in
+Use ctrl-Z to suspend the current job (but this doesn't work in
+Windows). Then use {\tt bg} to then put it in
 the background or {\tt fg} to bring it back to the foreground.
 
 I use ctrl-Z and {\tt bg} if I had forgotten to use {\tt \&}.
@@ -390,6 +391,150 @@ I use ctrl-Z with emacs sometimes, to do some command-line things
 without opening another shell/terminal; I'll then use {\tt fg} to
 bring emacs back. Or I'll forget about it and muck a bunch of stuff
 up.
+}
+\end{frame}
+
+
+\begin{frame}[c]{Moving around the command line}
+
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{ll}
+{\tt ctrl-f, ctrl-b} & \color{lolit} move forward and back \\
+{\tt ctrl-a, ctrl-e} & \color{lolit}  move to beginning and end of line \\
+{\tt ctrl-k, ctrl-u} & \color{lolit}  delete rest of line, or to the start \\
+{\tt ctrl-l} & \color{lolit}  clear the screen \\
+{\tt ctrl-c} & \color{lolit}  cancel what you've typed \\
+{\tt tab} & \color{lolit}  autocomplete command or file \\
+{\tt ctrl-p, ctrl-n} & \color{lolit}  forward and backward in history \\
+{\tt ctrl-r} & \color{lolit}  search for a previous command
+\end{tabular}
+
+\note{These are mostly emacs-like key ``bindings''.}
+\end{frame}
+
+
+
+\begin{frame}{How to solve computing problems}
+
+\vspace{24pt}
+
+\bi
+\item {\color{vhilit} Try stuff!}
+\item man pages and help files
+\item {\tt blah -h} or {\tt blah --help}
+\item \href{http://www.google.com}{Google}
+\item \href{http://stackoverflow.com}{Stackoverflow} and other
+  \href{http://stackexchange.com}{StackExchange} sites
+\item \href{http://www.google.com}{Google} with {\tt site:stackoverflow.com}
+\item email lists and google groups
+\item friends or colleagues
+\item \href{http://twitter.com}{Twitter}
+\item Buy a book. Buy {\color{vhilit} all} of the books.
+\ei
+
+\note{You will run into crazy and mysterious errors. Will you give up, or
+  figure them out?
+
+  Rule number 1: try stuff. Figure out how something works by trying
+  it out in different ways.
+
+  Rule number 2: Google. Google the exact error message, or a part of
+  an error message. You'll often get to a stackexchange site; don't
+  forget to read the comments as well as the answers. Often the best
+  answer is in a comment.
+
+  Rule number 3: Ask for help. Talk to your friends. Talk to me.
+  Post a question at a stackexchange site.
+
+  I'm a relatively recent convert to Twitter. I focus on just a few
+  things that interest me (mostly academic publishing, reproducible
+  research, and interactive graphics). If you tweet a question, you'll
+  be surprised at how quickly you get an answer.
+
+  I do tend to buy all possible books on a topic that is of even
+  passing interest to me. I read at least part of each of them.
+}
+\end{frame}
+
+
+\begin{frame}{Examples}
+
+\vspace{24pt}
+
+\bi
+\item How do you suppress warnings in knitr?
+\item What symbol corresponds to the unicode {\tt {\textbackslash}u00B1}?
+\item What's the difference between {\tt curl} and {\tt wget}?
+\item What does "{\tt 502 Bad Gateway}" mean?
+\item "{\tt To open gs you need to install X11}"
+\item {\tt mclapply} isn't working in Windows
+\item How to ping a server in Python?
+\item {\tt Font shape `EU1/pplx/m/n' undefined}
+\item {\tt except KeyError, k: raise AttributeError, k}
+\ei
+
+\note{These are examples of things you might search for.
+
+If you don't understand an error message, start by pasting it into
+google.
+}
+\end{frame}
+
+
+\begin{frame}[c]{Important principle}
+
+\centerline{Learn to code by looking at good code.}
+
+\note{Identify programmers that you respect (e.g., Hadley Wickham),
+  and study what they do.
+}
+\end{frame}
+
+
+
+\begin{frame}{Choose a good editor}
+
+\vspace{24pt}
+
+\bi
+\itemsep12pt
+\item \href{http://www.emacswiki.org/emacs/}{Emacs}
+\item \href{http://www.vim.org/}{VIM}
+\item \href{http://www.rstudio.com/ide/}{RStudio}
+\item \href{http://www.barebones.com/products/textwrangler/}{Textwrangler}
+\item \href{http://notepad-plus-plus.org/}{Notepad++}
+\item \href{http://www.sublimetext.com/}{Sublime Text}
+\item \href{https://atom.io/}{Atom}
+\ei
+
+\note{I use emacs; I should probably use vim.
+
+  RStudio is increasingly
+  useful, but as a general editor (for things that aren't R), I think
+  it's insufficient.
+
+  The choice of editor is very personal.
+}
+\end{frame}
+
+
+\begin{frame}{A good editor}
+
+\vspace{24pt}
+
+\bi
+\itemsep12pt
+\item Doesn't require pointing-and-clicking
+\item Easy to get code between R and a script
+\item Syntax highlighting of code
+\item Automatic indentation
+\item Close parentheses/brackets/braces
+\item Browse code across files
+\item Integrated with other tools (e.g., version control)
+\ei
+
+\note{I've not figured out how to explore code across a set of files
+  in emacs; otherwise I'm very happy with it.
 }
 \end{frame}
 
@@ -529,26 +674,6 @@ $ open http://google.com
 \end{frame}
 
 
-
-\begin{frame}[c]{Moving around the command line}
-
-\renewcommand{\arraystretch}{1.3}
-\begin{tabular}{ll}
-{\tt ctrl-f, ctrl-b} & \color{lolit} move forward and back \\
-{\tt ctrl-a, ctrl-e} & \color{lolit}  move to beginning and end of line \\
-{\tt ctrl-k, ctrl-u} & \color{lolit}  delete rest of line, or to the start \\
-{\tt ctrl-l} & \color{lolit}  clear the screen \\
-{\tt ctrl-c} & \color{lolit}  cancel what you've typed \\
-{\tt tab} & \color{lolit}  autocomplete command or file \\
-{\tt ctrl-p, ctrl-n} & \color{lolit}  forward and backward in history \\
-{\tt ctrl-r} & \color{lolit}  search for a previous command
-\end{tabular}
-
-\note{These are mostly emacs-like key ``bindings''.}
-\end{frame}
-
-
-
 \begin{frame}[c]{File modes}
 
 \centerline{\includegraphics[width=\textwidth]{Figs/chmod.png}}
@@ -598,129 +723,7 @@ chmod 700 Private\_stuff
 \end{frame}
 
 
-\begin{frame}{How to solve computing problems}
 
-\vspace{24pt}
-
-\bi
-\item {\color{vhilit} Try stuff!}
-\item man pages and help files
-\item {\tt blah -h} or {\tt blah --help}
-\item \href{http://www.google.com}{Google}
-\item \href{http://stackoverflow.com}{Stackoverflow} and other
-  \href{http://stackexchange.com}{StackExchange} sites
-\item \href{http://www.google.com}{Google} with {\tt site:stackoverflow.com}
-\item email lists and google groups
-\item friends or colleagues
-\item \href{http://twitter.com}{Twitter}
-\item Buy a book. Buy {\color{vhilit} all} of the books.
-\ei
-
-\note{You will run into crazy and mysterious errors. Will you give up, or
-  figure them out?
-
-  Rule number 1: try stuff. Figure out how something works by trying
-  it out in different ways.
-
-  Rule number 2: Google. Google the exact error message, or a part of
-  an error message. You'll often get to a stackexchange site; don't
-  forget to read the comments as well as the answers. Often the best
-  answer is in a comment.
-
-  Rule number 3: Ask for help. Talk to your friends. Talk to me.
-  Post a question at a stackexchange site.
-
-  I'm a relatively recent convert to Twitter. I focus on just a few
-  things that interest me (mostly academic publishing, reproducible
-  research, and interactive graphics). If you tweet a question, you'll
-  be surprised at how quickly you get an answer.
-
-  I do tend to buy all possible books on a topic that is of even
-  passing interest to me. I read at least part of each of them.
-}
-\end{frame}
-
-
-\begin{frame}{Examples}
-
-\vspace{24pt}
-
-\bi
-\item How do you suppress warnings in knitr?
-\item What symbol corresponds to the unicode {\tt {\textbackslash}u00B1}?
-\item What's the difference between {\tt curl} and {\tt wget}?
-\item What does "{\tt 502 Bad Gateway}" mean?
-\item "{\tt To open gs you need to install X11}"
-\item {\tt mclapply} isn't working in Windows
-\item How to ping a server in Python?
-\item {\tt Font shape `EU1/pplx/m/n' undefined}
-\item {\tt except KeyError, k: raise AttributeError, k}
-\ei
-
-\note{These are examples of things you might search for.
-
-If you don't understand an error message, start by pasting it into
-google.
-}
-\end{frame}
-
-
-\begin{frame}[c]{Important principle}
-
-\centerline{Learn to code by looking at good code.}
-
-\note{Identify programmers that you respect (e.g., Hadley Wickham),
-  and study what they do.
-}
-\end{frame}
-
-
-
-\begin{frame}{Choose a good editor}
-
-\vspace{24pt}
-
-\bi
-\itemsep12pt
-\item \href{http://www.emacswiki.org/emacs/}{Emacs}
-\item \href{http://www.vim.org/}{VIM}
-\item \href{http://www.rstudio.com/ide/}{RStudio}
-\item \href{http://www.barebones.com/products/textwrangler/}{Textwrangler}
-\item \href{http://notepad-plus-plus.org/}{Notepad++}
-\item \href{http://www.sublimetext.com/}{Sublime Text}
-\item \href{https://atom.io/}{Atom}
-\ei
-
-\note{I use emacs; I should probably use vim.
-
-  RStudio is increasingly
-  useful, but as a general editor (for things that aren't R), I think
-  it's insufficient.
-
-  The choice of editor is very personal.
-}
-\end{frame}
-
-
-\begin{frame}{A good editor}
-
-\vspace{24pt}
-
-\bi
-\itemsep12pt
-\item Doesn't require pointing-and-clicking
-\item Easy to get code between R and a script
-\item Syntax highlighting of code
-\item Automatic indentation
-\item Close parentheses/brackets/braces
-\item Browse code across files
-\item Integrated with other tools (e.g., version control)
-\ei
-
-\note{I've not figured out how to explore code across a set of files
-  in emacs; otherwise I'm very happy with it.
-}
-\end{frame}
 
 
 \begin{frame}[c]{Don't forget to look at the resources page}
