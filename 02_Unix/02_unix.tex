@@ -298,18 +298,19 @@ Consider testing your code on a more basic account.
 
 \begin{semiverbatim}
 \begin{lstlisting}
-$ locate article.cls > output.txt
-$ locate book.cls >> output.txt
-$ grep texmf output.txt
+$ curl -L http://bit.ly/hamlet_txt > hamlet.txt
 
-$ locate article.cls | grep texmf
+$ wc -l hamlet.txt
 
-$ locate article.cls | grep texmf | less
+$ grep Ham hamlet.txt > tmp.txt
+$ wc -l tmp.txt
 
-$ locate article.cls | wc -l
-$ locate article.cls | grep texmf | wc -l
+$ grep Ham hamlet.txt | wc -l
+
+$ grep Ham hamlet.txt | less
 
 $ cat file1.txt file2.txt > combined.txt
+$ cat file3.txt >> combined.txt
 \end{lstlisting}
 \end{semiverbatim}
 
@@ -327,11 +328,12 @@ this sort of technique. There are lots of little commands (often with
 short, cryptic names) that can be combined together with great
 flexibility.
 
-Important tools mentioned here: {\tt locate} (find files matching a
-pattern; not available on Windows), {\tt grep} (search for patterns in
-a file), {\tt less} (look through long files a page at a time), {\tt wc}
-(count the number of words, lines and/or characters in a file),
-{\tt cat} (print contents of or concatenate text files)
+Important tools mentioned here: {\tt curl} (for downloading web stuff
+on the command line; {\tt -L} is to follow any re-direction; see also
+{\tt wget}), {\tt grep} (search for patterns in a file), {\tt less}
+(look through long files a page at a time), {\tt wc} (count the number
+of words, lines and/or characters in a file; {\tt -l} is for the
+number of lines), {\tt cat} (print contents or concatenate text files)
 }
 
 \end{frame}
@@ -352,6 +354,10 @@ $ ls [a-z]*
 $ ls /usr/bin/[auz]*
 
 $ ls /usr/bin/[auz]*.*
+
+$ ls -l *.txt | wc -l
+
+$ wc -l *.txt | grep total
 \end{lstlisting}
 \end{semiverbatim}
 
@@ -544,6 +550,7 @@ google.
 \begin{semiverbatim}
 \begin{lstlisting}
 $ find . -name *.py
+$ locate article.cls
 
 $ ps ux
 
@@ -560,12 +567,10 @@ $ ln -s ~/Projects/SomeFriend/Data SomeFriend_Data
 $ tar xzvf qtl_1.29-2.tar.gz
 $ tar czvf blah.tgz Blah/
 $ tar tzvf blah.tgz
-
-$ curl -O http://kbroman.org/Tools4RR/pages/resources.html
 \end{lstlisting}
 \end{semiverbatim}
 
-\note{{\tt find} is like {\tt locate}
+\note{{\tt find} and {\tt locate} for finding files.
 
 {\tt ps ux} to see what processes are running.
 
@@ -582,8 +587,6 @@ there's a copy, but it's not really copied.
 {\tt tar} is used to archive a bunch of files within a single
 file. {\tt x} for extract, {\tt c} for combine, {\tt t} for test, {\tt
   z} for compress/zip, {\tt v} for verbose, {\tt f} for ``file name to follow.''
-
-{\tt curl} (see also {\tt wget}) for grabbing something from the web.
 }
 
 \end{frame}
