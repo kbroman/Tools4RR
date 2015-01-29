@@ -22,8 +22,6 @@ description: Links to resources on reproducible research
 
 - [GNU make](http://www.gnu.org/software/make)
 - [Manual for make](http://www.gnu.org/software/make/manual/make.html)
-- [rake](http://rake.rubyforge.org) (ruby-based build program, similar
-  to make)
 - [Minimal Make tutorial](http://kbroman.org/minimal_make)
 - [Managing projects with GNU make](http://oreilly.com/catalog/make3/book/)
   book (part of the
