@@ -3,7 +3,7 @@ all: example1.html example2.html example1.md example3.html
 R_OPTS=--no-save --no-restore --no-init-file --no-site-file # --vanilla, but without --no-environ
 
 example1.html: example1.Rmd
-	Rscript ${R_OPTS} -e "library(knitr);knit2html('example1.Rmd', 'example1.html')"
+	Rscript ${R_OPTS} -e "library(knitr);knit2html('example1.Rmd')"
 
 example2.html: example2.Rasciidoc
 	Rscript ${R_OPTS} -e "library(knitr);knit('example2.Rasciidoc')"
