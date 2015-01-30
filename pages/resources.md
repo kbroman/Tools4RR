@@ -44,12 +44,15 @@ description: Links to resources on reproducible research
 - [Important unix commands](http://www.personal.kent.edu/~rmuhamma/OpSystems/unixCommands.htm)
 - [Linux quick reference guide](http://linoxide.com/guide/linux-command-shelf.html)
 - UW-Madison software carpentry [tutorial on the shell](https://github.com/UW-Madison-ACI/boot-camps/tree/2014-01-uwmadison/shell)
-- [Cygwin](http://www.cygwin.com/)
 - [A command-line murder mystery](https://github.com/veltman/clmystery)
 - Book: [Learning the bash shell](http://www.amazon.com/exec/obidos/ASIN/0596009658/7210-20)
 - [Karl](http://kbroman.org)'s [`.bash_profile`](../assets/dot.bash_profile) and
   [`.bashrc`](../assets/dot.bashrc) files
 - [How to install the Xcode command line tools (Mac)](http://railsapps.github.io/xcode-command-line-tools.html)
+- [Git Bash](http://msysgit.github.io/) and [Cygwin](http://www.cygwin.com/) for command-line
+  tools in Windows
+- [Mintty](https://code.google.com/p/mintty/) and [ConEmu](https://github.com/Maximus5/ConEmu) are
+  terminal emulators for Windows.
 
 
 ### RStudio, emacs, vim
