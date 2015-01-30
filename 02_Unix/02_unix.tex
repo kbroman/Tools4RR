@@ -81,14 +81,16 @@ Consider \href{http://msysgit.github.io/}{Git Bash}
 
 \bigskip
 
-{\color{lolit} (and perhaps \href{https://code.google.com/p/mintty/}{Mintty})}
+{\color{lolit} (and perhaps
+  \href{https://code.google.com/p/mintty/}{Mintty} or
+  \href{https://github.com/Maximus5/ConEmu}{ComEmu})}
 
 \note{Cygwin is an effort to get Unix command-line tools in Windows.
 
 Git Bash combines git (for version control) and bash (the unix shell);
 it's simpler to deal with than Cygwin.
 
-Mintty is a terminal emulator.}
+Mintty and ConEmu are terminal emulators.}
 \end{frame}
 
 \begin{frame}[c]{If you use a Mac...}
@@ -672,7 +674,11 @@ $ open http://google.com
 
 \note{I often like to open a file from the command line. If the file
   extension is known, you can use {\tt start} in Windows or {\tt open}
-  in Mac OS X.}
+  in Mac OS X.
+
+  In Linux, you may have {\tt xdg-open} (in the xdg-utils package on Ubuntu).
+  You might make an alias (e.g. {\tt open}) for that in your {\tt .bash\_profile} file.
+}
 
 \end{frame}
 
