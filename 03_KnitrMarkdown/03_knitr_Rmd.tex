@@ -549,6 +549,47 @@ autosomes.  The genotype data is quite complete.
 \end{frame}
 
 
+\begin{frame}[fragile,c]{YAML header}
+
+\vspace{24pt}
+
+\begin{lstlisting}
+---
+title: "knitr/R Markdown example"
+author: "Karl Broman"
+date: "28 January 2015"
+output: html_document
+---
+\end{lstlisting}
+
+\vspace{36pt}
+
+
+\begin{lstlisting}
+---
+title: "Another knitr/R Markdown example"
+author: "[Karl Broman](http://kbroman.org)"
+date: "`r Sys.Date()`"
+output: word_document
+---
+\end{lstlisting}
+
+
+
+\note{At the top of your Rmd file, it's best to include a header like
+  the above examples. (YAML is a simple text-based format for
+  specifying data, sort of like JSON but more human-readable.)
+
+  You don't have to include any of these things, but it's good to at
+  least specify {\tt output:} (which can be also be {\tt
+  pdf\_document}). There are a lot more options; see {\tt rmarkdown.rstudio.com}.
+
+  Note my use of a hyperlink and some R code in the second
+  example. These will carry over to the final document.
+}
+\end{frame}
+
+
 \begin{frame}{Rounding}
 
 \vspace{24pt}
