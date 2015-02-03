@@ -626,21 +626,20 @@ I want {\tt \hilit 0.90}.
 
 \centerline{\includegraphics[width=\textwidth]{Figs/rstudio_knitr.png}}
 
-\note{The easiest way to convert an R Markdown file to html is with R
-  Studio.
+\note{The easiest way to convert an R Markdown file to html is with
+  RStudio.
 
   Open the R Markdown file in R Studio and click the ``Knit HTML''
   button (with the ball of yarn and knitting needle).
 
-  Note the little ``MD'' button next to that. Click that, and you'll
+  Note the little button with a question mark. Click that, and you'll
   get the ``Markdown Quick Reference.''
 
   What actually happens: The {\tt knit} function in the knitr package
   processes all of the code chunks and in-line code and creates a
   Markdown file and possibly a bunch of figure files.
-
-  Then, the {\tt markdownToHTML} function in the markdown package converts the
-  Markdown file to an HTML file, with embedded figures.
+  The Markdown file (and any figure files) are sent to Pandoc, which
+  converts them to an HTML file, with embedded figures.
 
   RStudio is especially useful when you're first learning R Markdown
   and knitr, as it's easy to create and view the corresponding html
@@ -655,24 +654,23 @@ I want {\tt \hilit 0.90}.
 \vspace{18pt}
 
 \begin{lstlisting}
-> library(knitr)
-> knit("knitr_example.Rmd")
 > library(markdown)
-> markdownToHTML("knitr_example.md", "knitr_example.html")
+> render("knitr_example.Rmd")
 \end{lstlisting}
 
 \bigskip
 
 \begin{lstlisting}
-> library(knitr)
-> knit2html("knitr_example.Rmd")
+> rmarkdown::render("knitr_example.Rmd")
 \end{lstlisting}
 
 
-\note{When you click the ``Knit HTML'' button in RStudio, it just runs
-  some R code for you (and then opens the result in a preview window).
+\note{When you click the ``Knit HTML'' button in RStudio, what it
+  actually does is run {\tt rmarkdown::render()}, which in turn calls
+  {\tt knitr::knit()} and then runs pandoc.
 
-  But you can do the same thing directly, in R.
+  You can do the same thing directly, in R. You do miss out on the
+  immediate preview of the result.
 }
 \end{frame}
 
@@ -683,11 +681,14 @@ I want {\tt \hilit 0.90}.
 
 \begin{lstlisting}
 knitr_example.html: knitr_example.Rmd
-  R -e 'library(knitr);knit2html("knitr_example.Rmd")'
+  R -e "rmarkdown::render('knitr_example.Rmd')"
 \end{lstlisting}
 
 \note{I prefer to do this from the command-line, using a Makefile.
   Then it's more obvious what's happening.
+
+  In Windows, it's important that the double-quotes are on the outside
+  and the single-quotes are on the inside.
 }
 \end{frame}
 
