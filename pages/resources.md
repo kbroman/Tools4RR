@@ -59,6 +59,7 @@ description: Links to resources on reproducible research
 
 - [RStudio](http://www.rstudio.com/ide/download/desktop)
 - [RStudio documentation](https://support.rstudio.com/hc/en-us)
+- [Navigating code in RStudio](https://support.rstudio.com/hc/en-us/articles/200710523-Navigating-Code)
 - [Emacs Wiki](http://www.emacswiki.org/emacs/)
 - Book: [Learning GNU Emacs, 3rd ed](http://www.amazon.com/exec/obidos/ASIN/0596006489/7210-20)
 - [Karl](http://kbroman.org)'s
