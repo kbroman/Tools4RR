@@ -12,7 +12,7 @@
 
 % title info
 \title{Writing reproducible reports}
-\subtitle{KnitR with R Markdown}
+\subtitle{knitr with R Markdown}
 \author{\href{http://kbroman.org}{Karl Broman}}
 \institute{Biostatistics \& Medical Informatics, UW{\textendash}Madison}
 \date{\href{http://kbroman.org}{\tt \scriptsize \color{foreground} kbroman.org}
@@ -38,7 +38,7 @@
   that the data and code are available, and that there's a clear and
   automatic path from data and code to the final report.
 
-  Knitr is ideal for this effort. It's a system for combining code and
+  knitr is ideal for this effort. It's a system for combining code and
   text into a single document. Process the document, and the code is
   replaced with the results and figures that it generates.
 
@@ -47,18 +47,18 @@
   readable text, with the sort of marks that you might use in an email
   message, that gets converted to nicely formatted html-based web pages.
 
-  My goal in this lecture is to show you how to use Knitr with R
+  My goal in this lecture is to show you how to use knitr with R
   Markdown (a variant of Markdown) to make such
   reproducible reports, and to convince you that this is the way that
   you should be constructing such analysis reports.
 
-  I'd originally planned to also cover KnitR with AsciiDoc, but I
+  I'd originally planned to also cover knitr with AsciiDoc, but I
   decided to drop it; it's best to focus on Markdown.
 }
 } }
 
 
-\begin{frame}[c]{KnitR in a Knutshell}
+\begin{frame}[c]{knitr in a knutshell}
 
 \centerline{\Large \href{http://kbroman.org/knitr_knutshell}{\tt bit.ly/knitrknutshell}}
 
@@ -82,8 +82,8 @@
 \itemsep24pt
 \item Figures/tables + email
 \item Static \LaTeX\ or Word document
-\item Knitr/Sweave + \LaTeX\ $\rightarrow$ PDF
-\item Knitr + Markdown $\rightarrow$ Web page
+\item knitr/Sweave + \LaTeX\ $\rightarrow$ PDF
+\item knitr + Markdown $\rightarrow$ Web page
 \ei
 
 \note{Statisticians write a lot of reports. You do a bunch of
@@ -132,13 +132,13 @@ What if you used the wrong version of the data?
   dataset.''
 
   But actually, it didn't take long to find the right file, and the
-  revised analysis was derived instantaneously, as I'd used KnitR.
+  revised analysis was derived instantaneously, as I'd used knitr.
 }
 
 \end{frame}
 
 
-\begin{frame}[fragile]{KnitR code chunks}
+\begin{frame}[fragile]{knitr code chunks}
 
 \vspace{6pt}
 
@@ -342,7 +342,7 @@ And it's easy to create links, like to
 \itemsep12pt
 \item \href{http://rmarkdown.rstudio.com}{R Markdown} is a variant of Markdown, developed at
   \href{http://www.rstudio.com}{RStudio.com}
-\item Markdown + KnitR + extras
+\item Markdown + knitr + extras
 \item A few extra marks
 \item \href{http://www.rstudio.com/ide/docs/authoring/using_markdown_equations}{\LaTeX\ equations}
 \item Bundle images into the final html file
@@ -351,7 +351,7 @@ And it's easy to create links, like to
 \note{R Markdown is a variant of Markdown developed by the folks at
   RStudio.
 
-  It's Markdown with KnitR code chunks, but there are a number of
+  It's Markdown with knitr code chunks, but there are a number of
   added features,  most importantly the ability to use
   \LaTeX\ equations.
 }
@@ -537,7 +537,7 @@ autosomes.  The genotype data is quite complete.
 \ei
 
 \note{In-line code to insert summary statistics and such is a key
-  feature of KnitR.
+  feature of knitr.
 
   Even if you wanted the code for your figures or data analysis to be
   separate, you'd still want to make use of this feature.
@@ -602,7 +602,7 @@ I want {\tt \hilit 0.90}.
   Markdown file to an HTML file, with embedded figures.
 
   RStudio is especially useful when you're first learning R Markdown
-  and KnitR, as it's easy to create and view the corresponding html
+  and knitr, as it's easy to create and view the corresponding html
   file, and you have access to that Markdown Quick Reference.
 }
 
@@ -692,7 +692,7 @@ knitr_example.html: knitr_example.Rmd
   make it not reproducible.
 
   Earn et al. (2014) Proc Roy Soc B 281(1778):20132570 has a really
-  nice supplement, written with KnitR. But it says, ``The source code
+  nice supplement, written with knitr. But it says, ``The source code
   is available upon request.'' It's not {\nvhilit really}
   reproducible, then.
 }
@@ -717,7 +717,7 @@ plot(x,y)
 {\small
 \bi
 \itemsep8pt
-\item The default is for KnitR/R Markdown is to use the {\tt png()}
+\item The default is for knitr/R Markdown is to use the {\tt png()}
   graphics device.
 \item Use another graphics device with the chunk option {\tt dev}.
 \item Pass arguments to the graphics device via the chunk
@@ -725,7 +725,7 @@ plot(x,y)
 \ei
 }
 
-\note{Graphics in KnitR are super easy. For the most part, you don't
+\note{Graphics in knitr are super easy. For the most part, you don't
   have to do anything! If a code chunk produces a figure, it will be
   inserted.
 
