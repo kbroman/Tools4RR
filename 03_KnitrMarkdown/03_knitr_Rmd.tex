@@ -13,15 +13,15 @@
 % title info
 \title{Writing reproducible reports}
 \subtitle{KnitR with R Markdown}
-\author{\href{http://www.biostat.wisc.edu/~kbroman}{Karl Broman}}
+\author{\href{http://kbroman.org}{Karl Broman}}
 \institute{Biostatistics \& Medical Informatics, UW{\textendash}Madison}
-\date{\href{http://www.biostat.wisc.edu/~kbroman}{\tt \scriptsize \color{foreground} biostat.wisc.edu/{\textasciitilde}kbroman}
+\date{\href{http://kbroman.org}{\tt \scriptsize \color{foreground} kbroman.org}
 \\[-4pt]
-\href{http://github.com/kbroman}{\tt \scriptsize \color{foreground} github.com/kbroman}
+\href{https://github.com/kbroman}{\tt \scriptsize \color{foreground} github.com/kbroman}
 \\[-4pt]
 \href{https://twitter.com/kwbroman}{\tt \scriptsize \color{foreground} @kwbroman}
 \\[-4pt]
-{\scriptsize Course web: \href{http://bit.ly/tools4rr}{\tt bit.ly/tools4rr}}
+{\scriptsize Course web: \href{http://kbroman.org/Tools4RR}{\tt kbroman.org/Tools4RR}}
 }
 
 
@@ -60,7 +60,7 @@
 
 \begin{frame}[c]{KnitR in a Knutshell}
 
-\centerline{\Large \href{http://kbroman.github.io/knitr_knutshell}{\tt bit.ly/knitrknutshell}}
+\centerline{\Large \href{http://kbroman.org/knitr_knutshell}{\tt bit.ly/knitrknutshell}}
 
 \note{I wrote a short tutorial on knitr, covering a bit more than I'll
   cover in this lecture.
@@ -364,8 +364,9 @@ And it's easy to create links, like to
 
 \begin{lstlisting}
 ```{r knitr_options, include=FALSE}
-opts_chunk$set(fig.width=12, fig.height=4, fig.path='Figs/',
-               warning=FALSE, message=FALSE)
+knitr::opts_chunk$set(fig.width=12, fig.height=4,
+                      fig.path='Figs/', warning=FALSE,
+                      message=FALSE)
 set.seed(53079239)
 ```
 
@@ -377,11 +378,10 @@ Load the R/qtl package using the `library` function:
 library(qtl)
 ```
 
-To get help on the read.cross function in R, type one of the
+To get help on the read.cross function in R, type the
 following:
 
 ```{r help, eval=FALSE}
-help(read.cross)
 ?read.cross
 ```
 \end{lstlisting}
@@ -444,9 +444,10 @@ There are \href{http://yihui.name/knitr/options#chunk_options}{lots of chunk opt
 
 \begin{lstlisting}
 ```{r knitr_options, include=FALSE}
-opts_chunk$set(fig.width=12, fig.height=4, fig.path='Figs/',
-               warning=FALSE, message=FALSE,
-               include=FALSE, echo=FALSE)
+knitr::opts_chunk$set(fig.width=12, fig.height=4,
+                      fig.path='Figs/', warning=FALSE,
+                      message=FALSE, include=FALSE,
+                      echo=FALSE)
 set.seed(53079239)
 ```
 
@@ -487,7 +488,7 @@ plot(x, y)
 
 \begin{lstlisting}
 ```{r package_options, include=FALSE}
-opts_knit$set(progress = TRUE, verbose = TRUE)
+knitr::opts_knit$set(progress = TRUE, verbose = TRUE)
 ```
 \end{lstlisting}
 
@@ -526,7 +527,8 @@ autosomes.  The genotype data is quite complete.
 
 \bi
 \itemsep12pt
-\item Each bit of in-line code needs to be within one line; they can't
+\item Each bit of in-line code needs to be within one line; they
+  {\hilit can't}
   span across lines.
 \item I'll often precede a paragraph with a code chunk with {\tt
   include=FALSE}, defining various variables, to simplify the in-line
@@ -666,7 +668,7 @@ knitr_example.html: knitr_example.Rmd
 {\tt \scriptsize R --no-save --no-restore --no-init-file --no-site-file}
 \item Use GNU make to document the construction of the final product
    (tell future users what to do)
-\item Include a chunk with {\tt sessionInfo()} at the end
+\item Include a final chunk with {\tt devtools::session_info()}
 \item For simulations, use {\tt set.seed} in your first
    chunk.
 \ei
