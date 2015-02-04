@@ -4,6 +4,7 @@
 
 WEBDIR = ../Web/assets/lectures
 DROPBOXDIR = ~/Dropbox/Teaching/Tools4RR
+R_OPTS=--no-save --no-restore --no-init-file --no-site-file # --vanilla, but without --no-environ
 
 pdf: ${LEC}.pdf notes
 
