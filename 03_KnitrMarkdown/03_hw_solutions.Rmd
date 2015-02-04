@@ -5,16 +5,21 @@ date: "4 Feb 2015"
 output: html_document
 ---
 
-```{r set_figwidth, include=FALSE}
-knitr::opts_chunk$set(fig.width=12)
-```
-
 Problem 3 in this week's homework said, "Take the script from the last
 problem in homework 2 and turn it into an R Markdown document." Here's
 my solution.
 
 The script performed an exhaustive permutation test
 (with the t-statistic) and plotted the results.
+
+I'm going to use default chunk options of `fig.width=12` (wider figure
+width) and `dev="svg"` (use SVG for the figures). Normally I'd use
+`include=FALSE` to hide this code chunk, but here I'll leave it in the
+output.
+
+```{r set_chunk_opts}
+knitr::opts_chunk$set(fig.width=12, dev="svg")
+```
 
 Two utility functions were defined, `binary.v()` and
 `perm.test()`. I'll define them here, but in a way that will be hidden
