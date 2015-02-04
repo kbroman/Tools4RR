@@ -86,8 +86,13 @@ description: Links to resources on reproducible research
 - [MathJax](http://www.mathjax.org/)
 - [knitrBootstrap](http://jimhester.github.io/knitrBootstrap/) for nice-looking reports (see
   [L. Collado-Torres's post](http://lcolladotor.github.io/2013/12/10/knitrBootstrap/#.UuntzXddXVQ))
+- [pander](http://rapporter.github.io/pander), an R package that is
+  especially
+  [good for making tables](http://rapporter.github.io/pander/#markdown-tables)
+  with knitr, R Markdown, and pandoc.
 - [xtable](http://cran.r-project.org/web/packages/xtable/index.html),
-  an R package for creating LaTeX and HTML tables
+  an R package for creating LaTeX and HTML tables; it's better for
+  LaTeX than for HTML.
 - [asciidoc](http://www.methods.co.nz/asciidoc/)
 - [knitr resources](http://kbroman.org/knitr_knutshell/pages/resources.html)
 - [polymode](https://github.com/vitoshka/polymode), an emacs mode that
