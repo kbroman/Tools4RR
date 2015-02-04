@@ -693,6 +693,44 @@ knitr_example.html: knitr_example.Rmd
 \end{frame}
 
 
+\begin{frame}{Need pandoc in your {\tt PATH}}
+
+\vspace{24pt}
+
+\href{http://www.rstudio.com}{RStudio} includes pandoc; you just need
+to add the relevant directory to your {\tt PATH}.
+
+\vspace{24pt}
+
+\hspace{3mm} {\hilit Mac}:
+
+\vspace{6pt}
+
+\hspace{9mm} {\ttsm /Applications/RStudio.app/Contents/MacOS/pandoc}
+
+\vspace{24pt}
+
+\hspace{3mm} {\hilit Windows}:
+
+\vspace{6pt}
+
+\hspace{9mm} {\ttsm "c:{\textbackslash}Program Files{\textbackslash}RStudio{\textbackslash}bin{\textbackslash}pandoc"}
+
+\note{To use the rmarkdown package from the command line, you need
+  access to pandoc. But if you've installed RStudio (and I {\hilit
+  highly recommend} that you do), you don't need to do a separate
+  install, as pandoc is included with RStudio.
+
+  You just need to add the relevant directory (listed above) to your
+  {\tt PATH}, for example in your {\tt {\textasciitilde}/.bash\_profile} file.
+
+  At the command line, type {\tt type pandoc} or
+  {\tt pandoc --version} to check that it's available.
+
+}
+\end{frame}
+
+
 
 \begin{frame}{Reproducible knitr documents}
 
