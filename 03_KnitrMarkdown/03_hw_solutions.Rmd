@@ -1,0 +1,137 @@
+---
+title: Solution to week 3 homework
+author: "Karl Broman"
+date: "4 Feb 2015"
+output: html_document
+---
+
+```{r set_figwidth, include=FALSE}
+knitr::opts_chunk$set(fig.width=12)
+```
+
+Problem 3 in this week's homework said, "Take the script from the last
+problem in homework 2 and turn it into an R Markdown document." Here's
+my solution.
+
+The script performed an exhaustive permutation test
+(with the t-statistic) and plotted the results.
+
+Two utility functions were defined, `binary.v()` and
+`perm.test()`. I'll define them here, but in a way that will be hidden
+in the output (using the chunk option `echo=FALSE`).
+
+```{r define_functions, echo=FALSE}
+# Utility function
+#     returns binary representation of 1:(2^n)
+binary.v <-
+    function(n)
+{
+    x <- 1:(2^n)
+    mx <- max(x)
+    digits <- floor(log2(mx))
+    ans <- 0:(digits-1); lx <- length(x)
+    x <- matrix(rep(x,rep(digits, lx)),ncol=lx)
+    (x %/% 2^ans) %% 2
+}
+
+# exhaustive permutation test with the t-statistic
+perm.test <-
+    function(x, y, var.equal=TRUE)
+{
+    # number of data points
+    kx <- length(x)
+    ky <- length(y)
+    n <- kx + ky
+
+    # Data re-compiled
+    X <- c(x,y)
+    z <- rep(1:0,c(kx,ky))
+
+    tobs <- t.test(x,y,var.equal=var.equal)$statistic
+
+    o <- binary.v(n)  # indicator of all possible samples
+    o <- o[,apply(o,2,sum)==kx]
+    nc <- choose(n,kx)
+    allt <- 1:nc
+    for(i in 1:nc) {
+        xn <- X[o[,i]==1]
+        yn <- X[o[,i]==0]
+        allt[i] <- t.test(xn,yn,var.equal=var.equal)$statistic
+    }
+
+    attr(allt, "tobs") <- tobs
+
+    allt
+}
+```
+
+We first create the data objects
+
+```{r define_data}
+x <- c(6.20, 5.72, 6.07, 6.75, 5.50, 6.39, 4.30, 4.96, 5.48)
+y <- c(6.49, 6.52, 6.28, 8.59, 7.18, 4.92, 6.74, 7.27)
+```
+
+Here's a plot of the data, using `stripchart()`. I use `set.seed()` so
+that it will appear exactly the same way every time. (The permutation
+results below will also then be the same every time I compile this
+document.)
+
+```{r plot_data, fig.height=3.5}
+set.seed(99693682)
+stripchart(list(x=x, y=y), method="jitter", jitter=0.03,
+           pch=21, bg="slateblue", las=1)
+```
+
+We call `perm.test()` to run the permutation test.
+
+```{r run_perm_test}
+permt <- perm.test(x, y)
+```
+
+We grab the observed t-statistic (which was saved as attribute)
+
+```{r grab_observed_t}
+tobs <- attr(permt, "tobs")
+```
+
+We can calculate the p-value from the permutation test, as the
+proportion of t-statistics from the permutations that were greater or
+equal to the observed t-statistic, in absolute value.
+Note that the nominal p-value is `r round(t.test(x,y)$p.value, 3)`
+
+```{r calc_pvalue}
+pval <- mean(abs(permt) >= abs(tobs))
+```
+
+The observed t-statistic was `r round(tobs, 2)`. The p-value, for the
+test of whether the two population averages were different, was
+`r round(pval, 3)`.
+
+
+I'll save the results to a file, but I'll hide this in the output.
+
+```{r save_results, echo=FALSE}
+save(permt, tobs, pval, file="permt_results.RData")
+```
+
+I'll plot the permutation results, with a vertical line at the
+observed t-statistic.
+
+```{r plot_permutations}
+hist(permt, breaks=200, xlab="t-statistic", las=1,
+     main = paste("P-value =", round(pval, 3)))
+abline(v=tobs, lwd=2, col="violetred")
+```
+
+### Session info
+
+I try to remember to end every R Markdown document with information
+about the R and package versions that were used. R is distributed with
+the `sessionInfo()` function (in the utils package); I prefer
+`devtools::session_info()`, as the output is nicer, but I won't use it
+here.
+
+```{r session_info}
+sessionInfo()
+```
