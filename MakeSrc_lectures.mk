@@ -14,7 +14,7 @@ notes: ${LEC}_withnotes.pdf
 all: ${LEC}.pdf notes web dropbox
 hw: ${LECNUM}_homework.pdf
 hwsoln: ${LECNUM}_hw_solutions.pdf
-hwsolns: ${LECNUM}_hw_solutions.pdf # in case I forget whether it's hwsoln or hwsolns
+hwsolns: hwsoln
 
 ${LECNUM}_homework.pdf: ${LECNUM}_homework.tex
 	pdflatex $<
