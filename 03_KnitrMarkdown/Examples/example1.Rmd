@@ -43,24 +43,16 @@ So note that the estimated slope for the regression line is
 
 ### Tables
 
-To include a table, use `kable` in the knitr package or `xtable` in
-the xtable package.
+To include a table, I recommend the
+[pander package](http://rapporter.github.io/pander/#markdown-tables).
+Use `panderOptions()` to change various options, and `pander()` to
+create the actual table. If you call `pander` with the output of
+`lm()`, the default is to give the table of regression coefficients.
 
-`kable` is simpler but has few options.
-
-```{r kable, results="asis"}
-coef_tab <- summary(out)$coef
-library(knitr)
-kable(summary(out)$coef, format="html",
-      digits=2)
-```
-
-`xtable` gives you more complete control.
-
-```{r xtable, results="asis"}
-library(xtable)
-tab <- xtable(coef_tab, digits=c(0, 2, 2, 1, 3))
-print(tab, type="html")
+```{r pander_table}
+library(pander)
+panderOptions('digits', 3)
+pander(out, caption="Regression coefficients")
 ```
 
 ### It's usually best to end with session information
