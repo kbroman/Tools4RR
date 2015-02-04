@@ -831,19 +831,28 @@ plot(x,y)
 
 \begin{frame}[fragile]{Tables}
 
-\vspace{24pt}
-
 \begin{lstlisting}
-```{r kable, results="asis"}
+```{r kable}
 x <- rnorm(100)
 y <- 2*x + rnorm(100)
 out <- lm(y ~ x)
-kable(summary(out)$coef, format="html",
-      digits=2)
+coef_tab <- summary(out)$coef
+library(kable)
+kable(coef_tab, digits=2)
 ```
 \end{lstlisting}
 
-\vspace{12pt}
+\vspace{6pt}
+
+\begin{lstlisting}
+```{r pander}
+library(pander)
+panderOptions("digits", 2)
+pander(out, caption="Regression coefficients")
+```
+\end{lstlisting}
+
+\vspace{6pt}
 
 \begin{lstlisting}
 ```{r xtable, results="asis"}
@@ -854,13 +863,25 @@ print(tab, type="html")
 \end{lstlisting}
 
 
-\note{Two ways to make tables with R Markdown: the {\tt kable}
-  function in the knitr package, and the {\tt xtable} function in the
-  xtable package.
 
-  {\tt kable} is simpler, but has fewer options.
 
-  {\tt xtable} gives you more complete control.
+\note{In informal reports, I'll often just print out a matrix or data
+  frame, rather than create a formal table.
+
+  But there are multiple ways to make tables with R Markdown that may
+  look a bit nicer. I'm not {\hilit completely} happy with any of
+  them, but maybe I've just not figured out the right set of options.
+
+  {\tt kable} in the knitr package is simple but can't be customized
+  too much. But it can produce output as pandoc, markdown, html, or latex.
+
+  The {\tt pander} package produces pandoc-based tables, which even
+  work if you're making a Word document, and has a bit more control
+  than {\tt kable}.
+
+  The {\tt xtable} package gives you quite complete control,
+  but only produces latex or html output. You need to be sure to use
+  {\tt results="asis"} in the code chunk.
 }
 \end{frame}
 
