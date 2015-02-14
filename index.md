@@ -42,7 +42,7 @@ data analyses, papers, presentations, posters) are reproducible.
 \[[directions](pages/directions.html)\]
 
 **Office hours**: Wed &amp; Thur, 2:30&ndash;3:30pm (or by
-  appointment) [**Not available Thur 12 Feb**]
+  appointment)
 
 **[Schedule](pages/schedule.html)** (_<font color="#9411dB">with links to lecture notes</font>_)
 
