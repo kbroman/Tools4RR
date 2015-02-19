@@ -93,7 +93,7 @@ Slides prepared with \href{http://pages.cs.wisc.edu/~syounkin/}{Sam Younkin}}
 \note{There are three methods for keeping track of changes: don't keep
   track, periodically zip/tar a directory with a version number, or
   use formal version control.
-  
+
   Imagine that some aspect of your code has stopped working at some
   point. You know it was working in the past, but it's not working
   now. How easy is it to figure out where the problem was introduced?
@@ -310,7 +310,7 @@ Slides prepared with \href{http://pages.cs.wisc.edu/~syounkin/}{Sam Younkin}}
 
 \note{These are the basic git commands you'll use day-to-day.
 
-  {\tt git status} to see the current state of things, 
+  {\tt git status} to see the current state of things,
   {\tt git diff} to see what's changed, and {\tt git log} to look at
   the history.
 
@@ -358,7 +358,7 @@ Initialized empty Git repository in ~/Docs/Talks/Graphs/.git/
 \item Create a {\tt README.md} file
 \ei
 
-\bigskip 
+\bigskip
 \begin{lstlisting}
 ## Talk on &ldquo;How to display data badly&rdquo;
 
@@ -625,16 +625,16 @@ Part of a {\tt .git/config} file:
 
 \begin{lstlisting}
 [remote "origin"]
-	url = git@github.com:kbroman/qtl.git
-	fetch = +refs/heads/*:refs/remotes/origin/*
+    url = git@github.com:kbroman/qtl.git
+    fetch = +refs/heads/*:refs/remotes/origin/*
 
 [branch "master"]
-	remote = origin
-	merge = refs/heads/master
+    remote = origin
+    merge = refs/heads/master
 
 [remote "brian"]
-	url = git://github.com/byandell/qtl.git
-	fetch = +refs/heads/*:refs/remotes/brian/*
+    url = git://github.com/byandell/qtl.git
+    fetch = +refs/heads/*:refs/remotes/brian/*
 \end{lstlisting}
 
 \note{The {\tt git remote add} commands adds stuff to the {\tt
@@ -817,7 +817,7 @@ Edit, add, commit, push, submit pull request.
   at merging changes.
 
   If there's a merge conflict, there'll be a big warning message on
-  {\tt git pull} or {\tt git merge}, 
+  {\tt git pull} or {\tt git merge},
   When you open the offending file in an editor, look for
   lines with {\tt <<<<<<<}, {\tt =======}, and {\tt >>>>>>>}. Pick and
   choose and make the file just as you want it.
@@ -835,8 +835,8 @@ Edit, add, commit, push, submit pull request.
 
 \vspace{64pt}
 
-\hfill 
-{\small \lolit 
+\hfill
+{\small \lolit
 See \href{http://www.biostat.wisc.edu/~kbroman/presentations/GitPrimer.pdf}{GitPrimer.pdf}
 or
 \href{http://www.rstudio.com/ide/docs/version_control/overview}{RStudio page}}
@@ -903,7 +903,7 @@ or
 Setup (on server):
 \bigskip
 
-\bi 
+\bi
 \item Connect to server
     \bi
     \item[] {\ttfn ssh bigmem01.stat.wisc.edu}
@@ -912,12 +912,12 @@ Setup (on server):
 \item Make Folder
     \bi
     \item[] {\ttfn cd Repositories}
-    \item[] {\ttfn mkdir NewRepository} 
+    \item[] {\ttfn mkdir NewRepository}
     \ei
 \item Initialize Server Repository
     \bi
     \item[] {\ttfn cd NewRepository}
-    \item[] {\ttfn git init} 
+    \item[] {\ttfn git init}
     \ei
 \ei
 
