@@ -1,0 +1,67 @@
+\documentclass[12pt]{article}
+
+\usepackage{times}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+\hypersetup{pdfpagemode=UseNone} % don't show bookmarks on initial view
+\definecolor{hilit}{RGB}{122,0,128}
+\hypersetup{colorlinks, urlcolor={hilit}}
+\newcommand{\ttsm}{\tt \small}
+
+
+% revise margins
+\setlength{\headheight}{0.0in}
+\setlength{\topmargin}{-0.5in}
+\setlength{\headsep}{0.0in}
+\setlength{\textheight}{10in}
+\setlength{\footskip}{0.0in}
+\setlength{\oddsidemargin}{0.0in}
+\setlength{\evensidemargin}{0.0in}
+\setlength{\textwidth}{6.5in}
+
+\setlength{\parskip}{6pt}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\textbf{Tools for Reproducible Research} \\
+Homework 4
+
+\bigskip
+
+\begin{enumerate}
+
+\item Create a git repository for the R Markdown document from your
+  \href{}{third homework}.
+
+It would go something like this:
+
+\vspace{-12pt}
+
+\begin{verbatim}
+mkdir Homework4
+cd Homework4
+cp ../homework3.Rmd .
+git init
+git add homework3.Rmd
+git commit
+\end{verbatim}
+
+\item Create a new repository at GitHub (perhaps private). Push your
+  local repository to GitHub.
+
+Locally, you would do something like this:
+
+\vspace{-12pt}
+
+\begin{verbatim}
+git remote add origin https://github.com/username/Homework4
+git push -u origin master
+\end{verbatim}
+
+\end{enumerate}
+
+\end{document}
