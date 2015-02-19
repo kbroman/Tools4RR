@@ -553,48 +553,17 @@ $ git config --global core.excludesfile ~/.gitignore_global
 
 
 
-\begin{frame}[fragile]{Getting started with GitHub}
-\bbi
-\item Get an account
-\item Set up ssh keys
-\bi
-\item Look for files {\hilit {\tt
-    {\textasciitilde}/.ssh/id\_rsa}} and {\hilit {\tt {\textasciitilde}/.ssh/id\_rsa.pub}}
-\item {\hilit \tt ssh-keygen -t rsa -C "janedoe@wisc.edu"}
-\item Copy contents of {\tt {\textasciitilde}/.ssh/id\_rsa.pub}
-\ei
-\item Add SSH key at GitHub
-\bi
-\item Account settings
-\item SSH Keys
-\item Add SSH key
-\item Paste contents of {\tt {\textasciitilde}/.ssh/id\_rsa.pub}
-\ei
-\item Similar thing at BitBucket
-\ei
-
-
-\note{To use GitHub, you first need to set up an account. Use the
-  email that you used with git.
-
-  To push to your GitHub repositories, you need to you as password so
-  that GitHub knows it's you. I use ssh, so that I don't have to type
-  in my password every time.
-
-  The procedure is similar at Bitbucket.
-}
-\end{frame}
-
 \begin{frame}{Set up GitHub repository}
 
 \only<1>{
 \bbi
+\item Get a GitHub account
 \item Click the "Create a new repo" button
 \item Give it a {\hilit name} and description
 \item Click the "Create repository" button
 \item Back at the command line:
   \bi
-  \item[] {\tt git remote add origin git@github.com:username/{\hilit repo}}
+  \item[] {\tt git remote add origin https://github.com/username/{\hilit repo}}
   \item[] {\tt git push -u origin master}
   \ei
 \ei
@@ -625,7 +594,7 @@ Part of a {\tt .git/config} file:
 
 \begin{lstlisting}
 [remote "origin"]
-    url = git@github.com:kbroman/qtl.git
+    url = https://github.com/kbroman/qtl.git
     fetch = +refs/heads/*:refs/remotes/origin/*
 
 [branch "master"]
@@ -640,6 +609,17 @@ Part of a {\tt .git/config} file:
 \note{The {\tt git remote add} commands adds stuff to the {\tt
     .git/config} file; if you've made a mistake, you can just edit
   this file.
+
+  There are three different constructions for the url: \\
+  {\tt https://github.com/username/repo} \\
+  {\tt git://github.com/username/repo} \\
+  {\tt git@github.com:username/repo}
+
+  With {\tt https}, you'll need to enter your GitHub login and
+  password each time. With {\tt git://}, you'll have only read
+  access. With {\tt git@github.com:}, you need to set up ssh. (More
+  work initially, but you'll get write access without having to enter your login and
+  password.)
 }
 \end{frame}
 
@@ -713,7 +693,7 @@ Part of a {\tt .git/config} file:
 \ei
 \item {\hilit Clone} your version of it
 \bi
-\item[] {\tt git clone git@github.com:username/repo}
+\item[] {\tt git clone https://github.com/username/repo}
 \ei
 \item Change things locally, {\tt git \hilit add}, {\tt git \hilit commit}
 \item Push your changes to \emph{your\/} GitHub repository
