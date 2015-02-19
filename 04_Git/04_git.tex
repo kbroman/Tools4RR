@@ -209,7 +209,7 @@ Slides prepared with \href{https://github.com/syounkin}{Sam Younkin}}
 \item Like facebook for programmers
 \item Free 2-year "micro" account for students
 \bi
-\item \href{http://education.github.com}{github.com/edu}
+\item \href{http://education.github.com}{education.github.com}
 \ei
 \item (Bitbucket.org is an alternative)
 \bi
@@ -423,6 +423,53 @@ $ git commit -m "Initial commit of README.md file"
 
 
 
+\begin{frame}[fragile]{A few points on commits}
+\bbi
+\item Use frequent, small commits
+\item Don't get out of sync with your collaborators
+\item Commit the sources, not the derived files
+\bi
+\item[] (R code not images)
+\ei
+\item Use a {\tt .gitignore} file to indicate files to be ignored
+\ei
+
+\begin{lstlisting}
+*~
+manuscript.pdf
+Figs/*.pdf
+.RData
+.RHistory
+*.Rout
+*.aux
+*.log
+*.out
+\end{lstlisting}
+
+\note{I recommend using frequent, small commits. I'll make a batch of
+  changes with a common theme, make sure things are working, then add
+  and commit.
+
+  In projects with collabotors, be sure to pull any changes from them
+  before starting to make your own changes, and encourage your
+  collaborators to do the same. If you both make a month's changes
+  in parallel, merging the changes will be harder.
+
+  I commit only the source, and not files that are derived from those
+  sources. For a manuscript, though, I might include the pdf at major
+  milestones (at submission, after revision, and upon acceptance), so
+  that I don't have to work as hard to reconstruct them.
+
+  Use a {\tt .gitignore} file so that untracked files don't show up with
+  {\tt git status}. You can have a global ignore file, {\tt
+  {\textasciitilde}/.gitignore}.
+
+  But leaving off critical files is a common mistake.
+}
+\end{frame}
+
+
+
 \begin{frame}{Using git on an existing project}
 
 \bbi
@@ -479,53 +526,6 @@ $ git commit
 }
 \end{frame}
 
-
-
-
-\begin{frame}[fragile]{A few points on commits}
-\bbi
-\item Use frequent, small commits
-\item Don't get out of sync with your collaborators
-\item Commit the sources, not the derived files
-\bi
-\item[] (R code not images)
-\ei
-\item Use a {\tt .gitignore} file to indicate files to be ignored
-\ei
-
-\begin{lstlisting}
-*~
-manuscript.pdf
-Figs/*.pdf
-.RData
-.RHistory
-*.Rout
-*.aux
-*.log
-*.out
-\end{lstlisting}
-
-\note{I recommend using frequent, small commits. I'll make a batch of
-  changes with a common theme, make sure things are working, then add
-  and commit.
-
-  In projects with collabotors, be sure to pull any changes from them
-  before starting to make your own changes, and encourage your
-  collaborators to do the same. If you both make a month's changes
-  in parallel, merging the changes will be harder.
-
-  I commit only the source, and not files that are derived from those
-  sources. For a manuscript, though, I might include the pdf at major
-  milestones (at submission, after revision, and upon acceptance), so
-  that I don't have to work as hard to reconstruct them.
-
-  Use a {\tt .gitignore} file so that untracked files don't show up with
-  {\tt git status}. You can have a global ignore file, {\tt
-  {\textasciitilde}/.gitignore}.
-
-  But leaving off critical files is a common mistake.
-}
-\end{frame}
 
 
 
