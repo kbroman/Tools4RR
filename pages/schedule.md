@@ -41,7 +41,8 @@ description: Schedule (and links to lecture notes) for the Tools for Reproducibl
     \[
     [S](../assets/lectures/04_git.pdf) |
     [N](../assets/lectures/04_git_withnotes.pdf) |
-    [C](https://github.com/kbroman/Tools4RR/tree/master/04_Git/GitCommands/git_notes.md)
+    [C](https://github.com/kbroman/Tools4RR/tree/master/04_Git/GitCommands/git_notes.md) |
+    [H](../assets/homework/04_homework.pdf)
     \]
 
 **Feb 27**: [git](http://git-scm.com)/[GitHub](https://github.com)
