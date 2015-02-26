@@ -25,10 +25,6 @@ We'll work in pairs: **User A** and **User B**
 
 - Connect and push your local repository to GitHub
 
-        git remote add origin git@github.com:[userA]/[repo]
-
-  or
-
         git remote add origin https://github.com/[userA]/[repo]
 
   add then
@@ -41,10 +37,6 @@ We'll work in pairs: **User A** and **User B**
   `http://github.com/[UserA]/[repo]` and click the "Fork" button.
 
 - Clone _your_ version of that repository locally
-
-        git clone git@github.com:[userB]/[repo]
-
-  or
 
         git clone https://github.com/[userB]/[repo]
 
