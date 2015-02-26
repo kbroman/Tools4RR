@@ -1,4 +1,9 @@
-## Git/GitHub Lab
+---
+title: Git/GitHub Lab
+output:
+  html_document
+  pdf_document
+---
 
 We'll work in pairs: **User A** and **User B**
 
