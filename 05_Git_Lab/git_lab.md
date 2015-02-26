@@ -7,7 +7,7 @@ output:
 
 We'll work in pairs: **User A** and **User B**
 
-### User A
+## 1. User A
 
 - Set up a new repository, locally
 
@@ -32,7 +32,7 @@ We'll work in pairs: **User A** and **User B**
 
         git push -u origin master
 
-### User B
+## 2. User B
 
 - Fork user A's repository on GitHub: go to
   `http://github.com/userA/TestRepo` and click the "Fork" button.
@@ -62,7 +62,7 @@ We'll work in pairs: **User A** and **User B**
     - Optionally add a comment
     - Click "Create pull request"
 
-### User A
+## 3. User A
 
 - Connect to User B's repository
 
@@ -97,7 +97,7 @@ We'll work in pairs: **User A** and **User B**
 
 - Make another change to the file; then `add`, `commit`, and `push`.
 
-### User B
+## 4. User B
 
 - Add a connection to User A's repository
 
@@ -120,11 +120,11 @@ We'll work in pairs: **User A** and **User B**
         git merge userA
         git push
 
-### Users A and B
+## 5. Users A and B
 
 - Make simulateneous changes, then `add`, `commit`, and `push`.
 
-### User B
+## 6. User B
 
 - Pull User A's change
 
@@ -140,7 +140,7 @@ We'll work in pairs: **User A** and **User B**
 
 - Make another pull request
 
-### User A
+## 7. User A
 
 - Fetch User B's repository
 
