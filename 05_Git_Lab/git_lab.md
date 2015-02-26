@@ -24,11 +24,11 @@ We'll work in pairs: **User A** and **User B**
 
 - Go to your GitHub account and create a new repository
 
-- Connect and push your local repository to GitHub
+- Connect your local repository to GitHub
 
         git remote add origin https://github.com/userA/TestRepo
 
-  add then
+- Push your local repository to GitHub
 
         git push -u origin master
 
@@ -54,13 +54,13 @@ We'll work in pairs: **User A** and **User B**
 
 - Make a pull request:
 
-  - Go to _your_ version of the repository on GitHub
-  (`http://github.com/userB/TestRepo`)
-  - Click "Pull requests"
-  - Click "New pull request"
-  - Click "Create pull request"
-  - Optionally add a comment
-  - Click "Send pull request"
+    - Go to _your_ version of the repository on GitHub
+      (`http://github.com/userB/TestRepo`)
+    - Click "Pull requests"
+    - Click "New pull request"
+    - Click "Create pull request"
+    - Optionally add a comment
+    - Click "Create pull request"
 
 ### User A
 
