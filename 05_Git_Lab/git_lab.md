@@ -11,21 +11,22 @@ We'll work in pairs: **User A** and **User B**
 
 - Set up a new repository, locally
 
-        mkdir [directory]
-        cd [directory]
+        mkdir TestRepo
+        cd TestRepo
         git init
 
 - Create or copy over a file or two and add them to the repository.
 
-        [create/copy files]
-        git add [filenames]
+        touch ReadMe.md
+        [edit the file]
+        git add ReadMe.md
         git commit
 
 - Go to your GitHub account and create a new repository
 
 - Connect and push your local repository to GitHub
 
-        git remote add origin https://github.com/[userA]/[repo]
+        git remote add origin https://github.com/userA/TestRepo
 
   add then
 
@@ -34,14 +35,15 @@ We'll work in pairs: **User A** and **User B**
 ### User B
 
 - Fork user A's repository on GitHub: go to
-  `http://github.com/[UserA]/[repo]` and click the "Fork" button.
+  `http://github.com/userA/TestRepo` and click the "Fork" button.
 
 - Clone _your_ version of that repository locally
 
-        git clone https://github.com/[userB]/[repo]
+        git clone https://github.com/userB/TestRepo
 
 - Change a file, and another file
 
+        cd TestRepo
         [change/copy files]
         git add [filenames]
         git commit
@@ -53,7 +55,7 @@ We'll work in pairs: **User A** and **User B**
 - Make a pull request:
 
   - Go to _your_ version of the repository on GitHub
-  (`http://github.com/[userB]/[repo]`)
+  (`http://github.com/userB/TestRepo`)
   - Click "Pull requests"
   - Click "New pull request"
   - Click "Create pull request"
@@ -64,15 +66,15 @@ We'll work in pairs: **User A** and **User B**
 
 - Connect to User B's repository
 
-        git remote add [userB] git://github.com/[userB]/[repo]
+        git remote add userB git://github.com/userB/TestRepo
 
 - Fetch the changes from User B
 
-        git fetch [userB]
+        git fetch userB
 
-- Checkout their version of the repo as a local branch
+- Checkout their version of the repository as a local branch
 
-        git checkout -b [userB] [userB]/master
+        git checkout -b userB userB/master
 
 - Check that you like the changes
 
@@ -97,9 +99,9 @@ We'll work in pairs: **User A** and **User B**
 
 ### User B
 
-- Add a connection to User A's repo
+- Add a connection to User A's repository
 
-        git remote add userA git://github.com/[userA]/[repo]
+        git remote add userA git://github.com/userA/TestRepo
 
 - Fetch User A's latest
 
@@ -140,15 +142,15 @@ We'll work in pairs: **User A** and **User B**
 
 ### User A
 
-- Fetch User B's repo
+- Fetch User B's repository
 
-        git checkout [userB]
+        git checkout userB
         git pull userB master
 
 - Merge into your master branch
 
         git checkout master
-        git merge [userB]
+        git merge userB
 
 - Push back to github
 
