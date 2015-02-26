@@ -127,7 +127,7 @@ We'll work in pairs: **User A** and **User B**
 - Pull User A's change
 
         git checkout userA
-        git pull
+        git pull userA master
 
 - Go back to your master branch and merge the change from User A.
 
@@ -143,7 +143,7 @@ We'll work in pairs: **User A** and **User B**
 - Fetch User B's repo
 
         git checkout [userB]
-        git pull
+        git pull userB master
 
 - Merge into your master branch
 
