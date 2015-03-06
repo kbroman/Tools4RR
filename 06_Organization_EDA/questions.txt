@@ -1,0 +1,10 @@
+How do you organize your files?
+A. directory hierarchy
+B. search for things
+C. something else
+
+How do you perform EDA?
+A. Write R script and copy-paste
+B. Write an Rmd file
+C. Type at R prompt
+D. Something else
