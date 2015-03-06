@@ -55,7 +55,8 @@ description: Schedule (and links to lecture notes) for the Tools for Reproducibl
     \[
     [S](../assets/lectures/06_org_eda.pdf) |
     [N](../assets/lectures/06_org_eda_withnotes.pdf) |
-    [C](https://github.com/kbroman/Tools4RR/tree/master/06_Organization_EDA/Examples)
+    [C](https://github.com/kbroman/Tools4RR/tree/master/06_Organization_EDA/Examples) |
+    [H](../assets/homework/06_homework.pdf)
     \]
 
 
