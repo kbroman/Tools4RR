@@ -1,0 +1,63 @@
+\documentclass[12pt]{article}
+
+\usepackage{times}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+\hypersetup{pdfpagemode=UseNone} % don't show bookmarks on initial view
+\definecolor{hilit}{RGB}{122,0,128}
+\hypersetup{colorlinks, urlcolor={hilit}}
+\newcommand{\ttsm}{\tt \small}
+
+
+% revise margins
+\setlength{\headheight}{0.0in}
+\setlength{\topmargin}{-0.5in}
+\setlength{\headsep}{0.0in}
+\setlength{\textheight}{10in}
+\setlength{\footskip}{0.0in}
+\setlength{\oddsidemargin}{0.0in}
+\setlength{\evensidemargin}{0.0in}
+\setlength{\textwidth}{6.5in}
+
+\setlength{\parskip}{6pt}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\textbf{Tools for Reproducible Research} \\
+Homework, 6 March 2015
+
+\bigskip
+
+\begin{enumerate}
+
+\item Look at the file organization for an old project (or a current
+  project, if you don't have any old ones).
+
+  \begin{enumerate}
+  \item Is it easy to understand what everything is?
+  \item Did you document the process of data preparation and
+    analysis?
+  \item How might you reorganize things, to make it more clear to
+    someone else, or to you a year from now?
+  \item Do you need more documentation (e.g., {\ttsm ReadMe} files) or
+    are the file names and organization self-explanatory?
+  \end{enumerate}
+
+\item Try out \href{http://yihui.name/knitr/demo/stitch/}{knitr spin}.
+
+  \begin{enumerate}
+    \item Look at
+      \href{https://github.com/kbroman/Tools4RR/tree/master/06_Organization_EDA/Examples}{the
+        example for this week's lecture}.
+    \item Adapt one of your own recent R scripts to use {\ttsm
+      spin}-style comments.
+  \end{enumerate}
+
+  Does this seem useful for capturing exploratory data analysis?
+\end{enumerate}
+
+\end{document}
