@@ -364,9 +364,10 @@ function(vec, q=0.006)
 
   Global variables make code difficult to reuse.
 
-  But when you pass data into a function, R makes a copy. How to deal
-  with {\nhilit really big} data sets, then? I'm not sure. And
-  {\nvhilit efficiency is secondary}.
+  It turns out that, when you pass data into a function, R doesn't
+  actually make a copy. If your function makes any change to the data
+  object, {\nhilit then} it will make a copy. But you shouldn't be
+  afraid to pass really big data sets into and between functions.
 }
 \end{frame}
 
