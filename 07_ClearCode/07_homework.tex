@@ -1,0 +1,67 @@
+\documentclass[12pt]{article}
+
+\usepackage{times}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{amsmath}
+
+\hypersetup{pdfpagemode=UseNone} % don't show bookmarks on initial view
+\definecolor{hilit}{RGB}{122,0,128}
+\hypersetup{colorlinks, urlcolor={hilit}}
+\newcommand{\ttsm}{\tt \small}
+
+
+% revise margins
+\setlength{\headheight}{0.0in}
+\setlength{\topmargin}{-0.5in}
+\setlength{\headsep}{0.0in}
+\setlength{\textheight}{10in}
+\setlength{\footskip}{0.0in}
+\setlength{\oddsidemargin}{0.0in}
+\setlength{\evensidemargin}{0.0in}
+\setlength{\textwidth}{6.5in}
+
+\setlength{\parskip}{6pt}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\textbf{Tools for Reproducible Research} \\
+Homework, 13 March 2015
+
+\bigskip
+
+Using the principles from today's lecture,
+\href{http://kbroman.org/Tools4RR/assets/today'sectures/07_clearcode.pdf}{Writing
+  clear code}, write an R function or two that does something you
+consider interesting or useful.
+
+For example, you might do one of the following:
+
+\begin{itemize}
+
+\item Pull out a bit of R code from a current project and re-write it
+  as a more generally useful function.
+
+\item Write a function that simulates data from some model, and a
+  function to plot the data.
+
+\item Write a function that simulates one-dimensional Brownian motion,
+  and another function to plot the results.
+
+  $x_0, x_1, x_2, \dots x_n$ with $x_0 \sim \text{N}(0,1)$ and
+  $x_i = x_{i-1} + \epsilon_i$, with $\epsilon_i \sim \text{iid }
+  \text{N}(0, \sigma^2)$, independent of $x_0$.
+
+  Or maybe two-dimensional Brownian motion would be more interesting.
+
+\end{itemize}
+
+I have in mind that you will use this code in subsequent homeworks:
+turning it into an R package, writing a couple of tests, and writing a
+vignette. (Ultimately, I'll want you to put it in a GitHub repository
+and give me read access; ideally, you'll start that now.)
+
+\end{document}

@@ -1,3 +1,4 @@
-LEC = 07_clearcode
+LECNUM = 07
+LEC = $(LECNUM)_clearcode
 
 include ../MakeSrc_lectures.mk
