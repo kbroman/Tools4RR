@@ -64,7 +64,8 @@ description: Schedule (and links to lecture notes) for the Tools for Reproducibl
     \[
     [S](../assets/lectures/07_clearcode.pdf) |
     [N](../assets/lectures/07_clearcode_withnotes.pdf) |
-    [C](https://github.com/kbroman/Tools4RR/tree/master/07_ClearCode/Examples/ReadMe.md)
+    [C](https://github.com/kbroman/Tools4RR/tree/master/07_ClearCode/Examples/ReadMe.md) |
+    [H](../assets/homework/07_homework.pdf)
     \]
 
 
