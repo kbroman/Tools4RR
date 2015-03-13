@@ -279,34 +279,9 @@ function(vec, step)
 \end{frame}
 
 
+
+
 \begin{frame}[fragile,c]{Another example}
-
-\begin{lstlisting}
-# retain just the indicated markers
-pull.markers <-
-function(cross, markers)
-{
-  mn <- markernames(cross)
-
-  m <- match(markers, mn)
-  if(any(is.na(m)))
-    warning("Some markers couldn't be found: ",
-            paste(markers[is.na(m)], collapse=" "))
-
-  drop.markers(cross, mn[is.na(match(mn, markers))])
-}
-\end{lstlisting}
-
-\note{Note that this function calls other functions I wrote,
-  {\tt markernames} and {\tt drop.markers}.
-
-  The reliance on {\tt drop.markers} might be less efficient, but it's
-  more efficient to write, and it's easier to maintain.
-}
-\end{frame}
-
-
-\begin{frame}[fragile,c]{Yet another example}
 
 \begin{lstlisting}
 # rmvn: simulate from multivariate normal distribution
@@ -334,7 +309,7 @@ function(n, mu=0, V=matrix(1))
 }
 \end{frame}
 
-\begin{frame}[fragile,c]{Still more examples}
+\begin{frame}[fragile,c]{Further examples}
 
 \begin{lstlisting}
 # colors from blue to red
