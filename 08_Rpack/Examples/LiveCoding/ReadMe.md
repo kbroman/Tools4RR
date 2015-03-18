@@ -5,6 +5,8 @@
         mkdir simBM
         cd simBM
 
+2. Initialize it as a git repository and make connection on GitHub.
+
 2. Write an R file with some code.
 
         touch simBM.R
@@ -66,3 +68,14 @@
         build()
         install()
         check()
+
+16. Add in some `@seealso`, for example:
+
+        \code{\link{simBM}}
+        \code{\link[graphics]{plot}}
+
+17. Add a `README.md` file.
+
+18. Add a vignette. Look at
+    [R/qtlcharts](https://github.com/kbroman/qtlcharts) for the
+    requirements.
