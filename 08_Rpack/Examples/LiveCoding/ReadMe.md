@@ -11,6 +11,10 @@
 
         touch simBM.R
 
+   Write a function `simBM()` for simulating Brownian motion, with
+   parameters `n` and `sigma`. Try it out. Plot the results. Then
+   write a function to make a plot, `plotBM()`.
+
 4. Create an `R/` subdirectory and move the R code there.
 
         mkdir R
