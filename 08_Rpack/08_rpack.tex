@@ -357,7 +357,7 @@ RSkittleBrewer <-
 \begin{lstlisting}
 # build package documentation
 doc:
-  R -e 'library(devtools);document(roclets=c("namespace", "rd"))'
+  R -e "devtools::document()"
 \end{lstlisting}
 
 \note{
