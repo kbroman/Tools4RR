@@ -73,7 +73,8 @@ description: Schedule (and links to lecture notes) for the Tools for Reproducibl
     \[
     [S](../assets/lectures/08_rpack.pdf) |
     [N](../assets/lectures/08_rpack_withnotes.pdf) |
-    [C](https://github.com/kbroman/Tools4RR/tree/master/08_Rpack/Examples/ReadMe.md)
+    [C](https://github.com/kbroman/Tools4RR/tree/master/08_Rpack/Examples/ReadMe.md) |
+    [H](../assets/homework/08_homework.pdf)
     \]
 
 
