@@ -7,38 +7,38 @@
 
 2. Initialize it as a git repository and make connection on GitHub.
 
-2. Write an R file with some code.
+3. Write an R file with some code.
 
         touch simBM.R
 
-3. Create an `R/` subdirectory and move the R code there.
+4. Create an `R/` subdirectory and move the R code there.
 
         mkdir R
         mv simBM.R R/
 
-4. Create a `DESCRIPTION` file with just:
+5. Create a `DESCRIPTION` file with just:
 
         Package: simBM
         Version: 0.1
 
-5. Go back one directory and try build and install.
+6. Go back one directory and try build and install.
 
         R CMD build simBM
         R CMD INSTALL --library=/Users/kbroman/Rlibs simBM_0.1.tar.gz
 
-6. Go into R, load the library, and try it out. Within R:
+7. Go into R, load the library, and try it out. Within R:
 
         library(simBM)
         x <- simBM(10000)
         plotBM(x)
 
-7. Go back to the command line and run `R CMD check`.
+8. Go back to the command line and run `R CMD check`.
 
         R CMD check simBM_0.1.tar.gz
 
-8. Point out the bit about the `NAMESPACE` file.
+9. Point out the bit about the `NAMESPACE` file.
 
-9. Go back to the `DESCRIPTION` file and add the following lines:
+10. Go back to the `DESCRIPTION` file and add the following lines:
 
         Title: Simulate Brownian motion
         Description: Simulate and plot two-dimensional Brownian motion
@@ -46,36 +46,36 @@
         Author: Karl Broman <kbroman@biostat.wisc.edu>
         Maintainer: Karl Broman <kbroman@biostat.wisc.edu>
 
-10. Also add a license file with this:
+11. Also add a license file with this:
 
         YEAR: 2015
         COPYRIGHT HOLDER: Karl Broman
 
-11. Go back to the command line and run build, install, and check.
+12. Go back to the command line and run build, install, and check.
 
-12. Talk about R documentation and Roxygen2.
+13. Talk about R documentation and Roxygen2.
 
-13. Add Roxygen2 comments to the R code: title, description, `@param`,
+14. Add Roxygen2 comments to the R code: title, description, `@param`,
     `@result`, `@example`, `@export`
 
-14. Run Roxygen2 to create the documentation.
+15. Run Roxygen2 to create the documentation.
 
         library(devtools)
         document()
 
-15. Build, install, and check within R.
+16. Build, install, and check within R.
 
         build()
         install()
         check()
 
-16. Add in some `@seealso`, for example:
+17. Add in some `@seealso`, for example:
 
         \code{\link{simBM}}
         \code{\link[graphics]{plot}}
 
-17. Add a `README.md` file.
+18. Add a `README.md` file.
 
-18. Add a vignette. Look at
+19. Add a vignette. Look at
     [R/qtlcharts](https://github.com/kbroman/qtlcharts) for the
     requirements.
