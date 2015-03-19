@@ -43,7 +43,8 @@
 
         R CMD check simBM_0.1.tar.gz
 
-9. Point out the bit about the `NAMESPACE` file.
+9. Point out the bit about the `NAMESPACE` file, but mostly the error
+   is about title, description, license, author, maintainer.
 
 10. Go back to the `DESCRIPTION` file and add the following lines:
 
