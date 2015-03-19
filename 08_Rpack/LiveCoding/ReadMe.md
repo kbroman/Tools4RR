@@ -13,7 +13,10 @@
 
    Write a function `simBM()` for simulating Brownian motion, with
    parameters `n` and `sigma`. Try it out. Plot the results. Then
-   write a function to make a plot, `plotBM()`.
+   turn the code for plotting into another function, `plotBM()`.
+
+4. Push things to github. Then periodically, below, do `git add`,
+   `git commit`, `git push`.
 
 4. Create an `R/` subdirectory and move the R code there.
 
