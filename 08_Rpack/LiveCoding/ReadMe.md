@@ -86,4 +86,16 @@
 
 19. Add a vignette. Look at
     [R/qtlcharts](https://github.com/kbroman/qtlcharts) for the
-    requirements.
+    requirements. Need the `vignettes` subdirectory, and `.Rmd` file,
+    the special stuff in the YAML header, and then a couple of things
+    in the `DESCRIPTION` file.
+
+20. Build, install, check within R. The install part needs:
+
+        install(build_vignettes=TRUE)
+
+21. Show how to view the vignette within R.
+
+        library(simBM)
+        vignette(package="simBM")
+        vignette("simBM", "simBM")
