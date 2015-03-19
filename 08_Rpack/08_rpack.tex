@@ -437,7 +437,7 @@ names that correspond to that Skittle flavor.
 
 \begin{frame}{Package vignettes}
 
-\bi
+\bbi
 \item Include \emph{vignettes\/} to show how to use your package.
 \item It's simplest to use R Markdown.
   \bi
@@ -447,6 +447,7 @@ names that correspond to that Skittle flavor.
   \ei
 \item Include the following in the {\tt .Rmd} file's YAML header:
   \bi
+  \item[] {\lolit \ttfn output: rmarkdown::html\_vignette}
   \item[] {\lolit \ttfn vignette: >}
   \item[] {\lolit \ttfn \hspace{2em} \%{\textbackslash}VignetteIndexEntry\{Intro to RSkittleBrewer\}}
   \item[] {\lolit \ttfn \hspace{2em} \%{\textbackslash}VignetteEngine\{knitr::rmarkdown\}}
@@ -459,12 +460,6 @@ names that correspond to that Skittle flavor.
   \item[] {\lolit \ttfn library(RSkittleBrewer)}
   \ei
 
-\item In the {\ttfn DESCRIPTION} file, include:
-  \bi
-  \item[] {\lolit \ttfn Suggests: knitr, rmarkdown}
-  \item[] {\lolit \ttfn VignetteBuilder: knitr}
-  \ei
-
 \ei
 
 \note{In my experience, people tend not to read detailed
@@ -473,25 +468,21 @@ names that correspond to that Skittle flavor.
 
   It's easiest to write vignettes in R Markdown (allowed in R 3.0
   onwards). You create a subdirectory {\tt vignettes/} and put the
-  usual sort of {\tt .Rmd} files there. You just need to add a couple
-  of special lines to the top of the file: to tell R to use knitr to
-  build the vignette, and to give a title to the vignette.
+  usual sort of {\tt .Rmd} files there. You just need to add a few
+  special lines in the YAML header for the file.
 
-  You also need to indicate, in the {\ttfn DESCRIPTION} file, that
-  you're using knitr for the vignettes.
-
-  In your {\tt .Rmd} file, you'll need to load the package before you
-  start using it.
+  Also, in your {\tt .Rmd} file, you'll need to load the package
+  before you start using it.
 }
 \end{frame}
 
 \begin{frame}{Package vignettes}
 
 \bbi
-\item Add the following lines to your {\tt DESCRIPTION} file.
+\item In the {\ttfn DESCRIPTION} file, include:
   \bi
+  \item[] {\lolit \ttfn Suggests: knitr, rmarkdown}
   \item[] {\lolit \ttfn VignetteBuilder: knitr}
-  \item[] {\lolit \ttfn Suggests: knitr}
   \ei
 
 \item The following lists the vignettes for a package and then opens
@@ -505,7 +496,8 @@ names that correspond to that Skittle flavor.
 \ei
 
 \note{There's one other little detail: you need to mention knitr as
-  the vignette builder in your {\tt DESCRIPTION} file.
+  the vignette builder in your {\tt DESCRIPTION} file. You also need
+  to include knitr and rmarkdown in {\tt Suggests:}.
 
   If you submit the package to CRAN, links to the vignettes will be listed on
   web page for the package. You might also refer to them in your {\tt
