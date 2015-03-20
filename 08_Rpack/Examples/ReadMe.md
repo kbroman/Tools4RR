@@ -10,3 +10,6 @@ Here are some links to R packages to look at.
 
 Here are my notes for today's "Live coding":
 <https://github.com/kbroman/Tools4RR/tree/master/08_Rpack/LiveCoding>
+
+Here's the repository for the package I built:
+<https://github.com/kbroman/simBM>
