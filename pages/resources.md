@@ -220,7 +220,7 @@ description: Links to resources on reproducible research
 - [LaTeXit](http://www.chachatelier.fr/latexit/latexit-home.php) (for
   Mac) - LaTeX-based equation editor
 - [LaTeX table generator](http://www.tablesgenerator.com/)
-
+- [Slides with introduction to LaTeX](https://www.overleaf.com/latex/learn/free-online-introduction-to-latex-part-1)
 
 ### Slides and posters
 
