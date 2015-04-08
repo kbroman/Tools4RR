@@ -5,7 +5,7 @@ all: lectures homework
 
 lectures: ${LEC}/01_intro.pdf ${LEC}/01_intro_withnotes.pdf ${LEC}/02_unix.pdf ${LEC}/02_unix_withnotes.pdf ${LEC}/03_knitr_Rmd.pdf ${LEC}/03_knitr_Rmd_withnotes.pdf ${LEC}/04_git.pdf ${LEC}/04_git_withnotes.pdf ${LEC}/06_org_eda.pdf ${LEC}/06_org_eda_withnotes.pdf ${LEC}/07_clearcode.pdf ${LEC}/07_clearcode_withnotes.pdf ${LEC}/08_rpack.pdf ${LEC}/08_rpack_withnotes.pdf ${LEC}/09_testdebug.pdf ${LEC}/09_testdebug_withnotes.pdf ${LEC}/10_bigjobs.pdf ${LEC}/10_bigjobs_withnotes.pdf ${LEC}/11_knitrpapers.pdf ${LEC}/11_knitrpapers_withnotes.pdf ${LEC}/12_talks_posters.pdf ${LEC}/12_talks_posters_withnotes.pdf ${LEC}/13_python.pdf ${LEC}/13_python_withnotes.pdf ${LEC}/15_licenses.pdf ${LEC}/15_licenses_withnotes.pdf
 
-homework: ${HW}/01_homework.pdf ${HW}/02_homework.pdf ${HW}/02_hw_solutions.pdf ${HW}/02_homework.R ${HW}/03_homework.pdf ${HW}/03_hw_solutions.Rmd ${HW}/03_hw_solutions.html $(HW)/04_homework.pdf $(HW)/06_homework.pdf $(HW)/07_homework.pdf $(HW)/08_homework.pdf
+homework: ${HW}/01_homework.pdf ${HW}/02_homework.pdf ${HW}/02_hw_solutions.pdf ${HW}/02_homework.R ${HW}/03_homework.pdf ${HW}/03_hw_solutions.Rmd ${HW}/03_hw_solutions.html $(HW)/04_homework.pdf $(HW)/06_homework.pdf $(HW)/07_homework.pdf $(HW)/08_homework.pdf $(HW)/09_homework.pdf
 
 ${LEC}/01%.pdf: ../01_Intro/01%.pdf
 	cp $< $@
@@ -62,6 +62,9 @@ ${HW}/08%.pdf: ../08_Rpack/08%.pdf
 	cp $< $@
 
 ${LEC}/09%.pdf: ../09_TestingDebugging/09%.pdf
+	cp $< $@
+
+${HW}/09%.pdf: ../09_TestingDebugging/09%.pdf
 	cp $< $@
 
 ${LEC}/10%.pdf: ../10_BigJobs/10%.pdf

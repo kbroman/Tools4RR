@@ -89,7 +89,8 @@ description: Schedule (and links to lecture notes) for the Tools for Reproducibl
     \[
     [S](../assets/lectures/09_testdebug.pdf) |
     [N](../assets/lectures/09_testdebug_withnotes.pdf) |
-    [C](https://github.com/kbroman/Tools4RR/tree/master/09_TestingDebugging/Examples/ReadMe.md)
+    [C](https://github.com/kbroman/Tools4RR/tree/master/09_TestingDebugging/Examples/ReadMe.md) |
+    [H](../assets/homework/09_homework.pdf)
     \]
 
 **Apr 17**: Big jobs/simulations; caching computations
