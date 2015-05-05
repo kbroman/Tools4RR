@@ -143,7 +143,8 @@ description: Links to resources on reproducible research
 
 ### R packages
 
-- [Hadley Wickham](http://had.co.nz)'s [R Packages book](http://r-pkgs.had.co.nz/)
+- [Hadley Wickham](http://had.co.nz)'s
+  [R Packages book](http://r-pkgs.had.co.nz/) \[[Amazon](http://www.amazon.com/exec/obidos/ASIN/1491910593/7210-20)\]
 - Documenting R
   [packages](http://r-pkgs.had.co.nz/vignettes.html) and
   [functions](http://r-pkgs.had.co.nz/man.html),
