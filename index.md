@@ -60,6 +60,9 @@ the semester:
     [github](http://github.com) or [bitbucket](http://bitbucket.org).
 - Make it an [R](http://www.r-project.org) package.
 - Use [knitr](http://yihui.name/knitr/) to make a [vignette](http://cran.us.r-project.org/doc/manuals/R-exts.html#Writing-package-vignettes).
+- Use [testthat](https://github.com/hadley/testthat) to include a unit
+  test.
+- Make sure it passes `R CMD check`.
 
 ---
 
