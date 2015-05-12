@@ -348,12 +348,11 @@ unlink("junk.csv")
  \bi
  \item[] {\tt context("Group of related tests")}
  \ei
-\item Store tests in {\tt inst/tests/}
-\item {\tt tests/run-all.R} file containing
+\item Store tests in {\tt tests/testthat}
+\item {\tt tests/testthat.R} file containing
  \bi
  \item[] {\tt library(testthat) \\
-              library({\color{hilit} mypkg}) \\
-              test\_package("{\color{hilit} mypkg}")}
+              test\_check("{\color{hilit} mypkg}")}
  \ei
 \ei
 
@@ -374,7 +373,7 @@ unlink("junk.csv")
   character string will be printed, so you can see what part of the
   code is being tested.
 
-  Put your tests in {\tt .R} files within {\tt inst/tests}. Put
+  Put your tests in {\tt .R} files within {\tt tests/testthat}. Put
   another file within {\tt tests/} that will ensure that these tests
   are run when you do {\tt R CMD check}.
 }
