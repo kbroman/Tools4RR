@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Tools for Reproducible Research
-tagline: Spring, 2015
+tagline: Spring, 2016
 description: A course on tools for reproducible research, UW-Madison
 ---
 
@@ -38,10 +38,9 @@ data analyses, papers, presentations, posters) are reproducible.
 **Prerequisite**: Some knowledge of [R](http://www.r-project.org).
 
 **Lectures**: Fridays, 11:00&ndash;11:50am,
-[1116 Biochem, 420 Henry Mall](http://map.wisc.edu/s/psk50tw2)
-\[[directions](pages/directions.html)\]
+[2321 Engineering Hall](http://map.wisc.edu/s/mhoi6s1u)
 
-**Office hours**: Wed &amp; Thur, 2:30&ndash;3:30pm (or by
+**Office hours**: Wed 2:30&ndash;3:30pm (or by
   appointment)
 
 **[Schedule](pages/schedule.html)** (_<font color="#9411dB">with links to lecture notes</font>_)
