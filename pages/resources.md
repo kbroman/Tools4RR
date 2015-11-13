@@ -262,6 +262,8 @@ description: Links to resources on reproducible research
 - [What's new in Python 3.0 (vs 2.6)](https://docs.python.org/3.1/whatsnew/3.0.html)
 - [Guide to getting started with Data Science and Python](http://twiecki.github.io/blog/2014/11/18/python-for-data-science/)
   by [Thomas Wiecki](https://sites.google.com/a/brown.edu/lncc/home/members/thomas-wiecki)
+- [Learn Python for epidemiology](https://github.com/cmrivers/episkills)
+  (particularly regarding pandas)
 
 ### Copyright and software/data licenses
 
