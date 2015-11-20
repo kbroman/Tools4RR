@@ -54,6 +54,44 @@ data analyses, papers, presentations, posters) are reproducible.}
 } }
 
 
+\begin{frame}[fragile,c]{}
+
+\begin{center}
+\begin{minipage}[c]{9.3cm}
+\begin{semiverbatim}
+\lstset{basicstyle=\normalsize}
+\begin{lstlisting}[linewidth=9.3cm]
+ Karl -- this is very interesting,
+ however you used an old version of
+ the data (n=143 rather than n=226).
+
+ I'm really sorry you did all that
+ work on the incomplete dataset.
+
+ Bruce
+\end{lstlisting}
+\end{semiverbatim}
+\end{minipage}
+\end{center}
+
+\note{This is an edited version of an email I got from a collaborator,
+  in response to an analysis report that I had sent him.
+
+  I try to always include some brief data summaries at the start of
+  such reports. By doing so, he immediately saw that I had an old
+  version of the data.
+
+  Because I'd set things up carefully, I could just substitute in the
+  newer dataset, type ``{\tt make}'', and get the revised report.
+
+  This is a reproducibility success story. But it took me a long
+  time to get to this point.
+}
+\end{frame}
+
+
+
+
 \begin{frame}[c]{}
 
 
