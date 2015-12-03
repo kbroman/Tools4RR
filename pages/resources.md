@@ -154,6 +154,7 @@ description: Links to resources on reproducible research
 - [devtools package](http://github.com/hadley/devtools)
 - [Jeff Leek on developing R packages](https://github.com/jtleek/rpackages)
 - [Hilary Parker on making a simple R package](http://hilaryparker.com/2014/04/29/writing-an-r-package-from-scratch/)
+- [Stat 545 guide to writing an R package](http://stat545-ubc.github.io/packages00_index.html)
 - [Writing R extensions (official manual)](http://cran.r-project.org/manuals.html):
 \[[pdf](http://cran.r-project.org/doc/manuals/r-release/R-exts.pdf) | [html](http://cran.r-project.org/doc/manuals/r-release/R-exts.html)\]
 - [Developing R packages with RStudio](https://support.rstudio.com/hc/en-us/articles/200486488-Developing-Packages-with-RStudio)
