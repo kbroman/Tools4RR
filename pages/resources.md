@@ -55,6 +55,11 @@ description: Links to resources on reproducible research
   terminal emulators for Windows.
 
 
+### R
+
+- [Art of R programming (book, pdf)](http://heather.cs.ucdavis.edu/~matloff/132/NSPpart.pdf)
+- [Advanced R
+
 ### RStudio, emacs, vim
 
 - [RStudio](http://www.rstudio.com/ide/download/desktop)
