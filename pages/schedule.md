@@ -104,6 +104,7 @@ description: Schedule (and links to lecture notes) for the Tools for Reproducibl
     [N](../assets/lectures/11_knitrpapers_withnotes.pdf) |
     [C](https://github.com/kbroman/Tools4RR/tree/master/11_KnitrPapers/Examples)
     \]
+    (**Different room: [1289 Comp Sci](http://map.wisc.edu/s/q4wac64r)**)
 
 
 **Apr 22**: [Python](http://www.python.org/) for data/text manipulation
