@@ -748,7 +748,8 @@ to add the relevant directory to your {\tt PATH}.
 {\tt \scriptsize R --no-save --no-restore --no-init-file --no-site-file}
 \item Use GNU make to document the construction of the final product
    (tell future users what to do)
-\item Include a final chunk with {\tt devtools::session\_info()}
+\item Include a final chunk with {\tt getwd()} and
+  {\tt devtools::session\_info()}.
 \item For simulations, use {\tt set.seed} in your first
    chunk.
 \ei
