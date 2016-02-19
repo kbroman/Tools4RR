@@ -29,8 +29,8 @@ description: Schedule (and links to lecture notes) for the Tools for Reproducibl
     [S](../assets/lectures/03_knitr_Rmd.pdf) |
     [N](../assets/lectures/03_knitr_Rmd_withnotes.pdf) |
     [C](https://github.com/kbroman/Tools4RR/tree/master/03_KnitrMarkdown/Examples) |
-    [H](../assets/homework/03_homework.pdf) <!-- |
-    HS: [Rmd](https://raw.githubusercontent.com/kbroman/Tools4RR/master/03_KnitrMarkdown/03_hw_solutions.Rmd), [html](../assets/homework/03_hw_solutions.html)-->
+    [H](../assets/homework/03_homework.pdf) |
+    HS: [Rmd](https://raw.githubusercontent.com/kbroman/Tools4RR/master/03_KnitrMarkdown/03_hw_solutions.Rmd), [html](../assets/homework/03_hw_solutions.html)
     \]
 
 
