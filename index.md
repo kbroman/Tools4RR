@@ -40,9 +40,10 @@ data analyses, papers, presentations, posters) are reproducible.
 **Lectures**: Fridays, 11:00&ndash;11:50am,
 [2321 Engineering Hall](http://map.wisc.edu/s/mhoi6s1u)
 (**except for 15 Apr**, which will be in [1289 Comp Sci](http://map.wisc.edu/s/q4wac64r))
+**No class on 1 Apr**
 
 **Office hours**: Wed 2:30&ndash;3:30pm (or by
-  appointment) **No office hours on 16 March.**
+  appointment)
 
 **[Schedule](pages/schedule.html)** (_<font color="#9411dB">with links to lecture notes</font>_)
 
