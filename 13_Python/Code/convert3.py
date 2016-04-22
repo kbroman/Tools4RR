@@ -15,7 +15,7 @@ def read_markers (filename):
 
 class Person:
   "Person class, to contain the data on a subject."
-  def __init__ (self,family, id, dad, mom, sex):
+  def __init__ (self, family, id, dad, mom, sex):
     self.family = family
     self.id = id
     self.dad = dad
