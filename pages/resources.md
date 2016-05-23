@@ -188,6 +188,7 @@ description: Links to resources on reproducible research
 - Agans, [Debugging (book)](http://www.amazon.com/exec/obidos/ASIN/0814474578/7210-20)
 - [Travis CI](http://travis-ci.com/) [for R](http://yihui.name/en/2013/04/travis-ci-general-purpose/)
 - [Debugging with RStudio](http://www.rstudio.com/ide/docs/debugging/overview)
+- [Beginner's guide to Travis for R](http://juliasilge.com/blog/Beginners-Guide-to-Travis/)
 
 
 ### Big jobs
