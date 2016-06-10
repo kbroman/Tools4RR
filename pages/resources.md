@@ -45,7 +45,7 @@ description: Links to resources on reproducible research
 - [Linux quick reference guide](http://linoxide.com/guide/linux-command-shelf.html)
 - UW-Madison software carpentry [tutorial on the shell](https://github.com/UW-Madison-ACI/boot-camps/tree/2014-01-uwmadison/shell)
 - [A command-line murder mystery](https://github.com/veltman/clmystery)
-- Book: [Learning the bash shell](http://www.amazon.com/exec/obidos/ASIN/0596009658/7210-20)
+- Book: [Learning the bash shell](https://www.amazon.com/gp/product/0596009658?ie=UTF8&tag=7210-20)
 - [Karl](http://kbroman.org)'s [`.bash_profile`](../assets/dot.bash_profile) and
   [`.bashrc`](../assets/dot.bashrc) files
 - [How to install the Xcode command line tools (Mac)](http://railsapps.github.io/xcode-command-line-tools.html)
@@ -66,7 +66,7 @@ description: Links to resources on reproducible research
 - [RStudio documentation](https://support.rstudio.com/hc/en-us)
 - [Navigating code in RStudio](https://support.rstudio.com/hc/en-us/articles/200710523-Navigating-Code)
 - [Emacs Wiki](http://www.emacswiki.org/emacs/)
-- Book: [Learning GNU Emacs, 3rd ed](http://www.amazon.com/exec/obidos/ASIN/0596006489/7210-20)
+- Book: [Learning GNU Emacs, 3rd ed](https://www.amazon.com/gp/product/0596006489?ie=UTF8&tag=7210-20)
 - [Karl](http://kbroman.org)'s
   [`.emacs`](../assets/dot.emacs) file
 - [Viper mode](http://www.emacswiki.org/emacs/ViperMode) to mimic vi key bindings in emacs
@@ -77,14 +77,14 @@ description: Links to resources on reproducible research
 - [Vim-R-plugin](http://www.vim.org/scripts/script.php?script_id=2628)
   \[[github](https://github.com/vim-scripts/Vim-R-plugin)\], like ESS
   for Vim
-- Book: [Learning the vi and Vim editors](http://www.amazon.com/exec/obidos/ASIN/059652983X/7210-20)
+- Book: [Learning the vi and Vim editors](https://www.amazon.com/gp/product/059652983X?ie=UTF8&tag=7210-20)
 
 
 ### Knitr, Markdown, Asciidoc
 
 - [knitr](http://yihui.name/knitr/)
 - [knitr in a knutshell](http://kbroman.org/knitr_knutshell/)
-- [Dynamic Documents with R and knitr (book)](http://www.amazon.com/exec/obidos/ASIN/1498716962/7210-20)
+- [Dynamic Documents with R and knitr (book)](https://www.amazon.com/gp/product/1498716962?ie=UTF8&tag=7210-20)
 - [R Markdown](http://www.rstudio.com/ide/docs/r_markdown)
 - [Using R Markdown with RStudio](http://www.rstudio.com/ide/docs/authoring/using_markdown)
 - [Equations in R Markdown](http://www.rstudio.com/ide/docs/authoring/using_markdown_equations)
@@ -142,15 +142,15 @@ description: Links to resources on reproducible research
 - [Style guide](http://adv-r.had.co.nz/Style.html) in [Hadley Wickham](http://had.co.nz)'s
   [Advanced R Programming book](http://adv-r.had.co.nz/)
 - Oliveira & Stewart,
-  [Writing scientific software (book)](http://www.amazon.com/exec/obidos/ASIN/0521675952/7210-20)
-- Kernighan & Plauger, [The elements of programming style, 2nd ed (book)](http://www.amazon.com/exec/obidos/ASIN/0070342075/7210-20)
-- Kernighan & Pike, [The practice of programming (book)](http://www.amazon.com/exec/obidos/ASIN/020161586X/7210-20)
+  [Writing scientific software (book)](https://www.amazon.com/gp/product/0521675952?ie=UTF8&tag=7210-20)
+- Kernighan & Plauger, [The elements of programming style, 2nd ed (book)](https://www.amazon.com/gp/product/0070342075?ie=UTF8&tag=7210-20)
+- Kernighan & Pike, [The practice of programming (book)](https://www.amazon.com/gp/product/020161586X?ie=UTF8&tag=7210-20)
 
 
 ### R packages
 
 - [Hadley Wickham](http://had.co.nz)'s
-  [R Packages book](http://r-pkgs.had.co.nz/) \[[Amazon](http://www.amazon.com/exec/obidos/ASIN/1491910593/7210-20)\]
+  [R Packages book](http://r-pkgs.had.co.nz/) \[[Amazon](https://www.amazon.com/gp/product/1491910593?ie=UTF8&tag=7210-20)
 - Documenting R
   [packages](http://r-pkgs.had.co.nz/vignettes.html) and
   [functions](http://r-pkgs.had.co.nz/man.html),
@@ -184,8 +184,8 @@ description: Links to resources on reproducible research
 - [Jeff Leek's notes on developing R packages](https://github.com/jtleek/rpackages)
    talk a bit about [unit tests](https://github.com/jtleek/rpackages#unit-tests)
 - [Software Carpentry](http://software-carpentry.org) on [testing](http://software-carpentry.org/v4/test/)
-- Marick, [The craft of software testing (book)](http://www.amazon.com/exec/obidos/ASIN/0131774115/7210-20)
-- Agans, [Debugging (book)](http://www.amazon.com/exec/obidos/ASIN/0814474578/7210-20)
+- Marick, [The craft of software testing (book)](https://www.amazon.com/gp/product/0131774115?ie=UTF8&tag=7210-20)
+- Agans, [Debugging (book)](https://www.amazon.com/gp/product/0814474578?ie=UTF8&tag=7210-20)
 - [Travis CI](http://travis-ci.com/) [for R](http://yihui.name/en/2013/04/travis-ci-general-purpose/)
 - [Debugging with RStudio](http://www.rstudio.com/ide/docs/debugging/overview)
 - [Beginner's guide to Travis for R](http://juliasilge.com/blog/Beginners-Guide-to-Travis/)
@@ -196,7 +196,7 @@ description: Links to resources on reproducible research
 - [KnitR cache](http://yihui.name/knitr/demo/cache/)
   \[Also see [Knitr options](http://yihui.name/knitr/options)\]
 - [KnitR chunk references](http://yihui.name/knitr/demo/reference/)
-- [Parallel R (book)](http://www.amazon.com/exec/obidos/ASIN/1449309925/7210-20)
+- [Parallel R (book)](https://www.amazon.com/gp/product/1449309925?ie=UTF8&tag=7210-20)
 - [A no BS guide to the basics of parallelization in R](http://librestats.com/2012/03/15/a-no-bs-guide-to-the-basics-of-parallelization-in-r/)
   at [librestats](http://librestats.com/)
 - [Parallel Options for R slides](http://www.sdsc.edu/Events/summerinstitute/slides/Lockwood%20-%20Parallel%20R.pdf)
@@ -261,9 +261,9 @@ description: Links to resources on reproducible research
 - [IPython](http://ipython.org/)
 - [IPython notebook](http://ipython.org/notebook)
 - [Installing iPython](http://ipython.org/install.html): [Anaconda](http://continuum.io/downloads)
-- [Practical computing for biologists (book)](http://www.amazon.com/exec/obidos/ASIN/0878933913/7210-20)
-- [Bioinformatics programming using Python (book)](http://www.amazon.com/exec/obidos/ASIN/059615450X/7210-20)
-- [Python scripting for computational science (book)](http://www.amazon.com/exec/obidos/ASIN/3540739157/7210-20)
+- [Practical computing for biologists (book)](https://www.amazon.com/gp/product/0878933913?ie=UTF8&tag=7210-20)
+- [Bioinformatics programming using Python (book)](https://www.amazon.com/gp/product/059615450X?ie=UTF8&tag=7210-20)
+- [Python scripting for computational science (book)](https://www.amazon.com/gp/product/3540739157?ie=UTF8&tag=7210-20)
 - [Python unittest introduction](http://pythontesting.net/framework/unittest/unittest-introduction)
 - [Python nose unit testing quick start](http://blog.jameskyle.org/2010/10/nose-unit-testing-quick-start)
 - [Differences between Python 2 and 3](http://inventwithpython.com/appendixa.html)
