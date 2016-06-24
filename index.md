@@ -47,8 +47,8 @@ data analyses, papers, presentations, posters) are reproducible.
 
 **[Resources and further reading](pages/resources.html)**
 
-**Recommended books** <br>
-&nbsp; &nbsp; C Gandrud, _[Reproducible research with R and RStudio](https://www.amazon.com/gp/product/1498715370?ie=UTF8&tag=7210-20)_
+**Recommended books** <br/>
+&nbsp; &nbsp; C Gandrud, _[Reproducible research with R and RStudio](https://www.amazon.com/gp/product/1498715370?ie=UTF8&tag=7210-20)_ <br/>
 &nbsp; &nbsp; Y Xie, _[Dynamic documents with R and knitr](https://www.amazon.com/gp/product/1498716962?ie=UTF8&tag=7210-20)_
 
 **Project**: There will be one small project, developed over the course of
