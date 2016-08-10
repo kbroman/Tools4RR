@@ -119,8 +119,7 @@ description: Links to resources on reproducible research
 - [Software carpentry notes on git](https://github.com/swcarpentry/boot-camps/blob/master/version-control/git/git-and-github/instructor_notes.md)
 - [Git can facilitate greater reproducibility and increased transparency in science (paper)](http://www.scfbm.org/content/8/1/7)
 - [Karthik Ram's slides](http://karthik.github.io/git_intro/#/slide-title)
-- [Git tutorials on github](http://learn.github.com/); you can even
-  [try it out](http://try.github.io/levels/1/challenges/1)
+- [&ldquo;Try git&rdquo; tutorial](http://try.github.io)
 - [git - the simple guide](http://rogerdudler.github.io/git-guide/)
 - [magit](http://magit.github.io/), an emacs mode for git
 - [Tutorial on magit](http://www.masteringemacs.org/articles/2013/12/06/introduction-magit-emacs-mode-git/);
