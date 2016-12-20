@@ -298,9 +298,8 @@ description: Links to resources on reproducible research
 - [VertNet guide to copyright and licenses for dataset publication](http://www.vertnet.org/resources/datalicensingguide.html)
 - UW-Madison:
   - [Intellectual property rights](https://grad.wisc.edu/acadpolicy/#responsibleconductofresearch)
-  - [Intellectual property policies and prodcedures (pdf)](https://kb.wisc.edu/images/group156/32996/IntellectualPropertyPoliciesandProceduresforUniversityResearch.pdf)
-  - [Copyrightable instructions materials](http://www.uwsa.edu/fadmin/gapp/gapp27.htm)
-
+  - [Intellectual property policies and prodcedures (pdf)](https://kb.wisc.edu/images/group156/32996/12.15IntellectualPropertyPoliciesandProceduresforUniversityResearch.pdf)
+  - [Copyrightable instructional materials](https://www.wisconsin.edu/uw-policies/uw-system-administrative-policies/copyrightable-instructions-materials-ownership-use-and-control/)
 
 ### Human subjects research
 
