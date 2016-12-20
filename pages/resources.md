@@ -305,5 +305,5 @@ description: Links to resources on reproducible research
 ### Human subjects research
 
 - [HIPAA](http://hipaa.wisc.edu/)
-- [Human Research Protection Program at UW-Madison](http://grad.wisc.edu/respolcomp/hrpp/)
+- [Human Research Protection Program at UW-Madison](https://research.wisc.edu/respolcomp/hrpp/)
 - [De-identification of HIPAA data](http://www.hhs.gov/ocr/privacy/hipaa/understanding/coveredentities/De-identification/guidance.html)
