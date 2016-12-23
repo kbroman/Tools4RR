@@ -58,7 +58,7 @@ description: Links to resources on reproducible research
 ### R
 
 - [Art of R programming (book, pdf)](http://heather.cs.ucdavis.edu/~matloff/132/NSPpart.pdf)
-- [Advanced R
+- [Advanced R](http://adv-r.had.co.nz/)
 
 ### RStudio, emacs, vim
 
