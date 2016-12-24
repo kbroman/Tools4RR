@@ -154,7 +154,7 @@ description: Links to resources on reproducible research
   [packages](http://r-pkgs.had.co.nz/vignettes.html) and
   [functions](http://r-pkgs.had.co.nz/man.html),
   from [that book](http://r-pkgs.had.co.nz/)
-- My [R package primer](http://kbroman.org/pkg_primer)
+- Karl's [R package primer](http://kbroman.org/pkg_primer)
 - [devtools package](http://github.com/hadley/devtools)
 - [Jeff Leek on developing R packages](https://github.com/jtleek/rpackages)
 - [Hilary Parker on making a simple R package](http://hilaryparker.com/2014/04/29/writing-an-r-package-from-scratch/)
