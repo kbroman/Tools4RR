@@ -109,7 +109,7 @@ description: Links to resources on reproducible research
 
 - [git/github guide](http://kbroman.org/github_tutorial)
 - [GitHub](http://github.com)
-- [Free 2-year "micro" account for students (?)](http://education.github.com) (allows 5
+- [Education discount on GitHub personal account](http://education.github.com) (allows
   private repositories)
 - [Working with RStudio, git, github](http://stat545-ubc.github.io/git00_index.html)
   (from [Jenny Bryan](http://www.stat.ubc.ca/~jenny/)'s [Data Science course](http://stat545-ubc.github.io/))
