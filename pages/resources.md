@@ -107,7 +107,7 @@ description: Links to resources on reproducible research
 
 ### Git, Github and Bitbucket
 
-- [git/github guide](http://kbroman.org/github_tutorial)
+- Karl's [git/github guide](http://kbroman.org/github_tutorial)
 - [GitHub](http://github.com)
 - [Education discount on GitHub personal account](http://education.github.com) (allows
   private repositories)
