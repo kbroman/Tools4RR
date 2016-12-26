@@ -85,9 +85,7 @@ description: Links to resources on reproducible research
 - [knitr](http://yihui.name/knitr/)
 - [knitr in a knutshell](http://kbroman.org/knitr_knutshell/)
 - [Dynamic Documents with R and knitr (book)](https://www.amazon.com/gp/product/1498716962?ie=UTF8&tag=7210-20)
-- [R Markdown](http://www.rstudio.com/ide/docs/r_markdown)
-- [Using R Markdown with RStudio](http://www.rstudio.com/ide/docs/authoring/using_markdown)
-- [Equations in R Markdown](http://www.rstudio.com/ide/docs/authoring/using_markdown_equations)
+- [R Markdown](http://rmarkdown.rstudio.com)
 - [Markdown](http://daringfireball.net/projects/markdown/)
 - [MathJax](http://www.mathjax.org/)
 - [knitrBootstrap](http://jimhester.github.io/knitrBootstrap/) for nice-looking reports (see
