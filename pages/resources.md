@@ -26,7 +26,7 @@ description: Links to resources on reproducible research
 - [Managing projects with GNU make](http://oreilly.com/catalog/make3/book/)
   book (part of the
   [Open Books project](http://oreilly.com/openbook/))
-- [Software carpentry](http://software-carpentry.org/)'s [make tutorial](http://v4.software-carpentry.org/make/index.html)
+- [Software carpentry](http://software-carpentry.org/)'s [make tutorial](http://swcarpentry.github.io/git-novice/)
 - [Mike Bostock](http://bost.ocks.org/mike/)'s &ldquo;[Why Use Make](http://bost.ocks.org/mike/make/)&rdquo;
 - [GNU Make for reproducible data analysis](http://zmjones.com/make.html) by [Zachary Jones](http://zmjones.com/)
 - [Makefiles for R/LaTeX projects](http://robjhyndman.com/hyndsight/makefiles/) by [Rob Hyndman](http://robjhyndman.com)
@@ -128,7 +128,7 @@ description: Links to resources on reproducible research
 
 - [Hadley Wickham](http://had.co.nz)'s [paper on Tidy Data](http://www.jstatsoft.org/v59/i10)
 - [KnitR](http://yihui.name/knitr)'s [`stitch()` and `spin()`](http://yihui.name/knitr/demo/stitch)
-- [Nine simple ways to make it easier to (re)use your data (paper)](http://library.queensu.ca/ojs/index.php/IEE/article/view/4608)
+- [Nine simple ways to make it easier to (re)use your data (paper)](https://ojs.library.queensu.ca/index.php/IEE/article/view/4608/0)
 - [Some simple guidelines for effective data management (paper)](http://www.esajournals.org/doi/abs/10.1890/0012-9623-90.2.205)
 - [Quick guide to organizing computational biology projects (paper)](http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2Fjournal.pcbi.1000424)
 
@@ -147,7 +147,7 @@ description: Links to resources on reproducible research
 ### R packages
 
 - [Hadley Wickham](http://had.co.nz)'s
-  [R Packages book](http://r-pkgs.had.co.nz/) \[[Amazon](https://www.amazon.com/gp/product/1491910593?ie=UTF8&tag=7210-20)
+  [R Packages book](http://r-pkgs.had.co.nz/) \[[Amazon](https://www.amazon.com/gp/product/1491910593?ie=UTF8&tag=7210-20)\]
 - Documenting R
   [packages](http://r-pkgs.had.co.nz/vignettes.html) and
   [functions](http://r-pkgs.had.co.nz/man.html),
