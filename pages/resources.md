@@ -45,6 +45,7 @@ description: Links to resources on reproducible research
 - [Linux quick reference guide](http://linoxide.com/guide/linux-command-shelf.html)
 - UW-Madison software carpentry [tutorial on the shell](https://github.com/UW-Madison-ACI/boot-camps/tree/2014-01-uwmadison/shell)
 - [A command-line murder mystery](https://github.com/veltman/clmystery)
+- [Command-line bootcamp](http://rik.smith-unna.com/command_line_bootcamp/?id=y3shhd1a5n)
 - Book: [Learning the bash shell](https://www.amazon.com/gp/product/0596009658?ie=UTF8&tag=7210-20)
 - [Karl](http://kbroman.org)'s [`.bash_profile`](../assets/dot.bash_profile) and
   [`.bashrc`](../assets/dot.bashrc) files
