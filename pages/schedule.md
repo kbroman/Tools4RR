@@ -24,7 +24,7 @@ description: Schedule (and links to lecture notes) for the Tools for Reproducibl
     [HS](../assets/homework/02_hw_solutions.pdf)
     \]
 
-**Feb 5**:  [Knitr](http://yihui.name/knitr/) with [Markdown](http://daringfireball.net/projects/markdown/) for basic reports
+**Feb 5**:  [Knitr](https://yihui.name/knitr/) with [Markdown](https://daringfireball.net/projects/markdown/) for basic reports
     \[
     [S](../assets/lectures/03_knitr_Rmd.pdf) |
     [N](../assets/lectures/03_knitr_Rmd_withnotes.pdf) |
@@ -34,7 +34,7 @@ description: Schedule (and links to lecture notes) for the Tools for Reproducibl
     \]
 
 
-**Feb 12**: Version control with [git](http://git-scm.com/) & [github](https://github.com/)/[bitbucket](https://bitbucket.org/)
+**Feb 12**: Version control with [git](https://git-scm.com/) & [github](https://github.com/)/[bitbucket](https://bitbucket.org/)
     \[
     [S](../assets/lectures/04_git.pdf) |
     [N](../assets/lectures/04_git_withnotes.pdf) |
@@ -42,7 +42,7 @@ description: Schedule (and links to lecture notes) for the Tools for Reproducibl
     [H](../assets/homework/04_homework.pdf)
     \]
 
-**Feb 19**: [git](http://git-scm.com)/[GitHub](https://github.com)
+**Feb 19**: [git](https://git-scm.com)/[GitHub](https://github.com)
   Laboratory
       \[
       [C](https://github.com/kbroman/Tools4RR/blob/master/05_Git_Lab/git_lab.md)
@@ -66,7 +66,7 @@ description: Schedule (and links to lecture notes) for the Tools for Reproducibl
     \]
 
 
-**Mar 11**: Writing [R](http://www.r-project.org) packages; [roxygen2](https://github.com/klutometis/roxygen)
+**Mar 11**: Writing [R](https://www.r-project.org) packages; [roxygen2](https://github.com/klutometis/roxygen)
     \[
     [S](../assets/lectures/08_rpack.pdf) |
     [N](../assets/lectures/08_rpack_withnotes.pdf) |
@@ -104,17 +104,17 @@ description: Schedule (and links to lecture notes) for the Tools for Reproducibl
     [N](../assets/lectures/11_knitrpapers_withnotes.pdf) |
     [C](https://github.com/kbroman/Tools4RR/tree/master/11_KnitrPapers/Examples)
     \]
-    (**Different room: [1289 Comp Sci](http://map.wisc.edu/s/q4wac64r)**)
+    (**Different room: [1289 Comp Sci](https://map.wisc.edu/s/q4wac64r)**)
 
 
-**Apr 22**: [Python](http://www.python.org/) for data/text manipulation
+**Apr 22**: [Python](https://www.python.org/) for data/text manipulation
     \[
     [S](../assets/lectures/13_python.pdf) |
     [N](../assets/lectures/13_python_withnotes.pdf) |
     [C](https://github.com/kbroman/Tools4RR/tree/master/13_Python/Code)
     \]
 
-**Apr 29**: [Python](http://www.python.org/) Laboratory
+**Apr 29**: [Python](https://www.python.org/) Laboratory
     \[
     [C](https://github.com/kbroman/Tools4RR/tree/master/14_Python_Lab/)
     \]

@@ -19,8 +19,8 @@ not fully adopted the required tools for reproducible research.
 
 In this course, we will discuss general principles for reproducible
 research but will focus primarily on the use of relevant tools
-(particularly [make](http://www.gnu.org/software/make/),
-[git](http://git-scm.org), and [knitr](http://yihui.name/knitr/)),
+(particularly [make](https://www.gnu.org/software/make/),
+[git](https://git-scm.org), and [knitr](https://yihui.name/knitr/)),
 with the goal that the students leave the course ready and willing to
 ensure that all aspects of their computational research (software,
 data analyses, papers, presentations, posters) are reproducible.
@@ -32,13 +32,13 @@ data analyses, papers, presentations, posters) are reproducible.
 
 **Course number**: BMI 826-003
 
-**Instructor**: [Karl Broman](http://kbroman.org),
-  [2126 Genetics-Biotechnology](http://map.wisc.edu/s/2tie3nen)
+**Instructor**: [Karl Broman](https://kbroman.org),
+  [2126 Genetics-Biotechnology](https://map.wisc.edu/s/2tie3nen)
 
-**Prerequisite**: Some knowledge of [R](http://www.r-project.org).
+**Prerequisite**: Some knowledge of [R](https://www.r-project.org).
 
 **Lectures**: Fridays, 11:00&ndash;11:50am,
-[2321 Engineering Hall](http://map.wisc.edu/s/mhoi6s1u)
+[2321 Engineering Hall](https://map.wisc.edu/s/mhoi6s1u)
 
 **Office hours**: Wed 2:30&ndash;3:30pm (or by
   appointment)
@@ -54,18 +54,18 @@ data analyses, papers, presentations, posters) are reproducible.
 **Project**: There will be one small project, developed over the course of
 the semester:
 
-- Implement something in [R](http://www.r-project.org) (e.g., simulation + fancy plot).
-- Develop it in a [git](http://git-scm.com) repository on
-    [github](http://github.com) or [bitbucket](http://bitbucket.org).
+- Implement something in [R](https://www.r-project.org) (e.g., simulation + fancy plot).
+- Develop it in a [git](https://git-scm.com) repository on
+    [github](https://github.com) or [bitbucket](https://bitbucket.org).
 - Make it an [R](http://www.r-project.org) package.
-- Use [knitr](http://yihui.name/knitr/) to make a [vignette](http://cran.us.r-project.org/doc/manuals/R-exts.html#Writing-package-vignettes).
+- Use [knitr](https://yihui.name/knitr/) to make a [vignette](https://cran.r-project.org/doc/manuals/R-exts.html#Writing-package-vignettes).
 - Use [testthat](https://github.com/hadley/testthat) to include a unit
   test.
 - Make sure it passes `R CMD check`.
 
 ---
 
-Sources on [github](http://github.com):
+Sources on [github](https://github.com):
 
 - The [source for the website](https://github.com/kbroman/Tools4RR/tree/gh-pages)
 - The [source for other material (e.g., lecture slides)](https://github.com/kbroman/Tools4RR/tree/master)

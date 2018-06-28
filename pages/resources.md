@@ -22,7 +22,7 @@ description: Links to resources on reproducible research
 
 - [GNU make](http://www.gnu.org/software/make)
 - [Manual for make](http://www.gnu.org/software/make/manual/make.html)
-- [Minimal Make tutorial](http://kbroman.org/minimal_make)
+- [Minimal Make tutorial](https://kbroman.org/minimal_make)
 - [Managing projects with GNU make](http://oreilly.com/catalog/make3/book/)
   book (part of the
   [Open Books project](http://oreilly.com/openbook/))
@@ -47,7 +47,7 @@ description: Links to resources on reproducible research
 - [A command-line murder mystery](https://github.com/veltman/clmystery)
 - [Command-line bootcamp](http://rik.smith-unna.com/command_line_bootcamp/?id=y3shhd1a5n)
 - Book: [Learning the bash shell](https://www.amazon.com/gp/product/0596009658?ie=UTF8&tag=7210-20)
-- [Karl](http://kbroman.org)'s [`.bash_profile`](../assets/dot.bash_profile) and
+- [Karl](https://kbroman.org)'s [`.bash_profile`](../assets/dot.bash_profile) and
   [`.bashrc`](../assets/dot.bashrc) files
 - [How to install the Xcode command line tools (Mac)](http://railsapps.github.io/xcode-command-line-tools.html)
 - [Git Bash](http://msysgit.github.io/) and [Cygwin](http://www.cygwin.com/) for command-line
@@ -69,7 +69,7 @@ description: Links to resources on reproducible research
 - [Navigating code in RStudio](https://support.rstudio.com/hc/en-us/articles/200710523-Navigating-Code)
 - [Emacs Wiki](http://www.emacswiki.org/emacs/)
 - Book: [Learning GNU Emacs, 3rd ed](https://www.amazon.com/gp/product/0596006489?ie=UTF8&tag=7210-20)
-- [Karl](http://kbroman.org)'s
+- [Karl](https://kbroman.org)'s
   [`.emacs`](../assets/dot.emacs) file
 - [Viper mode](http://www.emacswiki.org/emacs/ViperMode) to mimic vi key bindings in emacs
   \[[Manual](http://www.gnu.org/software/emacs/manual/html_node/viper/) | [Installation](http://www.gnu.org/software/emacs/manual/html_node/viper/Loading-Viper.html#Loading-Viper)\]
@@ -84,8 +84,8 @@ description: Links to resources on reproducible research
 
 ### Knitr, Markdown, Asciidoc
 
-- [knitr](http://yihui.name/knitr/)
-- [knitr in a knutshell](http://kbroman.org/knitr_knutshell/)
+- [knitr](https://yihui.name/knitr/)
+- [knitr in a knutshell](https://kbroman.org/knitr_knutshell/)
 - [Dynamic Documents with R and knitr (book)](https://www.amazon.com/gp/product/1498716962?ie=UTF8&tag=7210-20)
 - [R Markdown](http://rmarkdown.rstudio.com)
 - [Markdown](http://daringfireball.net/projects/markdown/)
@@ -100,14 +100,14 @@ description: Links to resources on reproducible research
   an R package for creating LaTeX and HTML tables; it's better for
   LaTeX than for HTML.
 - [asciidoc](http://www.methods.co.nz/asciidoc/)
-- [knitr resources](http://kbroman.org/knitr_knutshell/pages/resources.html)
+- [knitr resources](https://kbroman.org/knitr_knutshell/pages/resources.html)
 - [polymode](https://github.com/vitoshka/polymode), an emacs mode that
   handles R Markdown nicely
 
 
 ### Git, Github and Bitbucket
 
-- Karl's [git/github guide](http://kbroman.org/github_tutorial)
+- Karl's [git/github guide](https://kbroman.org/github_tutorial)
 - [GitHub](http://github.com)
 - [Education discount on GitHub personal account](http://education.github.com) (allows
   private repositories)
@@ -154,7 +154,7 @@ description: Links to resources on reproducible research
   [packages](http://r-pkgs.had.co.nz/vignettes.html) and
   [functions](http://r-pkgs.had.co.nz/man.html),
   from [that book](http://r-pkgs.had.co.nz/)
-- Karl's [R package primer](http://kbroman.org/pkg_primer)
+- Karl's [R package primer](https://kbroman.org/pkg_primer)
 - [devtools package](http://github.com/hadley/devtools)
 - [Jeff Leek on developing R packages](https://github.com/jtleek/rpackages)
 - [Hilary Parker on making a simple R package](http://hilaryparker.com/2014/04/29/writing-an-r-package-from-scratch/)
@@ -165,7 +165,7 @@ description: Links to resources on reproducible research
 - [How to build package vignettes with knitr](http://yihui.name/knitr/demo/vignette)
 - [Rd2roxygen package](http://yihui.name/Rd2roxygen/): Translate Rd files to roxygen comments
 - [Building R packages on Windows](http://cran.us.r-project.org/bin/windows/Rtools/)
-- [Karl's largely out-of-date page about building R packages on Windows](http://www.biostat.wisc.edu/~kbroman/Rintro/Rwinpack.html)
+- [Karl's largely out-of-date page about building R packages on Windows](https://www.biostat.wisc.edu/~kbroman/Rintro/Rwinpack.html)
 - [A web service](http://win-builder.r-project.org/) for building and
   checking R packages for Windows
 - [R for Mac developer's page](http://r.research.att.com/)
@@ -244,7 +244,7 @@ description: Links to resources on reproducible research
   from the Johns Hopkins Data Science Coursera course
 - [Modern, simple presentations written in R Markdown](http://benjaminlmoore.wordpress.com/2014/02/24/slidify-presentations-in-r-markdown/)
   by [Benomics](http://benjaminlmoore.wordpress.com)
-- [How to give a scientific presentation (pdf)](http://www.biostat.wisc.edu/~kbroman/presentations/giving_talks.pdf)
+- [How to give a scientific presentation (pdf)](https://www.biostat.wisc.edu/~kbroman/presentations/giving_talks.pdf)
   \[[source on github](https://github.com/kbroman/Talks_GivingTalks)\]
 - [PDFjam](http://www2.warwick.ac.uk/fac/sci/statistics/staff/academic-research/firth/software/pdfjam)
 - [LaTeX poster templates](http://www.latextemplates.com/cat/conference-posters)
