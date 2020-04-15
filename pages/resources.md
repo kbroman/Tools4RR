@@ -207,28 +207,26 @@ description: Links to resources on reproducible research
 
 ### LaTeX
 
+- [LyX](https://www.lyx.org), a WYSIWYG application for LaTeX, with knitr
+- [Overleaf](https://www.overleaf.com),
+  [Authorea](https://authorea.com): online collaborative LaTeX editors
+- [Setting up LaTeX](https://robjhyndman.com/hyndsight/latex-setup/) by [Rob Hyndman](https://robjhyndman.com)
+- [A not so short introduction to LaTeX](https://www.ctan.org/tex-archive/info/lshort/english/)
+- [Getting started with LaTeX (pdf)](https://www.maths.tcd.ie/~dwilkins/LaTeXPrimer/GSWLaTeX.pdf)
+- [Slides with introduction to LaTeX](https://www.overleaf.com/latex/learn/free-online-introduction-to-latex-part-1)
+- [A hitchhiker's guide to LaTeX (pdf)](https://chaosbook.org/FAQ/lala.pdf)
+- [Detexify<sup>2</sup>](https://detexify.kirelabs.org/classify.html) -
+  LaTeX symbol classifier
+- [xtable](https://cran.r-project.org/package=xtable),
+  an R package for creating LaTeX and HTML tables
+- [xtableGallery (pdf vignette)](https://cran.r-project.org/web/packages/xtable/vignettes/xtableGallery.pdf)
+- [UnicodeIt](http://unicodeit.net) (for Mac) - convert latex expressions into
+  unicode characters
+- [LaTeXit](https://www.chachatelier.fr/latexit/latexit-home.php) (for
+  Mac) - LaTeX-based equation editor
+- [LaTeX table generator](https://www.tablesgenerator.com/)
 - [AucTex](https://www.gnu.org/software/auctex/), for working with
   LaTeX within emacs.
-- [LyX](http://www.lyx.org), a WYSIWYG application for LaTeX, with knitr
-- [WriteLaTeX](http://writelatex.com),
-  [Authorea](http://authorea.com),
-  [ShareLaTeX](http://sharelatex.com),
-  [Verbosus](http://verbosus.com): online collaborative LaTeX editors
-- [Setting up LaTeX](http://robjhyndman.com/hyndsight/latex-setup/) by [Rob Hyndman](http://robjhyndman.com)
-- [A not so short introduction to LaTeX](http://www.ctan.org/tex-archive/info/lshort/english/)
-- [Getting started with LaTeX](http://www.maths.tcd.ie/~dwilkins/LaTeXPrimer/GSWLaTeX.pdf)
-- [A hitchhiker's guide to LaTeX (pdf)](http://chaosbook.org/FAQ/lala.pdf)
-- [Detexify<sup>2</sup>](http://detexify.kirelabs.org/classify.html) -
-  LaTeX symbol classifier
-- [xtable](http://cran.r-project.org/web/packages/xtable/index.html),
-  an R package for creating LaTeX and HTML tables
-- [xtableGallery (pdf vignette)](http://cran.r-project.org/web/packages/xtable/vignettes/xtableGallery.pdf)
-- [UnicodeIt](http://unicodeit.net/) (for Mac) - convert latex expressions into
-  unicode characters
-- [LaTeXit](http://www.chachatelier.fr/latexit/latexit-home.php) (for
-  Mac) - LaTeX-based equation editor
-- [LaTeX table generator](http://www.tablesgenerator.com/)
-- [Slides with introduction to LaTeX](https://www.overleaf.com/latex/learn/free-online-introduction-to-latex-part-1)
 
 ### Slides and posters
 
