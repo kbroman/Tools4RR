@@ -112,7 +112,7 @@ description: Links to resources on reproducible research
 - [Education discount on GitHub personal account](http://education.github.com) (allows
   private repositories)
 - [Happy Git and GitHub for the useR](http://happygitwithr.com/)
-  (from [Jenny Bryan](http://www.stat.ubc.ca/~jenny/)'s [Data Science course](http://stat545-ubc.github.io/))
+  (from [Jenny Bryan](http://www.stat.ubc.ca/~jenny/)'s [Data Science course](https://stat545.com)
 - [Pro Git book](http://git-scm.com/book)
 - The [git documentation](http://git-scm.com/documentation)
 - The [github help pages](https://help.github.com/)
@@ -158,7 +158,7 @@ description: Links to resources on reproducible research
 - [devtools package](http://github.com/hadley/devtools)
 - [Jeff Leek on developing R packages](https://github.com/jtleek/rpackages)
 - [Hilary Parker on making a simple R package](http://hilaryparker.com/2014/04/29/writing-an-r-package-from-scratch/)
-- [Stat 545 guide to writing an R package](http://stat545-ubc.github.io/packages00_index.html)
+- [Stat 545 guide to writing an R package](https://stat545.com/package-overview.html)
 - [Writing R extensions (official manual)](http://cran.r-project.org/manuals.html):
 \[[pdf](http://cran.r-project.org/doc/manuals/r-release/R-exts.pdf) | [html](http://cran.r-project.org/doc/manuals/r-release/R-exts.html)\]
 - [Developing R packages with RStudio](https://support.rstudio.com/hc/en-us/articles/200486488-Developing-Packages-with-RStudio)
@@ -192,17 +192,20 @@ description: Links to resources on reproducible research
 
 ### Big jobs
 
-- [KnitR cache](http://yihui.name/knitr/demo/cache/)
-  \[Also see [Knitr options](http://yihui.name/knitr/options)\]
-- [KnitR chunk references](http://yihui.name/knitr/demo/reference/)
+- [KnitR cache](https://yihui.name/knitr/demo/cache/)
+  \[Also see [Knitr options](https://yihui.name/knitr/options)\]
+- [KnitR chunk references](https://yihui.name/knitr/demo/reference/)
 - [Parallel R (book)](https://www.amazon.com/gp/product/1449309925?ie=UTF8&tag=7210-20)
 - [A no BS guide to the basics of parallelization in R](http://librestats.com/2012/03/15/a-no-bs-guide-to-the-basics-of-parallelization-in-r/)
   at [librestats](http://librestats.com/)
+<!--
 - [Parallel Options for R slides](http://www.sdsc.edu/Events/summerinstitute/slides/Lockwood%20-%20Parallel%20R.pdf)
   by [Glenn Lockwood](http://users.sdsc.edu/~glockwood/index.php)
-- [HTCondor](http://research.cs.wisc.edu/htcondor/)
+-->
+- [HTCondor](https://research.cs.wisc.edu/htcondor/)
 - [UW-Madison Center for High Throughput Computing](http://chtc.cs.wisc.edu)
-- [Kill Linux processes easier with pkill](http://www.howtogeek.com/howto/linux/kill-linux-processes-easier-with-pkill/)
+- [Kill Linux processes easier with pkill](https://www.howtogeek.com/howto/linux/kill-linux-processes-easier-with-pkill/)
+- [Reproducibility of parallel tasks in R](https://pjs-web.de/post/reproducibility-when-going-parallel)
 
 
 ### LaTeX
