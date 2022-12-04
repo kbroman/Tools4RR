@@ -128,7 +128,7 @@ description: Links to resources on reproducible research
 
 ### Organizing projects and data
 
-- [Hadley Wickham](http://had.co.nz)'s [paper on Tidy Data](http://www.jstatsoft.org/v59/i10)
+- [Hadley Wickham](https://hadley.nz)'s [paper on Tidy Data](http://www.jstatsoft.org/v59/i10)
 - [KnitR](http://yihui.name/knitr)'s [`stitch()` and `spin()`](http://yihui.name/knitr/demo/stitch)
 - [Nine simple ways to make it easier to (re)use your data (paper)](https://ojs.library.queensu.ca/index.php/IEE/article/view/4608/0)
 - [Some simple guidelines for effective data management (paper)](http://www.esajournals.org/doi/abs/10.1890/0012-9623-90.2.205)
@@ -138,7 +138,7 @@ description: Links to resources on reproducible research
 ### Writing clear code
 
 - [Best Practices for Scientific Computing (paper)](http://www.plosbiology.org/article/info:doi%2F10.1371%2Fjournal.pbio.1001745)
-- [Style guide](http://adv-r.had.co.nz/Style.html) in [Hadley Wickham](http://had.co.nz)'s
+- [Style guide](http://adv-r.had.co.nz/Style.html) in [Hadley Wickham](https://hadley.nz)'s
   [Advanced R Programming book](http://adv-r.had.co.nz/)
 - Oliveira & Stewart,
   [Writing scientific software (book)](https://www.amazon.com/gp/product/0521675952?ie=UTF8&tag=7210-20)
@@ -148,12 +148,12 @@ description: Links to resources on reproducible research
 
 ### R packages
 
-- [Hadley Wickham](http://had.co.nz)'s
-  [R Packages book](http://r-pkgs.had.co.nz/) \[[Amazon](https://www.amazon.com/gp/product/1491910593?ie=UTF8&tag=7210-20)\]
+- [Hadley Wickham](https://hadley.nz)'s
+  [R Packages book](https://r-pkgs.org)
 - Documenting R
-  [packages](http://r-pkgs.had.co.nz/vignettes.html) and
-  [functions](http://r-pkgs.had.co.nz/man.html),
-  from [that book](http://r-pkgs.had.co.nz/)
+  [packages](https://r-pkgs.org/vignettes.html) and
+  [functions](https://r-pkgs.org/man.html),
+  from [that book](https://r-pkgs.org)
 - Karl's [R package primer](https://kbroman.org/pkg_primer)
 - [devtools package](http://github.com/hadley/devtools)
 - [Jeff Leek on developing R packages](https://github.com/jtleek/rpackages)
@@ -176,7 +176,7 @@ description: Links to resources on reproducible research
 
 - [assertthat](https://github.com/hadley/assertthat) and [testthat](https://github.com/hadley/testthat) packages
 - [Hadley Wickham's paper on testthat](http://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf)
-- [Testing](http://adv-r.had.co.nz/Testing.html) and [debugging](http://adv-r.had.co.nz/Exceptions-Debugging.html) in [Hadley Wickham](http://had.co.nz)'s
+- [Testing](http://adv-r.had.co.nz/Testing.html) and [debugging](http://adv-r.had.co.nz/Exceptions-Debugging.html) in [Hadley Wickham](https://hadley.nz)'s
    [Advanced R book](http://adv-r.had.co.nz)
 - [Dr. Climate](http://drclimate.wordpress.com/) [blog post on testing your code](http://drclimate.wordpress.com/2013/10/10/testing-your-code/)
 - [Yihui Xie](http://yihui.name)'s [testit](http://github.com/yihui/testit) package
