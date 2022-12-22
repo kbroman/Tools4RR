@@ -6,8 +6,8 @@ description: Links to resources on reproducible research
 
 ### Reproducible research
 
-- [Best Practices for Scientific Computing (paper)](http://www.plosbiology.org/article/info:doi%2F10.1371%2Fjournal.pbio.1001745)
-- [Ten simple rules for reproducible computational research (paper)](http://www.ploscompbiol.org/article/info:doi/10.1371/journal.pcbi.1003285)
+- [Best Practices for Scientific Computing (paper)](https://doi.org/10.1371/journal.pbio.1001745)
+- [Ten simple rules for reproducible computational research (paper)](https://doi.org/10.1371/journal.pcbi.1003285)
 - [Top ten reasons not to share your code](http://www.siam.org/news/news.php?id=2064)
 - [Computational and Policy Tools for Reproducible Research](http://www.stodden.net/AMP2011/slides/pengslides.pdf)
   (slides for a talk by [Roger Peng](http://www.biostat.jhsph.edu/~rpeng/))
