@@ -8,7 +8,7 @@ description: Links to resources on reproducible research
 
 - [Best Practices for Scientific Computing (paper)](https://doi.org/10.1371/journal.pbio.1001745)
 - [Ten simple rules for reproducible computational research (paper)](https://doi.org/10.1371/journal.pcbi.1003285)
-- [Top ten reasons not to share your code](http://www.siam.org/news/news.php?id=2064)
+- [Top ten reasons not to share your code](https://sinews.siam.org/Details-Page/top-ten-reasons-to-not-share-your-code-and-why-you-should-anyway)
 - [Computational and Policy Tools for Reproducible Research](http://www.stodden.net/AMP2011/slides/pengslides.pdf)
   (slides for a talk by [Roger Peng](http://www.biostat.jhsph.edu/~rpeng/))
 - Roger Peng's 2009 ENAR course: [Methods for Reproducible Research](http://www.biostat.jhsph.edu/~rpeng/ENAR2009/)
