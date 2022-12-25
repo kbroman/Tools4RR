@@ -11,7 +11,7 @@ description: Links to resources on reproducible research
 - [Top ten reasons not to share your code](https://sinews.siam.org/Details-Page/top-ten-reasons-to-not-share-your-code-and-why-you-should-anyway)
 - [Computational and Policy Tools for Reproducible Research](http://www.stodden.net/AMP2011/slides/pengslides.pdf)
   (slides for a talk by [Roger Peng](https://rdpeng.org/))
-- Roger Peng's 2009 ENAR course: [Methods for Reproducible Research](http://www.biostat.jhsph.edu/~rpeng/ENAR2009/)
+- Roger Peng's 2009 ENAR course: [Methods for Reproducible Research](https://www.biostat.jhsph.edu/~rpeng/ENAR2009/)
 - [Reproducible Research in Signal Processing - What, why, and how](http://infoscience.epfl.ch/record/136640)
 - [Replication, reproduction, and remixing in research software](http://ivory.idyll.org/blog/research-software-reuse.html)
 - [Implementing reproducible research (book; chapter PDFs online)](http://implementing.reproducibleresearch.org)
