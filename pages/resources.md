@@ -14,7 +14,7 @@ description: Links to resources on reproducible research
 - Roger Peng's 2009 ENAR course: [Methods for Reproducible Research](https://www.biostat.jhsph.edu/~rpeng/ENAR2009/)
 - [Reproducible Research in Signal Processing - What, why, and how](https://infoscience.epfl.ch/record/136640)
 - [Replication, reproduction, and remixing in research software](http://ivory.idyll.org/blog/research-software-reuse.html)
-- [Implementing reproducible research (book; chapter PDFs online)](http://implementing.reproducibleresearch.org)
+- [Implementing reproducible research (book; chapter PDFs online)](https://osf.io/s9tya/wiki/home/)
 - [Starting data analysis and wrangling with R](http://reganmian.net/blog/2014/10/14/starting-data-analysiswrangling-with-r-things-i-wish-id-been-told/),
 [Stian H&aring;klev](http://reganmian.net)
 
