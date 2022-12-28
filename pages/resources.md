@@ -20,7 +20,7 @@ description: Links to resources on reproducible research
 
 ### Make
 
-- [GNU make](http://www.gnu.org/software/make)
+- [GNU make](https://www.gnu.org/software/make)
 - [Manual for make](http://www.gnu.org/software/make/manual/make.html)
 - [Minimal Make tutorial](https://kbroman.org/minimal_make)
 - [Managing projects with GNU make](http://oreilly.com/catalog/make3/book/)
