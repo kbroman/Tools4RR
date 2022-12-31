@@ -26,7 +26,7 @@ description: Links to resources on reproducible research
 - [Managing projects with GNU make](https://www.oreilly.com/openbook/make3/book/)
   book (part of the
   [Open Books project](https://oreilly.com/openbook/))
-- [Software carpentry](http://software-carpentry.org/)'s [make tutorial](http://swcarpentry.github.io/git-novice/)
+- [Software carpentry](https://software-carpentry.org/)'s [make tutorial](https://v4.software-carpentry.org/make/)
 - [Mike Bostock](http://bost.ocks.org/mike/)'s &ldquo;[Why Use Make](http://bost.ocks.org/mike/make/)&rdquo;
 - [GNU Make for reproducible data analysis](http://zmjones.com/make.html) by [Zachary Jones](http://zmjones.com/)
 - [Makefiles for R/LaTeX projects](http://robjhyndman.com/hyndsight/makefiles/) by [Rob Hyndman](http://robjhyndman.com)
