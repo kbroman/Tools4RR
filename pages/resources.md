@@ -29,7 +29,7 @@ description: Links to resources on reproducible research
 - [Software carpentry](https://software-carpentry.org/)'s [make tutorial](https://v4.software-carpentry.org/make/)
 - [Mike Bostock](https://bost.ocks.org/mike/)'s &ldquo;[Why Use Make](https://bost.ocks.org/mike/make/)&rdquo;
 - [GNU Make for reproducible data analysis](http://zmjones.com/make.html) by [Zachary Jones](http://zmjones.com/)
-- [Makefiles for R/LaTeX projects](http://robjhyndman.com/hyndsight/makefiles/) by [Rob Hyndman](http://robjhyndman.com)
+- [Makefiles for R/LaTeX projects](https://robjhyndman.com/hyndsight/makefiles/) by [Rob Hyndman](https://robjhyndman.com)
 
 ### Unix command line
 
