@@ -34,8 +34,8 @@ description: Links to resources on reproducible research
 ### Unix command line
 
 - [Survival guide for Unix newbies](https://matt.might.net/articles/basic-unix/)
-- [Settling into Unix](http://matt.might.net/articles/settling-into-unix/)
-- [Shell programming with bash](http://matt.might.net/articles/bash-by-example/)
+- [Settling into Unix](https://matt.might.net/articles/settling-into-unix/)
+- [Shell programming with bash](https://matt.might.net/articles/bash-by-example/)
 - [Essential Unix commands](http://www.english.upenn.edu/~curran/205-505/unix.html)
 - [Basic Unix commands](https://web.archive.org/web/20210203175843/https://www.tjhsst.edu/~dhyatt/superap/unixcmd.html)
 - [Command line essentials (slides)](http://www.slideshare.net/bbbart/command-line-essentials)
