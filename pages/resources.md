@@ -33,7 +33,7 @@ description: Links to resources on reproducible research
 
 ### Unix command line
 
-- [Survival guide for Unix newbies](http://matt.might.net/articles/basic-unix/)
+- [Survival guide for Unix newbies](https://matt.might.net/articles/basic-unix/)
 - [Settling into Unix](http://matt.might.net/articles/settling-into-unix/)
 - [Shell programming with bash](http://matt.might.net/articles/bash-by-example/)
 - [Essential Unix commands](http://www.english.upenn.edu/~curran/205-505/unix.html)
