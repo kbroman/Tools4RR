@@ -39,7 +39,7 @@ description: Links to resources on reproducible research
 - [Essential Unix commands](https://www.english.upenn.edu/~curran/205-505/unix.html)
 - [Basic Unix commands](https://web.archive.org/web/20210203175843/https://www.tjhsst.edu/~dhyatt/superap/unixcmd.html)
 - [Command line essentials (slides)](https://www.slideshare.net/bbbart/command-line-essentials)
-- [How to look like a unix guru](http://www.cs.usfca.edu/~parrt/course/601/lectures/unix.util.html)
+- [How to look like a unix guru](https://www.cs.usfca.edu/~parrt/course/601/lectures/unix.util.html)
 - [Linux essentials](http://faculty.ucr.edu/~tgirke/Documents/UNIX/linux_manual.html)
 - [Important unix commands](http://www.personal.kent.edu/~rmuhamma/OpSystems/unixCommands.htm)
 - [Linux quick reference guide](http://linoxide.com/guide/linux-command-shelf.html)
