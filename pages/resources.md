@@ -48,7 +48,7 @@ description: Links to resources on reproducible research
 - Book: [Learning the bash shell](https://www.amazon.com/gp/product/0596009658?ie=UTF8&tag=7210-20)
 - [Karl](https://kbroman.org)'s [`.bash_profile`](../assets/dot.bash_profile) and
   [`.bashrc`](../assets/dot.bashrc) files
-- [How to install the Xcode command line tools (Mac)](http://railsapps.github.io/xcode-command-line-tools.html)
+- [How to install the Xcode command line tools (Mac)](https://mac.install.guide/commandlinetools/index.html)
 - [Git Bash](http://msysgit.github.io/) and [Cygwin](http://www.cygwin.com/) for command-line
   tools in Windows
 - [Mintty](https://code.google.com/p/mintty/) and [ConEmu](https://github.com/Maximus5/ConEmu) are
