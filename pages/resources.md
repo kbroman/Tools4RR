@@ -57,7 +57,7 @@ description: Links to resources on reproducible research
 
 ### R
 
-- [Art of R programming (book, pdf)](http://heather.cs.ucdavis.edu/~matloff/132/NSPpart.pdf)
+- [Art of R programming (book, pdf)](https://heather.cs.ucdavis.edu/~matloff/132/NSPpart.pdf)
 - [Advanced R](http://adv-r.had.co.nz/)
 - [Testing R Code](https://www.amazon.com/gp/product/1498763650?ie=UTF8&tag=7210-20)
 
