@@ -49,7 +49,7 @@ description: Links to resources on reproducible research
 - [Karl](https://kbroman.org)'s [`.bash_profile`](../assets/dot.bash_profile) and
   [`.bashrc`](../assets/dot.bashrc) files
 - [How to install the Xcode command line tools (Mac)](https://mac.install.guide/commandlinetools/index.html)
-- [Git Bash](http://msysgit.github.io/) and [Cygwin](http://www.cygwin.com/) for command-line
+- [Git for Windows](https://gitforwindows.org/) for Git BASH and other command-line
   tools in Windows
 - [Mintty](https://code.google.com/p/mintty/) and [ConEmu](https://github.com/Maximus5/ConEmu) are
   terminal emulators for Windows.
