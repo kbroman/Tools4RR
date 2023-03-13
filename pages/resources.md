@@ -63,7 +63,7 @@ description: Links to resources on reproducible research
 
 ### RStudio, emacs, vim
 
-- [RStudio](http://www.rstudio.com/ide/download/desktop)
+- [RStudio](https://posit.co/download/rstudio-desktop/)
 - [RStudio documentation](https://support.rstudio.com/hc/en-us)
 - [Navigating code in RStudio](https://support.rstudio.com/hc/en-us/articles/200710523-Navigating-Code)
 - [Emacs Wiki](http://www.emacswiki.org/emacs/)
