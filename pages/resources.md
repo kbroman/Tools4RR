@@ -66,7 +66,7 @@ description: Links to resources on reproducible research
 - [RStudio](https://posit.co/download/rstudio-desktop/)
 - [RStudio documentation](https://docs.posit.co/)
 - [Navigating code in RStudio](https://support.posit.co/hc/en-us/articles/200710523-Navigating-Code)
-- [Emacs Wiki](http://www.emacswiki.org/emacs/)
+- [Emacs Wiki](https://www.emacswiki.org/emacs/)
 - Book: [Learning GNU Emacs, 3rd ed](https://www.amazon.com/gp/product/0596006489?ie=UTF8&tag=7210-20)
 - [Karl](https://kbroman.org)'s
   [`.emacs`](../assets/dot.emacs) file
