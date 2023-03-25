@@ -70,12 +70,12 @@ description: Links to resources on reproducible research
 - Book: [Learning GNU Emacs, 3rd ed](https://www.amazon.com/gp/product/0596006489?ie=UTF8&tag=7210-20)
 - [Karl](https://kbroman.org)'s
   [`.emacs`](../assets/dot.emacs) file
-- [Viper mode](http://www.emacswiki.org/emacs/ViperMode) to mimic vi key bindings in emacs
-  \[[Manual](http://www.gnu.org/software/emacs/manual/html_node/viper/) | [Installation](http://www.gnu.org/software/emacs/manual/html_node/viper/Loading-Viper.html#Loading-Viper)\]
-- [Evil](http://www.emacswiki.org/emacs/Evil): Vim features within emacs
-- [Vim](http://www.vim.org/)
-- [Vim Tips wiki](http://vim.wikia.com/wiki/Vim_Tips_Wiki)
-- [Vim-R-plugin](http://www.vim.org/scripts/script.php?script_id=2628)
+- [Viper mode](https://www.emacswiki.org/emacs/ViperMode) to mimic vi key bindings in emacs
+  \[[Manual](https://www.gnu.org/software/emacs/manual/html_node/viper/) | [Installation](https://www.gnu.org/software/emacs/manual/html_node/viper/Loading-Viper.html#Loading-Viper)\]
+- [Evil](https://www.emacswiki.org/emacs/Evil): Vim features within emacs
+- [Vim](https://www.vim.org/)
+- [Vim Tips wiki](https://vim.wikia.com/wiki/Vim_Tips_Wiki)
+- [Vim-R-plugin](https://www.vim.org/scripts/script.php?script_id=2628)
   \[[github](https://github.com/vim-scripts/Vim-R-plugin)\], like ESS
   for Vim
 - Book: [Learning the vi and Vim editors](https://www.amazon.com/gp/product/059652983X?ie=UTF8&tag=7210-20)
