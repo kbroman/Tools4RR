@@ -91,9 +91,9 @@ description: Links to resources on reproducible research
 - [MathJax](https://www.mathjax.org/)
 - [knitrBootstrap](https://jimhester.github.io/knitrBootstrap/) for nice-looking reports (see
   [L. Collado-Torres's post](https://web.archive.org/web/20150913102208/http://lcolladotor.github.io/2013/12/10/knitrBootstrap/#.VfVOUrzP2XI))
-- [pander](http://rapporter.github.io/pander), an R package that is
+- [pander](https://rapporter.github.io/pander), an R package that is
   especially
-  [good for making tables](http://rapporter.github.io/pander/#markdown-tables)
+  [good for making tables](https://rapporter.github.io/pander/#markdown-tables)
   with knitr, R Markdown, and pandoc.
 - [xtable](http://cran.r-project.org/web/packages/xtable/index.html),
   an R package for creating LaTeX and HTML tables; it's better for
