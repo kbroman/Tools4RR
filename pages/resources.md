@@ -95,7 +95,7 @@ description: Links to resources on reproducible research
   especially
   [good for making tables](https://rapporter.github.io/pander/#markdown-tables)
   with knitr, R Markdown, and pandoc.
-- [xtable](http://cran.r-project.org/web/packages/xtable/index.html),
+- [xtable](https://cran.r-project.org/package=xtable).
   an R package for creating LaTeX and HTML tables; it's better for
   LaTeX than for HTML.
 - [asciidoc](http://www.methods.co.nz/asciidoc/)
