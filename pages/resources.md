@@ -98,7 +98,7 @@ description: Links to resources on reproducible research
 - [xtable](https://cran.r-project.org/package=xtable).
   an R package for creating LaTeX and HTML tables; it's better for
   LaTeX than for HTML.
-- [asciidoc](http://www.methods.co.nz/asciidoc/)
+- [asciidoc](https://asciidoc.org)
 - [knitr resources](https://kbroman.org/knitr_knutshell/pages/resources.html)
 - [polymode](https://github.com/vitoshka/polymode), an emacs mode that
   handles R Markdown nicely
