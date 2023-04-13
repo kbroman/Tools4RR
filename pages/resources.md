@@ -108,7 +108,7 @@ description: Links to resources on reproducible research
 
 - Karl's [git/github guide](https://kbroman.org/github_tutorial)
 - [GitHub](https://github.com)
-- [Education discount on GitHub personal account](http://education.github.com) (allows
+- [Education discount on GitHub personal account](https://education.github.com) (allows
   private repositories)
 - [Happy Git and GitHub for the useR](http://happygitwithr.com/)
   (from [Jenny Bryan](http://www.stat.ubc.ca/~jenny/)'s [Data Science course](https://stat545.com)
