@@ -110,8 +110,8 @@ description: Links to resources on reproducible research
 - [GitHub](https://github.com)
 - [Education discount on GitHub personal account](https://education.github.com) (allows
   private repositories)
-- [Happy Git and GitHub for the useR](http://happygitwithr.com/)
-  (from [Jenny Bryan](http://www.stat.ubc.ca/~jenny/)'s [Data Science course](https://stat545.com)
+- [Happy Git and GitHub for the useR](https://happygitwithr.com/)
+  (from [Jenny Bryan](https://jennybryan.org)'s [Data Science course](https://stat545.com)
 - [Pro Git book](http://git-scm.com/book)
 - The [git documentation](http://git-scm.com/documentation)
 - The [github help pages](https://help.github.com/)
