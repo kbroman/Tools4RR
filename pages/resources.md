@@ -112,7 +112,7 @@ description: Links to resources on reproducible research
   private repositories)
 - [Happy Git and GitHub for the useR](https://happygitwithr.com/)
   (from [Jenny Bryan](https://jennybryan.org)'s [Data Science course](https://stat545.com)
-- [Pro Git book](http://git-scm.com/book)
+- [Pro Git book](https://git-scm.com/book)
 - The [git documentation](http://git-scm.com/documentation)
 - The [github help pages](https://help.github.com/)
 - [Software carpentry notes on git](https://github.com/swcarpentry/boot-camps/blob/master/version-control/git/git-and-github/instructor_notes.md)
