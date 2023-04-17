@@ -113,7 +113,7 @@ description: Links to resources on reproducible research
 - [Happy Git and GitHub for the useR](https://happygitwithr.com/)
   (from [Jenny Bryan](https://jennybryan.org)'s [Data Science course](https://stat545.com)
 - [Pro Git book](https://git-scm.com/book)
-- The [git documentation](http://git-scm.com/documentation)
+- The [git documentation](https://git-scm.com/doc)
 - The [github help pages](https://help.github.com/)
 - [Software carpentry notes on git](https://github.com/swcarpentry/boot-camps/blob/master/version-control/git/git-and-github/instructor_notes.md)
 - [Git can facilitate greater reproducibility and increased transparency in science (paper)](http://www.scfbm.org/content/8/1/7)
