@@ -116,7 +116,7 @@ description: Links to resources on reproducible research
 - The [git documentation](https://git-scm.com/doc)
 - The [github help pages](https://help.github.com/)
 - [Software carpentry notes on git](https://github.com/swcarpentry/boot-camps/blob/master/version-control/git/git-and-github/instructor_notes.md)
-- [Git can facilitate greater reproducibility and increased transparency in science (paper)](http://www.scfbm.org/content/8/1/7)
+- [Git can facilitate greater reproducibility and increased transparency in science (paper)](https://doi.org/10.1186/1751-0473-8-7)
 - [Karthik Ram's slides](http://karthik.github.io/git_intro/#/slide-title)
 - [&ldquo;Try git&rdquo; tutorial](http://try.github.io)
 - [git - the simple guide](http://rogerdudler.github.io/git-guide/)
