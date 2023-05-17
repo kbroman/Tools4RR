@@ -120,7 +120,7 @@ description: Links to resources on reproducible research
 - [Karthik Ram's slides](https://karthik.github.io/git_intro/#/slide-title)
 - [git - the simple guide](http://rogerdudler.github.io/git-guide/)
 - [magit](https://magit.vc), an emacs mode for git
-- [Tutorial on magit](http://www.masteringemacs.org/articles/2013/12/06/introduction-magit-emacs-mode-git/);
+- [Tutorial on magit](https://www.masteringemacs.org/articles/2013/12/06/introduction-magit-emacs-mode-git/);
   [also this one](http://ergoemacs.org/emacs/emacs_magit-mode_tutorial.html)
 
 
