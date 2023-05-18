@@ -121,7 +121,7 @@ description: Links to resources on reproducible research
 - [git - the simple guide](http://rogerdudler.github.io/git-guide/)
 - [magit](https://magit.vc), an emacs mode for git
 - [Tutorial on magit](https://www.masteringemacs.org/articles/2013/12/06/introduction-magit-emacs-mode-git/);
-  [also this one](http://ergoemacs.org/emacs/emacs_magit-mode_tutorial.html)
+  [also this one](http://xahlee.info/emacs/emacs/emacs_magit-mode_tutorial.html)
 
 
 ### Organizing projects and data
