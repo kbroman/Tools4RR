@@ -135,7 +135,7 @@ description: Links to resources on reproducible research
 
 ### Writing clear code
 
-- [Best Practices for Scientific Computing (paper)](http://www.plosbiology.org/article/info:doi%2F10.1371%2Fjournal.pbio.1001745)
+- [Best Practices for Scientific Computing (paper)](https://doi.org/10.1371/journal.pbio.1001745)
 - [Style guide](http://adv-r.had.co.nz/Style.html) in [Hadley Wickham](https://hadley.nz)'s
   [Advanced R Programming book](http://adv-r.had.co.nz/)
 - Oliveira & Stewart,
