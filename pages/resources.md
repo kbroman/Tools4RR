@@ -137,7 +137,7 @@ description: Links to resources on reproducible research
 
 - [Best Practices for Scientific Computing (paper)](https://doi.org/10.1371/journal.pbio.1001745)
 - [Style guide](http://adv-r.had.co.nz/Style.html) in [Hadley Wickham](https://hadley.nz)'s
-  [Advanced R Programming book](http://adv-r.had.co.nz/)
+  [Advanced R Programming book](https://adv-r.hadley.nz/)
 - Oliveira & Stewart,
   [Writing scientific software (book)](https://www.amazon.com/gp/product/0521675952?ie=UTF8&tag=7210-20)
 - Kernighan & Plauger, [The elements of programming style, 2nd ed (book)](https://www.amazon.com/gp/product/0070342075?ie=UTF8&tag=7210-20)
@@ -175,7 +175,7 @@ description: Links to resources on reproducible research
 - [assertthat](https://github.com/hadley/assertthat) and [testthat](https://github.com/hadley/testthat) packages
 - [Hadley Wickham's paper on testthat](http://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf)
 - [Testing](http://adv-r.had.co.nz/Testing.html) and [debugging](http://adv-r.had.co.nz/Exceptions-Debugging.html) in [Hadley Wickham](https://hadley.nz)'s
-   [Advanced R book](http://adv-r.had.co.nz)
+   [Advanced R book](https://adv-r.hadley.nz/)
 - [Dr. Climate](http://drclimate.wordpress.com/) [blog post on testing your code](http://drclimate.wordpress.com/2013/10/10/testing-your-code/)
 - [Yihui Xie](http://yihui.name)'s [testit](http://github.com/yihui/testit) package
 - [Jeff Leek's notes on developing R packages](https://github.com/jtleek/rpackages)
