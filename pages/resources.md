@@ -136,8 +136,7 @@ description: Links to resources on reproducible research
 ### Writing clear code
 
 - [Best Practices for Scientific Computing (paper)](https://doi.org/10.1371/journal.pbio.1001745)
-- [Style guide](http://adv-r.had.co.nz/Style.html) in [Hadley Wickham](https://hadley.nz)'s
-  [Advanced R Programming book](https://adv-r.hadley.nz/)
+- [Tidyverse style guide](https://style.tidyverse.org/)
 - Oliveira & Stewart,
   [Writing scientific software (book)](https://www.amazon.com/gp/product/0521675952?ie=UTF8&tag=7210-20)
 - Kernighan & Plauger, [The elements of programming style, 2nd ed (book)](https://www.amazon.com/gp/product/0070342075?ie=UTF8&tag=7210-20)
