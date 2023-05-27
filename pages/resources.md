@@ -152,7 +152,7 @@ description: Links to resources on reproducible research
   [functions](https://r-pkgs.org/man.html),
   from [that book](https://r-pkgs.org)
 - Karl's [R package primer](https://kbroman.org/pkg_primer)
-- [devtools package](http://github.com/hadley/devtools)
+- [devtools package](https://devtools.r-lib.org/)
 - [Jeff Leek on developing R packages](https://github.com/jtleek/rpackages)
 - [Hilary Parker on making a simple R package](http://hilaryparker.com/2014/04/29/writing-an-r-package-from-scratch/)
 - [Stat 545 guide to writing an R package](https://stat545.com/package-overview.html)
