@@ -156,8 +156,8 @@ description: Links to resources on reproducible research
 - [Jeff Leek on developing R packages](https://github.com/jtleek/rpackages)
 - [Hilary Parker on making a simple R package](https://hilaryparker.com/2014/04/29/writing-an-r-package-from-scratch/)
 - [Stat 545 guide to writing an R package](https://stat545.com/package-overview.html)
-- [Writing R extensions (official manual)](http://cran.r-project.org/manuals.html):
-\[[pdf](http://cran.r-project.org/doc/manuals/r-release/R-exts.pdf) | [html](http://cran.r-project.org/doc/manuals/r-release/R-exts.html)\]
+- [Writing R extensions (official manual)](https://cran.r-project.org/manuals.html):
+\[[pdf](https://cran.r-project.org/doc/manuals/r-release/R-exts.pdf) | [html](https://cran.r-project.org/doc/manuals/r-release/R-exts.html)\]
 - [Developing R packages with RStudio](https://support.rstudio.com/hc/en-us/articles/200486488-Developing-Packages-with-RStudio)
 - [How to build package vignettes with knitr](http://yihui.name/knitr/demo/vignette)
 - [Rd2roxygen package](http://yihui.name/Rd2roxygen/): Translate Rd files to roxygen comments
