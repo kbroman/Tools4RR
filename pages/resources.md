@@ -159,7 +159,7 @@ description: Links to resources on reproducible research
 - [Writing R extensions (official manual)](https://cran.r-project.org/manuals.html):
 \[[pdf](https://cran.r-project.org/doc/manuals/r-release/R-exts.pdf) | [html](https://cran.r-project.org/doc/manuals/r-release/R-exts.html)\]
 - [Developing R packages with RStudio](https://support.rstudio.com/hc/en-us/articles/200486488-Developing-Packages-with-RStudio)
-- [How to build package vignettes with knitr](http://yihui.name/knitr/demo/vignette)
+- [How to build package vignettes with knitr](https://yihui.name/knitr/demo/vignette)
 - [Rd2roxygen package](http://yihui.name/Rd2roxygen/): Translate Rd files to roxygen comments
 - [Building R packages on Windows](http://cran.us.r-project.org/bin/windows/Rtools/)
 - [Karl's largely out-of-date page about building R packages on Windows](https://www.biostat.wisc.edu/~kbroman/Rintro/Rwinpack.html)
