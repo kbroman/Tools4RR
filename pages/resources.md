@@ -161,7 +161,7 @@ description: Links to resources on reproducible research
 - [Developing R packages with RStudio](https://support.rstudio.com/hc/en-us/articles/200486488-Developing-Packages-with-RStudio)
 - [How to build package vignettes with knitr](https://yihui.name/knitr/demo/vignette)
 - [Rd2roxygen package](https://yihui.name/Rd2roxygen/): Translate Rd files to roxygen comments
-- [Building R packages on Windows](http://cran.us.r-project.org/bin/windows/Rtools/)
+- [Building R packages on Windows](https://cran.r-project.org/bin/windows/base/howto-R-devel.html)
 - [Karl's largely out-of-date page about building R packages on Windows](https://www.biostat.wisc.edu/~kbroman/Rintro/Rwinpack.html)
 - [A web service](http://win-builder.r-project.org/) for building and
   checking R packages for Windows
