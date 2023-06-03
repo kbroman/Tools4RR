@@ -163,8 +163,8 @@ description: Links to resources on reproducible research
 - [Rd2roxygen package](https://yihui.name/Rd2roxygen/): Translate Rd files to roxygen comments
 - [Building R packages on Windows](https://cran.r-project.org/bin/windows/base/howto-R-devel.html)
 - [Karl's largely out-of-date page about building R packages on Windows](https://www.biostat.wisc.edu/~kbroman/Rintro/Rwinpack.html)
-- [A web service](http://win-builder.r-project.org/) for building and
-  checking R packages for Windows
+- [A web service](https://win-builder.r-project.org/) for building and
+  checking R packages for Windows: [upload page](https://win-builder.r-project.org/upload.aspx)
 - [R for Mac developer's page](http://r.research.att.com/)
 - [R for Mac tools](http://r.research.att.com/tools/)
 
