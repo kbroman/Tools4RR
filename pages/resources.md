@@ -165,8 +165,8 @@ description: Links to resources on reproducible research
 - [Karl's largely out-of-date page about building R packages on Windows](https://www.biostat.wisc.edu/~kbroman/Rintro/Rwinpack.html)
 - [A web service](https://win-builder.r-project.org/) for building and
   checking R packages for Windows: [upload page](https://win-builder.r-project.org/upload.aspx)
-- [R for Mac developer's page](http://r.research.att.com/)
-- [R for Mac tools](http://r.research.att.com/tools/)
+- [R for Mac developer's page](https://mac.r-project.org)
+- [R for Mac tools](https://mac.r-project.org/tools)
 
 
 ### Testing and debugging
