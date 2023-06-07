@@ -176,7 +176,7 @@ description: Links to resources on reproducible research
 - [Testing](https://r-pkgs.org/testing-basics.html) in the [R Packages book](https://r-pkgs.org/)
 - [Debugging](https://adv-r.hadley.nz/debugging.html) in [Hadley Wickham](https://hadley.nz)'s
    [Advanced R book](https://adv-r.hadley.nz/)
-- [Dr. Climate](http://drclimate.wordpress.com/) [blog post on testing your code](http://drclimate.wordpress.com/2013/10/10/testing-your-code/)
+- [Dr. Climate](https://drclimate.wordpress.com/) [blog post on testing your code](https://drclimate.wordpress.com/2013/10/10/testing-your-code/)
 - [Yihui Xie](http://yihui.name)'s [testit](http://github.com/yihui/testit) package
 - [Jeff Leek's notes on developing R packages](https://github.com/jtleek/rpackages)
    talk a bit about [unit tests](https://github.com/jtleek/rpackages#unit-tests)
