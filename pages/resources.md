@@ -180,7 +180,7 @@ description: Links to resources on reproducible research
 - [Yihui Xie](https://yihui.name)'s [testit](https://github.com/yihui/testit) package
 - [Jeff Leek's notes on developing R packages](https://github.com/jtleek/rpackages)
    talk a bit about [unit tests](https://github.com/jtleek/rpackages#unit-tests)
-- [Software Carpentry](http://software-carpentry.org) on [testing](http://software-carpentry.org/v4/test/)
+- [Software Carpentry](https://software-carpentry.org) on [testing](https://web.archive.org/web/20150407050531/http://software-carpentry.org/v4/test/)
 - Marick, [The craft of software testing (book)](https://www.amazon.com/gp/product/0131774115?ie=UTF8&tag=7210-20)
 - Agans, [Debugging (book)](https://www.amazon.com/gp/product/0814474578?ie=UTF8&tag=7210-20)
 - [Travis CI](http://travis-ci.com/) [for R](http://yihui.name/en/2013/04/travis-ci-general-purpose/)
