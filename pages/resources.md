@@ -183,7 +183,7 @@ description: Links to resources on reproducible research
 - [Software Carpentry](https://software-carpentry.org) on [testing](https://web.archive.org/web/20150407050531/http://software-carpentry.org/v4/test/)
 - Marick, [The craft of software testing (book)](https://www.amazon.com/gp/product/0131774115?ie=UTF8&tag=7210-20)
 - Agans, [Debugging (book)](https://www.amazon.com/gp/product/0814474578?ie=UTF8&tag=7210-20)
-- [Debugging with RStudio](http://www.rstudio.com/ide/docs/debugging/overview)
+- [Debugging with RStudio](https://support.posit.co/hc/en-us/articles/200713843-Debugging-with-RStudio)
 
 
 ### Big jobs
