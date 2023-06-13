@@ -193,7 +193,7 @@ description: Links to resources on reproducible research
 - [KnitR chunk references](https://yihui.name/knitr/demo/reference/)
 - [Parallel R (book)](https://www.amazon.com/gp/product/1449309925?ie=UTF8&tag=7210-20)
 - [A no BS guide to the basics of parallelization in R](https://librestats.com/2012/03/15/a-no-bs-guide-to-the-basics-of-parallelization-in-r/)
-  at [librestats](http://librestats.com/)
+  at [librestats](https://librestats.com/)
 <!--
 - [Parallel Options for R slides](http://www.sdsc.edu/Events/summerinstitute/slides/Lockwood%20-%20Parallel%20R.pdf)
   by [Glenn Lockwood](http://users.sdsc.edu/~glockwood/index.php)
