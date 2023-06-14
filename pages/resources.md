@@ -199,7 +199,7 @@ description: Links to resources on reproducible research
   by [Glenn Lockwood](http://users.sdsc.edu/~glockwood/index.php)
 -->
 - [HTCondor](https://research.cs.wisc.edu/htcondor/)
-- [UW-Madison Center for High Throughput Computing](http://chtc.cs.wisc.edu)
+- [UW-Madison Center for High Throughput Computing](https://chtc.cs.wisc.edu)
 - [Kill Linux processes easier with pkill](https://www.howtogeek.com/howto/linux/kill-linux-processes-easier-with-pkill/)
 - [Reproducibility of parallel tasks in R](https://pjs-web.de/post/reproducibility-when-going-parallel)
 
