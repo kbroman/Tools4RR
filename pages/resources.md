@@ -230,7 +230,7 @@ description: Links to resources on reproducible research
 ### Slides and posters
 
 - [LaTeX Beamer](https://bitbucket.org/rivanvx/beamer/wiki/Home)
-- [Beamer Quickstart](http://www.math.umbc.edu/~rouben/beamer)
+- [Beamer Quickstart](https://web.archive.org/web/20120527221442/https://www.math.umbc.edu/~rouben/beamer)
 - [Beamer appearance cheat sheet](http://www.cpt.univ-mrs.fr/~masson/latex/Beamer-appearance-cheat-sheet.pdf)
 - [LaTeX templates for conference posters](http://www.latextemplates.com/cat/conference-posters)
 - [Slidify](http://slidify.org/)
