@@ -219,7 +219,7 @@ description: Links to resources on reproducible research
 - [xtable](https://cran.r-project.org/package=xtable),
   an R package for creating LaTeX and HTML tables
 - [xtableGallery (pdf vignette)](https://cran.r-project.org/web/packages/xtable/vignettes/xtableGallery.pdf)
-- [UnicodeIt](http://unicodeit.net) (for Mac) - convert latex expressions into
+- [UnicodeIt](https://www.unicodeit.net) (for Mac) - convert latex expressions into
   unicode characters
 - [LaTeXit](https://www.chachatelier.fr/latexit/latexit-home.php) (for
   Mac) - LaTeX-based equation editor
