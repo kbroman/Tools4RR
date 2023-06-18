@@ -231,7 +231,7 @@ description: Links to resources on reproducible research
 
 - [LaTeX Beamer](https://bitbucket.org/rivanvx/beamer/wiki/Home)
 - [Beamer Quickstart](https://web.archive.org/web/20120527221442/https://www.math.umbc.edu/~rouben/beamer)
-- [Beamer appearance cheat sheet](http://www.cpt.univ-mrs.fr/~masson/latex/Beamer-appearance-cheat-sheet.pdf)
+- [Beamer appearance cheat sheet](https://web.archive.org/web/20230324093814/http://www.cpt.univ-mrs.fr/~masson/latex/Beamer-appearance-cheat-sheet.pdf)
 - [LaTeX templates for conference posters](http://www.latextemplates.com/cat/conference-posters)
 - [Slidify](http://slidify.org/)
 - [Get started with slidify](http://slidify.org/start.html)
