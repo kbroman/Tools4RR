@@ -233,12 +233,6 @@ description: Links to resources on reproducible research
 - [Beamer Quickstart](https://web.archive.org/web/20120527221442/https://www.math.umbc.edu/~rouben/beamer)
 - [Beamer appearance cheat sheet](https://web.archive.org/web/20230324093814/http://www.cpt.univ-mrs.fr/~masson/latex/Beamer-appearance-cheat-sheet.pdf)
 - [LaTeX templates for conference posters](https://www.latextemplates.com/cat/conference-posters)
-- [Slidify](http://slidify.org/)
-- [Get started with slidify](http://slidify.org/start.html)
-- [Slides on slidify](http://slidify.org/samples/intro/) from
-  [Ramnath Vaidyanathan](https://github.com/ramnathv)
-- [Lecture on slidify](https://github.com/DataScienceSpecialization/courses/tree/master/09_DevelopingDataProducts/slidify)
-  from the Johns Hopkins Data Science Coursera course
 - [Modern, simple presentations written in R Markdown](http://benjaminlmoore.wordpress.com/2014/02/24/slidify-presentations-in-r-markdown/)
   by [Benomics](http://benjaminlmoore.wordpress.com)
 - [How to give a scientific presentation (pdf)](https://www.biostat.wisc.edu/~kbroman/presentations/giving_talks.pdf)
