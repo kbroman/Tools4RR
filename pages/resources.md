@@ -238,7 +238,7 @@ description: Links to resources on reproducible research
 - [How to give a scientific presentation (pdf)](https://www.biostat.wisc.edu/~kbroman/presentations/giving_talks.pdf)
   \[[source on github](https://github.com/kbroman/Talks_GivingTalks)\]
 - [PDFjam](https://github.com/rrthomas/pdfjam)
-- [LaTeX poster templates](http://www.latextemplates.com/cat/conference-posters)
+- [LaTeX poster templates](https://www.latextemplates.com/cat/conference-posters)
 - [Nathaniel Johnston's poster template](http://www.nathanieljohnston.com/2009/08/latex-poster-template/)
 
 
