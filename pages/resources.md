@@ -247,7 +247,7 @@ description: Links to resources on reproducible research
 - [Python for biologists](https://pythonforbiologists.com)
 - [Software Carpentry](https://software-carpentry.org)
 - [Python Scientific lecture notes](https://scipy-lectures.github.io/)
-- [IPython](http://ipython.org/)
+- [IPython](https://ipython.org/)
 - [IPython notebook](http://ipython.org/notebook)
 - [Installing iPython](http://ipython.org/install.html): [Anaconda](http://continuum.io/downloads)
 - [Practical computing for biologists (book)](https://www.amazon.com/gp/product/0878933913?ie=UTF8&tag=7210-20)
