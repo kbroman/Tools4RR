@@ -252,7 +252,7 @@ description: Links to resources on reproducible research
 - [Bioinformatics programming using Python (book)](https://www.amazon.com/gp/product/059615450X?ie=UTF8&tag=7210-20)
 - [Python scripting for computational science (book)](https://www.amazon.com/gp/product/3540739157?ie=UTF8&tag=7210-20)
 - [Python unittest introduction](https://web.archive.org/web/20220209212557/https://pythontesting.net/framework/unittest/unittest-introduction/)
-- [Python nose unit testing quick start](http://blog.jameskyle.org/2010/10/nose-unit-testing-quick-start)
+- [Python nose unit testing quick start](https://blog.jameskyle.org/2010/10/nose-unit-testing-quick-start)
 - [Differences between Python 2 and 3](http://inventwithpython.com/appendixa.html)
 - [What's new in Python 3.0 (vs 2.6)](https://docs.python.org/3.1/whatsnew/3.0.html)
 - [Guide to getting started with Data Science and Python](http://twiecki.github.io/blog/2014/11/18/python-for-data-science/)
