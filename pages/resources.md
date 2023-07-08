@@ -262,7 +262,7 @@ description: Links to resources on reproducible research
 
 ### Copyright and software/data licenses
 
-- [Victoria Stodden](http://stodden.net):
+- [Victoria Stodden](https://stodden.net):
   - [What computational scientists need to know about Intellectual property law (pdf)](https://osf.io/yi8k2/)
   - [The legal framework for reproducible scientific research (pdf)](http://www.stanford.edu/~vcs/papers/LFRSR12012008.pdf)
 - [Coding horror blog](http://www.codinghorror.com/blog/2007/04/pick-a-license-any-license.html)
