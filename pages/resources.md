@@ -265,7 +265,7 @@ description: Links to resources on reproducible research
 - [Victoria Stodden](https://stodden.net):
   - [What computational scientists need to know about Intellectual property law (pdf)](https://osf.io/yi8k2/download)
   - [The legal framework for reproducible scientific research (pdf)](https://stodden.net/papers/Legal-STODDEN2009.pdf)
-- [Coding horror blog](http://www.codinghorror.com/blog/2007/04/pick-a-license-any-license.html)
+- [Coding horror blog](https://blog.codinghorror.com/pick-a-license-any-license/)
 - [Understanding open source and free software licensing (book)](http://oreilly.com/openbook/osfreesoft/book/)
 - [The whys and hows of licensing scientific code](http://www.astrobetter.com/the-whys-and-hows-of-licensing-scientific-code/)
   by [Jake VanderPlas](http://www.astrobetter.com/author/jakevdp/)
