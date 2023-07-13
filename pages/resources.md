@@ -267,7 +267,7 @@ description: Links to resources on reproducible research
   - [The legal framework for reproducible scientific research (pdf)](https://stodden.net/papers/Legal-STODDEN2009.pdf)
 - [Coding horror blog](https://blog.codinghorror.com/pick-a-license-any-license/)
 - [Understanding open source and free software licensing (book)](https://oreilly.com/openbook/osfreesoft/book/)
-- [The whys and hows of licensing scientific code](http://www.astrobetter.com/the-whys-and-hows-of-licensing-scientific-code/)
+- [The whys and hows of licensing scientific code](https://www.astrobetter.com/the-whys-and-hows-of-licensing-scientific-code/)
   by [Jake VanderPlas](http://www.astrobetter.com/author/jakevdp/)
 - [A quick guide to software licensing for the scientist-programmer](http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2Fjournal.pcbi.1002598)
   (Morin et al. PLoS Comput Biol 8:e1002598, 2012)
