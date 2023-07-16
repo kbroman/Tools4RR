@@ -273,7 +273,7 @@ description: Links to resources on reproducible research
   (Morin et al. PLoS Comput Biol 8:e1002598, 2012)
 - [Creative Commons licenses](https://creativecommons.org/licenses/)
 - [tl;dr legal: Software licenses in plain English](https://tldrlegal.com/)
-- [MIT license at wikipedia](http://en.wikipedia.org/wiki/MIT_License)
+- [MIT license at wikipedia](https://en.wikipedia.org/wiki/MIT_License)
 - [GNU General Public License](https://www.gnu.org/copyleft/gpl.html)
 - [GPL frequently asked questions](https://www.gnu.org/licenses/gpl-faq.html)
 - [Copyright basics (pdf from US Copyright Office)](http://www.copyright.gov/circs/circ01.pdf)
