@@ -277,7 +277,7 @@ description: Links to resources on reproducible research
 - [GNU General Public License](https://www.gnu.org/copyleft/gpl.html)
 - [GPL frequently asked questions](https://www.gnu.org/licenses/gpl-faq.html)
 - [Copyright basics (pdf from US Copyright Office)](https://www.copyright.gov/circs/circ01.pdf)
-- [Works for hire (pdf from US Copyright Office)](http://www.copyright.gov/circs/circ09.pdf)
+- [Works for hire (pdf from US Copyright Office)](https://www.copyright.gov/circs/circ09.pdf)
 - [Fair use (US Copyright Office)](http://www.copyright.gov/title17/92chap1.html#107)
 - [Copyright basics](http://library.wisc.edu/copyright/#copyright-basics)
 - [Copyright and fair use](https://academictech.doit.wisc.edu/blend/create/copyright)
