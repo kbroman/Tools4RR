@@ -279,7 +279,7 @@ description: Links to resources on reproducible research
 - [Copyright basics (pdf from US Copyright Office)](https://www.copyright.gov/circs/circ01.pdf)
 - [Works for hire (pdf from US Copyright Office)](https://www.copyright.gov/circs/circ09.pdf)
 - [Fair use (US Copyright Office)](https://www.copyright.gov/title17/92chap1.html#107)
-- [Copyright basics](http://library.wisc.edu/copyright/#copyright-basics)
+- [Copyright basics](https://www.library.wisc.edu/research-support/scholarly-communication/copyright-resources/copyright-basics/)
 - [Copyright and fair use](https://academictech.doit.wisc.edu/blend/create/copyright)
 - [Copyright of facts and data](http://www.lib.umich.edu/copyright/facts-and-data) \[concise\]
 - [Database legal protections](http://www.bitlaw.com/copyright/database.html) \[detailed\]
