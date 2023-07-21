@@ -231,7 +231,7 @@ description: Links to resources on reproducible research
 
 - [LaTeX Beamer](https://bitbucket.org/rivanvx/beamer/wiki/Home)
 - [Beamer Quickstart](https://web.archive.org/web/20120527221442/https://www.math.umbc.edu/~rouben/beamer)
-- [Beamer appearance cheat sheet](https://web.archive.org/web/20230324093814/http://www.cpt.univ-mrs.fr/~masson/latex/Beamer-appearance-cheat-sheet.pdf)
+- [Beamer appearance cheat sheet](https://web.archive.org/web/20230324093814/https://www.cpt.univ-mrs.fr/~masson/latex/Beamer-appearance-cheat-sheet.pdf)
 - [LaTeX templates for conference posters](https://www.latextemplates.com/cat/conference-posters)
 - [Modern, simple presentations written in R Markdown](https://benjaminlmoore.wordpress.com/2014/02/24/slidify-presentations-in-r-markdown/)
   by [Benomics](https://benjaminlmoore.wordpress.com)
