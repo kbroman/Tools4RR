@@ -293,4 +293,4 @@ description: Links to resources on reproducible research
 
 - [HIPAA](https://compliance.wisc.edu/hipaa/)
 - [Human Research Protection Program at UW-Madison](https://research.wisc.edu/respolcomp/hrpp/)
-- [De-identification of HIPAA data](http://www.hhs.gov/ocr/privacy/hipaa/understanding/coveredentities/De-identification/guidance.html)
+- [De-identification of HIPAA data](https://web.archive.org/web/20151210024653/http://www.hhs.gov/ocr/privacy/hipaa/understanding/coveredentities/De-identification/guidance.html)
