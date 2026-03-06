@@ -41,7 +41,6 @@ description: Links to resources on reproducible research
 - [Command line essentials (slides)](https://www.slideshare.net/bbbart/command-line-essentials)
 - [How to look like a unix guru](https://www.cs.usfca.edu/~parrt/course/601/lectures/unix.util.html)
 - [Linux essentials](https://faculty.ucr.edu/~tgirke/Documents/UNIX/linux_manual.html)
-- [Important unix commands](https://www.personal.kent.edu/~rmuhamma/OpSystems/unixCommands.htm)
 - UW-Madison software carpentry [tutorial on the shell](https://github.com/UW-Madison-ACI/boot-camps/tree/2014-01-uwmadison/shell)
 - [A command-line murder mystery](https://github.com/veltman/clmystery)
 - Book: [Learning the bash shell](https://www.amazon.com/gp/product/0596009658?ie=UTF8&tag=7210-20)
