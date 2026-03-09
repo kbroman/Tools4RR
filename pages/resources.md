@@ -113,7 +113,7 @@ description: Links to resources on reproducible research
 - [Pro Git book](https://git-scm.com/book)
 - The [git documentation](https://git-scm.com/doc)
 - The [github help pages](https://help.github.com/)
-- [Software carpentry notes on git](https://github.com/swcarpentry/boot-camps/blob/master/version-control/git/git-and-github/instructor_notes.md)
+- [Software carpentry lesson on git](https://swcarpentry.github.io/git-novice/)
 - [Git can facilitate greater reproducibility and increased transparency in science (paper)](https://doi.org/10.1186/1751-0473-8-7)
 - [Karthik Ram's slides](https://karthik.github.io/git_intro/#/slide-title)
 - [git - the simple guide](http://rogerdudler.github.io/git-guide/)
