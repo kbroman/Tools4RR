@@ -170,7 +170,7 @@ description: Links to resources on reproducible research
 ### Testing and debugging
 
 - [assertthat](https://github.com/hadley/assertthat) and [testthat](https://github.com/hadley/testthat) packages
-- [Hadley Wickham's paper on testthat](https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf)
+- [Hadley Wickham's paper on testthat](https://vita.had.co.nz/papers/testthat.pdf)
 - [Testing](https://r-pkgs.org/testing-basics.html) in the [R Packages book](https://r-pkgs.org/)
 - [Debugging](https://adv-r.hadley.nz/debugging.html) in [Hadley Wickham](https://hadley.nz)'s
    [Advanced R book](https://adv-r.hadley.nz/)
