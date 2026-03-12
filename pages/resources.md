@@ -192,10 +192,6 @@ description: Links to resources on reproducible research
 - [Parallel R (book)](https://www.amazon.com/gp/product/1449309925?ie=UTF8&tag=7210-20)
 - [A no BS guide to the basics of parallelization in R](https://librestats.com/2012/03/15/a-no-bs-guide-to-the-basics-of-parallelization-in-r/)
   at [librestats](https://librestats.com/)
-<!--
-- [Parallel Options for R slides](http://www.sdsc.edu/Events/summerinstitute/slides/Lockwood%20-%20Parallel%20R.pdf)
-  by [Glenn Lockwood](http://users.sdsc.edu/~glockwood/index.php)
--->
 - [HTCondor](https://research.cs.wisc.edu/htcondor/)
 - [UW-Madison Center for High Throughput Computing](https://chtc.cs.wisc.edu)
 - [Kill Linux processes easier with pkill](https://www.howtogeek.com/howto/linux/kill-linux-processes-easier-with-pkill/)
