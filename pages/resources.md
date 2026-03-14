@@ -195,7 +195,7 @@ description: Links to resources on reproducible research
 - [HTCondor](https://research.cs.wisc.edu/htcondor/)
 - [UW-Madison Center for High Throughput Computing](https://chtc.cs.wisc.edu)
 - [Kill Linux processes easier with pkill](https://web.archive.org/web/20161226055957/https://www.howtogeek.com/howto/linux/kill-linux-processes-easier-with-pkill/)
-- [Reproducibility of parallel tasks in R](https://pjs-web.de/post/reproducibility-when-going-parallel)
+- [Reproducibility of parallel tasks in R](https://web.archive.org/web/20191205153729/https://pat-s.me/post/reproducibility-when-going-parallel/)
 
 
 ### LaTeX
