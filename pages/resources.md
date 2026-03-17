@@ -233,7 +233,7 @@ description: Links to resources on reproducible research
   \[[source on github](https://github.com/kbroman/Talks_GivingTalks)\]
 - [PDFjam](https://github.com/rrthomas/pdfjam)
 - [LaTeX poster templates](https://www.latextemplates.com/cat/conference-posters)
-- [Nathaniel Johnston's poster template](https://www.nathanieljohnston.com/2009/08/latex-poster-template/)
+- [Nathaniel Johnston's poster template](https://web.archive.org/web/20250428085147/https://www.nathanieljohnston.com/2009/08/latex-poster-template/)
 
 
 ### Python
