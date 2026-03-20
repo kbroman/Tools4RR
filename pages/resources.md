@@ -250,7 +250,7 @@ description: Links to resources on reproducible research
 - [Differences between Python 2 and 3](https://inventwithpython.com/appendixa.html)
 - [What's new in Python 3.0 (vs 2.6)](https://docs.python.org/3.1/whatsnew/3.0.html)
 - [Guide to getting started with Data Science and Python](https://twiecki.github.io/blog/2014/11/18/python-for-data-science/)
-  by [Thomas Wiecki](https://sites.google.com/a/brown.edu/lncc/home/members/thomas-wiecki)
+  by [Thomas Wiecki](https://twiecki.io)
 - [Learn Python for epidemiology](https://github.com/cmrivers/episkills)
   (particularly regarding pandas)
 
