@@ -274,7 +274,6 @@ description: Links to resources on reproducible research
 - [Works for hire (pdf from US Copyright Office)](https://www.copyright.gov/circs/circ09.pdf)
 - [Fair use (US Copyright Office)](https://www.copyright.gov/title17/92chap1.html#107)
 - [Copyright basics](https://www.library.wisc.edu/research-support/scholarly-communication/copyright-resources/copyright-basics/)
-- [Copyright and fair use](https://academictech.doit.wisc.edu/blend/create/copyright)
 - [Copyright of facts and data](https://web.archive.org/web/20160221024229/https://www.lib.umich.edu/copyright/facts-and-data) \[concise\]
 - [Database legal protections](https://www.bitlaw.com/copyright/database.html) \[detailed\]
 - [VertNet guide to copyright and licenses for dataset publication](http://www.vertnet.org/resources/datalicensingguide.html)
