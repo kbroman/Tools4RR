@@ -18,6 +18,8 @@ description: Links to resources on reproducible research
 - [Starting data analysis and wrangling with R](http://reganmian.net/blog/2014/10/14/starting-data-analysiswrangling-with-r-things-i-wish-id-been-told/),
 [Stian H&aring;klev](http://reganmian.net)
 - The [Turing Way](https://the-turing-way.start.page/) [handbook](https://book.the-turing-way.org/)
+ - [ROpenSci](https://ropensci.org)'s [Reproducibility guide](https://ropensci-archive.github.io/reproducibility-guide/)
+
 
 ### Make
 
